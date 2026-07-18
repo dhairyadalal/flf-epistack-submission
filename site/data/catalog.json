@@ -10511,7 +10511,7 @@
         "baseline_id": "audit-lower-layers-eggs-starter-2026-07-18",
         "evidence_count": 4,
         "unique_source_count": 11,
-        "annotation_status": "extracted_not_verified"
+        "annotation_status": "provisionally_reviewed"
       },
       "evidence": [
         {
@@ -10522,9 +10522,11 @@
           "provenance": {
             "upstream_author": "Audit the Lower Layers team",
             "upstream_generation_method": "curated starter baseline with declared framings",
-            "annotation_method": "deterministic_extraction_and_provisional_classification"
+            "annotation_method": "deterministic_extraction_and_provisional_classification",
+            "reviewer": "OpenAI Codex",
+            "review_method": "Model-assisted structural review of the four supplied evidence notes and declared framing policies; no systematic full-text verification of the cited corpus"
           },
-          "annotation_status": "extracted_not_verified",
+          "annotation_status": "provisionally_reviewed",
           "evidence": {
             "evidence_id": "egg-production-environmental-impact",
             "title": "Egg production has environmental impacts that vary by system and comparison",
@@ -10579,22 +10581,39 @@
           "review": {
             "verification_status": "not_checked",
             "review_basis": "baseline_document_only",
-            "framing_assumptions": [],
-            "policy_sensitivities": [],
-            "coverage_gaps": [],
-            "correlation_risks": [],
-            "capability_limits": [],
+            "framing_assumptions": [
+              "‘Good to eat’ is operationalized as environmental performance relative to specified substitute foods and functional units."
+            ],
+            "policy_sensitivities": [
+              "Rankings change with system boundaries, allocation rules, geography, production method, functional unit, and the chosen comparator."
+            ],
+            "coverage_gaps": [
+              "The starter set does not provide a globally representative production inventory or integrate environmental results with nutrition and welfare tradeoffs."
+            ],
+            "correlation_risks": [
+              "Global comparative datasets may incorporate or summarize some of the same underlying production studies used by narrower lifecycle assessments."
+            ],
+            "capability_limits": [
+              "The supplied summary was reviewed without a systematic full-text audit of every cited source."
+            ],
             "uncertainty_attribution": {
-              "evidential": [],
-              "ingestion_conditional": [],
-              "capability_conditional": [],
-              "framing_conditional": [],
-              "unattributed": [
-                "The baseline assessment has not yet been independently audited."
-              ]
+              "evidential": [
+                "Lifecycle estimates are model-dependent and locally variable."
+              ],
+              "ingestion_conditional": [
+                "The three selected studies cover only a subset of geographies, systems, and environmental outcomes."
+              ],
+              "capability_conditional": [
+                "Comparing heterogeneous lifecycle studies requires harmonizing functional units and system boundaries."
+              ],
+              "framing_conditional": [
+                "Different definitions of environmental performance can reverse food rankings without any underlying data changing."
+              ],
+              "unattributed": []
             },
             "notes": [
-              "Baseline prose and scores are preserved as claims by the upstream run, not adopted as our judgments."
+              "No single environmental verdict is meaningful without declaring the comparison being made.",
+              "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
             ]
           }
         },
@@ -10606,9 +10625,11 @@
           "provenance": {
             "upstream_author": "Audit the Lower Layers team",
             "upstream_generation_method": "curated starter baseline with declared framings",
-            "annotation_method": "deterministic_extraction_and_provisional_classification"
+            "annotation_method": "deterministic_extraction_and_provisional_classification",
+            "reviewer": "OpenAI Codex",
+            "review_method": "Model-assisted structural review of the four supplied evidence notes and declared framing policies; no systematic full-text verification of the cited corpus"
           },
-          "annotation_status": "extracted_not_verified",
+          "annotation_status": "provisionally_reviewed",
           "evidence": {
             "evidence_id": "individual-lipid-response",
             "title": "Individual lipid responses to dietary cholesterol from eggs vary",
@@ -10663,22 +10684,39 @@
           "review": {
             "verification_status": "not_checked",
             "review_basis": "baseline_document_only",
-            "framing_assumptions": [],
-            "policy_sensitivities": [],
-            "coverage_gaps": [],
-            "correlation_risks": [],
-            "capability_limits": [],
+            "framing_assumptions": [
+              "‘Good to eat’ is operationalized as a person-specific physiological and clinical response rather than a population average."
+            ],
+            "policy_sensitivities": [
+              "The answer depends on whether short-term lipid changes, long-term events, metabolic status, genetics, and ordinary versus experimental egg doses are required."
+            ],
+            "coverage_gaps": [
+              "The note does not establish a validated method for predicting an individual’s long-term clinical outcome from the cited response literature."
+            ],
+            "correlation_risks": [
+              "The older review summarizes the responder literature represented by the controlled-study citation; these are related rather than independent evidence streams."
+            ],
+            "capability_limits": [
+              "The supplied summary was reviewed without a systematic full-text audit of every cited source."
+            ],
             "uncertainty_attribution": {
-              "evidential": [],
-              "ingestion_conditional": [],
-              "capability_conditional": [],
-              "framing_conditional": [],
-              "unattributed": [
-                "The baseline assessment has not yet been independently audited."
-              ]
+              "evidential": [
+                "Short feeding studies establish heterogeneity more readily than long-term clinical significance."
+              ],
+              "ingestion_conditional": [
+                "The starter set contains only a few sources and does not systematically cover modern precision-nutrition evidence."
+              ],
+              "capability_conditional": [
+                "Literature synthesis cannot diagnose a user or substitute for clinical measurement."
+              ],
+              "framing_conditional": [
+                "The population claim changes shape when individual heterogeneity becomes the target of inquiry."
+              ],
+              "unattributed": []
             },
             "notes": [
-              "Baseline prose and scores are preserved as claims by the upstream run, not adopted as our judgments."
+              "This run demonstrates a change in answer shape, not merely a change in confidence.",
+              "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
             ]
           }
         },
@@ -10690,9 +10728,11 @@
           "provenance": {
             "upstream_author": "Audit the Lower Layers team",
             "upstream_generation_method": "curated starter baseline with declared framings",
-            "annotation_method": "deterministic_extraction_and_provisional_classification"
+            "annotation_method": "deterministic_extraction_and_provisional_classification",
+            "reviewer": "OpenAI Codex",
+            "review_method": "Model-assisted structural review of the four supplied evidence notes and declared framing policies; no systematic full-text verification of the cited corpus"
           },
-          "annotation_status": "extracted_not_verified",
+          "annotation_status": "provisionally_reviewed",
           "evidence": {
             "evidence_id": "laying-hen-welfare",
             "title": "Egg production creates husbandry-dependent laying-hen welfare harms",
@@ -10735,22 +10775,39 @@
           "review": {
             "verification_status": "not_checked",
             "review_basis": "baseline_document_only",
-            "framing_assumptions": [],
-            "policy_sensitivities": [],
-            "coverage_gaps": [],
-            "correlation_risks": [],
-            "capability_limits": [],
+            "framing_assumptions": [
+              "The welfare of laying hens is treated as part of whether consuming eggs is good, rather than as an external issue."
+            ],
+            "policy_sensitivities": [
+              "Conclusions depend on production system, geography, husbandry practices, selected welfare outcomes, and the ethical weight assigned to animal harms."
+            ],
+            "coverage_gaps": [
+              "The note does not identify the production system behind a particular egg purchase or convert welfare consequences into a settled moral verdict."
+            ],
+            "correlation_risks": [
+              "The EFSA plain-language summary restates the scientific opinion and is not an independent source."
+            ],
+            "capability_limits": [
+              "The supplied summary was reviewed without a systematic full-text audit of every cited source."
+            ],
             "uncertainty_attribution": {
-              "evidential": [],
-              "ingestion_conditional": [],
-              "capability_conditional": [],
-              "framing_conditional": [],
-              "unattributed": [
-                "The baseline assessment has not yet been independently audited."
-              ]
+              "evidential": [
+                "Evidence for some welfare consequences and system comparisons remains limited or uncertain."
+              ],
+              "ingestion_conditional": [
+                "One European synthesis does not establish conditions across all jurisdictions and production systems."
+              ],
+              "capability_conditional": [
+                "The system can describe reported harms but cannot resolve the normative weighting without declared values."
+              ],
+              "framing_conditional": [
+                "A health-only source policy excludes these outcomes before their importance is considered."
+              ],
+              "unattributed": []
             },
             "notes": [
-              "Baseline prose and scores are preserved as claims by the upstream run, not adopted as our judgments."
+              "Keep descriptive welfare findings separate from the ethical conclusion drawn from them.",
+              "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
             ]
           }
         },
@@ -10762,9 +10819,11 @@
           "provenance": {
             "upstream_author": "Audit the Lower Layers team",
             "upstream_generation_method": "curated starter baseline with declared framings",
-            "annotation_method": "deterministic_extraction_and_provisional_classification"
+            "annotation_method": "deterministic_extraction_and_provisional_classification",
+            "reviewer": "OpenAI Codex",
+            "review_method": "Model-assisted structural review of the four supplied evidence notes and declared framing policies; no systematic full-text verification of the cited corpus"
           },
-          "annotation_status": "extracted_not_verified",
+          "annotation_status": "provisionally_reviewed",
           "evidence": {
             "evidence_id": "population-cardiovascular-risk",
             "title": "Moderate egg consumption and population-level cardiovascular risk",
@@ -10819,22 +10878,39 @@
           "review": {
             "verification_status": "not_checked",
             "review_basis": "baseline_document_only",
-            "framing_assumptions": [],
-            "policy_sensitivities": [],
-            "coverage_gaps": [],
-            "correlation_risks": [],
-            "capability_limits": [],
+            "framing_assumptions": [
+              "‘Good to eat’ is operationalized as population-level cardiovascular risk at typical consumption levels."
+            ],
+            "policy_sensitivities": [
+              "The answer changes with outcome definition, geography, dietary comparator, exposure measurement, and the treatment of observational confounding."
+            ],
+            "coverage_gaps": [
+              "Individual response, non-cardiovascular health outcomes, animal welfare, environmental impact, and systematic non-English coverage are outside this evidence note."
+            ],
+            "correlation_risks": [
+              "The advisory and meta-analytic evidence synthesize overlapping bodies of observational research and should not be treated as wholly independent confirmation."
+            ],
+            "capability_limits": [
+              "Assessing sampling, ascertainment, and spatial or temporal inference requires raw data and specialist statistical review beyond the supplied summary."
+            ],
             "uncertainty_attribution": {
-              "evidential": [],
-              "ingestion_conditional": [],
-              "capability_conditional": [],
-              "framing_conditional": [],
-              "unattributed": [
-                "The baseline assessment has not yet been independently audited."
-              ]
+              "evidential": [
+                "Prospective cohorts remain vulnerable to residual confounding and dietary-measurement error."
+              ],
+              "ingestion_conditional": [
+                "The starter corpus selects a small English-language cardiovascular evidence set rather than enumerating the full health literature."
+              ],
+              "capability_conditional": [
+                "A complete dietary-epidemiology appraisal would require study-level bias and substitution analysis."
+              ],
+              "framing_conditional": [
+                "A population-average cardiovascular result cannot answer the broader unqualified question by itself."
+              ],
+              "unattributed": []
             },
             "notes": [
-              "Baseline prose and scores are preserved as claims by the upstream run, not adopted as our judgments."
+              "This is the interpretation a silent baseline is most likely to adopt, which is precisely why the framing must be declared.",
+              "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
             ]
           }
         }
@@ -11346,6 +11422,7 @@
   "experiments": [
     {
       "schema_version": "0.1.0",
+      "experiment_type": "fixed_corpus_ablation",
       "experiment_id": "covid-fixed-corpus-policy-ablation-v1",
       "case_id": "covid-origins",
       "baseline_id": "carlo-claude-unattended-2026-06-25",
@@ -14913,6 +14990,746 @@
             "source": "claim:wuhan-lab-geographic-coincidence",
             "target": "cluster:wuhan-geography",
             "edge_type": "shares_evidence_family"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "experiment_type": "framing_comparison",
+      "experiment_id": "eggs-question-framing-comparison-v1",
+      "case_id": "eggs",
+      "baseline_id": "audit-lower-layers-eggs-starter-2026-07-18",
+      "question": "Are eggs good to eat?",
+      "analysis_method": {
+        "intervention": "Swap the explicit framing object and its implied source policy.",
+        "held_constant": "The raw natural-language question and the deterministic build pipeline.",
+        "comparison_output": "Changes in operationalized question, admissible source classes, excluded outcomes, answer shape, and framing-conditional uncertainty.",
+        "interpretation": "The runs are not competing votes on one proposition. Their divergence demonstrates that the raw question does not determine its own evidentiary scope."
+      },
+      "runs": [
+        {
+          "run_id": "eggs-silent-baseline",
+          "label": "Silent baseline",
+          "framing_id": "health_population",
+          "policy_id": "eggs-health-population",
+          "evidence_id": "population-cardiovascular-risk",
+          "framing_declared": false,
+          "answer_shape": "One population-level cardiovascular-risk claim presented as the answer to the unqualified question.",
+          "assessment_summary": "Moderate egg intake is not consistently associated with higher population-level cardiovascular risk, subject to observational-study limitations.",
+          "framing_conditional_uncertainty": "The answer silently assumes that ‘good’ means population cardiovascular health and therefore never represents welfare, environmental, or person-specific outcomes.",
+          "operationalized_question": "At typical consumption levels, how is eating eggs associated with population-level cardiovascular outcomes?",
+          "declared_values": [
+            "population health",
+            "cardiovascular outcomes",
+            "typical consumption"
+          ],
+          "source_scope": {
+            "languages": [
+              "en"
+            ],
+            "source_types": [
+              "systematic reviews",
+              "prospective cohorts",
+              "clinical guidance"
+            ],
+            "inclusion_rules": [
+              "Human evidence with an explicit egg-consumption exposure"
+            ],
+            "exclusion_rules": [
+              "Animal welfare and environmental outcomes are outside this framing"
+            ]
+          },
+          "capability_profile": [
+            {
+              "capability": "Interpret English-language abstracts and reports",
+              "status": "supported",
+              "evidence_type": "curated",
+              "note": "Full methodological appraisal still requires domain review."
+            }
+          ],
+          "included_evidence_ids": [
+            "population-cardiovascular-risk"
+          ],
+          "included_source_ids": [
+            "src_68170b824429",
+            "src_32a78142c304",
+            "src_52d996d82739"
+          ],
+          "excluded_by_framing": [
+            {
+              "evidence_id": "laying-hen-welfare",
+              "title": "Egg production creates husbandry-dependent laying-hen welfare harms",
+              "framing_id": "animal_welfare",
+              "reason": "Outside the operationalized question and declared source scope for this run."
+            },
+            {
+              "evidence_id": "egg-production-environmental-impact",
+              "title": "Egg production has environmental impacts that vary by system and comparison",
+              "framing_id": "environmental_impact",
+              "reason": "Outside the operationalized question and declared source scope for this run."
+            },
+            {
+              "evidence_id": "individual-lipid-response",
+              "title": "Individual lipid responses to dietary cholesterol from eggs vary",
+              "framing_id": "health_individual",
+              "reason": "Outside the operationalized question and declared source scope for this run."
+            }
+          ],
+          "uncertainty_attribution": {
+            "evidential": [
+              "Prospective cohorts remain vulnerable to residual confounding and dietary-measurement error."
+            ],
+            "ingestion_conditional": [
+              "The starter corpus selects a small English-language cardiovascular evidence set rather than enumerating the full health literature."
+            ],
+            "capability_conditional": [
+              "A complete dietary-epidemiology appraisal would require study-level bias and substitution analysis."
+            ],
+            "framing_conditional": [
+              "A population-average cardiovascular result cannot answer the broader unqualified question by itself."
+            ],
+            "unattributed": []
+          }
+        },
+        {
+          "run_id": "eggs-health-population-declared",
+          "label": "Population health",
+          "framing_id": "health_population",
+          "policy_id": "eggs-health-population",
+          "evidence_id": "population-cardiovascular-risk",
+          "framing_declared": true,
+          "answer_shape": "A conditional population-average association about typical consumption and cardiovascular outcomes.",
+          "assessment_summary": "Moderate intake is not consistently associated with higher cardiovascular risk across the selected cohort syntheses, but geography, confounding, and dietary substitution matter.",
+          "framing_conditional_uncertainty": "This framing does not answer whether eggs are good for a particular person or acceptable under welfare or environmental criteria.",
+          "operationalized_question": "At typical consumption levels, how is eating eggs associated with population-level cardiovascular outcomes?",
+          "declared_values": [
+            "population health",
+            "cardiovascular outcomes",
+            "typical consumption"
+          ],
+          "source_scope": {
+            "languages": [
+              "en"
+            ],
+            "source_types": [
+              "systematic reviews",
+              "prospective cohorts",
+              "clinical guidance"
+            ],
+            "inclusion_rules": [
+              "Human evidence with an explicit egg-consumption exposure"
+            ],
+            "exclusion_rules": [
+              "Animal welfare and environmental outcomes are outside this framing"
+            ]
+          },
+          "capability_profile": [
+            {
+              "capability": "Interpret English-language abstracts and reports",
+              "status": "supported",
+              "evidence_type": "curated",
+              "note": "Full methodological appraisal still requires domain review."
+            }
+          ],
+          "included_evidence_ids": [
+            "population-cardiovascular-risk"
+          ],
+          "included_source_ids": [
+            "src_68170b824429",
+            "src_32a78142c304",
+            "src_52d996d82739"
+          ],
+          "excluded_by_framing": [
+            {
+              "evidence_id": "laying-hen-welfare",
+              "title": "Egg production creates husbandry-dependent laying-hen welfare harms",
+              "framing_id": "animal_welfare",
+              "reason": "Outside the operationalized question and declared source scope for this run."
+            },
+            {
+              "evidence_id": "egg-production-environmental-impact",
+              "title": "Egg production has environmental impacts that vary by system and comparison",
+              "framing_id": "environmental_impact",
+              "reason": "Outside the operationalized question and declared source scope for this run."
+            },
+            {
+              "evidence_id": "individual-lipid-response",
+              "title": "Individual lipid responses to dietary cholesterol from eggs vary",
+              "framing_id": "health_individual",
+              "reason": "Outside the operationalized question and declared source scope for this run."
+            }
+          ],
+          "uncertainty_attribution": {
+            "evidential": [
+              "Prospective cohorts remain vulnerable to residual confounding and dietary-measurement error."
+            ],
+            "ingestion_conditional": [
+              "The starter corpus selects a small English-language cardiovascular evidence set rather than enumerating the full health literature."
+            ],
+            "capability_conditional": [
+              "A complete dietary-epidemiology appraisal would require study-level bias and substitution analysis."
+            ],
+            "framing_conditional": [
+              "A population-average cardiovascular result cannot answer the broader unqualified question by itself."
+            ],
+            "unattributed": []
+          }
+        },
+        {
+          "run_id": "eggs-health-individual-declared",
+          "label": "Individual health",
+          "framing_id": "health_individual",
+          "policy_id": "eggs-health-individual",
+          "evidence_id": "individual-lipid-response",
+          "framing_declared": true,
+          "answer_shape": "The single population claim splits into an average effect plus person-specific response uncertainty.",
+          "assessment_summary": "Individual lipid responses vary, so population evidence alone cannot determine a particular person’s response or clinical risk.",
+          "framing_conditional_uncertainty": "The literature can establish heterogeneity but cannot diagnose an individual without clinical information.",
+          "operationalized_question": "How might eating eggs affect an individual's lipid markers and cardiovascular risk, given heterogeneous dietary-cholesterol response?",
+          "declared_values": [
+            "individual heterogeneity",
+            "person-specific uncertainty",
+            "clinical relevance"
+          ],
+          "source_scope": {
+            "languages": [
+              "en"
+            ],
+            "source_types": [
+              "controlled feeding studies",
+              "clinical trials",
+              "mechanistic reviews",
+              "cohort evidence"
+            ],
+            "inclusion_rules": [
+              "Evidence must report or discuss variation between individuals"
+            ],
+            "exclusion_rules": [
+              "Population averages are insufficient when response heterogeneity is not reported"
+            ]
+          },
+          "capability_profile": [
+            {
+              "capability": "Infer an individual's response from population literature",
+              "status": "unsupported",
+              "evidence_type": "curated",
+              "note": "The tool can surface heterogeneity but cannot diagnose a user."
+            }
+          ],
+          "included_evidence_ids": [
+            "individual-lipid-response"
+          ],
+          "included_source_ids": [
+            "src_a04b46952862",
+            "src_17e21b145f2e",
+            "src_d4064e97355b"
+          ],
+          "excluded_by_framing": [
+            {
+              "evidence_id": "laying-hen-welfare",
+              "title": "Egg production creates husbandry-dependent laying-hen welfare harms",
+              "framing_id": "animal_welfare",
+              "reason": "Outside the operationalized question and declared source scope for this run."
+            },
+            {
+              "evidence_id": "egg-production-environmental-impact",
+              "title": "Egg production has environmental impacts that vary by system and comparison",
+              "framing_id": "environmental_impact",
+              "reason": "Outside the operationalized question and declared source scope for this run."
+            },
+            {
+              "evidence_id": "population-cardiovascular-risk",
+              "title": "Moderate egg consumption and population-level cardiovascular risk",
+              "framing_id": "health_population",
+              "reason": "Outside the operationalized question and declared source scope for this run."
+            }
+          ],
+          "uncertainty_attribution": {
+            "evidential": [
+              "Short feeding studies establish heterogeneity more readily than long-term clinical significance."
+            ],
+            "ingestion_conditional": [
+              "The starter set contains only a few sources and does not systematically cover modern precision-nutrition evidence."
+            ],
+            "capability_conditional": [
+              "Literature synthesis cannot diagnose a user or substitute for clinical measurement."
+            ],
+            "framing_conditional": [
+              "The population claim changes shape when individual heterogeneity becomes the target of inquiry."
+            ],
+            "unattributed": []
+          }
+        },
+        {
+          "run_id": "eggs-animal-welfare-declared",
+          "label": "Animal welfare",
+          "framing_id": "animal_welfare",
+          "policy_id": "eggs-animal-welfare",
+          "evidence_id": "laying-hen-welfare",
+          "framing_declared": true,
+          "answer_shape": "A production-system assessment describing animal harms, followed by an explicitly ethical weighting step.",
+          "assessment_summary": "Egg production creates housing- and management-dependent welfare harms; descriptive evidence does not by itself settle their moral acceptability.",
+          "framing_conditional_uncertainty": "The assessment depends on which animals and harms count, how husbandry systems are distinguished, and what moral weight is assigned to those outcomes.",
+          "operationalized_question": "What welfare consequences for laying hens are causally connected to producing the eggs being consumed?",
+          "declared_values": [
+            "sentient-animal welfare",
+            "husbandry conditions",
+            "avoidable harm"
+          ],
+          "source_scope": {
+            "languages": [
+              "en"
+            ],
+            "source_types": [
+              "animal-welfare science",
+              "veterinary evidence",
+              "regulatory scientific opinions"
+            ],
+            "inclusion_rules": [
+              "Evidence tied to laying-hen production systems and welfare outcomes"
+            ],
+            "exclusion_rules": [
+              "Human-health outcomes alone cannot answer this framing"
+            ]
+          },
+          "capability_profile": [
+            {
+              "capability": "Separate descriptive welfare evidence from ethical weighting",
+              "status": "limited",
+              "evidence_type": "curated",
+              "note": "The evidence can describe consequences; the moral conclusion requires declared values."
+            }
+          ],
+          "included_evidence_ids": [
+            "laying-hen-welfare"
+          ],
+          "included_source_ids": [
+            "src_c10579b55993",
+            "src_acf6d3d12806"
+          ],
+          "excluded_by_framing": [
+            {
+              "evidence_id": "egg-production-environmental-impact",
+              "title": "Egg production has environmental impacts that vary by system and comparison",
+              "framing_id": "environmental_impact",
+              "reason": "Outside the operationalized question and declared source scope for this run."
+            },
+            {
+              "evidence_id": "individual-lipid-response",
+              "title": "Individual lipid responses to dietary cholesterol from eggs vary",
+              "framing_id": "health_individual",
+              "reason": "Outside the operationalized question and declared source scope for this run."
+            },
+            {
+              "evidence_id": "population-cardiovascular-risk",
+              "title": "Moderate egg consumption and population-level cardiovascular risk",
+              "framing_id": "health_population",
+              "reason": "Outside the operationalized question and declared source scope for this run."
+            }
+          ],
+          "uncertainty_attribution": {
+            "evidential": [
+              "Evidence for some welfare consequences and system comparisons remains limited or uncertain."
+            ],
+            "ingestion_conditional": [
+              "One European synthesis does not establish conditions across all jurisdictions and production systems."
+            ],
+            "capability_conditional": [
+              "The system can describe reported harms but cannot resolve the normative weighting without declared values."
+            ],
+            "framing_conditional": [
+              "A health-only source policy excludes these outcomes before their importance is considered."
+            ],
+            "unattributed": []
+          }
+        },
+        {
+          "run_id": "eggs-environment-declared",
+          "label": "Environmental impact",
+          "framing_id": "environmental_impact",
+          "policy_id": "eggs-environment",
+          "evidence_id": "egg-production-environmental-impact",
+          "framing_declared": true,
+          "answer_shape": "A comparative lifecycle assessment whose result varies with functional unit, production system, geography, and substitute food.",
+          "assessment_summary": "Egg production has material environmental impacts and often falls between several livestock foods and plant proteins, but no ranking is meaningful without a declared comparator and functional unit.",
+          "framing_conditional_uncertainty": "Per-kilogram, per-calorie, per-protein, and per-serving comparisons can produce different rankings.",
+          "operationalized_question": "What environmental impacts follow from egg production relative to plausible substitute foods?",
+          "declared_values": [
+            "climate",
+            "land and resource use",
+            "comparative substitution"
+          ],
+          "source_scope": {
+            "languages": [
+              "en"
+            ],
+            "source_types": [
+              "life-cycle assessments",
+              "environmental reviews"
+            ],
+            "inclusion_rules": [
+              "Studies must state system boundaries and a functional unit"
+            ],
+            "exclusion_rules": [
+              "Health and welfare outcomes are tracked separately"
+            ]
+          },
+          "capability_profile": [
+            {
+              "capability": "Compare heterogeneous life-cycle assessments",
+              "status": "limited",
+              "evidence_type": "curated",
+              "note": "Rankings depend on functional unit, geography, and substitution assumptions."
+            }
+          ],
+          "included_evidence_ids": [
+            "egg-production-environmental-impact"
+          ],
+          "included_source_ids": [
+            "src_ca316d5769d7",
+            "src_68ed13bb9c13",
+            "src_3eff07494463"
+          ],
+          "excluded_by_framing": [
+            {
+              "evidence_id": "laying-hen-welfare",
+              "title": "Egg production creates husbandry-dependent laying-hen welfare harms",
+              "framing_id": "animal_welfare",
+              "reason": "Outside the operationalized question and declared source scope for this run."
+            },
+            {
+              "evidence_id": "individual-lipid-response",
+              "title": "Individual lipid responses to dietary cholesterol from eggs vary",
+              "framing_id": "health_individual",
+              "reason": "Outside the operationalized question and declared source scope for this run."
+            },
+            {
+              "evidence_id": "population-cardiovascular-risk",
+              "title": "Moderate egg consumption and population-level cardiovascular risk",
+              "framing_id": "health_population",
+              "reason": "Outside the operationalized question and declared source scope for this run."
+            }
+          ],
+          "uncertainty_attribution": {
+            "evidential": [
+              "Lifecycle estimates are model-dependent and locally variable."
+            ],
+            "ingestion_conditional": [
+              "The three selected studies cover only a subset of geographies, systems, and environmental outcomes."
+            ],
+            "capability_conditional": [
+              "Comparing heterogeneous lifecycle studies requires harmonizing functional units and system boundaries."
+            ],
+            "framing_conditional": [
+              "Different definitions of environmental performance can reverse food rankings without any underlying data changing."
+            ],
+            "unattributed": []
+          }
+        }
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "node_id": "question:eggs-good-to-eat",
+            "node_type": "question",
+            "label": "Are eggs good to eat?"
+          },
+          {
+            "node_id": "run:eggs-silent-baseline:framing",
+            "node_type": "framing",
+            "label": "Implicit: Silent baseline",
+            "declared": false,
+            "operationalized_question": "At typical consumption levels, how is eating eggs associated with population-level cardiovascular outcomes?"
+          },
+          {
+            "node_id": "run:eggs-silent-baseline:policy",
+            "node_type": "source_policy",
+            "label": "systematic reviews, prospective cohorts, clinical guidance",
+            "inclusion_rules": [
+              "Human evidence with an explicit egg-consumption exposure"
+            ],
+            "exclusion_rules": [
+              "Animal welfare and environmental outcomes are outside this framing"
+            ]
+          },
+          {
+            "node_id": "run:eggs-silent-baseline:claim",
+            "node_type": "claim",
+            "label": "Moderate egg consumption and population-level cardiovascular risk",
+            "evidence_id": "population-cardiovascular-risk",
+            "source_ids": [
+              "src_68170b824429",
+              "src_32a78142c304",
+              "src_52d996d82739"
+            ]
+          },
+          {
+            "node_id": "run:eggs-silent-baseline:assessment",
+            "node_type": "assessment",
+            "label": "Moderate egg intake is not consistently associated with higher population-level cardiovascular risk, subject to observational-study limitations.",
+            "answer_shape": "One population-level cardiovascular-risk claim presented as the answer to the unqualified question."
+          },
+          {
+            "node_id": "run:eggs-health-population-declared:framing",
+            "node_type": "framing",
+            "label": "Population health",
+            "declared": true,
+            "operationalized_question": "At typical consumption levels, how is eating eggs associated with population-level cardiovascular outcomes?"
+          },
+          {
+            "node_id": "run:eggs-health-population-declared:policy",
+            "node_type": "source_policy",
+            "label": "systematic reviews, prospective cohorts, clinical guidance",
+            "inclusion_rules": [
+              "Human evidence with an explicit egg-consumption exposure"
+            ],
+            "exclusion_rules": [
+              "Animal welfare and environmental outcomes are outside this framing"
+            ]
+          },
+          {
+            "node_id": "run:eggs-health-population-declared:claim",
+            "node_type": "claim",
+            "label": "Moderate egg consumption and population-level cardiovascular risk",
+            "evidence_id": "population-cardiovascular-risk",
+            "source_ids": [
+              "src_68170b824429",
+              "src_32a78142c304",
+              "src_52d996d82739"
+            ]
+          },
+          {
+            "node_id": "run:eggs-health-population-declared:assessment",
+            "node_type": "assessment",
+            "label": "Moderate intake is not consistently associated with higher cardiovascular risk across the selected cohort syntheses, but geography, confounding, and dietary substitution matter.",
+            "answer_shape": "A conditional population-average association about typical consumption and cardiovascular outcomes."
+          },
+          {
+            "node_id": "run:eggs-health-individual-declared:framing",
+            "node_type": "framing",
+            "label": "Individual health",
+            "declared": true,
+            "operationalized_question": "How might eating eggs affect an individual's lipid markers and cardiovascular risk, given heterogeneous dietary-cholesterol response?"
+          },
+          {
+            "node_id": "run:eggs-health-individual-declared:policy",
+            "node_type": "source_policy",
+            "label": "controlled feeding studies, clinical trials, mechanistic reviews, cohort evidence",
+            "inclusion_rules": [
+              "Evidence must report or discuss variation between individuals"
+            ],
+            "exclusion_rules": [
+              "Population averages are insufficient when response heterogeneity is not reported"
+            ]
+          },
+          {
+            "node_id": "run:eggs-health-individual-declared:claim",
+            "node_type": "claim",
+            "label": "Individual lipid responses to dietary cholesterol from eggs vary",
+            "evidence_id": "individual-lipid-response",
+            "source_ids": [
+              "src_a04b46952862",
+              "src_17e21b145f2e",
+              "src_d4064e97355b"
+            ]
+          },
+          {
+            "node_id": "run:eggs-health-individual-declared:assessment",
+            "node_type": "assessment",
+            "label": "Individual lipid responses vary, so population evidence alone cannot determine a particular person’s response or clinical risk.",
+            "answer_shape": "The single population claim splits into an average effect plus person-specific response uncertainty."
+          },
+          {
+            "node_id": "run:eggs-animal-welfare-declared:framing",
+            "node_type": "framing",
+            "label": "Animal welfare",
+            "declared": true,
+            "operationalized_question": "What welfare consequences for laying hens are causally connected to producing the eggs being consumed?"
+          },
+          {
+            "node_id": "run:eggs-animal-welfare-declared:policy",
+            "node_type": "source_policy",
+            "label": "animal-welfare science, veterinary evidence, regulatory scientific opinions",
+            "inclusion_rules": [
+              "Evidence tied to laying-hen production systems and welfare outcomes"
+            ],
+            "exclusion_rules": [
+              "Human-health outcomes alone cannot answer this framing"
+            ]
+          },
+          {
+            "node_id": "run:eggs-animal-welfare-declared:claim",
+            "node_type": "claim",
+            "label": "Egg production creates husbandry-dependent laying-hen welfare harms",
+            "evidence_id": "laying-hen-welfare",
+            "source_ids": [
+              "src_c10579b55993",
+              "src_acf6d3d12806"
+            ]
+          },
+          {
+            "node_id": "run:eggs-animal-welfare-declared:assessment",
+            "node_type": "assessment",
+            "label": "Egg production creates housing- and management-dependent welfare harms; descriptive evidence does not by itself settle their moral acceptability.",
+            "answer_shape": "A production-system assessment describing animal harms, followed by an explicitly ethical weighting step."
+          },
+          {
+            "node_id": "run:eggs-environment-declared:framing",
+            "node_type": "framing",
+            "label": "Environmental impact",
+            "declared": true,
+            "operationalized_question": "What environmental impacts follow from egg production relative to plausible substitute foods?"
+          },
+          {
+            "node_id": "run:eggs-environment-declared:policy",
+            "node_type": "source_policy",
+            "label": "life-cycle assessments, environmental reviews",
+            "inclusion_rules": [
+              "Studies must state system boundaries and a functional unit"
+            ],
+            "exclusion_rules": [
+              "Health and welfare outcomes are tracked separately"
+            ]
+          },
+          {
+            "node_id": "run:eggs-environment-declared:claim",
+            "node_type": "claim",
+            "label": "Egg production has environmental impacts that vary by system and comparison",
+            "evidence_id": "egg-production-environmental-impact",
+            "source_ids": [
+              "src_ca316d5769d7",
+              "src_68ed13bb9c13",
+              "src_3eff07494463"
+            ]
+          },
+          {
+            "node_id": "run:eggs-environment-declared:assessment",
+            "node_type": "assessment",
+            "label": "Egg production has material environmental impacts and often falls between several livestock foods and plant proteins, but no ranking is meaningful without a declared comparator and functional unit.",
+            "answer_shape": "A comparative lifecycle assessment whose result varies with functional unit, production system, geography, and substitute food."
+          }
+        ],
+        "edges": [
+          {
+            "source": "question:eggs-good-to-eat",
+            "target": "run:eggs-silent-baseline:framing",
+            "edge_type": "interpreted_as",
+            "run_id": "eggs-silent-baseline"
+          },
+          {
+            "source": "run:eggs-silent-baseline:framing",
+            "target": "run:eggs-silent-baseline:policy",
+            "edge_type": "instantiates",
+            "run_id": "eggs-silent-baseline"
+          },
+          {
+            "source": "run:eggs-silent-baseline:policy",
+            "target": "run:eggs-silent-baseline:claim",
+            "edge_type": "admits",
+            "run_id": "eggs-silent-baseline"
+          },
+          {
+            "source": "run:eggs-silent-baseline:claim",
+            "target": "run:eggs-silent-baseline:assessment",
+            "edge_type": "shapes",
+            "run_id": "eggs-silent-baseline"
+          },
+          {
+            "source": "question:eggs-good-to-eat",
+            "target": "run:eggs-health-population-declared:framing",
+            "edge_type": "interpreted_as",
+            "run_id": "eggs-health-population-declared"
+          },
+          {
+            "source": "run:eggs-health-population-declared:framing",
+            "target": "run:eggs-health-population-declared:policy",
+            "edge_type": "instantiates",
+            "run_id": "eggs-health-population-declared"
+          },
+          {
+            "source": "run:eggs-health-population-declared:policy",
+            "target": "run:eggs-health-population-declared:claim",
+            "edge_type": "admits",
+            "run_id": "eggs-health-population-declared"
+          },
+          {
+            "source": "run:eggs-health-population-declared:claim",
+            "target": "run:eggs-health-population-declared:assessment",
+            "edge_type": "shapes",
+            "run_id": "eggs-health-population-declared"
+          },
+          {
+            "source": "question:eggs-good-to-eat",
+            "target": "run:eggs-health-individual-declared:framing",
+            "edge_type": "interpreted_as",
+            "run_id": "eggs-health-individual-declared"
+          },
+          {
+            "source": "run:eggs-health-individual-declared:framing",
+            "target": "run:eggs-health-individual-declared:policy",
+            "edge_type": "instantiates",
+            "run_id": "eggs-health-individual-declared"
+          },
+          {
+            "source": "run:eggs-health-individual-declared:policy",
+            "target": "run:eggs-health-individual-declared:claim",
+            "edge_type": "admits",
+            "run_id": "eggs-health-individual-declared"
+          },
+          {
+            "source": "run:eggs-health-individual-declared:claim",
+            "target": "run:eggs-health-individual-declared:assessment",
+            "edge_type": "shapes",
+            "run_id": "eggs-health-individual-declared"
+          },
+          {
+            "source": "question:eggs-good-to-eat",
+            "target": "run:eggs-animal-welfare-declared:framing",
+            "edge_type": "interpreted_as",
+            "run_id": "eggs-animal-welfare-declared"
+          },
+          {
+            "source": "run:eggs-animal-welfare-declared:framing",
+            "target": "run:eggs-animal-welfare-declared:policy",
+            "edge_type": "instantiates",
+            "run_id": "eggs-animal-welfare-declared"
+          },
+          {
+            "source": "run:eggs-animal-welfare-declared:policy",
+            "target": "run:eggs-animal-welfare-declared:claim",
+            "edge_type": "admits",
+            "run_id": "eggs-animal-welfare-declared"
+          },
+          {
+            "source": "run:eggs-animal-welfare-declared:claim",
+            "target": "run:eggs-animal-welfare-declared:assessment",
+            "edge_type": "shapes",
+            "run_id": "eggs-animal-welfare-declared"
+          },
+          {
+            "source": "question:eggs-good-to-eat",
+            "target": "run:eggs-environment-declared:framing",
+            "edge_type": "interpreted_as",
+            "run_id": "eggs-environment-declared"
+          },
+          {
+            "source": "run:eggs-environment-declared:framing",
+            "target": "run:eggs-environment-declared:policy",
+            "edge_type": "instantiates",
+            "run_id": "eggs-environment-declared"
+          },
+          {
+            "source": "run:eggs-environment-declared:policy",
+            "target": "run:eggs-environment-declared:claim",
+            "edge_type": "admits",
+            "run_id": "eggs-environment-declared"
+          },
+          {
+            "source": "run:eggs-environment-declared:claim",
+            "target": "run:eggs-environment-declared:assessment",
+            "edge_type": "shapes",
+            "run_id": "eggs-environment-declared"
           }
         ]
       }

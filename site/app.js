@@ -16,6 +16,9 @@ const elements = {
   boundary: document.querySelector("#review-boundary"),
   metrics: document.querySelector("#metrics"),
   experimentSection: document.querySelector("#experiment-section"),
+  experimentKicker: document.querySelector("#experiment-kicker"),
+  experimentTitle: document.querySelector("#experiment-title"),
+  experimentDescription: document.querySelector("#experiment-description"),
   runTabs: document.querySelector("#run-tabs"),
   runTitle: document.querySelector("#run-title"),
   runDescription: document.querySelector("#run-description"),
@@ -25,11 +28,20 @@ const elements = {
   researchBalance: document.querySelector("#research-balance"),
   naturalBar: document.querySelector("#natural-bar"),
   researchBar: document.querySelector("#research-bar"),
+  supportBalance: document.querySelector("#support-balance"),
+  framingOutput: document.querySelector("#framing-output"),
+  answerShape: document.querySelector("#answer-shape"),
+  framingUncertainty: document.querySelector("#framing-uncertainty"),
+  graphTitle: document.querySelector("#graph-title"),
+  graphDescription: document.querySelector("#graph-description"),
+  graphFilterField: document.querySelector("#graph-filter-field"),
+  graphLegend: document.querySelector("#graph-legend"),
   clusterFilter: document.querySelector("#cluster-filter"),
   graph: document.querySelector("#claim-graph"),
   graphSummary: document.querySelector("#graph-summary"),
   graphSelection: document.querySelector("#graph-selection"),
   coverage: document.querySelector("#coverage-report"),
+  coverageSummary: document.querySelector("#coverage-summary"),
   resultCount: document.querySelector("#result-count"),
   search: document.querySelector("#search"),
   direction: document.querySelector("#direction-filter"),
@@ -128,8 +140,16 @@ function renderCaseHeader(caseData) {
     [caseData.manifest.evidence_count, "evidence records"],
     [caseData.manifest.unique_source_count, "unique cited sources"],
     [
-      experiment ? experiment.clusters.length : reusedSources,
-      experiment ? "independence clusters" : "sources used by multiple records",
+      experiment
+        ? experiment.experiment_type === "fixed_corpus_ablation"
+          ? experiment.clusters.length
+          : experiment.runs.filter((run) => run.framing_declared).length
+        : reusedSources,
+      experiment
+        ? experiment.experiment_type === "fixed_corpus_ablation"
+          ? "independence clusters"
+          : "declared framings"
+        : "sources used by multiple records",
     ],
   ];
   elements.metrics.replaceChildren(
@@ -353,12 +373,7 @@ function renderCoverage(experiment) {
   );
 }
 
-function renderExperiment(caseData) {
-  const experiment = currentExperiment();
-  elements.experimentSection.hidden = !experiment;
-  if (!experiment) return;
-
-  if (state.runIndex >= experiment.runs.length) state.runIndex = 0;
+function renderRunTabs(experiment, caseData) {
   const run = experiment.runs[state.runIndex];
   elements.runTabs.replaceChildren(
     ...experiment.runs.map((candidate, index) => {
@@ -376,6 +391,28 @@ function renderExperiment(caseData) {
       });
       return button;
     }),
+  );
+  return run;
+}
+
+function renderFixedCorpusExperiment(caseData, experiment) {
+  const run = experiment.runs[state.runIndex];
+  elements.experimentKicker.textContent = "Fixed-corpus policy ablation";
+  elements.experimentTitle.textContent = "How source policy changes the assessment";
+  elements.experimentDescription.textContent =
+    "The 40 supplied records stay fixed. Each run admits a different subset, then recalculates support after duplicate evidence families are collapsed.";
+  elements.supportBalance.hidden = false;
+  elements.framingOutput.hidden = true;
+  elements.graphFilterField.hidden = false;
+  elements.graphTitle.textContent = "Claim → warrant → hypothesis";
+  elements.graphDescription.textContent =
+    "Records in the same evidence family are shown together and scored once per direction.";
+  elements.coverageSummary.textContent = "Coverage and negative space";
+  elements.graphLegend.replaceChildren(
+    el("span", {}, [el("i", { className: "legend-mark claim-mark" }), document.createTextNode("Claim")]),
+    el("span", {}, [el("i", { className: "legend-mark warrant-mark" }), document.createTextNode("Inferential warrant")]),
+    el("span", {}, [el("i", { className: "legend-mark hypothesis-mark" }), document.createTextNode("Hypothesis")]),
+    el("span", {}, [el("i", { className: "legend-mark excluded-mark" }), document.createTextNode("Excluded by selected policy")]),
   );
 
   const evidenceCount = run.included_evidence_ids.length;
@@ -408,6 +445,169 @@ function renderExperiment(caseData) {
   elements.clusterFilter.value = state.clusterId;
   renderClaimGraph(experiment, run, caseData);
   renderCoverage(experiment);
+}
+
+function renderFramingGraph(experiment, run, caseData) {
+  const nodeMap = new Map(experiment.graph.nodes.map((node) => [node.node_id, node]));
+  const prefix = `run:${run.run_id}`;
+  const stages = [
+    {
+      node: nodeMap.get("question:eggs-good-to-eat"),
+      type: "Raw question",
+      className: "question",
+    },
+    {
+      node: nodeMap.get(`${prefix}:framing`),
+      type: run.framing_declared ? "Declared framing" : "Implicit framing",
+      className: `framing${run.framing_declared ? "" : " implicit"}`,
+    },
+    {
+      node: nodeMap.get(`${prefix}:policy`),
+      type: "Source policy",
+      className: "source-policy",
+    },
+    {
+      node: nodeMap.get(`${prefix}:claim`),
+      type: "Admitted evidence",
+      className: "claim",
+    },
+    {
+      node: nodeMap.get(`${prefix}:assessment`),
+      type: "Assessment",
+      className: "assessment",
+    },
+  ];
+  const positions = [22, 244, 466, 688, 910];
+  const widths = [190, 190, 190, 190, 244];
+  const svg = svgEl("svg", {
+    viewBox: "0 0 1180 220",
+    "aria-hidden": "true",
+  });
+
+  for (let index = 0; index < stages.length - 1; index += 1) {
+    svg.append(
+      svgEl("path", {
+        d: `M ${positions[index] + widths[index]} 116 L ${positions[index + 1]} 116`,
+        class: "graph-edge",
+      }),
+    );
+    svg.append(
+      svgEl("text", {
+        x: positions[index] + widths[index] + 8,
+        y: 105,
+        class: "edge-label",
+      }, ["interpreted as", "sets scope", "admits", "shapes"][index]),
+    );
+  }
+
+  stages.forEach((stage, index) => {
+    const node = graphNode({
+      x: positions[index],
+      y: 74,
+      width: widths[index],
+      height: 84,
+      labelText: stage.node.label,
+      typeText: stage.type,
+      className: stage.className,
+      excluded: false,
+    });
+    if (stage.node.node_type === "claim") {
+      const link = svgEl("a", { href: "#records-title" });
+      link.append(node);
+      link.addEventListener("click", () => {
+        state.selectedId = stage.node.evidence_id;
+        state.query = "";
+        state.direction = "all";
+        elements.search.value = "";
+        renderEvidenceList(caseData);
+      });
+      svg.append(link);
+    } else {
+      svg.append(node);
+    }
+  });
+
+  elements.graph.replaceChildren(svg);
+  elements.graphSummary.textContent = `${run.label}. The raw question is interpreted as ${run.operationalized_question}. That framing admits ${run.source_scope.source_types.join(", ")} and produces this assessment: ${run.assessment_summary}`;
+  elements.graphSelection.replaceChildren(
+    el("strong", { text: run.operationalized_question }),
+    document.createTextNode(` — ${run.answer_shape}`),
+  );
+}
+
+function renderFramingCoverage(run) {
+  const groups = [
+    ["Admitted source scope", run.source_scope.source_types.map((value) => ({ label: value, note: "" }))],
+    ["Explicit policy exclusions", run.source_scope.exclusion_rules.map((value) => ({ label: value, note: "" }))],
+    [
+      "Other outcomes excluded by this framing",
+      run.excluded_by_framing.map((item) => ({
+        label: label(item.framing_id),
+        note: item.title,
+      })),
+    ],
+  ];
+  elements.coverage.replaceChildren(
+    ...groups.map(([title, items]) =>
+      el("section", {}, [
+        el("h4", { text: `${title} (${items.length})` }),
+        el(
+          "ul",
+          {},
+          items.map((item) =>
+            el("li", {}, [
+              el("strong", { text: item.label }),
+              item.note ? document.createTextNode(`: ${item.note}`) : null,
+            ]),
+          ),
+        ),
+      ]),
+    ),
+  );
+}
+
+function renderFramingExperiment(caseData, experiment) {
+  const run = experiment.runs[state.runIndex];
+  elements.experimentKicker.textContent = "Question-framing intervention";
+  elements.experimentTitle.textContent = "How the meaning of “good” changes the inquiry";
+  elements.experimentDescription.textContent =
+    "The raw question stays fixed. Each run swaps the framing object, which changes the operational question, admissible sources, and shape of the answer.";
+  elements.supportBalance.hidden = true;
+  elements.framingOutput.hidden = false;
+  elements.graphFilterField.hidden = true;
+  elements.graphTitle.textContent = "Question → framing → source policy → evidence → assessment";
+  elements.graphDescription.textContent =
+    "This graph shows the dependency introduced before evidence retrieval begins.";
+  elements.coverageSummary.textContent = "What this framing admits and excludes";
+  elements.graphLegend.replaceChildren(
+    el("span", {}, [el("i", { className: "legend-mark question-mark" }), document.createTextNode("Raw question")]),
+    el("span", {}, [el("i", { className: "legend-mark framing-mark" }), document.createTextNode("Framing")]),
+    el("span", {}, [el("i", { className: "legend-mark policy-mark" }), document.createTextNode("Source policy")]),
+    el("span", {}, [el("i", { className: "legend-mark claim-mark" }), document.createTextNode("Evidence")]),
+    el("span", {}, [el("i", { className: "legend-mark assessment-mark" }), document.createTextNode("Assessment")]),
+  );
+
+  elements.runTitle.textContent = run.label;
+  elements.runDescription.textContent = run.operationalized_question;
+  elements.runCounts.textContent = `${run.included_evidence_ids.length} evidence record · ${run.included_source_ids.length} cited sources · framing ${run.framing_declared ? "declared" : "implicit"}`;
+  elements.assessmentConclusion.textContent = run.assessment_summary;
+  elements.answerShape.textContent = run.answer_shape;
+  elements.framingUncertainty.textContent = run.framing_conditional_uncertainty;
+  renderFramingGraph(experiment, run, caseData);
+  renderFramingCoverage(run);
+}
+
+function renderExperiment(caseData) {
+  const experiment = currentExperiment();
+  elements.experimentSection.hidden = !experiment;
+  if (!experiment) return;
+  if (state.runIndex >= experiment.runs.length) state.runIndex = 0;
+  renderRunTabs(experiment, caseData);
+  if (experiment.experiment_type === "fixed_corpus_ablation") {
+    renderFixedCorpusExperiment(caseData, experiment);
+  } else {
+    renderFramingExperiment(caseData, experiment);
+  }
 }
 
 function filteredEvidence(caseData) {
@@ -661,7 +861,9 @@ elements.direction.addEventListener("change", (event) => {
 elements.clusterFilter.addEventListener("change", (event) => {
   state.clusterId = event.target.value;
   const experiment = currentExperiment();
-  if (experiment) renderClaimGraph(experiment, experiment.runs[state.runIndex], currentCase());
+  if (experiment?.experiment_type === "fixed_corpus_ablation") {
+    renderClaimGraph(experiment, experiment.runs[state.runIndex], currentCase());
+  }
 });
 
 try {

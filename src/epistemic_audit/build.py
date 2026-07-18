@@ -8,7 +8,7 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Any
 
-from .experiment import build_fixed_corpus_experiment
+from .experiment import build_fixed_corpus_experiment, build_framing_experiment
 from .markdown import load_corpus
 from .models import EvidenceAnnotation, SCHEMA_VERSION
 
@@ -191,7 +191,12 @@ def build(annotations_root: Path, site_output: Path) -> dict[str, Any]:
     for path in sorted((ROOT / "data" / "experiments").glob("*.json")):
         spec = json.loads(path.read_text(encoding="utf-8"))
         case_data = next(case for case in cases if case["manifest"]["case_id"] == spec["case_id"])
-        experiments.append(build_fixed_corpus_experiment(case_data, spec))
+        if spec["experiment_type"] == "fixed_corpus_ablation":
+            experiments.append(build_fixed_corpus_experiment(case_data, spec))
+        elif spec["experiment_type"] == "framing_comparison":
+            experiments.append(build_framing_experiment(case_data, spec, policies))
+        else:
+            raise ValueError(f"Unsupported experiment type: {spec['experiment_type']}")
 
     catalog = {
         "schema_version": SCHEMA_VERSION,

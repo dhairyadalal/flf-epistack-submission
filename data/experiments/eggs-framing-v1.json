@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1.0",
+  "experiment_type": "framing_comparison",
+  "experiment_id": "eggs-question-framing-comparison-v1",
+  "case_id": "eggs",
+  "baseline_id": "audit-lower-layers-eggs-starter-2026-07-18",
+  "question_raw": "Are eggs good to eat?",
+  "baseline_run": {
+    "run_id": "eggs-silent-baseline",
+    "label": "Silent baseline",
+    "framing_id": "health_population",
+    "policy_id": "eggs-health-population",
+    "evidence_id": "population-cardiovascular-risk",
+    "framing_declared": false,
+    "answer_shape": "One population-level cardiovascular-risk claim presented as the answer to the unqualified question.",
+    "assessment_summary": "Moderate egg intake is not consistently associated with higher population-level cardiovascular risk, subject to observational-study limitations.",
+    "framing_conditional_uncertainty": "The answer silently assumes that ‘good’ means population cardiovascular health and therefore never represents welfare, environmental, or person-specific outcomes."
+  },
+  "framing_runs": [
+    {
+      "run_id": "eggs-health-population-declared",
+      "label": "Population health",
+      "framing_id": "health_population",
+      "policy_id": "eggs-health-population",
+      "evidence_id": "population-cardiovascular-risk",
+      "framing_declared": true,
+      "answer_shape": "A conditional population-average association about typical consumption and cardiovascular outcomes.",
+      "assessment_summary": "Moderate intake is not consistently associated with higher cardiovascular risk across the selected cohort syntheses, but geography, confounding, and dietary substitution matter.",
+      "framing_conditional_uncertainty": "This framing does not answer whether eggs are good for a particular person or acceptable under welfare or environmental criteria."
+    },
+    {
+      "run_id": "eggs-health-individual-declared",
+      "label": "Individual health",
+      "framing_id": "health_individual",
+      "policy_id": "eggs-health-individual",
+      "evidence_id": "individual-lipid-response",
+      "framing_declared": true,
+      "answer_shape": "The single population claim splits into an average effect plus person-specific response uncertainty.",
+      "assessment_summary": "Individual lipid responses vary, so population evidence alone cannot determine a particular person’s response or clinical risk.",
+      "framing_conditional_uncertainty": "The literature can establish heterogeneity but cannot diagnose an individual without clinical information."
+    },
+    {
+      "run_id": "eggs-animal-welfare-declared",
+      "label": "Animal welfare",
+      "framing_id": "animal_welfare",
+      "policy_id": "eggs-animal-welfare",
+      "evidence_id": "laying-hen-welfare",
+      "framing_declared": true,
+      "answer_shape": "A production-system assessment describing animal harms, followed by an explicitly ethical weighting step.",
+      "assessment_summary": "Egg production creates housing- and management-dependent welfare harms; descriptive evidence does not by itself settle their moral acceptability.",
+      "framing_conditional_uncertainty": "The assessment depends on which animals and harms count, how husbandry systems are distinguished, and what moral weight is assigned to those outcomes."
+    },
+    {
+      "run_id": "eggs-environment-declared",
+      "label": "Environmental impact",
+      "framing_id": "environmental_impact",
+      "policy_id": "eggs-environment",
+      "evidence_id": "egg-production-environmental-impact",
+      "framing_declared": true,
+      "answer_shape": "A comparative lifecycle assessment whose result varies with functional unit, production system, geography, and substitute food.",
+      "assessment_summary": "Egg production has material environmental impacts and often falls between several livestock foods and plant proteins, but no ranking is meaningful without a declared comparator and functional unit.",
+      "framing_conditional_uncertainty": "Per-kilogram, per-calorie, per-protein, and per-serving comparisons can produce different rankings."
+    }
+  ],
+  "analysis_method": {
+    "intervention": "Swap the explicit framing object and its implied source policy.",
+    "held_constant": "The raw natural-language question and the deterministic build pipeline.",
+    "comparison_output": "Changes in operationalized question, admissible source classes, excluded outcomes, answer shape, and framing-conditional uncertainty.",
+    "interpretation": "The runs are not competing votes on one proposition. Their divergence demonstrates that the raw question does not determine its own evidentiary scope."
+  }
+}

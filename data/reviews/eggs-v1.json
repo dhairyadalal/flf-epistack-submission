@@ -1,0 +1,64 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "eggs",
+  "reviewer": "OpenAI Codex",
+  "review_method": "Model-assisted structural review of the four supplied evidence notes and declared framing policies; no systematic full-text verification of the cited corpus",
+  "reviews": {
+    "population-cardiovascular-risk": {
+      "framing_assumptions": ["‘Good to eat’ is operationalized as population-level cardiovascular risk at typical consumption levels."],
+      "policy_sensitivities": ["The answer changes with outcome definition, geography, dietary comparator, exposure measurement, and the treatment of observational confounding."],
+      "coverage_gaps": ["Individual response, non-cardiovascular health outcomes, animal welfare, environmental impact, and systematic non-English coverage are outside this evidence note."],
+      "correlation_risks": ["The advisory and meta-analytic evidence synthesize overlapping bodies of observational research and should not be treated as wholly independent confirmation."],
+      "uncertainty_attribution": {
+        "evidential": ["Prospective cohorts remain vulnerable to residual confounding and dietary-measurement error."],
+        "ingestion_conditional": ["The starter corpus selects a small English-language cardiovascular evidence set rather than enumerating the full health literature."],
+        "capability_conditional": ["A complete dietary-epidemiology appraisal would require study-level bias and substitution analysis."],
+        "framing_conditional": ["A population-average cardiovascular result cannot answer the broader unqualified question by itself."],
+        "unattributed": []
+      },
+      "notes": ["This is the interpretation a silent baseline is most likely to adopt, which is precisely why the framing must be declared."]
+    },
+    "individual-lipid-response": {
+      "framing_assumptions": ["‘Good to eat’ is operationalized as a person-specific physiological and clinical response rather than a population average."],
+      "policy_sensitivities": ["The answer depends on whether short-term lipid changes, long-term events, metabolic status, genetics, and ordinary versus experimental egg doses are required."],
+      "coverage_gaps": ["The note does not establish a validated method for predicting an individual’s long-term clinical outcome from the cited response literature."],
+      "correlation_risks": ["The older review summarizes the responder literature represented by the controlled-study citation; these are related rather than independent evidence streams."],
+      "uncertainty_attribution": {
+        "evidential": ["Short feeding studies establish heterogeneity more readily than long-term clinical significance."],
+        "ingestion_conditional": ["The starter set contains only a few sources and does not systematically cover modern precision-nutrition evidence."],
+        "capability_conditional": ["Literature synthesis cannot diagnose a user or substitute for clinical measurement."],
+        "framing_conditional": ["The population claim changes shape when individual heterogeneity becomes the target of inquiry."],
+        "unattributed": []
+      },
+      "notes": ["This run demonstrates a change in answer shape, not merely a change in confidence."]
+    },
+    "laying-hen-welfare": {
+      "framing_assumptions": ["The welfare of laying hens is treated as part of whether consuming eggs is good, rather than as an external issue."],
+      "policy_sensitivities": ["Conclusions depend on production system, geography, husbandry practices, selected welfare outcomes, and the ethical weight assigned to animal harms."],
+      "coverage_gaps": ["The note does not identify the production system behind a particular egg purchase or convert welfare consequences into a settled moral verdict."],
+      "correlation_risks": ["The EFSA plain-language summary restates the scientific opinion and is not an independent source."],
+      "uncertainty_attribution": {
+        "evidential": ["Evidence for some welfare consequences and system comparisons remains limited or uncertain."],
+        "ingestion_conditional": ["One European synthesis does not establish conditions across all jurisdictions and production systems."],
+        "capability_conditional": ["The system can describe reported harms but cannot resolve the normative weighting without declared values."],
+        "framing_conditional": ["A health-only source policy excludes these outcomes before their importance is considered."],
+        "unattributed": []
+      },
+      "notes": ["Keep descriptive welfare findings separate from the ethical conclusion drawn from them."]
+    },
+    "egg-production-environmental-impact": {
+      "framing_assumptions": ["‘Good to eat’ is operationalized as environmental performance relative to specified substitute foods and functional units."],
+      "policy_sensitivities": ["Rankings change with system boundaries, allocation rules, geography, production method, functional unit, and the chosen comparator."],
+      "coverage_gaps": ["The starter set does not provide a globally representative production inventory or integrate environmental results with nutrition and welfare tradeoffs."],
+      "correlation_risks": ["Global comparative datasets may incorporate or summarize some of the same underlying production studies used by narrower lifecycle assessments."],
+      "uncertainty_attribution": {
+        "evidential": ["Lifecycle estimates are model-dependent and locally variable."],
+        "ingestion_conditional": ["The three selected studies cover only a subset of geographies, systems, and environmental outcomes."],
+        "capability_conditional": ["Comparing heterogeneous lifecycle studies requires harmonizing functional units and system boundaries."],
+        "framing_conditional": ["Different definitions of environmental performance can reverse food rankings without any underlying data changing."],
+        "unattributed": []
+      },
+      "notes": ["No single environmental verdict is meaningful without declaring the comparison being made."]
+    }
+  }
+}

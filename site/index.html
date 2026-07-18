@@ -34,12 +34,9 @@
       <section id="experiment-section" class="experiment-section" aria-labelledby="experiment-title" hidden>
         <header class="experiment-header">
           <div>
-            <p class="kicker">Fixed-corpus policy ablation</p>
-            <h2 id="experiment-title">How source policy changes the assessment</h2>
-            <p>
-              The 40 supplied records stay fixed. Each run admits a different subset,
-              then recalculates support after duplicate evidence families are collapsed.
-            </p>
+            <p id="experiment-kicker" class="kicker"></p>
+            <h2 id="experiment-title"></h2>
+            <p id="experiment-description"></p>
           </div>
           <div id="run-tabs" class="run-tabs" role="tablist" aria-label="Evidence policy"></div>
         </header>
@@ -57,7 +54,7 @@
             <span>Assessment under this policy</span>
             <strong id="assessment-conclusion"></strong>
           </div>
-          <div class="support-balance">
+          <div id="support-balance" class="support-balance">
             <div class="balance-labels">
               <span id="natural-balance"></span>
               <span id="research-balance"></span>
@@ -68,31 +65,31 @@
             </div>
             <p>Uses the baseline’s weak/moderate/strong labels, deduplicated by evidence family; not a probability.</p>
           </div>
+          <div id="framing-output" class="framing-output" hidden>
+            <span>Answer shape</span>
+            <strong id="answer-shape"></strong>
+            <p id="framing-uncertainty"></p>
+          </div>
         </div>
 
         <div class="graph-toolbar">
           <div>
-            <h3>Claim → warrant → hypothesis</h3>
-            <p>Records in the same evidence family are shown together and scored once per direction.</p>
+            <h3 id="graph-title"></h3>
+            <p id="graph-description"></p>
           </div>
-          <label>
+          <label id="graph-filter-field">
             <span>Evidence family</span>
             <select id="cluster-filter"></select>
           </label>
         </div>
 
-        <div class="graph-legend" aria-label="Graph legend">
-          <span><i class="legend-mark claim-mark"></i>Claim</span>
-          <span><i class="legend-mark warrant-mark"></i>Inferential warrant</span>
-          <span><i class="legend-mark hypothesis-mark"></i>Hypothesis</span>
-          <span><i class="legend-mark excluded-mark"></i>Excluded by selected policy</span>
-        </div>
+        <div id="graph-legend" class="graph-legend" aria-label="Graph legend"></div>
         <div id="graph-summary" class="sr-only"></div>
         <div id="claim-graph" class="claim-graph" role="img" aria-describedby="graph-summary"></div>
         <div id="graph-selection" class="graph-selection"></div>
 
         <details class="coverage-details">
-          <summary>Coverage and negative space</summary>
+          <summary id="coverage-summary">Coverage and negative space</summary>
           <div id="coverage-report" class="coverage-report"></div>
         </details>
       </section>

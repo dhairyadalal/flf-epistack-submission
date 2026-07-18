@@ -5,6 +5,7 @@
   "type": "object",
   "required": [
     "schema_version",
+    "experiment_type",
     "experiment_id",
     "case_id",
     "baseline_id",
@@ -16,6 +17,7 @@
   ],
   "properties": {
     "schema_version": { "const": "0.1.0" },
+    "experiment_type": { "const": "fixed_corpus_ablation" },
     "experiment_id": { "type": "string", "minLength": 1 },
     "case_id": { "type": "string", "minLength": 1 },
     "baseline_id": { "type": "string", "minLength": 1 },

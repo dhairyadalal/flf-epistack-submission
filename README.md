@@ -44,8 +44,8 @@ Python extraction ──► versioned annotations ──► site/data/catalog.js
 - `schemas/` — JSON Schema contracts for portable records.
 - `data/policies/` — explicit framing and source-policy fixtures.
 - `data/reviews/` — hand-authored review inputs, kept separate from generated data.
-- `data/experiments/` — fixed-corpus policy ablations, independence clusters,
-  assessment rules, and coverage reports.
+- `data/experiments/` — fixed-corpus policy ablations and declared-framing
+  comparisons, with assessment rules and coverage reports.
 - `data/annotations/` — generated annotation records; never hand-edited.
 - `site/` — plain HTML, CSS, and JavaScript. No framework or build step.
 - `tests/` — parser, coverage, and JSON Schema validation tests.
@@ -98,3 +98,20 @@ is a sensitivity measure, not a probability.
 The site graph exposes the path from baseline claim, through its inferential
 warrant, to the hypothesis on which it bears. Records excluded by the selected
 policy remain visible but muted, so a reviewer can inspect exactly what changed.
+
+## Declared-framing eggs experiment
+
+The eggs case asks a different question: what happens when “Are eggs good to
+eat?” is operationalized in different, defensible ways? It compares a silent
+population-health baseline with four declared framings: population health,
+individual health, animal welfare, and environmental impact. Each run exposes
+its operationalized question, source policy, included evidence, excluded
+outcomes, assessment, and framing-conditional uncertainty.
+
+This is not a vote across four evidence records and it does not produce a
+single support score. The outputs answer different questions. The graph makes
+that path explicit so a user can see how changing the framing changes what
+counts as evidence and therefore changes the answer. The eggs corpus remains a
+small 4-record starter corpus with 11 cited sources; all four records now have
+a substantive structural annotation, but their cited sources have not been
+independently verified.

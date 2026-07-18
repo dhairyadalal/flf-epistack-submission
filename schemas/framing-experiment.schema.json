@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/epistemic-audit/framing-experiment.schema.json",
+  "title": "Question-framing comparison experiment",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "experiment_type",
+    "experiment_id",
+    "case_id",
+    "baseline_id",
+    "question_raw",
+    "baseline_run",
+    "framing_runs",
+    "analysis_method"
+  ],
+  "properties": {
+    "schema_version": { "const": "0.1.0" },
+    "experiment_type": { "const": "framing_comparison" },
+    "experiment_id": { "type": "string", "minLength": 1 },
+    "case_id": { "type": "string", "minLength": 1 },
+    "baseline_id": { "type": "string", "minLength": 1 },
+    "question_raw": { "type": "string", "minLength": 1 },
+    "baseline_run": { "$ref": "#/$defs/run" },
+    "framing_runs": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "$ref": "#/$defs/run" }
+    },
+    "analysis_method": {
+      "type": "object",
+      "required": ["intervention", "held_constant", "comparison_output", "interpretation"],
+      "properties": {
+        "intervention": { "type": "string" },
+        "held_constant": { "type": "string" },
+        "comparison_output": { "type": "string" },
+        "interpretation": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "run": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "label",
+        "framing_id",
+        "policy_id",
+        "evidence_id",
+        "framing_declared",
+        "answer_shape",
+        "assessment_summary",
+        "framing_conditional_uncertainty"
+      ],
+      "properties": {
+        "run_id": { "type": "string" },
+        "label": { "type": "string" },
+        "framing_id": { "type": "string" },
+        "policy_id": { "type": "string" },
+        "evidence_id": { "type": "string" },
+        "framing_declared": { "type": "boolean" },
+        "answer_shape": { "type": "string" },
+        "assessment_summary": { "type": "string" },
+        "framing_conditional_uncertainty": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

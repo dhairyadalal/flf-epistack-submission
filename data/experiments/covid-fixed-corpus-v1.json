@@ -1,5 +1,6 @@
 {
   "schema_version": "0.1.0",
+  "experiment_type": "fixed_corpus_ablation",
   "experiment_id": "covid-fixed-corpus-policy-ablation-v1",
   "case_id": "covid-origins",
   "baseline_id": "carlo-claude-unattended-2026-06-25",

@@ -6,9 +6,11 @@
   "provenance": {
     "upstream_author": "Audit the Lower Layers team",
     "upstream_generation_method": "curated starter baseline with declared framings",
-    "annotation_method": "deterministic_extraction_and_provisional_classification"
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of the four supplied evidence notes and declared framing policies; no systematic full-text verification of the cited corpus"
   },
-  "annotation_status": "extracted_not_verified",
+  "annotation_status": "provisionally_reviewed",
   "evidence": {
     "evidence_id": "individual-lipid-response",
     "title": "Individual lipid responses to dietary cholesterol from eggs vary",
@@ -63,22 +65,39 @@
   "review": {
     "verification_status": "not_checked",
     "review_basis": "baseline_document_only",
-    "framing_assumptions": [],
-    "policy_sensitivities": [],
-    "coverage_gaps": [],
-    "correlation_risks": [],
-    "capability_limits": [],
+    "framing_assumptions": [
+      "‘Good to eat’ is operationalized as a person-specific physiological and clinical response rather than a population average."
+    ],
+    "policy_sensitivities": [
+      "The answer depends on whether short-term lipid changes, long-term events, metabolic status, genetics, and ordinary versus experimental egg doses are required."
+    ],
+    "coverage_gaps": [
+      "The note does not establish a validated method for predicting an individual’s long-term clinical outcome from the cited response literature."
+    ],
+    "correlation_risks": [
+      "The older review summarizes the responder literature represented by the controlled-study citation; these are related rather than independent evidence streams."
+    ],
+    "capability_limits": [
+      "The supplied summary was reviewed without a systematic full-text audit of every cited source."
+    ],
     "uncertainty_attribution": {
-      "evidential": [],
-      "ingestion_conditional": [],
-      "capability_conditional": [],
-      "framing_conditional": [],
-      "unattributed": [
-        "The baseline assessment has not yet been independently audited."
-      ]
+      "evidential": [
+        "Short feeding studies establish heterogeneity more readily than long-term clinical significance."
+      ],
+      "ingestion_conditional": [
+        "The starter set contains only a few sources and does not systematically cover modern precision-nutrition evidence."
+      ],
+      "capability_conditional": [
+        "Literature synthesis cannot diagnose a user or substitute for clinical measurement."
+      ],
+      "framing_conditional": [
+        "The population claim changes shape when individual heterogeneity becomes the target of inquiry."
+      ],
+      "unattributed": []
     },
     "notes": [
-      "Baseline prose and scores are preserved as claims by the upstream run, not adopted as our judgments."
+      "This run demonstrates a change in answer shape, not merely a change in confidence.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
     ]
   }
 }

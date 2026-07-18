@@ -259,6 +259,7 @@ def build_fixed_corpus_experiment(
 
     return {
         "schema_version": spec["schema_version"],
+        "experiment_type": spec["experiment_type"],
         "experiment_id": spec["experiment_id"],
         "case_id": spec["case_id"],
         "baseline_id": spec["baseline_id"],
@@ -267,6 +268,157 @@ def build_fixed_corpus_experiment(
         "assessment_method": spec["assessment_method"],
         "coverage_report": spec["coverage_report"],
         "clusters": spec["evidence_clusters"],
+        "runs": runs,
+        "graph": {"nodes": graph_nodes, "edges": graph_edges},
+    }
+
+
+def build_framing_experiment(
+    case_data: dict[str, Any],
+    spec: dict[str, Any],
+    policies: list[dict[str, Any]],
+) -> dict[str, Any]:
+    """Build runs that swap framing while holding the raw question fixed."""
+
+    evidence_by_id = {
+        item["evidence"]["evidence_id"]: item for item in case_data["evidence"]
+    }
+    policy_by_id = {policy["policy_id"]: policy for policy in policies}
+    run_specs = [spec["baseline_run"], *spec["framing_runs"]]
+    declared_framing_ids = {run["framing_id"] for run in spec["framing_runs"]}
+    case_framing_ids = {item["evidence"]["direction"].replace("-", "_") for item in case_data["evidence"]}
+    if declared_framing_ids != case_framing_ids:
+        raise ValueError(
+            "Framing experiment coverage mismatch; "
+            f"declared={sorted(declared_framing_ids)}, evidence={sorted(case_framing_ids)}"
+        )
+
+    graph_nodes: list[dict[str, Any]] = [
+        {
+            "node_id": "question:eggs-good-to-eat",
+            "node_type": "question",
+            "label": spec["question_raw"],
+        }
+    ]
+    graph_edges: list[dict[str, Any]] = []
+    runs: list[dict[str, Any]] = []
+
+    for run_spec in run_specs:
+        evidence_id = run_spec["evidence_id"]
+        policy_id = run_spec["policy_id"]
+        if evidence_id not in evidence_by_id:
+            raise ValueError(f"Unknown eggs evidence id {evidence_id!r}")
+        if policy_id not in policy_by_id:
+            raise ValueError(f"Unknown eggs policy id {policy_id!r}")
+
+        annotation = evidence_by_id[evidence_id]
+        evidence = annotation["evidence"]
+        policy = policy_by_id[policy_id]
+        if policy["framing"]["framing_id"] != run_spec["framing_id"]:
+            raise ValueError(f"Run {run_spec['run_id']!r} does not match its policy framing")
+
+        run_id = run_spec["run_id"]
+        prefix = f"run:{run_id}"
+        framing_label = (
+            f"Implicit: {run_spec['label']}"
+            if not run_spec["framing_declared"]
+            else run_spec["label"]
+        )
+        run_nodes = [
+            {
+                "node_id": f"{prefix}:framing",
+                "node_type": "framing",
+                "label": framing_label,
+                "declared": run_spec["framing_declared"],
+                "operationalized_question": policy["framing"]["operationalized_question"],
+            },
+            {
+                "node_id": f"{prefix}:policy",
+                "node_type": "source_policy",
+                "label": ", ".join(policy["source_scope"]["source_types"]),
+                "inclusion_rules": policy["source_scope"]["inclusion_rules"],
+                "exclusion_rules": policy["source_scope"]["exclusion_rules"],
+            },
+            {
+                "node_id": f"{prefix}:claim",
+                "node_type": "claim",
+                "label": evidence["title"],
+                "evidence_id": evidence_id,
+                "source_ids": [source["source_id"] for source in evidence["citations"]],
+            },
+            {
+                "node_id": f"{prefix}:assessment",
+                "node_type": "assessment",
+                "label": run_spec["assessment_summary"],
+                "answer_shape": run_spec["answer_shape"],
+            },
+        ]
+        graph_nodes.extend(run_nodes)
+        graph_edges.extend(
+            [
+                {
+                    "source": "question:eggs-good-to-eat",
+                    "target": f"{prefix}:framing",
+                    "edge_type": "interpreted_as",
+                    "run_id": run_id,
+                },
+                {
+                    "source": f"{prefix}:framing",
+                    "target": f"{prefix}:policy",
+                    "edge_type": "instantiates",
+                    "run_id": run_id,
+                },
+                {
+                    "source": f"{prefix}:policy",
+                    "target": f"{prefix}:claim",
+                    "edge_type": "admits",
+                    "run_id": run_id,
+                },
+                {
+                    "source": f"{prefix}:claim",
+                    "target": f"{prefix}:assessment",
+                    "edge_type": "shapes",
+                    "run_id": run_id,
+                },
+            ]
+        )
+
+        excluded = [
+            {
+                "evidence_id": other_id,
+                "title": other["evidence"]["title"],
+                "framing_id": other["evidence"]["direction"].replace("-", "_"),
+                "reason": "Outside the operationalized question and declared source scope for this run.",
+            }
+            for other_id, other in evidence_by_id.items()
+            if other_id != evidence_id
+        ]
+        runs.append(
+            {
+                **run_spec,
+                "operationalized_question": policy["framing"]["operationalized_question"],
+                "declared_values": policy["framing"]["declared_values"],
+                "source_scope": policy["source_scope"],
+                "capability_profile": policy["capability_profile"],
+                "included_evidence_ids": [evidence_id],
+                "included_source_ids": [
+                    source["source_id"] for source in evidence["citations"]
+                ],
+                "excluded_by_framing": sorted(
+                    excluded, key=lambda item: item["framing_id"]
+                ),
+                "uncertainty_attribution": annotation["review"]["uncertainty_attribution"],
+            }
+        )
+
+    return {
+        "schema_version": spec["schema_version"],
+        "experiment_type": spec["experiment_type"],
+        "experiment_id": spec["experiment_id"],
+        "case_id": spec["case_id"],
+        "baseline_id": spec["baseline_id"],
+        "question": spec["question_raw"],
+        "analysis_method": spec["analysis_method"],
         "runs": runs,
         "graph": {"nodes": graph_nodes, "edges": graph_edges},
     }

@@ -23,6 +23,10 @@ class AnnotationTests(unittest.TestCase):
             (ROOT / "data" / "annotations" / "covid-origins" / "evidence").glob("*.json")
         )
         cls.covid_annotations = [load_json(path) for path in cls.covid_paths]
+        cls.eggs_paths = sorted(
+            (ROOT / "data" / "annotations" / "eggs" / "evidence").glob("*.json")
+        )
+        cls.eggs_annotations = [load_json(path) for path in cls.eggs_paths]
 
     def test_all_covid_annotations_conform_to_schema(self) -> None:
         self.assertEqual(len(self.covid_annotations), 40)
@@ -51,6 +55,21 @@ class AnnotationTests(unittest.TestCase):
         reused = [source for source in sources if source["review"]["independence_notes"]]
         self.assertGreaterEqual(len(reused), 1)
         self.assertTrue(all(len(source["occurrences"]) > 1 for source in reused))
+
+    def test_every_eggs_item_has_substantive_structural_review(self) -> None:
+        self.assertEqual(len(self.eggs_annotations), 4)
+        for path, annotation in zip(self.eggs_paths, self.eggs_annotations, strict=True):
+            with self.subTest(path=path.name):
+                errors = sorted(
+                    self.validator.iter_errors(annotation), key=lambda error: list(error.path)
+                )
+                self.assertEqual(errors, [], "\n".join(error.message for error in errors))
+                self.assertEqual(annotation["annotation_status"], "provisionally_reviewed")
+                self.assertEqual(annotation["review"]["verification_status"], "not_checked")
+                self.assertTrue(annotation["review"]["framing_assumptions"])
+                self.assertTrue(annotation["review"]["policy_sensitivities"])
+                self.assertTrue(annotation["review"]["coverage_gaps"])
+                self.assertTrue(annotation["review"]["correlation_risks"])
 
     def test_declared_source_policies_conform_to_schema(self) -> None:
         schema = load_json(ROOT / "schemas" / "source-policy.schema.json")
@@ -81,7 +100,9 @@ class AnnotationTests(unittest.TestCase):
 
     def test_generated_policy_runs_are_nested_and_graph_is_traceable(self) -> None:
         catalog = load_json(ROOT / "site" / "data" / "catalog.json")
-        experiment = catalog["experiments"][0]
+        experiment = next(
+            item for item in catalog["experiments"] if item["case_id"] == "covid-origins"
+        )
         runs = experiment["runs"]
         self.assertEqual([len(run["included_evidence_ids"]) for run in runs], [23, 37, 40])
         self.assertTrue(set(runs[0]["included_evidence_ids"]) < set(runs[1]["included_evidence_ids"]))
@@ -90,6 +111,31 @@ class AnnotationTests(unittest.TestCase):
         nodes = {node["node_id"]: node for node in experiment["graph"]["nodes"]}
         self.assertEqual(len([node for node in nodes.values() if node["node_type"] == "claim"]), 40)
         self.assertEqual(len([node for node in nodes.values() if node["node_type"] == "warrant"]), 40)
+        for edge in experiment["graph"]["edges"]:
+            self.assertIn(edge["source"], nodes)
+            self.assertIn(edge["target"], nodes)
+
+    def test_eggs_framing_experiment_conforms_and_is_traceable(self) -> None:
+        schema = load_json(ROOT / "schemas" / "framing-experiment.schema.json")
+        spec = load_json(ROOT / "data" / "experiments" / "eggs-framing-v1.json")
+        errors = list(Draft202012Validator(schema).iter_errors(spec))
+        self.assertEqual(errors, [], "\n".join(error.message for error in errors))
+
+        catalog = load_json(ROOT / "site" / "data" / "catalog.json")
+        experiment = next(
+            item for item in catalog["experiments"] if item["case_id"] == "eggs"
+        )
+        runs = experiment["runs"]
+        self.assertEqual(len(runs), 5)
+        self.assertEqual(
+            [run["framing_declared"] for run in runs], [False, True, True, True, True]
+        )
+        self.assertTrue(all(len(run["included_evidence_ids"]) == 1 for run in runs))
+        self.assertTrue(all(len(run["excluded_by_framing"]) == 3 for run in runs))
+
+        nodes = {node["node_id"]: node for node in experiment["graph"]["nodes"]}
+        self.assertEqual(len(nodes), 21)
+        self.assertEqual(len(experiment["graph"]["edges"]), 20)
         for edge in experiment["graph"]["edges"]:
             self.assertIn(edge["source"], nodes)
             self.assertIn(edge["target"], nodes)

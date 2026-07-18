@@ -6,9 +6,11 @@
   "provenance": {
     "upstream_author": "Audit the Lower Layers team",
     "upstream_generation_method": "curated starter baseline with declared framings",
-    "annotation_method": "deterministic_extraction_and_provisional_classification"
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of the four supplied evidence notes and declared framing policies; no systematic full-text verification of the cited corpus"
   },
-  "annotation_status": "extracted_not_verified",
+  "annotation_status": "provisionally_reviewed",
   "evidence": {
     "evidence_id": "egg-production-environmental-impact",
     "title": "Egg production has environmental impacts that vary by system and comparison",
@@ -63,22 +65,39 @@
   "review": {
     "verification_status": "not_checked",
     "review_basis": "baseline_document_only",
-    "framing_assumptions": [],
-    "policy_sensitivities": [],
-    "coverage_gaps": [],
-    "correlation_risks": [],
-    "capability_limits": [],
+    "framing_assumptions": [
+      "‘Good to eat’ is operationalized as environmental performance relative to specified substitute foods and functional units."
+    ],
+    "policy_sensitivities": [
+      "Rankings change with system boundaries, allocation rules, geography, production method, functional unit, and the chosen comparator."
+    ],
+    "coverage_gaps": [
+      "The starter set does not provide a globally representative production inventory or integrate environmental results with nutrition and welfare tradeoffs."
+    ],
+    "correlation_risks": [
+      "Global comparative datasets may incorporate or summarize some of the same underlying production studies used by narrower lifecycle assessments."
+    ],
+    "capability_limits": [
+      "The supplied summary was reviewed without a systematic full-text audit of every cited source."
+    ],
     "uncertainty_attribution": {
-      "evidential": [],
-      "ingestion_conditional": [],
-      "capability_conditional": [],
-      "framing_conditional": [],
-      "unattributed": [
-        "The baseline assessment has not yet been independently audited."
-      ]
+      "evidential": [
+        "Lifecycle estimates are model-dependent and locally variable."
+      ],
+      "ingestion_conditional": [
+        "The three selected studies cover only a subset of geographies, systems, and environmental outcomes."
+      ],
+      "capability_conditional": [
+        "Comparing heterogeneous lifecycle studies requires harmonizing functional units and system boundaries."
+      ],
+      "framing_conditional": [
+        "Different definitions of environmental performance can reverse food rankings without any underlying data changing."
+      ],
+      "unattributed": []
     },
     "notes": [
-      "Baseline prose and scores are preserved as claims by the upstream run, not adopted as our judgments."
+      "No single environmental verdict is meaningful without declaring the comparison being made.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
     ]
   }
 }
