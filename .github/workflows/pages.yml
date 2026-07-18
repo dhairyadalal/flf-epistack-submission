@@ -22,6 +22,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install project and test dependencies
+        run: python -m pip install -e '.[test]'
       - name: Build annotation catalog
         run: PYTHONPATH=src python -m epistemic_audit.build
       - name: Run tests
@@ -41,4 +43,3 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
-
