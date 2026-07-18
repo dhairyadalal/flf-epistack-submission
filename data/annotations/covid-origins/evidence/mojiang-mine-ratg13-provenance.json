@@ -1,0 +1,127 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_mojiang-mine-ratg13-provenance_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "mojiang-mine-ratg13-provenance",
+    "title": "The Mojiang mine, the 2012 miner deaths, and RaTG13's contested provenance",
+    "direction": "neutral",
+    "evidence_type": "documentary",
+    "claim_confidence": 0.92,
+    "support_strength": "weak",
+    "claim": "RaTG13 — the bat coronavirus ~96.1% identical to SARS-CoV-2 — was sequenced by the Wuhan Institute of Virology (WIV) from a bat-swab sample originally published under the partial-sequence label BtCoV/4991, collected in 2013 from the Tongguan mineshaft in Mojiang, Yunnan, where in 2012 six miners clearing bat guano fell ill with severe pneumonia and three died. WIV did not initially disclose, in its February 2020 *Nature* paper describing RaTG13, that RaTG13 and BtCoV/4991 were the same sample, nor the mine's fatal-illness history; both were disclosed/confirmed only later (Rahalkar & Bahulikar; the November 2020 *Nature* addendum).",
+    "evidence_quality": "The core provenance facts are **well-documented and not seriously contested**: the same-sample identity (BtCoV/4991 = RaTG13), the mine location, the 2012 outbreak, and the absence of these details in the original 2020 paper are confirmed by the peer-reviewed Rahalkar & Bahulikar paper (*Frontiers in Public Health*) and by WIV's own peer-reviewed *Nature* addendum. This is primarily **documentary/forensic** evidence about disclosure and labeling, not experimental data. The more speculative layer — that the miners were infected by a SARS-like CoV that was then studied/passaged at WIV (the \"Mojiang Miners Passage\" hypothesis of Latham & Wilson) — rests on inference from theses and is **not** established; it is a hypothesis, not a finding. Independence is moderate: the disclosure timeline is verifiable from independent parties, but interpretations cluster into advocacy camps.",
+    "strongest_counterargument": "The provenance facts do not point to a lab leak, and several cut the other way. (1) **RaTG13 is genetically far too distant** — ~1,100+ nucleotide changes, decades of divergence — to be SARS-CoV-2 or its proximal ancestor, and it has never been isolated as live virus, so there is no demonstrated WIV stock of a SARS-CoV-2-like agent (Frutos et al. 2021; Zhou et al. 2020). (2) **The miners tested negative** for SARS-related CoV in 2012 and for SARS-CoV-2 antibodies in 2020 (per WIV). (3) Frutos et al. (2021), reviewing the clinical records, argue the miners' presentation is **atypical of COVID-19** and better explained by fungal infection or hypersensitivity pneumonitis. On this reading, the renaming/non-disclosure is poor transparency by WIV, not evidence of a concealed leak — sampling at a mine with a prior outbreak is exactly what surveillance virologists would do, and renaming on full-genome publication is ordinary practice.",
+    "confidence_assessment": "- **Claim confidence:** 0.92 — The factual claim (same sample, mine provenance, 2012 deaths, non-disclosure in the original paper) is solidly sourced from two peer-reviewed papers including WIV's own addendum. I dock points only because \"did not initially disclose\" is partly a framing question, and the exact intent behind the renaming is unknowable.\n- **Support strength:** weak — For the *origin* question this is weak in either direction. It is a genuine **data-transparency** problem (favoring skepticism of WIV's openness) but provides **no direct evidence of a leak**, and the genetic distance plus negative serology actively undercut the strong lab-leak reading. It neither confirms nor refutes either hypothesis.\n- **Net:** A calibrated reasoner should treat this as an established but **low-probative** transparency/credibility issue: real grounds to distrust WIV's initial candor, but not evidence that SARS-CoV-2 came from the Mojiang mine or from WIV — hence neutral.",
+    "source_path": "evidence/mojiang-mine-ratg13-provenance.md",
+    "citations": [
+      {
+        "source_id": "src_87add3f16946",
+        "citation": "Zhou, P., Yang, X.-L., Wang, X.-G., et al. (2020). *A pneumonia outbreak associated with a new coronavirus of probable bat origin* and the **Addendum** (17 Nov 2020). *Nature*. https://doi.org/10.1038/s41586-020-2951-z (original: https://doi.org/10.1038/s41586-020-2012-7)",
+        "urls": [
+          "https://doi.org/10.1038/s41586-020-2951-z",
+          "https://doi.org/10.1038/s41586-020-2012-7"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_47b46c32db61",
+        "citation": "Rahalkar, M. C., & Bahulikar, R. A. (2020). *Lethal Pneumonia Cases in Mojiang Miners (2012) and the Mineshaft Could Provide Important Clues to the Origin of SARS-CoV-2.* *Frontiers in Public Health*, 8:581569. https://doi.org/10.3389/fpubh.2020.581569",
+        "urls": [
+          "https://doi.org/10.3389/fpubh.2020.581569"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_5572f1ce4aca",
+        "citation": "Frutos, R., Javelle, E., Barberot, C., Gavotte, L., Tissot-Dupont, H., & Devaux, C. A. (2021). *Origin of COVID-19: Dismissing the Mojiang mine theory and the laboratory accident narrative.* *Environmental Research*, 204:112141. https://doi.org/10.1016/j.envres.2021.112141 (PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC8490156/)",
+        "urls": [
+          "https://doi.org/10.1016/j.envres.2021.112141",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC8490156/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_4242781f4703",
+        "citation": "Latham, J., & Wilson, A. (2020). *A Proposed Origin for SARS-CoV-2 and the COVID-19 Pandemic* (\"The Mojiang Miners Passage\"). Independent Science News. https://www.independentsciencenews.org/commentaries/a-proposed-origin-for-sars-cov-2-and-the-covid-19-pandemic/",
+        "urls": [
+          "https://www.independentsciencenews.org/commentaries/a-proposed-origin-for-sars-cov-2-and-the-covid-19-pandemic/"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_0a493fed7ff0",
+        "citation": "Wikipedia contributors. *RaTG13.* https://en.wikipedia.org/wiki/RaTG13",
+        "urls": [
+          "https://en.wikipedia.org/wiki/RaTG13"
+        ],
+        "source_class": "reference_work",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Ambiguity around miner illness and sample naming is treated as relevant to whether WIV possessed a closer precursor."
+    ],
+    "policy_sensitivities": [
+      "Weight changes with policies for contested theses, later addenda, advocacy reconstructions, and institutional disclosure conduct."
+    ],
+    "coverage_gaps": [
+      "Complete miner clinical samples, WIV sample inventory, sequencing history, and database records are unavailable."
+    ],
+    "correlation_risks": [
+      "Shares underlying mine, RaTG13, and disclosure events with the RaTG13-secrecy item."
+    ],
+    "capability_limits": [
+      "Document interpretation depends on completeness, provenance, surrounding context, and access to the original record."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Mine sampling and RaTG13 provenance are documented; the miner-passage narrative is not genetically established."
+      ],
+      "ingestion_conditional": [
+        "Missing sample records and untranslated or inaccessible materials constrain assessment."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "Provenance irregularity can be treated as ordinary scientific disclosure failure or evidence of concealment."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Neutral/context classification is appropriate unless a direct precursor link is established.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

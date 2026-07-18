@@ -1,0 +1,125 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_wiv-database-offline-sept-2019_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "wiv-database-offline-sept-2019",
+    "title": "WIV bat coronavirus sequence database taken offline in September 2019",
+    "direction": "lab-leak",
+    "evidence_type": "circumstantial",
+    "claim_confidence": 0.9,
+    "support_strength": "weak",
+    "claim": "The Wuhan Institute of Virology's (WIV) main bat- and rodent-virus sample/sequence database (hosted at `csdata.org` / `batvirus.whiov.ac.cn`), which held tens of thousands of sample records and a body of unpublished bat coronavirus sequences, became inaccessible from outside the institute around September 12, 2019 — roughly three months before the COVID-19 outbreak was publicly acknowledged. The full underlying data has never been released to independent investigators.",
+    "evidence_quality": "The **factual core** — that the WIV bat-virus database stopped being externally accessible in or around September 2019 and has not been released — is well supported. It rests on web-archive forensics (a replicable method using public Wayback Machine snapshots) by DRASTIC, and the September 12, 2019 dating was accepted and republished by mainstream outlets (Washington Post editorial board; BuzzFeed News science reporting by Peter Aldhous) and surfaced in official channels (European Parliament written question E-000608/2022; the WHO mission was briefed on the removal). Chinese officials and Shi Zhengli have **not disputed that the database was taken offline** — they dispute the interpretation.\n\nThe originating analysis is from DRASTIC, an open-source investigative collective, not a peer-reviewed venue, and the report is self-published (Zenodo/ResearchGate). However, the underlying datum (a site becoming unreachable on a given date) is independently checkable, and the offline status is uncontested. So this is **strong on the bare fact, weak as a self-published analytic narrative** about motive.\n\nThe **interpretation** (that the timing implies concealment of a SARS-CoV-2 progenitor) is circumstantial and unproven. No source demonstrates that the hidden sequences contain a closer relative of SARS-CoV-2.",
+    "strongest_counterargument": "1. **The offline date is not as anomalous as it looks.** The database in question was a research-data portal that had received limited maintenance; web resources of this kind frequently lapse, change hosts, or restrict access for mundane reasons. A snapshot gap from September 2019 establishes when *external accessibility via that interface* dropped — not that the institute deliberately \"scrubbed\" anything in response to an outbreak that had not yet been recognized. Critics of the lab-leak framing (and fact-checks of the \"deleted to hide COVID\" narrative) note that nothing in the web-archive record shows the *content* was destroyed, only that a public-facing portal became unreachable.\n2. **Shi Zhengli's cybersecurity explanation is plausible.** WIV did face an extraordinary surge of attention and hostility in 2020. Taking a research database offline to limit exposure during that period is an ordinary defensive move. The genuine **tension** is that the *earliest* loss of accessibility (Sept 2019) predates the pandemic, which her \"during the pandemic\" framing does not cleanly explain — but a portal can go offline in Sept 2019 for routine reasons and *separately* be kept offline later for security, and the two need not share a cause.\n3. **Non-disclosure is consistent with many motives**, including legitimate ones (proprietary unpublished data, state secrecy reflexes, fear of being scapegoated) that have nothing to do with hiding a progenitor virus. Absence of the data cannot, by itself, distinguish \"they are hiding a smoking gun\" from \"they are stonewalling an investigation they find threatening regardless of guilt.\"",
+    "confidence_assessment": "- **Claim confidence:** 0.9 — That the database became externally inaccessible around September 12, 2019 and remains undisclosed is well corroborated and undisputed by WIV itself; only minor uncertainty attaches to the exact date and to the precise scope/content figures (the \"100+ unpublished sequences\" vs \"~22,000 records\" describe different layers and are sometimes loosely reported).\n- **Support strength:** weak — for the lab-leak hypothesis. The timing is genuinely suggestive and the continued non-disclosure is a real obstruction to investigation, which legitimately raises suspicion. But it is fully explainable by innocent causes, contains no demonstrated link to SARS-CoV-2's actual ancestor, and an offline web portal is not evidence of what the underlying data show. It shifts priors only modestly.\n- **Net:** A calibrated reasoner should treat this as a real and frustrating transparency failure that mildly favors the lab-leak hypothesis through obstruction and suspicious timing, while recognizing that \"we cannot see the data\" is not the same as \"the data are incriminating,\" and that the September 2019 date is suggestive rather than probative.",
+    "source_path": "evidence/wiv-database-offline-sept-2019.md",
+    "citations": [
+      {
+        "source_id": "src_4ce3eea5877f",
+        "citation": "Demaneuf, G. & Bostickson, B. (2021). *An investigation into the WIV databases that were taken offline.* DRASTIC (self-published, ResearchGate/Zenodo). https://www.researchgate.net/publication/349073738_An_investigation_into_the_WIV_databases_that_were_taken_offline",
+        "urls": [
+          "https://www.researchgate.net/publication/349073738_An_investigation_into_the_WIV_databases_that_were_taken_offline"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_9d8c28bf63ff",
+        "citation": "Washington Post Editorial Board (Feb 5, 2021). *We're still missing the origin story of this pandemic. China is sitting on the answers.* The Washington Post. https://www.washingtonpost.com/opinions/2021/02/05/coronavirus-origins-mystery-china/",
+        "urls": [
+          "https://www.washingtonpost.com/opinions/2021/02/05/coronavirus-origins-mystery-china/"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_d0a9188a5f37",
+        "citation": "Aldhous, P. (2021). *A Scientist Tracked Down Chinese Coronavirus Sequences That Had Disappeared Online.* BuzzFeed News. https://www.buzzfeednews.com/article/peteraldhous/coronavirus-sequences-deleted-china-nih",
+        "urls": [
+          "https://www.buzzfeednews.com/article/peteraldhous/coronavirus-sequences-deleted-china-nih"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_c31e729e243a",
+        "citation": "European Parliament, Written Question E-000608/2022, *Entire Wuhan Institute virus database taken offline on 12 September 2019.* https://www.europarl.europa.eu/doceo/document/E-9-2022-000608_EN.html",
+        "urls": [
+          "https://www.europarl.europa.eu/doceo/document/E-9-2022-000608_EN.html"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_77d98aaff7ef",
+        "citation": "Bloom, J. D. (2021). *Recovery of deleted deep sequencing data sheds more light on the early Wuhan SARS-CoV-2 epidemic.* (Related but distinct deletion episode — NIH SRA sequences, not the WIV bat-virus database.) bioRxiv / Molecular Biology and Evolution. https://academic.oup.com/mbe/article/38/12/5211/6353034",
+        "urls": [
+          "https://academic.oup.com/mbe/article/38/12/5211/6353034"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Loss of public access shortly before recognized emergence is treated as intentional concealment related to the outbreak."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on base rates for research-site outages, exact accessibility timelines, and whether later non-release is bundled with the initial outage."
+    ],
+    "coverage_gaps": [
+      "Server logs, maintenance records, internal access, complete database contents, and contemporaneous reasons are unavailable."
+    ],
+    "correlation_risks": [
+      "One event already included in the broader data-deletion and China-opacity clusters."
+    ],
+    "capability_limits": [
+      "Circumstantial patterns are especially sensitive to base rates, alternative explanations, and selection of which coincidences are noticed."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "External inaccessibility is more established than deletion, timing motive, or content relevance."
+      ],
+      "ingestion_conditional": [
+        "The database's missing contents directly bound the assessable source universe."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "The same timeline can be framed as suspicious concealment or an ordinary outage later prolonged for security and political reasons."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Track access state, content survival, motive, and origin relevance as separate claims.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "schema_version": "0.1.0",
+  "experiment_id": "covid-fixed-corpus-policy-ablation-v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "question": "Was COVID-19 caused by zoonotic spillover or a research-related incident?",
+  "policies": [
+    {
+      "policy_id": "strict-public-evidence",
+      "label": "Strict public evidence",
+      "description": "Retains public empirical and mechanistic evidence. It excludes intelligence judgments, institutional conduct, general biosafety context, and circumstantial coincidence as independent origin evidence.",
+      "selection": {
+        "include_all": false,
+        "evidence_types": ["epidemiological", "genomic", "virological"],
+        "evidence_ids": ["live-susceptible-mammals-on-sale-wuhan-markets"]
+      }
+    },
+    {
+      "policy_id": "contextual-evidence",
+      "label": "Contextual evidence",
+      "description": "Adds documentary records, biosafety practice, and published intelligence assessments while keeping purely circumstantial coincidence outside the assessment.",
+      "selection": {
+        "include_all": false,
+        "evidence_types": [
+          "epidemiological",
+          "genomic",
+          "virological",
+          "documentary",
+          "biosafety",
+          "intelligence-assessment"
+        ],
+        "evidence_ids": []
+      }
+    },
+    {
+      "policy_id": "full-available-baseline",
+      "label": "Full available baseline",
+      "description": "Retains all 40 evidence notes in the supplied Carlo/Claude corpus. This is the full available baseline, not a claim to contain all evidence that exists.",
+      "selection": {
+        "include_all": true,
+        "evidence_types": [],
+        "evidence_ids": []
+      }
+    }
+  ],
+  "assessment_method": {
+    "unit": "independence cluster and hypothesis direction",
+    "strength_scale": { "weak": 1, "moderate": 2, "strong": 3 },
+    "aggregation": "Within each independence cluster, retain only the maximum upstream support strength for each direction; then sum cluster contributions.",
+    "interpretation": "The resulting balance is an exploratory sensitivity measure based on the baseline's support labels, not a calibrated probability or an independent truth judgment."
+  },
+  "evidence_clusters": [
+    {
+      "cluster_id": "market-early-cases",
+      "label": "Market and early cases",
+      "description": "Early-case geography, market linkage, ascertainment, and the composite market-origin argument.",
+      "evidence_ids": [
+        "absence-of-non-market-early-clustering",
+        "early-cases-without-market-link",
+        "huanan-market-spatial-clustering-early-cases",
+        "huanan-market-spatial-clustering-two-lineages"
+      ]
+    },
+    {
+      "cluster_id": "natural-relatives-mechanisms",
+      "label": "Natural relatives and mechanisms",
+      "description": "Natural sarbecovirus diversity, recombination, receptor binding, and distance from known relatives.",
+      "evidence_ids": [
+        "banal-laos-bat-sarbecoviruses-ace2",
+        "natural-recombination-sarbecoviruses",
+        "pangolin-cov-rbd-five-contact-residues",
+        "ratg13-banal-genetic-distance",
+        "rbd-not-optimal-for-human-ace2"
+      ]
+    },
+    {
+      "cluster_id": "furin-site",
+      "label": "Furin-site features",
+      "description": "Sequence-feature arguments about the furin-cleavage site and codon pair.",
+      "evidence_ids": [
+        "cgg-cgg-arginine-codon-argument",
+        "furin-cleavage-site-prra-insertion"
+      ]
+    },
+    {
+      "cluster_id": "opacity-data-access",
+      "label": "Opacity and data access",
+      "description": "Withholding, deletion, disclosure disputes, publication process, and institutional reversals.",
+      "evidence_ids": [
+        "china-data-withholding-transparency",
+        "data-deletion-and-restricted-access",
+        "proximal-origin-private-doubts-controversy",
+        "who-china-2021-extremely-unlikely-walkback",
+        "wiv-database-offline-sept-2019"
+      ]
+    },
+    {
+      "cluster_id": "defuse-proposal",
+      "label": "DEFUSE proposal",
+      "description": "Three records describing the same 2018 proposal and its relationship to later viral features.",
+      "evidence_ids": [
+        "defuse-2018-furin-cleavage-proposal",
+        "defuse-furin-preexisting-blueprint",
+        "defuse-grant-proposal-blueprint"
+      ]
+    },
+    {
+      "cluster_id": "market-animal-evidence",
+      "label": "Market animals and samples",
+      "description": "Live susceptible mammals, environmental samples, wildlife DNA, and the failure to identify an infected animal.",
+      "evidence_ids": [
+        "environmental-samples-wildlife-stall-positivity",
+        "live-susceptible-mammals-on-sale-wuhan-markets",
+        "no-source-animal-ever-found",
+        "raccoon-dog-susceptible-species-genetic-tracing"
+      ]
+    },
+    {
+      "cluster_id": "intelligence-official-assessments",
+      "label": "Intelligence and official assessments",
+      "description": "Public summaries of intelligence judgments, congressional synthesis, and reported staff illness.",
+      "evidence_ids": [
+        "fbi-doe-cia-lab-leaning-assessments",
+        "house-covid-select-final-report-lab-leak",
+        "odni-ic-split-assessment-2021-2023",
+        "three-wiv-researchers-sick-nov-2019"
+      ]
+    },
+    {
+      "cluster_id": "lab-capability-biosafety",
+      "label": "Laboratory capability and biosafety",
+      "description": "Relevant experimental capability, containment practice, staffing concerns, and serial-passage possibility.",
+      "evidence_ids": [
+        "2018-state-dept-cables-biosafety-warnings",
+        "menachery-baric-2015-shc014-chimera",
+        "serial-passage-cell-culture-adaptation",
+        "wiv-bsl2-handling-sars-like-cov"
+      ]
+    },
+    {
+      "cluster_id": "mojiang-ratg13",
+      "label": "Mojiang and RaTG13 provenance",
+      "description": "Mine illness, sample history, naming, and delayed disclosure around RaTG13.",
+      "evidence_ids": [
+        "mojiang-mine-ratg13-provenance",
+        "ratg13-mojiang-provenance-secrecy"
+      ]
+    },
+    {
+      "cluster_id": "lineages-and-timing",
+      "label": "Lineages and timing",
+      "description": "Molecular-clock dating and duplicated arguments for multiple early introductions.",
+      "evidence_ids": [
+        "molecular-clock-tmrca-nov-2019",
+        "two-lineages-a-b-multiple-introductions",
+        "two-zoonotic-introductions-lineages-A-B"
+      ]
+    },
+    {
+      "cluster_id": "missing-progenitor-host",
+      "label": "Missing progenitor or host",
+      "description": "The unresolved absence of a close viral progenitor or identified intermediate host.",
+      "evidence_ids": ["no-close-progenitor-or-intermediate-host"]
+    },
+    {
+      "cluster_id": "zoonotic-precedents",
+      "label": "Zoonotic precedents",
+      "description": "SARS-CoV-1 and MERS as reference classes for coronavirus emergence.",
+      "evidence_ids": [
+        "sars-cov-1-market-precedent",
+        "sars1-mers-zoonotic-precedent"
+      ]
+    },
+    {
+      "cluster_id": "wuhan-geography",
+      "label": "Wuhan geographic coincidence",
+      "description": "The geographic co-location of outbreak recognition and a leading bat-coronavirus laboratory.",
+      "evidence_ids": ["wuhan-lab-geographic-coincidence"]
+    }
+  ],
+  "coverage_report": {
+    "known_but_unavailable": [
+      {
+        "label": "Independent early-case line list",
+        "note": "The baseline repeatedly identifies raw early-case locations, exposure histories, and case-finding procedures as unavailable for independent audit.",
+        "evidence_ids": [
+          "absence-of-non-market-early-clustering",
+          "early-cases-without-market-link",
+          "huanan-market-spatial-clustering-early-cases"
+        ]
+      },
+      {
+        "label": "Underlying intelligence",
+        "note": "Public agency conclusions do not expose the classified sources, dependency structure, or analytic tradecraft behind them.",
+        "evidence_ids": [
+          "fbi-doe-cia-lab-leaning-assessments",
+          "odni-ic-split-assessment-2021-2023",
+          "three-wiv-researchers-sick-nov-2019"
+        ]
+      },
+      {
+        "label": "Laboratory inventories and incident records",
+        "note": "Complete WIV sequence inventories, laboratory notebooks, incident logs, and staff medical records are not available in the supplied corpus.",
+        "evidence_ids": [
+          "defuse-2018-furin-cleavage-proposal",
+          "ratg13-mojiang-provenance-secrecy",
+          "wiv-bsl2-handling-sars-like-cov",
+          "wiv-database-offline-sept-2019"
+        ]
+      },
+      {
+        "label": "Contemporaneous animal and supply-chain samples",
+        "note": "The relevant live animals were removed before systematic sampling, and upstream suppliers were not comprehensively investigated in the available record.",
+        "evidence_ids": [
+          "environmental-samples-wildlife-stall-positivity",
+          "no-source-animal-ever-found",
+          "raccoon-dog-susceptible-species-genetic-tracing"
+        ]
+      }
+    ],
+    "capability_limited": [
+      {
+        "label": "Sequence-level genomic adjudication",
+        "note": "The annotation pass did not independently reproduce phylogenetic, molecular-clock, codon, or recombination analyses.",
+        "evidence_ids": [
+          "cgg-cgg-arginine-codon-argument",
+          "molecular-clock-tmrca-nov-2019",
+          "two-lineages-a-b-multiple-introductions"
+        ]
+      },
+      {
+        "label": "Spatial and ascertainment modeling",
+        "note": "The annotation pass did not reproduce competing spatial models from raw case data.",
+        "evidence_ids": [
+          "absence-of-non-market-early-clustering",
+          "huanan-market-spatial-clustering-early-cases"
+        ]
+      },
+      {
+        "label": "Non-English full-text interpretation",
+        "note": "The imported baseline does not provide a measured language-coverage or language-reliability profile.",
+        "evidence_ids": []
+      }
+    ],
+    "not_established": [
+      {
+        "label": "Systematic non-English source coverage",
+        "note": "This prototype cannot yet prove which relevant non-English sources were excluded; it records the missing coverage measurement rather than inventing a source list.",
+        "evidence_ids": []
+      },
+      {
+        "label": "Complete source universe",
+        "note": "The 173 normalized citations are the sources in the supplied baseline, not an enumeration of all relevant evidence that exists.",
+        "evidence_ids": []
+      }
+    ]
+  }
+}

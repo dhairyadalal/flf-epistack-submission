@@ -1,0 +1,103 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_live-susceptible-mammals-on-sale-wuhan-markets_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "live-susceptible-mammals-on-sale-wuhan-markets",
+    "title": "Live SARS-CoV-2-susceptible mammals were documented on sale in Wuhan markets, including Huanan, before the pandemic",
+    "direction": "natural-origin",
+    "evidence_type": "documentary",
+    "claim_confidence": 0.93,
+    "support_strength": "moderate",
+    "claim": "Systematic monthly surveys of Wuhan wet markets from May 2017 to November 2019 documented 47,381 live wild animals from 38 species (18 of them mammals) on sale in poor hygienic and welfare conditions, including raccoon dogs, masked palm civets, and American mink — species known to be susceptible to SARS-like coronaviruses. Seven shops at the Huanan Seafood Market were among those selling live mammals. No bats or pangolins were observed in the trade.",
+    "evidence_quality": "The core claim rests on a **peer-reviewed paper** (*Scientific Reports*, an open-access Nature journal) built on a pre-existing, independently motivated dataset: the surveys were originally undertaken to study a tick-borne disease (SFTSV) and zoonotic risk, not the pandemic, reducing the risk of post-hoc bias. The animal counts are direct field observations by the authors. This is strong, replicable documentation of *what was traded*. It is corroborated on the specific point of Huanan mammal sales by later genomic environmental sampling (Source 3) and by social-media and vendor photographs compiled by other groups.\n\nCrucial limitation in the evidence itself: the surveys **did not test any of these animals for SARS-CoV-2** (the virus did not yet exist in circulation for most of the period, and no archived market animals were ever virologically tested by authorities). So the paper establishes the *susceptible-host supply chain*, not a positive virus-in-animal result.",
+    "strongest_counterargument": "The paper shows susceptible animals were *present and sold*, but it does **not** show that any were infected, nor that infection at the market was the spillover event rather than a later human-driven superspreading amplification. Two specific rebuttals:\n\n1. **No positive animal sample exists.** As the IDSociety/Science Speaks commentary stresses, China never disclosed SARS-CoV-2 test results for live market animals, and no infected intermediate host has ever been found — for SARS-CoV-2 the animal link remains inferential, unlike SARS-CoV-1 where infected civets were recovered [Source 2].\n2. **The raccoon-dog DNA correlation is contested.** Jesse Bloom's reanalysis found that across the full CCDC dataset, raccoon-dog genetic material did not robustly correlate with viral abundance and was if anything somewhat more associated with virus-*negative* samples; the CCDC made the same point. The presence of susceptible mammals and the presence of virus in the same building does not by itself establish that the mammals were the infection source rather than infected humans contaminating animal stalls [Source 3 includes both the positive analysis and the critiques].\n\nA lab-leak proponent would add that a market selling susceptible mammals is fully expected in any large Chinese city and would exist regardless of how the virus actually originated, so its explanatory weight for *origin* is limited.",
+    "confidence_assessment": "- **Claim confidence:** 0.93 — The factual claim (these species, in these numbers, sold in these conditions, including at Huanan) is well-documented in a peer-reviewed paper using a pre-pandemic dataset and is corroborated independently. The small residual uncertainty reflects reliance on a single survey team for the counts and a known discrepancy with the WHO–China report (which I judge the WHO report got wrong, not Xiao et al.).\n- **Support strength:** moderate — for the **natural-origin** hypothesis. It robustly establishes the *necessary precondition* for market zoonosis (a sustained supply of stressed, susceptible mammals in human contact at the epicenter) and refocuses attention onto plausible intermediates (raccoon dogs/civets) rather than bats/pangolins. But \"necessary precondition present\" is weaker than \"spillover demonstrated\"; no infected animal was found, so it does not close the loop.\n- **Net:** A calibrated reasoner should treat this as solid, near-certain documentation that the zoonotic *opportunity* existed at the exact epicenter — meaningfully raising the prior on a market spillover — while recognizing it is a precondition, not proof, and that the absence of any tested-positive animal leaves the natural-origin chain inferential.",
+    "source_path": "evidence/live-susceptible-mammals-on-sale-wuhan-markets.md",
+    "citations": [
+      {
+        "source_id": "src_2f1b4b43f686",
+        "citation": "Xiao, X., Newman, C., Buesching, C. D., Macdonald, D. W., & Zhou, Z.-M. (2021). *Animal sales from Wuhan wet markets immediately prior to the COVID-19 pandemic.* Scientific Reports, 11, 11898. https://doi.org/10.1038/s41598-021-91470-2 (open access: https://pmc.ncbi.nlm.nih.gov/articles/PMC8184983/)",
+        "urls": [
+          "https://doi.org/10.1038/s41598-021-91470-2",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC8184983/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_899548aadc28",
+        "citation": "Branswell-era commentary — Daniel R. Lucey / IDSociety \"Science Speaks\" blog (2021). *Not until June 2021 does China report Wuhan wet markets sold palm civets, raccoon dogs and mink from 2017–2019: Where are the SARS-CoV-2 results?* https://www.idsociety.org/science-speaks-blog/2021/not-until-june-2021-does-china-report-wuhan-wet-markets-sold-palm-civets-racoon-dogs-and-mink-from-2017-2019-where-are-the-sars-cov-2-results/",
+        "urls": [
+          "https://www.idsociety.org/science-speaks-blog/2021/not-until-june-2021-does-china-report-wuhan-wet-markets-sold-palm-civets-racoon-dogs-and-mink-from-2017-2019-where-are-the-sars-cov-2-results/"
+        ],
+        "source_class": "commentary_or_advocacy",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_8057298a14c6",
+        "citation": "Crits-Christoph, A., Gangavarapu, K., Pekar, J. E., Débarre, F., et al. (2024). *Genetic tracing of market wildlife and viruses at the epicenter of the COVID-19 pandemic.* Cell (preprint 2023, bioRxiv 2023.04.25.538336). https://pmc.ncbi.nlm.nih.gov/articles/PMC10515900/ — and the critical reappraisal: Débarre, F. & Crits-Christoph, A. (2024). *What we can and cannot learn from SARS-CoV-2 and animals in metagenomic samples from the Huanan market.* Virus Evolution, 10(1), vead077. https://academic.oup.com/ve/article/10/1/vead077/7503693 (which discusses the Bloom/CCDC raccoon-dog-DNA correlation debate).",
+        "urls": [
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC10515900/",
+          "https://academic.oup.com/ve/article/10/1/vead077/7503693"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Presence of susceptible animals creates a mechanism-bearing prior for market spillover even without an identified infected animal."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on whether opportunity evidence is evaluated symmetrically for wildlife-trade and laboratory scenarios."
+    ],
+    "coverage_gaps": [
+      "Animals present during the relevant period were removed before virological sampling; supply-chain infection data are incomplete."
+    ],
+    "correlation_risks": [
+      "Overlaps environmental-stall and raccoon-dog genetic evidence; all bear on the same market-animal mechanism."
+    ],
+    "capability_limits": [
+      "Document interpretation depends on completeness, provenance, surrounding context, and access to the original record."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Animal presence and susceptibility are better established than infection and transmission."
+      ],
+      "ingestion_conditional": [
+        "Missing contemporaneous animal samples prevent direct confirmation."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "Opportunity supports plausibility but is weaker than evidence of the actual causal event."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Compare explicitly with laboratory-opportunity evidence using the same evidential category.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

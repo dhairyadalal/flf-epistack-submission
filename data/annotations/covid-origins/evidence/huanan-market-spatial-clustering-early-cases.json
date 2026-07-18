@@ -1,0 +1,128 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_huanan-market-spatial-clustering-early-cases_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "huanan-market-spatial-clustering-early-cases",
+    "title": "Earliest December 2019 cases cluster tightly around the Huanan market",
+    "direction": "natural-origin",
+    "evidence_type": "epidemiological",
+    "claim_confidence": 0.8,
+    "support_strength": "moderate",
+    "claim": "The residential locations of the earliest known December 2019 COVID-19 cases in Wuhan — including those with no reported epidemiological link to the Huanan Seafood Wholesale Market — were geographically centered on that market, with the spatial pattern dispersing across the city by January–February 2020. Worobey et al. argue this centering would be extremely unlikely unless the outbreak began at or very near the market.",
+    "evidence_quality": "The primary source is peer-reviewed (Science, 2022), uses pre-registered-style spatial statistics (kernel density estimation, center-point/centroid distance tests against population-density and age-matched nulls, spatial relative-risk surfaces), and has generated an unusually detailed public methodological debate — a sign of scrutiny, not of weakness. The case-location data, however, are not raw line-lists released by Chinese authorities; they were reconstructed from a WHO-China joint mission report and published figures, so the underlying geocoding has limited independence and cannot be fully audited. The temporal pattern (December clustering → January dispersal) is robust and intuitive. The specific claim that unlinked cases cluster *even more tightly* than linked cases is the load-bearing and most contested element.",
+    "strongest_counterargument": "The most serious rebuttal is **ascertainment bias**, not raw clustering. Critics (Stoyan & Chiu 2024 in JRSS-A; D. Weissman 2024) argue: (1) any contagious disease produces clustered case maps, so rejecting a population-density null shows *clustering exists*, not that the market *caused* it; and (2) early cases may have been preferentially *detected* because Chinese investigators, alerted to the market, searched for market-connected pneumonia — making \"December cases near the market\" partly a product of where authorities looked. Weissman specifically flagged the finding that unlinked cases sit closer than linked cases as a red flag for \"major proximity ascertainment bias.\" A broader version of this critique (Bloom and others) holds that the December case set is too small, too curated by Chinese authorities who suppressed and selected data, to bear the inferential weight placed on it. Débarre & Worobey (arXiv:2405.08040, 2024) reply that the unlinked-vs-linked pattern is explained by infections occurring away from home plus stochasticity, not bias, and that broad community surveillance for \"viral pneumonia of unknown cause\" in early 2020 was not market-targeted. This dispute is genuinely unresolved: if the data were ascertainment-biased toward the market, the spatial result is partly circular.",
+    "confidence_assessment": "- **Claim confidence:** 0.8 — That the *available, reconstructed* December 2019 case locations are statistically centered on the market is well established and survived a re-analysis using the critics' own method. The residual ~20% reflects the unauditable, Chinese-curated provenance of the case set and the live possibility of ascertainment bias inflating the apparent centering.\n- **Support strength:** moderate — Strong *if* the case sample is representative and not ascertainment-biased; the bias objection is the reason it is not \"strong.\" It locates the December epicenter at a live-animal market and not at the WIV, but a market epicenter is also compatible with an infected person (e.g., a lab worker) seeding the market — spatial centering identifies *where* sustained transmission first concentrated, not the ultimate upstream source.\n- **Net:** A calibrated reasoner should treat the spatial centering on the market as real and meaningful evidence for a market-origin, while holding open that ascertainment bias and curated Chinese data could partly manufacture the pattern, and that \"epicenter of spread\" is not strictly identical to \"site of the index spillover.\"",
+    "source_path": "evidence/huanan-market-spatial-clustering-early-cases.md",
+    "citations": [
+      {
+        "source_id": "src_08a628ab2f98",
+        "citation": "Worobey, M., Levy, J. I., Malpica Serrano, L., Crits-Christoph, A., Pekar, J. E., Goldstein, S. A., Rasmussen, A. L., Kraemer, M. U. G., Newman, C., Koopmans, M. P. G., Suchard, M. A., Wertheim, J. O., Lemey, P., Robertson, D. L., Garry, R. F., Holmes, E. C., Rambaut, A., & Andersen, K. G. (2022). The Huanan Seafood Wholesale Market in Wuhan was the early epicenter of the COVID-19 pandemic. *Science*, 377(6609), 951–959. https://doi.org/10.1126/science.abp8715 (open access: https://pmc.ncbi.nlm.nih.gov/articles/PMC9348750/)",
+        "urls": [
+          "https://doi.org/10.1126/science.abp8715",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC9348750/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_152fcdb00bbb",
+        "citation": "Stoyan, D., & Chiu, S. N. (2024). Statistics did not prove that the Huanan Seafood Wholesale Market was the early epicentre of the COVID-19 pandemic. *Journal of the Royal Statistical Society Series A: Statistics in Society*, 187(3), 710–724. https://academic.oup.com/jrsssa/article/187/3/710/7557954 (preprint: arXiv:2208.10106)",
+        "urls": [
+          "https://academic.oup.com/jrsssa/article/187/3/710/7557954"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_18b03f21852f",
+        "citation": "Débarre, F., & Worobey, M. (2024). Confirmation of the centrality of the Huanan market among early COVID-19 cases — Reply to Stoyan and Chiu (2024). arXiv:2403.05859. https://arxiv.org/abs/2403.05859",
+        "urls": [
+          "https://arxiv.org/abs/2403.05859"
+        ],
+        "source_class": "preprint",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_4e936a0fbdf8",
+        "citation": "Débarre, F., & Worobey, M. (2024). No evidence of systematic proximity ascertainment bias in early COVID-19 cases in Wuhan — Reply to Weissman (2024). arXiv:2405.08040. https://arxiv.org/abs/2405.08040",
+        "urls": [
+          "https://arxiv.org/abs/2405.08040"
+        ],
+        "source_class": "preprint",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_2e59627f5ec0",
+        "citation": "Worobey et al. (2024). Erratum for \"The Huanan Seafood Wholesale Market in Wuhan was the early epicenter of the COVID-19 pandemic.\" *Science*. https://doi.org/10.1126/science.adp1133",
+        "urls": [
+          "https://doi.org/10.1126/science.adp1133"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "The reconstructed early-case locations are representative enough for spatial centrality to identify an outbreak epicenter."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on null model, case-set definition, ascertainment-bias treatment, and distinction between epicenter and spillover site."
+    ],
+    "coverage_gaps": [
+      "Independent raw line-list data, original geocoding, and complete case-finding procedures are unavailable."
+    ],
+    "correlation_risks": [
+      "Same market/case dataset underlies several natural-origin evidence items and should be clustered."
+    ],
+    "capability_limits": [
+      "Assessing sampling, ascertainment, and spatial or temporal inference requires raw data and specialist statistical review beyond the supplied summary."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Spatial centrality is supported for the available dataset; causal interpretation remains disputed."
+      ],
+      "ingestion_conditional": [
+        "The available dataset is reconstructed from official reports and figures rather than independently released raw data."
+      ],
+      "capability_conditional": [
+        "Adjudicating competing spatial models requires specialist statistical review."
+      ],
+      "framing_conditional": [
+        "The first detected transmission center may differ from the upstream origin event."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "A strong candidate for the first full-content audit because it is load-bearing and methodologically contested.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

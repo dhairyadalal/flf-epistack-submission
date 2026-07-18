@@ -1,0 +1,125 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_natural-recombination-sarbecoviruses_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "natural-recombination-sarbecoviruses",
+    "title": "Pervasive natural recombination in sarbecoviruses, and a SARS-CoV-2 lineage that diverged decades before 2019",
+    "direction": "natural-origin",
+    "evidence_type": "genomic",
+    "claim_confidence": 0.9,
+    "support_strength": "moderate",
+    "claim": "Recombination-aware phylogenetics shows that bat sarbecoviruses recombine extensively in nature (Lytras et al. detected ~160 recombination events across 78 genomes), and that the SARS-CoV-2 lineage diverged from its closest sampled relatives (RaTG13, RmYN02, pangolin and Southeast-Asian viruses) decades to over a century ago. The receptor-binding domain (RBD) features that allow human-ACE2 binding appear to be inherited from a deep common ancestor rather than recently acquired, and SARS-CoV-2 is not a recombinant of any virus sampled to date.",
+    "evidence_quality": "High. Three independent, peer-reviewed analyses by partly non-overlapping research groups converge: Boni et al. 2020 (*Nature Microbiology*, an influential, heavily cited study including Andrew Rambaut and David Robertson), Lytras et al. 2022 (*Genome Biology and Evolution*), and Esquivel Gomez et al. 2024 (*Scientific Reports*, a Max Planck group using a distinct Bayesian recombination-detection method). The recombination signal in sarbecoviruses is a robust, replicated finding; the divergence-time estimates carry wide confidence intervals (e.g., Boni's 95% HPDs span roughly 1879–2009) because molecular-clock dating of recombining RNA viruses is genuinely uncertain, but all estimates place divergence from sampled relatives well before 2019.",
+    "strongest_counterargument": "The most important rebuttal is that this evidence is **necessary but not sufficient** to exclude a lab origin, and it sidesteps the single feature most central to that debate: the **furin (polybasic) cleavage site (FCS)** at the S1/S2 junction, which is unique to SARS-CoV-2 and absent from all other known sarbecoviruses. Segreto & Deigin (2021, *BioEssays*, \"The genetic structure of SARS-CoV-2 does not rule out a laboratory origin\") argue that (a) showing the RBD is ancestral does nothing to explain the FCS, whose natural origin \"has proved elusive,\" and (b) natural recombination and engineered chimeras can produce indistinguishable genetic structures, so demonstrating that recombination *can* generate novel spikes does not show that *this* virus arose that way rather than via passage or construction in a lab. In short: that the *RBD* is inherited is compatible with both hypotheses, and the *FCS* — the part lab-leak proponents most emphasize — is exactly the region these recombination analyses do not explain. (A partial counter-rebuttal: later work shows FCS-like sites can arise naturally in related bat coronaviruses by single nucleotide changes — e.g. Lytras-adjacent and *Communications Biology* 2022 work on European SARS-related bat CoVs — so the FCS gap is narrowing but not closed.)",
+    "confidence_assessment": "- **Claim confidence:** 0.9 — The core factual claims (pervasive natural recombination; ~160 events/78 genomes; pre-2019 divergence from sampled relatives; ancestral rather than recently-recombined RBD) are well-replicated and peer-reviewed. I dock confidence mainly because divergence-time point estimates are model-dependent with wide intervals, not because the qualitative claim is in doubt.\n- **Support strength:** moderate — for natural origin. It strongly establishes a *plausible natural mechanism* and rules out any *sampled* lab strain as a direct ancestor, which weakens crude \"RaTG13 was tweaked\" framings. But it does not address the FCS, does not exclude an *unsampled* progenitor that could equally have been collected and manipulated, and a deep natural divergence of the *backbone* is consistent with several origin scenarios. It is evidence about mechanism availability more than about what actually happened in Wuhan.\n- **Net:** A calibrated reasoner should treat this as solid evidence that the SARS-CoV-2 genomic backbone and RBD are products of long natural evolution — removing one class of lab-origin arguments — while noting it neither explains the furin cleavage site nor, by itself, settles the origin question.",
+    "source_path": "evidence/natural-recombination-sarbecoviruses.md",
+    "citations": [
+      {
+        "source_id": "src_a1aa97a71b37",
+        "citation": "Boni, M.F., Lemey, P., Jiang, X., Lam, T.T-Y., Perry, B.W., Castoe, T.A., Rambaut, A., Robertson, D.L. (2020). Evolutionary origins of the SARS-CoV-2 sarbecovirus lineage responsible for the COVID-19 pandemic. *Nature Microbiology* 5, 1408–1417. https://doi.org/10.1038/s41564-020-0771-4",
+        "urls": [
+          "https://doi.org/10.1038/s41564-020-0771-4"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_c641c3a718f3",
+        "citation": "Lytras, S., Hughes, J., Martin, D., Swanepoel, P., de Klerk, A., Lourens, R., Kosakovsky Pond, S.L., Xia, W., Jiang, X., Robertson, D.L. (2022). Exploring the Natural Origins of SARS-CoV-2 in the Light of Recombination. *Genome Biology and Evolution* 14(2):evac018. https://doi.org/10.1093/gbe/evac018",
+        "urls": [
+          "https://doi.org/10.1093/gbe/evac018"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_5d6a760d5802",
+        "citation": "Esquivel Gomez, L.R., Weber, A., Kocher, A., Kühnert, D. (2024). Recombination-aware phylogenetic analysis sheds light on the evolutionary origin of SARS-CoV-2. *Scientific Reports* 14:541. https://doi.org/10.1038/s41598-023-50952-1",
+        "urls": [
+          "https://doi.org/10.1038/s41598-023-50952-1"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_f534a0e50137",
+        "citation": "Segreto, R., Deigin, Y. (2021). The genetic structure of SARS-CoV-2 does not rule out a laboratory origin. *BioEssays* 43(3):2000240. https://doi.org/10.1002/bies.202000240 (strongest counterargument)",
+        "urls": [
+          "https://doi.org/10.1002/bies.202000240"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_822f61813223",
+        "citation": "Expert reaction to Boni et al., Science Media Centre (2020). https://www.sciencemediacentre.org/expert-reaction-to-study-looking-at-the-evolutionary-origins-of-the-sars-cov-2-virus-lineage-responsible-for-the-covid-19-pandemic/",
+        "urls": [
+          "https://www.sciencemediacentre.org/expert-reaction-to-study-looking-at-the-evolutionary-origins-of-the-sars-cov-2-virus-lineage-responsible-for-the-covid-19-pandemic/"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Demonstrating a natural mechanism for mosaic genomes reduces the need to posit engineering for SARS-CoV-2's feature combination."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on whether mechanism plausibility or identification of the actual ancestral pathway is required."
+    ],
+    "coverage_gaps": [
+      "No sampled recombination chain reconstructs the complete SARS-CoV-2 progenitor."
+    ],
+    "correlation_risks": [
+      "Mechanistically overlaps BANAL, pangolin-RBD, genetic-distance, and furin-site natural-origin arguments."
+    ],
+    "capability_limits": [
+      "Assessing phylogenetic or genomic inference requires sequence-level analysis and domain expertise beyond the supplied summary."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Natural recombination is well established generally; its specific historical role here remains inferred."
+      ],
+      "ingestion_conditional": [
+        "Sparse wildlife sampling limits reconstruction of the actual pathway."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "A natural mechanism rebuts necessity of engineering but does not exclude collection or laboratory passage of a natural virus."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Distinguish mechanism sufficiency from event identification.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

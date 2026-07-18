@@ -1,0 +1,128 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_molecular-clock-tmrca-nov-2019_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "molecular-clock-tmrca-nov-2019",
+    "title": "Molecular-clock dating places SARS-CoV-2's common ancestor in Nov–Dec 2019, with no genomic sign of long cryptic human circulation",
+    "direction": "natural-origin",
+    "evidence_type": "genomic",
+    "claim_confidence": 0.85,
+    "support_strength": "moderate",
+    "claim": "Bayesian molecular-clock phylodynamics place the time of the most recent common ancestor (tMRCA) of sequenced SARS-CoV-2 genomes in roughly mid-November to mid-December 2019, with the inferred index case / first human infections in the weeks just before (plausibly mid-October to mid-November 2019). The sampled genomic diversity is shallow and shows no robust signal of a long, deep tail of cryptic human transmission predating the Wuhan outbreak — a pattern consistent with a recent introduction near the outbreak epicenter.",
+    "evidence_quality": "This is **peer-reviewed, genomic/phylodynamic** evidence, replicated across independent groups (Pekar/Wertheim/Worobey; Nie et al.; and broader reviews) using standard Bayesian coalescent methods. That convergence is a genuine strength. Important limitations: (1) early-pandemic datasets carried weak temporal signal, so rate and tMRCA estimates were sensitive to clock-model choice and sampling; (2) molecular-clock dating tells us about the **sampled** genetic diversity, not directly about zoonosis timing or about lineages that were never sequenced; and (3) the most influential elaborations (Pekar 2021/2022) come from an overlapping author group, so they are not fully independent of one another. The claim \"no long cryptic human circulation\" is an *inference* from shallow diversity, not a direct observation.",
+    "strongest_counterargument": "The headline rebuttal is that **a recent, shallow tMRCA does not by itself discriminate natural spillover from a lab origin**, and may even understate how early the virus was circulating. Kumar, Pond and colleagues (*Molecular Biology and Evolution*, 2021) used mutation-order (\"progenitor\") methods and argued the SARS-CoV-2 progenitor was likely circulating **6–8 weeks before Wuhan-1**, i.e., into late October or earlier — implying the tMRCA postdates real circulation by a substantial margin. More fundamentally, a lab-origin scenario does **not** predict a long human transmission tail either: an engineered or cultured virus released shortly before the outbreak would *also* produce a shallow, recent tMRCA near Wuhan. So the recent common ancestor is consistent with both hypotheses; it argues against only the specific sub-claim of *prolonged undetected human spread*, not against lab origin as such. Additionally, the two-lineage / two-introduction model (Pekar 2022) is contested — some authors argue lineage A and B can be linked by intermediate haplotypes or a single introduction plus early mutation, which would weaken the \"two independent zoonoses\" framing while leaving the dating intact.",
+    "confidence_assessment": "- **Claim confidence:** 0.85 — That phylodynamic dating robustly places the sampled common ancestor in roughly Nov–Dec 2019 is well replicated and uncontested in its broad strokes. The narrower assertion of \"no cryptic prior circulation\" is softer: it is an inference from shallow diversity and is actively disputed by progenitor-based analyses, so I keep confidence below the level I'd assign the bare dating result.\n- **Support strength:** moderate (for natural origin) — The recent tMRCA constrains origin scenarios to a narrow window tied to Wuhan in late 2019, which is broadly more comfortable for a single recent spillover than for a long-circulating lab-adapted lineage. But because a recent lab release predicts the *same* shallow tree, this evidence does not cleanly separate the two hypotheses. Its real weight comes when combined with the spatial clustering and market-linkage evidence, not on its own.\n- **Net:** A calibrated reasoner should treat the late-2019 tMRCA as solid and as ruling out *prolonged* prior human circulation, while recognizing it is only weakly diagnostic between natural and lab origin on its own, and that the exact date of zoonosis sits somewhat earlier than the tMRCA.",
+    "source_path": "evidence/molecular-clock-tmrca-nov-2019.md",
+    "citations": [
+      {
+        "source_id": "src_4d7c6b9ac4ec",
+        "citation": "Pekar J, Worobey M, Moshiri N, Scheffler K, Wertheim JO (2021). \"Timing the SARS-CoV-2 index case in Hubei province.\" *Science* 372(6540):412–417. https://doi.org/10.1126/science.abf8003 (open: https://pmc.ncbi.nlm.nih.gov/articles/PMC8139421/)",
+        "urls": [
+          "https://doi.org/10.1126/science.abf8003",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC8139421/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_a119c286b4fe",
+        "citation": "Nie Q, Li X, Chen W, Liu D, et al. (2020). \"Phylogenetic and phylodynamic analyses of SARS-CoV-2.\" *Virus Research* 287:198098. https://doi.org/10.1016/j.virusres.2020.198098 (open: https://pmc.ncbi.nlm.nih.gov/articles/PMC7366979/)",
+        "urls": [
+          "https://doi.org/10.1016/j.virusres.2020.198098",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC7366979/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_cdf8b0ed663c",
+        "citation": "Pekar JE, Magee A, Parker E, et al. (2022). \"The molecular epidemiology of multiple zoonotic origins of SARS-CoV-2.\" *Science* 377(6609):960–966. https://doi.org/10.1126/science.abp8337",
+        "urls": [
+          "https://doi.org/10.1126/science.abp8337"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_67b74829a025",
+        "citation": "Kumar S, Tao Q, Weaver S, et al. (2021). \"An evolutionary portrait of the progenitor SARS-CoV-2 and its dominant offshoots in COVID-19 pandemic.\" *Molecular Biology and Evolution* 38(8):3046–3059. https://doi.org/10.1093/molbev/msab118 (open: https://pmc.ncbi.nlm.nih.gov/articles/PMC8135569/) — counterargument source.",
+        "urls": [
+          "https://doi.org/10.1093/molbev/msab118",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC8135569/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_d445e4b58ceb",
+        "citation": "Attwood SW, Hill SC, Aanensen DM, Connor TR, Pybus OG (2022). \"Phylogenetic and phylodynamic approaches to understanding and combating the early SARS-CoV-2 pandemic.\" *Nature Reviews Genetics* 23:547–562. https://doi.org/10.1038/s41576-022-00483-8 — review on clock-model and temporal-signal caveats.",
+        "urls": [
+          "https://doi.org/10.1038/s41576-022-00483-8"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "The estimated common-ancestor date constrains competing emergence narratives and the duration of unobserved circulation."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on sequence inclusion, clock model, recombination assumptions, and treatment of uncertain early genomes."
+    ],
+    "coverage_gaps": [
+      "The earliest infections and potentially informative unsampled or withheld sequences are absent."
+    ],
+    "correlation_risks": [
+      "Correlated with early-case timing and lineage-introduction analyses that use overlapping sequence data."
+    ],
+    "capability_limits": [
+      "Assessing phylogenetic or genomic inference requires sequence-level analysis and domain expertise beyond the supplied summary."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Clock estimates have model and sampling uncertainty even when studies agree broadly on timing."
+      ],
+      "ingestion_conditional": [
+        "Missing early sequences can shift estimated ancestry and interval width."
+      ],
+      "capability_conditional": [
+        "Independent assessment requires sequence-level phylogenetic analysis."
+      ],
+      "framing_conditional": [],
+      "unattributed": []
+    },
+    "notes": [
+      "Use as a temporal constraint, not a direct discriminator unless a hypothesis makes a distinct timing prediction.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

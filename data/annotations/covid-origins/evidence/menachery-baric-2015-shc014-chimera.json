@@ -1,0 +1,136 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_menachery-baric-2015-shc014-chimera_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "menachery-baric-2015-shc014-chimera",
+    "title": "2015 SHC014 chimeric SARS-like coronavirus (Menachery, Baric, Shi): documented gain-of-function capability at UNC/WIV",
+    "direction": "lab-leak",
+    "evidence_type": "virological",
+    "claim_confidence": 0.98,
+    "support_strength": "moderate",
+    "claim": "In 2015, a Nature Medicine paper co-authored by the Wuhan Institute of Virology's Shi Zhengli (with UNC's Ralph Baric and lead author Vineet Menachery) reported building a lab chimera that placed the spike protein of a WIV-collected bat coronavirus (SHC014) onto a mouse-adapted SARS-CoV backbone, and showed the resulting virus replicated efficiently in primary human airway epithelial cells. The paper itself flagged that the work touched on the then-active U.S. gain-of-function (GoF) research funding pause.",
+    "evidence_quality": "High. The primary source is a peer-reviewed paper in a top journal (Nature Medicine), with named authors including Shi Zhengli, and a stable DOI. The factual content — that this chimera was built and replicated in human airway cells — is uncontested by anyone, including Baric himself. This is documentary/virological evidence of *capability and collaboration*, not a finding inferred from contested data. It is independently corroborated by the 2016 PNAS follow-up and by detailed journalism (MIT Technology Review, 2021).",
+    "strongest_counterargument": "The capability is real, but it is several steps removed from showing SARS-CoV-2 was engineered. Baric (the senior architect of this method) states plainly: \"We never created a supervirus,\" that none of the SARS-like coronaviruses used were closely related to SARS-CoV-2, and that the published sequences are \"very different from SARS-CoV-2.\" He says he personally believes SARS-CoV-2 is a natural pathogen and that there is \"no strong and actionable data\" that it was engineered (MIT Technology Review, 2021; Source 6). Critically: (a) SHC014 and WIV1 backbones/spikes are genetically far from SARS-CoV-2 — neither is a plausible direct progenitor; (b) the 2015 work used a SARS-CoV (not a SARS-CoV-2-type) backbone, a different lineage; (c) SARS-CoV-2 carries no signature (e.g., no known reverse-genetics scars matching this platform) tying it to this specific line of work. So the evidence establishes means and a track record, not the act. It is consistent with lab-leak but does not discriminate strongly between a natural spillover and an engineered/passaged virus.",
+    "confidence_assessment": "- **Claim confidence:** 0.98 — Every element of the core factual claim is verified against the peer-reviewed primary source and is uncontested. The only minor caveat is that \"SHC014 collected by WIV\" is best described as identified/sequenced by the Shi lab; the chimera-building was done at UNC using WIV-supplied sequences/reagents.\n- **Support strength:** moderate (for lab-leak) — It robustly establishes that the exact institutions implicated (WIV + a close collaborator) had, and exercised, the capability to construct chimeric, human-cell-infecting SARS-like coronaviruses years before the pandemic, and that such work was deemed risky enough to brush against a federal pause. But it is capability/means evidence, not a smoking gun: the specific viruses are not SARS-CoV-2 progenitors, and the platform leaves no signature in SARS-CoV-2.\n- **Net:** A calibrated reasoner should treat this as strong, near-certain proof of relevant engineering capability and intent at WIV/UNC — which raises the prior plausibility of a lab origin — while not mistaking it for evidence that SARS-CoV-2 itself was engineered or leaked.",
+    "source_path": "evidence/menachery-baric-2015-shc014-chimera.md",
+    "citations": [
+      {
+        "source_id": "src_bef2280fab23",
+        "citation": "Menachery VD, Yount BL Jr, Debbink K, et al. (2015). A SARS-like cluster of circulating bat coronaviruses shows potential for human emergence. *Nature Medicine* 21(12):1508–1513. DOI: 10.1038/nm.3985. https://www.nature.com/articles/nm.3985",
+        "urls": [
+          "https://www.nature.com/articles/nm.3985"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_39d483bf9f36",
+        "citation": "PubMed record for Menachery et al. 2015 (authors, abstract, corrections). https://pubmed.ncbi.nlm.nih.gov/26552008/ ; Author Correction: https://pubmed.ncbi.nlm.nih.gov/32661400/",
+        "urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/26552008/",
+          "https://pubmed.ncbi.nlm.nih.gov/32661400/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_f36b4a8593b8",
+        "citation": "Open-access PDF of the 2015 paper (UNC ORFeome repository), including the gain-of-function pause statement. https://www.med.unc.edu/orfeome/wp-content/uploads/sites/609/2018/03/a-sars-like-cluster-of-circulating-bat-coronaviruses-shows-potential-for-human-emergence.pdf",
+        "urls": [
+          "https://www.med.unc.edu/orfeome/wp-content/uploads/sites/609/2018/03/a-sars-like-cluster-of-circulating-bat-coronaviruses-shows-potential-for-human-emergence.pdf"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_3bd25df62eee",
+        "citation": "Corrigendum (2016). *Nature Medicine*. https://www.nature.com/articles/nm0416-446d",
+        "urls": [
+          "https://www.nature.com/articles/nm0416-446d"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_d2aaba34e9e7",
+        "citation": "Menachery VD, Yount BL Jr, Sims AC, et al. (2016). SARS-like WIV1-CoV poised for human emergence. *PNAS* 113(11):3048–3053. DOI: 10.1073/pnas.1517719113. https://www.pnas.org/doi/abs/10.1073/pnas.1517719113",
+        "urls": [
+          "https://www.pnas.org/doi/abs/10.1073/pnas.1517719113"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_5dedc48f04dd",
+        "citation": "Jacobsen R. (2021). Did gain-of-function research create covid-19? We asked Ralph Baric. *MIT Technology Review*, July 26, 2021. https://www.technologyreview.com/2021/07/26/1030043/gain-of-function-research-coronavirus-ralph-baric-vaccines/",
+        "urls": [
+          "https://www.technologyreview.com/2021/07/26/1030043/gain-of-function-research-coronavirus-ralph-baric-vaccines/"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Demonstrated capability to construct a SARS-like chimera is treated as evidence relevant to a later event involving different actors, viruses, and records."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on whether general capability evidence is admitted and how collaboration links are translated into event probability."
+    ],
+    "coverage_gaps": [
+      "No specific construct, precursor, experiment, or chain connects SHC014 work to SARS-CoV-2."
+    ],
+    "correlation_risks": [
+      "Correlated with DEFUSE, WIV biosafety, and general gain-of-function capability arguments."
+    ],
+    "capability_limits": [
+      "Assessing experimental virology requires checking methods, model systems, and replication in the cited studies."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Capability is documented; relevance to the specific origin event is indirect."
+      ],
+      "ingestion_conditional": [],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "A method's existence establishes possibility, not that it was used in the event under investigation."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Keep method capability separate from actor opportunity and event evidence.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

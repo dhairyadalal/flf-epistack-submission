@@ -1,0 +1,111 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_defuse-2018-furin-cleavage-proposal_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "defuse-2018-furin-cleavage-proposal",
+    "title": "The 2018 DEFUSE proposal: a pre-pandemic blueprint to insert furin cleavage sites into bat SARS-related coronaviruses",
+    "direction": "lab-leak",
+    "evidence_type": "documentary",
+    "claim_confidence": 0.95,
+    "support_strength": "moderate",
+    "claim": "In early 2018 a consortium led by EcoHealth Alliance (Peter Daszak), with the University of North Carolina (Ralph Baric), the Wuhan Institute of Virology (Zhengli Shi), and Duke-NUS (Linfa Wang), submitted a grant proposal named DEFUSE to DARPA's PREEMPT program. The proposal described building full-length infectious clones of bat SARS-related coronaviruses and inserting \"human-specific\" proteolytic (furin) cleavage sites into spike proteins, with some experimental work to be performed at relatively low biosafety. DARPA rejected the proposal; the document was leaked publicly in September 2021.",
+    "evidence_quality": "This is documentary evidence of high authenticity but indirect probative value. The proposal is a real primary document, leaked by the DRASTIC research collective and reported by The Intercept (an established outlet) in September 2021; its authenticity was not disputed by EcoHealth's president. So the claim \"this proposal existed and said these things\" is very well supported. What it does NOT establish is that the proposed work was ever performed: DARPA rejected the proposal, and there is no direct evidence the rejected experiments were carried out (in the US, in Wuhan, or anywhere). The document proves pre-pandemic *intent and capability* to engineer exactly the kind of feature SARS-CoV-2 has — which is circumstantially striking — but intent is not execution.",
+    "strongest_counterargument": "Several points cut against treating DEFUSE as strong origin evidence:\n- **Rejection, no demonstrated execution.** DARPA declined to fund DEFUSE. There is no released evidence that the furin-site insertion work was performed, so the document cannot show that SARS-CoV-2 was made this way.\n- **Andersen's S2′ objection.** Kristian Andersen (a natural-origin proponent and lead author of \"The Proximal Origin of SARS-CoV-2\") has argued DEFUSE is largely irrelevant to origins because, on his reading, the proposal's cleavage-site language concerns a different site (the S2′ position) and proteolytic cleavage sites can be activated by various enzymes, not specifically furin at S1/S2. (This is contested; the proposal does explicitly reference furin and the S1/S2 region, so the dispute is partly interpretive.)\n- **Furin sites can arise naturally.** Furin cleavage sites occur across other coronaviruses (e.g., some betacoronaviruses, MERS lineage, HKU1) and can emerge via natural recombination or in-host evolution. So the existence of the feature in SARS-CoV-2 does not by itself require engineering, and a documented plan to insert one does not prove insertion occurred.",
+    "confidence_assessment": "- **Claim confidence:** 0.95 — The existence and contents of the DEFUSE proposal are very well documented (leaked primary document, reported by The Intercept, authenticity not disputed by EcoHealth). The 0.05 discount is mainly for the BSL-2/low-biosafety specifics, where the exact proposal wording is harder to pin down than the furin/cleavage-site language, and for interpretive disputes (e.g., S2′ vs S1/S2) about what precisely was meant.\n- **Support strength:** moderate (for lab-leak) — A documented, detailed, pre-pandemic plan by a consortium including WIV to insert furin/human-specific cleavage sites into bat SARS-related CoVs is a genuinely notable coincidence given SARS-CoV-2's uniquely anomalous furin site. It raises the prior that lab manipulation was plausible and available. But because the proposal was rejected and no execution is demonstrated, it is suggestive circumstantial/documentary evidence, not proof — hence moderate rather than strong.\n- **Net:** A calibrated reasoner should treat DEFUSE as strong evidence of pre-pandemic intent and capability to build SARS-CoV-2-like features, which meaningfully raises the lab-origin hypothesis, while remembering that a rejected, unexecuted blueprint is not evidence the virus was actually engineered.",
+    "source_path": "evidence/defuse-2018-furin-cleavage-proposal.md",
+    "citations": [
+      {
+        "source_id": "src_069db05f7fe3",
+        "citation": "Lerner, S. & Hibbett, M. (2021). \"Leaked Grant Proposal Details High-Risk Coronavirus Research.\" The Intercept, Sept 23, 2021. https://theintercept.com/2021/09/23/coronavirus-research-grant-darpa/",
+        "urls": [
+          "https://theintercept.com/2021/09/23/coronavirus-research-grant-darpa/"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_9d3852b637f6",
+        "citation": "U.S. Right To Know. \"US scientists proposed to make viruses with unique features of SARS-CoV-2 in Wuhan.\" https://usrtk.org/covid-19-origins/scientists-proposed-making-viruses-with-unique-features-of-sars-cov-2-in-wuhan/",
+        "urls": [
+          "https://usrtk.org/covid-19-origins/scientists-proposed-making-viruses-with-unique-features-of-sars-cov-2-in-wuhan/"
+        ],
+        "source_class": "commentary_or_advocacy",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_66805d9b8e05",
+        "citation": "DRASTIC research collective (2021–2022). Release and analysis of the DEFUSE proposal documents. (DRASTIC, \"Project DEFUSE\" materials; leaked Sept 2021.) Referenced via The Intercept and USRTK above.",
+        "urls": [],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_bbef1f549a01",
+        "citation": "Andersen, K.G., Rambaut, A., Lipkin, W.I., Holmes, E.C. & Garry, R.F. (2020). \"The proximal origin of SARS-CoV-2.\" Nature Medicine 26, 450–452. https://doi.org/10.1038/s41591-020-0820-9 (natural-origin position whose authors, esp. Andersen, have argued DEFUSE is of limited relevance to origins).",
+        "urls": [
+          "https://doi.org/10.1038/s41591-020-0820-9"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "A proposed experimental capability and conceptual match are treated as evidence that related work may have been performed."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on required match specificity: general cleavage-site work, S1/S2 furin insertion, or the exact SARS-CoV-2 sequence and backbone."
+    ],
+    "coverage_gaps": [
+      "No verified execution record, precursor sequence, laboratory notebook, or chain connecting DEFUSE work to SARS-CoV-2 is supplied."
+    ],
+    "correlation_risks": [
+      "One of three retained DEFUSE write-ups describing the same proposal; the cluster must count once."
+    ],
+    "capability_limits": [
+      "Document interpretation depends on completeness, provenance, surrounding context, and access to the original record."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "The proposal is documented; execution and causal connection are not."
+      ],
+      "ingestion_conditional": [
+        "Assessment is sensitive to access to unpublished work records and complete proposal correspondence."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "A blueprint can be treated as opportunity evidence or, more strongly and controversially, as a near-match to the event."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Preserve the distinction between capability, intention, execution, and causation.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

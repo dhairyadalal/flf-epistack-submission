@@ -1,0 +1,129 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_two-lineages-a-b-multiple-introductions_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "two-lineages-a-b-multiple-introductions",
+    "title": "Two distinct early lineages (A and B) and the inference of multiple market spillovers",
+    "direction": "natural-origin",
+    "evidence_type": "genomic",
+    "claim_confidence": 0.85,
+    "support_strength": "moderate",
+    "claim": "Before February 2020, SARS-CoV-2 genomic diversity comprised two distinct lineages, A and B, separated by exactly two nucleotide substitutions (C8782T and T28144C), with no intermediate haplotypes that survive scrutiny. Pekar et al. (2022) argue this pattern is best explained by at least two independent zoonotic introductions into humans around mid-to-late November 2019, and that both lineages have now been detected in samples tied to the Huanan Seafood Market. The two-introduction inference is the contested part; the descriptive genomic facts are not.",
+    "evidence_quality": "The descriptive genomic facts (two lineages, two defining mutations, scarcity of clean intermediates, market detections) are well-replicated and drawn from peer-reviewed work: Pekar et al. 2022 in *Science* and Liu et al. 2023 in *Nature*. These are strong.\n\nThe *interpretation* — that the A/B split implies at least two separate spillovers rather than one introduction that diversified post-spillover — rests on a Bayesian phylodynamic model and is genuinely contested. It is a single analytical pipeline from one closely associated research group (Pekar, Worobey, Wertheim, Andersen and colleagues), and the inference depends on modeling assumptions (clock model, treatment of polytomies, the rooting/recCA constraints, and the structure of the hypothesis test). An erratum (Science 2023, doi:10.1126/science.adl0585) corrected aspects of the original article. So: robust facts, model-dependent conclusion.",
+    "strongest_counterargument": "The two-introduction inference has a serious, specific methodological challenge. McCowan (2025, arXiv:2502.20076, preprint, not yet peer-reviewed) argues that Pekar et al.'s support for multiple introductions is \"an artefact of an imbalanced hypothesis testing framework.\" The critique identifies concrete asymmetries — claimed including a coding/syntax error undercounting one-introduction likelihoods, an erroneous normalization inflating two-introduction likelihoods, and non-exclusive marginalization causing double-counting — such that the single-introduction model was effectively tested under stricter conditions. McCowan reports that when the framework is balanced, the apparent support for two introductions largely collapses and a single introduction \"cannot be reliably excluded.\" A related line (Bayesian re-analyses of early topology; Kumar/Pond-adjacent work) argues the model is biased against basal polytomies, weakening the rejection of a single ancestor.\n\nCrucially, even a single introduction is fully compatible with a natural (market/animal) origin: a critique of *this specific inference* is not evidence for a lab leak. It mainly downgrades the strength, not the direction, of this item. Note also McCowan's preprint is not peer-reviewed and had not, as of this writing, received a published formal reply from the Pekar group; this is an open dispute, not a settled refutation.",
+    "confidence_assessment": "- **Claim confidence:** 0.85 — The genomic description (two lineages, two mutations, both present in market-linked samples) is solidly established. The \"at least two separate spillovers\" inference is more like ~0.55–0.65 on its own given the live methodological dispute; the 0.85 reflects the claim as written, whose load-bearing factual core (the lineage structure and market detections) is very likely true even if the introduction-count is uncertain.\n- **Support strength:** moderate — for natural origin. If two independent introductions are real, it strongly favors repeated zoonotic spillover at a venue selling live mammals, since one lab escape most plausibly seeds one lineage. But the inference is contested, and even the single-introduction alternative remains consistent with a market origin, so this evidence shifts the question less than the original framing suggests.\n- **Net:** A calibrated reasoner should treat the two-lineage genomic pattern as real and market-linked, take the \"two spillovers\" claim as suggestive-but-disputed, and weight it as moderate support for natural origin rather than a decisive argument.",
+    "source_path": "evidence/two-lineages-a-b-multiple-introductions.md",
+    "citations": [
+      {
+        "source_id": "src_cdf8b0ed663c",
+        "citation": "Pekar, J. E., Magee, A., Parker, E., Moshiri, N., Izhikevich, K., Havens, J. L., Gangavarapu, K., ... Wertheim, J. O., Andersen, K. G., Suchard, M. A., Rambaut, A., Robertson, D. L., Worobey, M. (2022). The molecular epidemiology of multiple zoonotic origins of SARS-CoV-2. *Science*, 377(6609), 960–966. https://doi.org/10.1126/science.abp8337 (open access: https://pmc.ncbi.nlm.nih.gov/articles/PMC9348752/)",
+        "urls": [
+          "https://doi.org/10.1126/science.abp8337",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC9348752/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_5cfd3ac02634",
+        "citation": "Erratum for \"The molecular epidemiology of multiple zoonotic origins of SARS-CoV-2.\" (2023). *Science*. https://doi.org/10.1126/science.adl0585",
+        "urls": [
+          "https://doi.org/10.1126/science.adl0585"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_9ae7140dfa62",
+        "citation": "Liu, W. J., Liu, P., Lei, W., Jia, Z., He, X., Shi, W., ... Gao, G. F. (2023). Surveillance of SARS-CoV-2 at the Huanan Seafood Market. *Nature*, 622, 318–322. https://doi.org/10.1038/s41586-023-06043-2 (open access: https://www.nature.com/articles/s41586-023-06043-2)",
+        "urls": [
+          "https://doi.org/10.1038/s41586-023-06043-2",
+          "https://www.nature.com/articles/s41586-023-06043-2"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_d4a518675a2a",
+        "citation": "McCowan, A. (2025). Purported quantitative support for multiple introductions of SARS-CoV-2 into humans is an artefact of an imbalanced hypothesis testing framework. *arXiv* preprint (not peer-reviewed). https://arxiv.org/abs/2502.20076",
+        "urls": [
+          "https://arxiv.org/abs/2502.20076"
+        ],
+        "source_class": "preprint",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_eea39779bed4",
+        "citation": "Bayesian Re-Analysis of the Phylogenetic Topology of Early SARS-CoV-2 Case Sequences (2025). *arXiv* preprint. https://arxiv.org/abs/2510.01484",
+        "urls": [
+          "https://arxiv.org/abs/2510.01484"
+        ],
+        "source_class": "preprint",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Two early lineages and the absence of accepted intermediates are modeled as multiple introductions rather than rapid divergence after one introduction."
+    ],
+    "policy_sensitivities": [
+      "Conclusion depends on topology constraints, inclusion of disputed genomes, model symmetry, and error corrections."
+    ],
+    "coverage_gaps": [
+      "Early sequence sampling is incomplete, and disputed intermediate genomes and model implementations require independent reproduction."
+    ],
+    "correlation_risks": [
+      "Duplicate of the two-zoonotic-introductions item and overlaps market-linked sequence evidence."
+    ],
+    "capability_limits": [
+      "Assessing phylogenetic or genomic inference requires sequence-level analysis and domain expertise beyond the supplied summary."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Descriptive lineage differences are stronger than the inferred number of introductions."
+      ],
+      "ingestion_conditional": [
+        "Missing or excluded early genomes can alter topology."
+      ],
+      "capability_conditional": [
+        "Independent adjudication requires reproducing the phylogenetic simulations and code corrections."
+      ],
+      "framing_conditional": [
+        "Even rejection of two introductions does not select a lab origin over a single zoonotic introduction."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Count the descriptive lineage observation once and retain competing introduction models.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

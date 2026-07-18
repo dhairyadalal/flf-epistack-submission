@@ -1,0 +1,526 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "covid-origins",
+  "reviewer": "OpenAI Codex",
+  "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus",
+  "reviews": {
+    "2018-state-dept-cables-biosafety-warnings": {
+      "framing_assumptions": ["A staffing concern at a high-containment facility is treated as relevant to the probability of a specific accident involving a possibly different laboratory workflow."],
+      "policy_sensitivities": ["Weight changes sharply depending on whether the policy admits retrospective circumstantial indicators or requires incident-specific evidence."],
+      "coverage_gaps": ["The complete cable context, facility-specific incident records, and the containment level of the hypothesized precursor work are not established by this item."],
+      "correlation_risks": ["Overlaps with the BSL-2 handling and general WIV biosafety items; these should not be counted as three independent accident signals."],
+      "uncertainty_attribution": {
+        "evidential": ["The cable documents a concern but does not document an accident."],
+        "ingestion_conditional": ["Interpretation depends on whether the full cable or selected quotations and later commentary are used."],
+        "framing_conditional": ["The same document can be framed as a warning, a request for cooperation, or a routine capacity assessment."],
+        "unattributed": []
+      },
+      "notes": ["Primarily bears on opportunity and institutional risk, not direct causation."]
+    },
+    "absence-of-non-market-early-clustering": {
+      "framing_assumptions": ["The observed early-case set is sufficiently representative for absence of a second cluster to be informative."],
+      "policy_sensitivities": ["Assessment changes with case-definition rules, treatment of market environmental samples, and how ascertainment-bias critiques are weighted."],
+      "coverage_gaps": ["Independent raw line-list data and a complete account of early case-finding procedures are unavailable."],
+      "correlation_risks": ["Substantially overlaps the market-spatial-clustering and two-lineage evidence cluster."],
+      "uncertainty_attribution": {
+        "evidential": ["Competing statistical explanations remain for the observed spatial pattern."],
+        "ingestion_conditional": ["The corpus depends on Chinese-curated early-case and environmental records."],
+        "framing_conditional": ["A market epicenter is not automatically identical to the site of the first cross-species or laboratory-associated infection."],
+        "unattributed": []
+      },
+      "notes": ["Separate descriptive facts about observed cases from the inference that no relevant off-market cluster existed."]
+    },
+    "banal-laos-bat-sarbecoviruses-ace2": {
+      "framing_assumptions": ["Natural availability of ACE2-binding relatives materially addresses origin hypotheses centered on an allegedly unnatural receptor-binding domain."],
+      "policy_sensitivities": ["Weight depends on whether the target hypothesis is rational RBD design, any engineering, serial passage, or research-related collection of a natural virus."],
+      "coverage_gaps": ["Known BANAL viruses do not bridge the complete genomic gap or explain every SARS-CoV-2 feature, including the furin-cleavage-site question."],
+      "correlation_risks": ["Shares mechanism-level support with natural-recombination, pangolin-RBD, and genetic-distance items."],
+      "uncertainty_attribution": {
+        "evidential": ["The viruses demonstrate natural ACE2 binding but have important phenotypic and genomic differences from SARS-CoV-2."],
+        "ingestion_conditional": ["Inference is limited by sparse sampling of the wider sarbecovirus reservoir."],
+        "framing_conditional": ["Strong evidence against one rational-design argument is weaker evidence against the broader lab-incident hypothesis."],
+        "unattributed": []
+      },
+      "notes": ["Avoid upgrading a rebuttal to a narrow engineering claim into proof of the complete zoonotic pathway."]
+    },
+    "cgg-cgg-arginine-codon-argument": {
+      "framing_assumptions": ["A rare codon pair is assumed to be more expected under deliberate construction than under natural evolution."],
+      "policy_sensitivities": ["Weight depends on the reference class used for codon rarity and on whether designer preferences are specified before observing the sequence."],
+      "coverage_gaps": ["A preregistered likelihood model for the doublet under competing mechanisms is absent."],
+      "correlation_risks": ["This is one feature of the broader furin-cleavage-site cluster and should not be counted independently from it."],
+      "uncertainty_attribution": {
+        "evidential": ["The observation is real but its likelihood ratio is poorly established."],
+        "framing_conditional": ["Calling the doublet a fingerprint embeds an unstated model of how an engineer would design the sequence."],
+        "unattributed": []
+      },
+      "notes": ["Treat as a low-directness feature argument rather than an independent origin event."]
+    },
+    "china-data-withholding-transparency": {
+      "framing_assumptions": ["Institutional opacity is treated as evidence about the concealed event rather than a general feature of the political environment."],
+      "policy_sensitivities": ["Weight changes with the assumed base rate of data restriction in unrelated Chinese crises and with whether process evidence is admitted into causal assessment."],
+      "coverage_gaps": ["The contents of still-unreleased datasets and the reasons for each restriction are, by definition, unavailable."],
+      "correlation_risks": ["Highly overlaps database-offline, data-deletion, WHO-access, and RaTG13-disclosure items."],
+      "uncertainty_attribution": {
+        "evidential": ["Opacity lowers confidence in all conclusions but is weakly directional between origin hypotheses."],
+        "ingestion_conditional": ["Missing data directly limits what the pipeline can assess."],
+        "framing_conditional": ["The same conduct can be framed as concealment of a lab event, concealment of regulatory failure, or generic authoritarian control."],
+        "unattributed": []
+      },
+      "notes": ["Best represented as a coverage and trust modifier, not a standalone vote for either origin."]
+    },
+    "data-deletion-and-restricted-access": {
+      "framing_assumptions": ["Several heterogeneous access events are grouped as one pattern of suspicious conduct."],
+      "policy_sensitivities": ["The result depends on whether the policy aggregates events by apparent motive or evaluates each event's ordinary administrative base rate separately."],
+      "coverage_gaps": ["Server logs, submitter correspondence, retained database contents, and complete access histories are missing."],
+      "correlation_risks": ["Contains the same underlying events represented separately by database-offline and China-opacity items."],
+      "uncertainty_attribution": {
+        "evidential": ["Deletion or restriction is established more readily than a concealment motive or its relevance to origin."],
+        "ingestion_conditional": ["Unavailable content prevents assessing whether the missing records would be directionally informative."],
+        "framing_conditional": ["Bundling events creates a stronger pattern than evaluating their distinct causes may warrant."],
+        "unattributed": []
+      },
+      "notes": ["Use event-level nodes and shared-event identifiers to avoid pattern inflation."]
+    },
+    "defuse-2018-furin-cleavage-proposal": {
+      "framing_assumptions": ["A proposed experimental capability and conceptual match are treated as evidence that related work may have been performed."],
+      "policy_sensitivities": ["Weight depends on required match specificity: general cleavage-site work, S1/S2 furin insertion, or the exact SARS-CoV-2 sequence and backbone."],
+      "coverage_gaps": ["No verified execution record, precursor sequence, laboratory notebook, or chain connecting DEFUSE work to SARS-CoV-2 is supplied."],
+      "correlation_risks": ["One of three retained DEFUSE write-ups describing the same proposal; the cluster must count once."],
+      "uncertainty_attribution": {
+        "evidential": ["The proposal is documented; execution and causal connection are not."],
+        "ingestion_conditional": ["Assessment is sensitive to access to unpublished work records and complete proposal correspondence."],
+        "framing_conditional": ["A blueprint can be treated as opportunity evidence or, more strongly and controversially, as a near-match to the event."],
+        "unattributed": []
+      },
+      "notes": ["Preserve the distinction between capability, intention, execution, and causation."]
+    },
+    "defuse-furin-preexisting-blueprint": {
+      "framing_assumptions": ["The coincidence between a proposed intervention and a later viral feature is treated as unlikely without a causal connection."],
+      "policy_sensitivities": ["Weight changes with priors for natural cleavage-site emergence and for unfunded or pilot work proceeding outside the grant."],
+      "coverage_gaps": ["Evidence of execution, the exact construct design, and a matching precursor are absent."],
+      "correlation_risks": ["Duplicate DEFUSE evidence cluster; strongly correlated with the furin-site and laboratory-capability items."],
+      "uncertainty_attribution": {
+        "evidential": ["The conceptual resemblance is real but molecular and procedural linkage is unresolved."],
+        "ingestion_conditional": ["Unreleased experimental records could materially change the assessment in either direction."],
+        "framing_conditional": ["Calling the proposal a blueprint gives more causal force than calling it evidence of relevant research interest."],
+        "unattributed": []
+      },
+      "notes": ["Do not add this item's weight to the other DEFUSE summaries."]
+    },
+    "defuse-grant-proposal-blueprint": {
+      "framing_assumptions": ["Documented intent and capability among named actors are treated as increasing the probability of undocumented execution."],
+      "policy_sensitivities": ["Assessment depends on whether primary proposal text, later advocacy interpretations, or molecular-specificity criteria dominate source selection."],
+      "coverage_gaps": ["No direct record shows the proposed experiment occurred or produced a SARS-CoV-2-like virus."],
+      "correlation_risks": ["Third representation of the same DEFUSE proposal; duplicate prose broadens citations but not evidential independence."],
+      "uncertainty_attribution": {
+        "evidential": ["Proposal existence is high-confidence; causal implication is low-directness."],
+        "ingestion_conditional": ["The inference is bounded by absent laboratory and funding records."],
+        "framing_conditional": ["The label blueprint can obscure the gap between a general experimental plan and the specific observed virus."],
+        "unattributed": []
+      },
+      "notes": ["Model this as the same underlying event as the two other DEFUSE documents."]
+    },
+    "early-cases-without-market-link": {
+      "framing_assumptions": ["Lack of reported market exposure is treated as evidence that the market was not the origin rather than as expected incomplete linkage during community spread."],
+      "policy_sensitivities": ["Conclusion changes with case inclusion dates, direct-versus-geographic linkage rules, and confidence in official case summaries."],
+      "coverage_gaps": ["Raw patient line lists, complete exposure histories, and independent early surveillance records are unavailable."],
+      "correlation_risks": ["Uses the same early-case dataset as market-clustering and absence-of-non-market-cluster items, sometimes to argue the opposite direction."],
+      "uncertainty_attribution": {
+        "evidential": ["Reported non-linkage is descriptive; its causal implication is contested."],
+        "ingestion_conditional": ["Case histories were summarized and curated rather than independently available."],
+        "framing_conditional": ["Direct exposure, residence near the market, and outbreak epicenter are distinct relationships."],
+        "unattributed": []
+      },
+      "notes": ["Represent opposing interpretations as reviews of one shared dataset, not independent evidence nodes."]
+    },
+    "environmental-samples-wildlife-stall-positivity": {
+      "framing_assumptions": ["Spatial concentration of viral material at wildlife stalls is treated as evidence of infected animals rather than human shedding in a transmission site."],
+      "policy_sensitivities": ["Weight depends on whether environmental co-location without a positive animal is admitted as direct, indirect, or merely contextual evidence."],
+      "coverage_gaps": ["No pre-closure animal samples, complete stall-level sampling frame, or direction-of-shedding evidence is available."],
+      "correlation_risks": ["Overlaps raccoon-dog co-location, live-mammal sales, and general market-spatial evidence."],
+      "uncertainty_attribution": {
+        "evidential": ["Co-location is established more strongly than the animal-to-human direction of transmission."],
+        "ingestion_conditional": ["Sampling occurred after market closure and after human transmission, limiting causal resolution."],
+        "framing_conditional": ["An amplifier-market and a spillover-market can produce similar environmental patterns."],
+        "unattributed": []
+      },
+      "notes": ["Keep observation, mechanism, and origin-site inference as separate claims."]
+    },
+    "fbi-doe-cia-lab-leaning-assessments": {
+      "framing_assumptions": ["Agency expertise and classified access are treated as informative even when the underlying evidence cannot be inspected."],
+      "policy_sensitivities": ["Weight depends on deference policy, confidence-language interpretation, and whether shared intelligence inputs are treated as independent judgments."],
+      "coverage_gaps": ["Underlying intelligence, agency likelihood models, dissent, and reasons for assessment changes are largely classified."],
+      "correlation_risks": ["Agencies share information; this overlaps the ODNI split and House-report items and is not three independent evidence streams."],
+      "uncertainty_attribution": {
+        "evidential": ["Public confidence levels are low to moderate and do not expose the evidence basis."],
+        "ingestion_conditional": ["The public corpus excludes classified inputs available to the agencies."],
+        "capability_conditional": ["An external reviewer cannot audit classified-source credibility or analytic tradecraft."],
+        "framing_conditional": ["Agency conclusions are expert assessments about evidence, not new primary evidence."],
+        "unattributed": []
+      },
+      "notes": ["Render as opaque deference evidence with an explicit correlation warning."]
+    },
+    "furin-cleavage-site-prra-insertion": {
+      "framing_assumptions": ["Uniqueness among sampled close relatives is treated as evidence of artificial introduction rather than incomplete natural sampling."],
+      "policy_sensitivities": ["Weight depends on which coronavirus reference class is used and whether feature rarity is converted into a preregistered likelihood ratio."],
+      "coverage_gaps": ["The natural sarbecovirus reservoir is sparsely sampled, and no complete experimental-record corpus is available."],
+      "correlation_risks": ["Central node shared by DEFUSE, CGG-codon, natural-recombination, and serial-passage arguments."],
+      "uncertainty_attribution": {
+        "evidential": ["The feature is unusual in the sampled subgenus, but mechanism discrimination remains contested."],
+        "ingestion_conditional": ["Future natural sampling or laboratory records could strongly change its weight."],
+        "framing_conditional": ["Unusual is not synonymous with engineered; the inference requires explicit competing-mechanism priors."],
+        "unattributed": []
+      },
+      "notes": ["Treat as a contested feature requiring several dependent subarguments, not a standalone smoking gun."]
+    },
+    "house-covid-select-final-report-lab-leak": {
+      "framing_assumptions": ["A congressional committee conclusion is treated as epistemic evidence rather than a political synthesis of already-available evidence."],
+      "policy_sensitivities": ["Weight changes with policies for partisan institutions, expert testimony, and separation of primary evidence from institutional judgment."],
+      "coverage_gaps": ["The item does not identify a new public primary datum uniquely supporting the report's bottom-line conclusion."],
+      "correlation_risks": ["Repackages DEFUSE, biosafety, intelligence, and conduct evidence already represented elsewhere."],
+      "uncertainty_attribution": {
+        "evidential": ["The committee's conclusion is clear; the incremental evidential content is uncertain."],
+        "framing_conditional": ["Institutional conclusions can be evidence of serious consideration without being independent evidence of the event."],
+        "unattributed": []
+      },
+      "notes": ["Separate the report's primary documents from its evaluative conclusion."]
+    },
+    "huanan-market-spatial-clustering-early-cases": {
+      "framing_assumptions": ["The reconstructed early-case locations are representative enough for spatial centrality to identify an outbreak epicenter."],
+      "policy_sensitivities": ["Weight depends on null model, case-set definition, ascertainment-bias treatment, and distinction between epicenter and spillover site."],
+      "coverage_gaps": ["Independent raw line-list data, original geocoding, and complete case-finding procedures are unavailable."],
+      "correlation_risks": ["Same market/case dataset underlies several natural-origin evidence items and should be clustered."],
+      "uncertainty_attribution": {
+        "evidential": ["Spatial centrality is supported for the available dataset; causal interpretation remains disputed."],
+        "ingestion_conditional": ["The available dataset is reconstructed from official reports and figures rather than independently released raw data."],
+        "capability_conditional": ["Adjudicating competing spatial models requires specialist statistical review."],
+        "framing_conditional": ["The first detected transmission center may differ from the upstream origin event."],
+        "unattributed": []
+      },
+      "notes": ["A strong candidate for the first full-content audit because it is load-bearing and methodologically contested."]
+    },
+    "huanan-market-spatial-clustering-two-lineages": {
+      "framing_assumptions": ["Spatial clustering and two early lineages are combined as mutually reinforcing evidence of repeated market spillover."],
+      "policy_sensitivities": ["Result changes with spatial ascertainment assumptions and with the phylogenetic model used to infer one versus multiple introductions."],
+      "coverage_gaps": ["Raw early-case data, complete early sequences, and direct animal infections are absent."],
+      "correlation_risks": ["Composite of two separately repeated evidence clusters; combining them can hide dependence and double counting."],
+      "uncertainty_attribution": {
+        "evidential": ["Both spatial and lineage patterns are observed, but each causal inference is independently contested."],
+        "ingestion_conditional": ["Both components depend on incomplete early Chinese data."],
+        "framing_conditional": ["Convergence is weaker when the components share the same market-linked sampling process."],
+        "unattributed": []
+      },
+      "notes": ["Decompose this compound item before assigning weight."]
+    },
+    "live-susceptible-mammals-on-sale-wuhan-markets": {
+      "framing_assumptions": ["Presence of susceptible animals creates a mechanism-bearing prior for market spillover even without an identified infected animal."],
+      "policy_sensitivities": ["Weight depends on whether opportunity evidence is evaluated symmetrically for wildlife-trade and laboratory scenarios."],
+      "coverage_gaps": ["Animals present during the relevant period were removed before virological sampling; supply-chain infection data are incomplete."],
+      "correlation_risks": ["Overlaps environmental-stall and raccoon-dog genetic evidence; all bear on the same market-animal mechanism."],
+      "uncertainty_attribution": {
+        "evidential": ["Animal presence and susceptibility are better established than infection and transmission."],
+        "ingestion_conditional": ["Missing contemporaneous animal samples prevent direct confirmation."],
+        "framing_conditional": ["Opportunity supports plausibility but is weaker than evidence of the actual causal event."],
+        "unattributed": []
+      },
+      "notes": ["Compare explicitly with laboratory-opportunity evidence using the same evidential category."]
+    },
+    "menachery-baric-2015-shc014-chimera": {
+      "framing_assumptions": ["Demonstrated capability to construct a SARS-like chimera is treated as evidence relevant to a later event involving different actors, viruses, and records."],
+      "policy_sensitivities": ["Weight depends on whether general capability evidence is admitted and how collaboration links are translated into event probability."],
+      "coverage_gaps": ["No specific construct, precursor, experiment, or chain connects SHC014 work to SARS-CoV-2."],
+      "correlation_risks": ["Correlated with DEFUSE, WIV biosafety, and general gain-of-function capability arguments."],
+      "uncertainty_attribution": {
+        "evidential": ["Capability is documented; relevance to the specific origin event is indirect."],
+        "framing_conditional": ["A method's existence establishes possibility, not that it was used in the event under investigation."],
+        "unattributed": []
+      },
+      "notes": ["Keep method capability separate from actor opportunity and event evidence."]
+    },
+    "mojiang-mine-ratg13-provenance": {
+      "framing_assumptions": ["Ambiguity around miner illness and sample naming is treated as relevant to whether WIV possessed a closer precursor."],
+      "policy_sensitivities": ["Weight changes with policies for contested theses, later addenda, advocacy reconstructions, and institutional disclosure conduct."],
+      "coverage_gaps": ["Complete miner clinical samples, WIV sample inventory, sequencing history, and database records are unavailable."],
+      "correlation_risks": ["Shares underlying mine, RaTG13, and disclosure events with the RaTG13-secrecy item."],
+      "uncertainty_attribution": {
+        "evidential": ["Mine sampling and RaTG13 provenance are documented; the miner-passage narrative is not genetically established."],
+        "ingestion_conditional": ["Missing sample records and untranslated or inaccessible materials constrain assessment."],
+        "framing_conditional": ["Provenance irregularity can be treated as ordinary scientific disclosure failure or evidence of concealment."],
+        "unattributed": []
+      },
+      "notes": ["Neutral/context classification is appropriate unless a direct precursor link is established."]
+    },
+    "molecular-clock-tmrca-nov-2019": {
+      "framing_assumptions": ["The estimated common-ancestor date constrains competing emergence narratives and the duration of unobserved circulation."],
+      "policy_sensitivities": ["Weight depends on sequence inclusion, clock model, recombination assumptions, and treatment of uncertain early genomes."],
+      "coverage_gaps": ["The earliest infections and potentially informative unsampled or withheld sequences are absent."],
+      "correlation_risks": ["Correlated with early-case timing and lineage-introduction analyses that use overlapping sequence data."],
+      "uncertainty_attribution": {
+        "evidential": ["Clock estimates have model and sampling uncertainty even when studies agree broadly on timing."],
+        "ingestion_conditional": ["Missing early sequences can shift estimated ancestry and interval width."],
+        "capability_conditional": ["Independent assessment requires sequence-level phylogenetic analysis."],
+        "unattributed": []
+      },
+      "notes": ["Use as a temporal constraint, not a direct discriminator unless a hypothesis makes a distinct timing prediction."]
+    },
+    "natural-recombination-sarbecoviruses": {
+      "framing_assumptions": ["Demonstrating a natural mechanism for mosaic genomes reduces the need to posit engineering for SARS-CoV-2's feature combination."],
+      "policy_sensitivities": ["Weight depends on whether mechanism plausibility or identification of the actual ancestral pathway is required."],
+      "coverage_gaps": ["No sampled recombination chain reconstructs the complete SARS-CoV-2 progenitor."],
+      "correlation_risks": ["Mechanistically overlaps BANAL, pangolin-RBD, genetic-distance, and furin-site natural-origin arguments."],
+      "uncertainty_attribution": {
+        "evidential": ["Natural recombination is well established generally; its specific historical role here remains inferred."],
+        "ingestion_conditional": ["Sparse wildlife sampling limits reconstruction of the actual pathway."],
+        "framing_conditional": ["A natural mechanism rebuts necessity of engineering but does not exclude collection or laboratory passage of a natural virus."],
+        "unattributed": []
+      },
+      "notes": ["Distinguish mechanism sufficiency from event identification."]
+    },
+    "no-close-progenitor-or-intermediate-host": {
+      "framing_assumptions": ["Failure to find a close progenitor or host is treated as less expected under zoonosis than under a laboratory incident."],
+      "policy_sensitivities": ["Weight depends on search-effort estimates, reservoir size, political access, and expected discovery time under each hypothesis."],
+      "coverage_gaps": ["The relevant wildlife reservoir, farms, supply chains, and laboratory inventories were not comprehensively sampled."],
+      "correlation_risks": ["Overlaps no-source-animal and RaTG13/BANAL genetic-distance items."],
+      "uncertainty_attribution": {
+        "evidential": ["The absence is real in the observed corpus, but the likelihood of non-discovery under each hypothesis is uncertain."],
+        "ingestion_conditional": ["Sampling and access limitations directly determine the observed absence."],
+        "framing_conditional": ["Absence of an animal link and absence of a laboratory precursor are symmetric missing-link problems unless search efforts are compared."],
+        "unattributed": []
+      },
+      "notes": ["Requires an explicit missingness model before receiving directional weight."]
+    },
+    "no-source-animal-ever-found": {
+      "framing_assumptions": ["A zoonotic market origin should have produced a detectable infected animal despite the delay and removal of live animals."],
+      "policy_sensitivities": ["Weight depends on the counterfactual probability of detection given actual sampling timing and supply-chain disruption."],
+      "coverage_gaps": ["No contemporaneous animal testing occurred at the market, and upstream farms and suppliers were incompletely investigated."],
+      "correlation_risks": ["Narrower version of the no-close-progenitor/intermediate-host evidence and correlated with market-animal items."],
+      "uncertainty_attribution": {
+        "evidential": ["No positive source animal has been reported; the expected detection rate is unresolved."],
+        "ingestion_conditional": ["Late and incomplete sampling makes the negative result coverage-dependent."],
+        "framing_conditional": ["Not finding an animal is not equivalent to sampling the relevant animals and obtaining negative results."],
+        "unattributed": []
+      },
+      "notes": ["Represent as a failed-detection claim with explicit search coverage."]
+    },
+    "odni-ic-split-assessment-2021-2023": {
+      "framing_assumptions": ["A split among intelligence agencies is treated as evidence that both hypotheses remain plausible and that public evidence is incomplete."],
+      "policy_sensitivities": ["Interpretation depends on deference to classified expertise and whether agency counts or confidence-weighted reasoning are used."],
+      "coverage_gaps": ["Underlying reports, sources, interagency dependencies, and analytic methods are classified."],
+      "correlation_risks": ["Same institutional evidence family as the FBI/DOE/CIA and House-report items."],
+      "uncertainty_attribution": {
+        "evidential": ["The split and confidence labels are public; their evidential basis is not."],
+        "ingestion_conditional": ["Public assessors cannot ingest the classified corpus."],
+        "capability_conditional": ["Agency tradecraft and source reliability cannot be independently scored from summaries."],
+        "framing_conditional": ["Disagreement may indicate genuine evidential ambiguity, different agency access, or different analytic priors."],
+        "unattributed": []
+      },
+      "notes": ["Useful as a transparency limit and disagreement record, not a poll of independent experts."]
+    },
+    "pangolin-cov-rbd-five-contact-residues": {
+      "framing_assumptions": ["Natural occurrence of similar RBD residues in pangolin coronaviruses demonstrates a plausible natural source for that genomic component."],
+      "policy_sensitivities": ["Weight depends on whether mosaic feature plausibility or a complete direct progenitor is required."],
+      "coverage_gaps": ["Pangolin viruses are not close whole-genome progenitors, and the precise recombination pathway is unsampled."],
+      "correlation_risks": ["Correlated with natural-recombination and BANAL ACE2-binding evidence."],
+      "uncertainty_attribution": {
+        "evidential": ["Shared residues support natural availability but do not identify the host or route of emergence."],
+        "ingestion_conditional": ["Wildlife-virus sampling remains sparse and geographically uneven."],
+        "framing_conditional": ["Evidence against an unprecedented engineered RBD is not proof of a pangolin-mediated spillover."],
+        "unattributed": []
+      },
+      "notes": ["Keep component-level ancestry distinct from whole-virus ancestry."]
+    },
+    "proximal-origin-private-doubts-controversy": {
+      "framing_assumptions": ["Private uncertainty, rapid opinion change, or institutional coordination is treated as evidence about the reliability or independence of the published conclusion."],
+      "policy_sensitivities": ["Weight depends on whether discourse/process evidence is admitted and how preliminary private deliberation is distinguished from suppression."],
+      "coverage_gaps": ["Complete message context, evolving analyses, interviews, and contemporaneous evidence available to participants are not fully represented."],
+      "correlation_risks": ["Overlaps broader conduct, opacity, and institutional-trust evidence rather than providing new biological evidence."],
+      "uncertainty_attribution": {
+        "evidential": ["Private doubts are documented; coercion, bad faith, and the scientific correctness of the final paper are separate claims."],
+        "ingestion_conditional": ["Selective message release can materially alter perceived narrative."],
+        "framing_conditional": ["Normal scientific updating and politically influenced consensus formation can resemble one another in partial records."],
+        "unattributed": []
+      },
+      "notes": ["Primarily changes trust and deference weights; it is not direct origin evidence."]
+    },
+    "raccoon-dog-susceptible-species-genetic-tracing": {
+      "framing_assumptions": ["Co-location of susceptible-animal DNA and viral RNA is treated as evidence that animals, rather than nearby humans, shed the virus."],
+      "policy_sensitivities": ["Weight depends on standards for metagenomic co-occurrence, contamination controls, and whether indirect animal evidence is admitted."],
+      "coverage_gaps": ["No intact infected animal, animal serology, or temporal sample establishes direction of transmission."],
+      "correlation_risks": ["Same market environmental samples support the wildlife-stall positivity item; do not count separately without decomposing claims."],
+      "uncertainty_attribution": {
+        "evidential": ["Species DNA and viral RNA co-occur, but causal direction is unresolved."],
+        "ingestion_conditional": ["Samples were environmental and collected after market closure."],
+        "framing_conditional": ["The result can support an animal-source model or a contaminated-stall model depending on causal assumptions."],
+        "unattributed": []
+      },
+      "notes": ["A prime example where provenance is strong but inference structure must remain explicit."]
+    },
+    "ratg13-banal-genetic-distance": {
+      "framing_assumptions": ["Large divergence from known relatives is used to constrain both direct natural and known-laboratory precursor narratives."],
+      "policy_sensitivities": ["Weight depends on molecular-clock assumptions and the expected unsampled diversity in wildlife and laboratory collections."],
+      "coverage_gaps": ["Unknown wildlife viruses and unreleased laboratory sequences prevent a complete nearest-neighbor assessment."],
+      "correlation_risks": ["Shares source and mechanism base with BANAL, natural-recombination, and no-close-progenitor items."],
+      "uncertainty_attribution": {
+        "evidential": ["Known viruses are too divergent to be direct progenitors; the location of the missing branch is unknown."],
+        "ingestion_conditional": ["The result is explicitly conditional on the viruses that have been sampled or disclosed."],
+        "framing_conditional": ["Distance weakens simplistic versions of both hypotheses more than it discriminates between them."],
+        "unattributed": []
+      },
+      "notes": ["Appropriately treated as common constraint rather than a directional vote."]
+    },
+    "ratg13-mojiang-provenance-secrecy": {
+      "framing_assumptions": ["Delayed disclosure and renaming are treated as possible evidence of concealment of a more relevant laboratory lineage."],
+      "policy_sensitivities": ["Weight changes with norms for virology naming, publication disclosure, and institutional transparency."],
+      "coverage_gaps": ["Complete sample inventories, sequence history, mine records, and internal WIV communications are unavailable."],
+      "correlation_risks": ["Same Mojiang/RaTG13 event as the neutral provenance item and correlated with database and opacity evidence."],
+      "uncertainty_attribution": {
+        "evidential": ["Disclosure irregularities are more established than a causal relationship to SARS-CoV-2."],
+        "ingestion_conditional": ["Missing institutional records define the central uncertainty."],
+        "framing_conditional": ["The same irregularity can be framed as poor disclosure practice or purposeful concealment."],
+        "unattributed": []
+      },
+      "notes": ["Do not count the conduct framing separately from the neutral Mojiang provenance record."]
+    },
+    "rbd-not-optimal-for-human-ace2": {
+      "framing_assumptions": ["A rational designer would have used then-current computational predictions and selected an apparently optimal ACE2-binding solution."],
+      "policy_sensitivities": ["Weight depends on whether the competing laboratory hypothesis specifies rational design, directed evolution, serial passage, or collection of a natural virus."],
+      "coverage_gaps": ["The item does not test all plausible engineering or passage workflows."],
+      "correlation_risks": ["Correlated with BANAL natural ACE2 binding and broader RBD-naturalness arguments."],
+      "uncertainty_attribution": {
+        "evidential": ["Non-optimality relative to a model is informative mainly about a narrow design strategy."],
+        "framing_conditional": ["The inference weakens substantially when the lab hypothesis does not require rational computational design."],
+        "unattributed": []
+      },
+      "notes": ["Label explicitly as evidence against rational design, not against every research-related origin."]
+    },
+    "sars-cov-1-market-precedent": {
+      "framing_assumptions": ["SARS-CoV-1 is selected as a close reference class for setting prior odds on SARS-CoV-2 emergence."],
+      "policy_sensitivities": ["Weight depends on reference-class choice and how differences in host discovery, surveillance, geography, and laboratory context are handled."],
+      "coverage_gaps": ["The analogy does not supply event-specific evidence about SARS-CoV-2."],
+      "correlation_risks": ["Overlaps the combined SARS-1/MERS zoonotic-precedent item."],
+      "uncertainty_attribution": {
+        "evidential": ["The precedent establishes a real mechanism and prior, but analogy strength is contestable."],
+        "framing_conditional": ["Choosing zoonotic coronavirus precedents rather than laboratory accidents changes the prior before case evidence is considered."],
+        "unattributed": []
+      },
+      "notes": ["Represent as prior/reference-class evidence, not likelihood evidence from the Wuhan event."]
+    },
+    "sars1-mers-zoonotic-precedent": {
+      "framing_assumptions": ["The two recognized deadly coronavirus emergences form an appropriate and sufficiently complete reference class."],
+      "policy_sensitivities": ["Prior odds vary with whether the reference class includes all zoonoses, all laboratory accidents, unresolved outbreaks, or only close coronaviruses."],
+      "coverage_gaps": ["A sample of two confirmed precedents cannot establish a stable base rate and may be selected partly because those cases were resolved."],
+      "correlation_risks": ["Contains SARS-CoV-1 precedent again and should not be added independently to the dedicated SARS-1 item."],
+      "uncertainty_attribution": {
+        "evidential": ["Both precedents are natural; their predictive relevance to this event is uncertain."],
+        "framing_conditional": ["Reference-class construction is a lower-layer judgment that materially sets priors."],
+        "unattributed": []
+      },
+      "notes": ["This item directly illustrates the project's claim that framing enters before assessment."]
+    },
+    "serial-passage-cell-culture-adaptation": {
+      "framing_assumptions": ["A mechanistically possible, signature-free passage pathway receives probability even without positive evidence that it occurred."],
+      "policy_sensitivities": ["Weight depends on whether possibility, demonstrated precedent, or event-specific records are required for inclusion."],
+      "coverage_gaps": ["No precursor, passage series, experimental record, or matching model-system result is supplied."],
+      "correlation_risks": ["Correlated with furin-site, laboratory-capability, WIV-biosafety, and missing-record arguments."],
+      "uncertainty_attribution": {
+        "evidential": ["Plausibility differs across cell types and models; event-specific support is absent."],
+        "ingestion_conditional": ["Unreleased laboratory records prevent a decisive check."],
+        "framing_conditional": ["A hypothesis can become difficult to falsify if every absent signature is treated as expected."],
+        "unattributed": []
+      },
+      "notes": ["Keep mechanistic possibility separate from evidence that the mechanism was used."]
+    },
+    "three-wiv-researchers-sick-nov-2019": {
+      "framing_assumptions": ["A small cluster of autumn respiratory illness among laboratory staff is treated as anomalous relative to the seasonal baseline."],
+      "policy_sensitivities": ["Weight depends on admission of anonymous intelligence reporting and on the base rate assigned to ordinary illness and hospital visits."],
+      "coverage_gaps": ["Medical records, contemporaneous tests, serology, precise dates, and independently attributable identities are unavailable."],
+      "correlation_risks": ["News reports largely trace to overlapping intelligence claims rather than independent witnesses."],
+      "uncertainty_attribution": {
+        "evidential": ["Illness may have occurred, but SARS-CoV-2 etiology is unestablished."],
+        "ingestion_conditional": ["The decisive medical information is not publicly accessible."],
+        "framing_conditional": ["Without a seasonal baseline, ordinary sickness can be selected retrospectively as a suspicious cluster."],
+        "unattributed": []
+      },
+      "notes": ["Do not treat multiple media citations to one intelligence report as corroboration."]
+    },
+    "two-lineages-a-b-multiple-introductions": {
+      "framing_assumptions": ["Two early lineages and the absence of accepted intermediates are modeled as multiple introductions rather than rapid divergence after one introduction."],
+      "policy_sensitivities": ["Conclusion depends on topology constraints, inclusion of disputed genomes, model symmetry, and error corrections."],
+      "coverage_gaps": ["Early sequence sampling is incomplete, and disputed intermediate genomes and model implementations require independent reproduction."],
+      "correlation_risks": ["Duplicate of the two-zoonotic-introductions item and overlaps market-linked sequence evidence."],
+      "uncertainty_attribution": {
+        "evidential": ["Descriptive lineage differences are stronger than the inferred number of introductions."],
+        "ingestion_conditional": ["Missing or excluded early genomes can alter topology."],
+        "capability_conditional": ["Independent adjudication requires reproducing the phylogenetic simulations and code corrections."],
+        "framing_conditional": ["Even rejection of two introductions does not select a lab origin over a single zoonotic introduction."],
+        "unattributed": []
+      },
+      "notes": ["Count the descriptive lineage observation once and retain competing introduction models."]
+    },
+    "two-zoonotic-introductions-lineages-A-B": {
+      "framing_assumptions": ["The two-lineage pattern is treated as more expected from repeated animal exposures than from one introduction followed by early divergence."],
+      "policy_sensitivities": ["Weight changes with corrected Bayes factors, hypothesis symmetry, peer-review thresholds, and treatment of later critiques."],
+      "coverage_gaps": ["Full independent reproduction of the code, model constraints, and disputed early genomes is not part of the baseline."],
+      "correlation_risks": ["Same underlying claim as the other lineage-A/B item and part of the market evidence cluster."],
+      "uncertainty_attribution": {
+        "evidential": ["The two-introduction likelihood is actively disputed and weaker after correction than early headlines implied."],
+        "ingestion_conditional": ["Inference depends on which sequences and critiques enter the corpus."],
+        "capability_conditional": ["Statistical and phylogenetic code review is required to compare the competing analyses."],
+        "framing_conditional": ["The hypothesis comparison may exclude plausible single-zoonosis models if conditions are asymmetric."],
+        "unattributed": []
+      },
+      "notes": ["Merge with its duplicate for weighting while preserving both citation trails."]
+    },
+    "who-china-2021-extremely-unlikely-walkback": {
+      "framing_assumptions": ["WHO's change in public language is treated as evidence about the underlying origin rather than primarily about process and evidential sufficiency."],
+      "policy_sensitivities": ["Weight depends on deference to institutional conclusions and separation of procedural criticism from substantive probability updates."],
+      "coverage_gaps": ["Key data requested by WHO/SAGO remain unavailable, preventing resolution of why confidence should move."],
+      "correlation_risks": ["Overlaps China-data-withholding and general institutional-process evidence."],
+      "uncertainty_attribution": {
+        "evidential": ["The walkback establishes premature closure more clearly than it supports a lab origin."],
+        "ingestion_conditional": ["Institutional uncertainty is explicitly driven by missing requested evidence."],
+        "framing_conditional": ["Reopening a hypothesis is not the same claim as judging it more likely."],
+        "unattributed": []
+      },
+      "notes": ["Represent as a process-correction and uncertainty signal."]
+    },
+    "wiv-bsl2-handling-sars-like-cov": {
+      "framing_assumptions": ["Permitted BSL-2/3 work with novel bat coronaviruses is treated as a materially elevated route to the specific pandemic virus."],
+      "policy_sensitivities": ["Weight depends on contemporaneous biosafety norms, virus pathogenicity known at the time, and whether opportunity evidence is admitted."],
+      "coverage_gaps": ["Facility-specific procedures, incident logs, staff exposure records, and evidence that WIV possessed a direct precursor are absent."],
+      "correlation_risks": ["Overlaps State Department cables, Menachery/Baric capability, DEFUSE, and general lab-opportunity evidence."],
+      "uncertainty_attribution": {
+        "evidential": ["Containment practices are documented more strongly than any causal accident."],
+        "ingestion_conditional": ["Internal incident and inventory records are not public."],
+        "framing_conditional": ["Practice that creates generic opportunity is not event-specific evidence unless the relevant virus and exposure are shown."],
+        "unattributed": []
+      },
+      "notes": ["Evaluate laboratory and market opportunity evidence under parallel standards."]
+    },
+    "wiv-database-offline-sept-2019": {
+      "framing_assumptions": ["Loss of public access shortly before recognized emergence is treated as intentional concealment related to the outbreak."],
+      "policy_sensitivities": ["Weight depends on base rates for research-site outages, exact accessibility timelines, and whether later non-release is bundled with the initial outage."],
+      "coverage_gaps": ["Server logs, maintenance records, internal access, complete database contents, and contemporaneous reasons are unavailable."],
+      "correlation_risks": ["One event already included in the broader data-deletion and China-opacity clusters."],
+      "uncertainty_attribution": {
+        "evidential": ["External inaccessibility is more established than deletion, timing motive, or content relevance."],
+        "ingestion_conditional": ["The database's missing contents directly bound the assessable source universe."],
+        "framing_conditional": ["The same timeline can be framed as suspicious concealment or an ordinary outage later prolonged for security and political reasons."],
+        "unattributed": []
+      },
+      "notes": ["Track access state, content survival, motive, and origin relevance as separate claims."]
+    },
+    "wuhan-lab-geographic-coincidence": {
+      "framing_assumptions": ["Wuhan is selected after the event as a city unusually associated with bat-coronavirus research, making the co-location appear diagnostically rare."],
+      "policy_sensitivities": ["Weight depends on the reference class of cities, labs, outbreak-detection hubs, wildlife trade routes, and whether location hypotheses were specified in advance."],
+      "coverage_gaps": ["No quantified comparison estimates the probability of Wuhan under laboratory and natural-trade pathways using symmetric geographic models."],
+      "correlation_risks": ["Correlated with WIV capability and biosafety evidence, while competing market geography is represented by several overlapping items."],
+      "uncertainty_attribution": {
+        "evidential": ["The co-location is real; its likelihood ratio is not established."],
+        "framing_conditional": ["Choosing the lab, market, city, or regional trade network as the salient geographic unit changes the apparent coincidence."],
+        "unattributed": []
+      },
+      "notes": ["A clear example of reference-class and salience choices entering before assessment."]
+    }
+  }
+}

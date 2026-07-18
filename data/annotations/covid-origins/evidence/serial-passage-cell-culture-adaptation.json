@@ -1,0 +1,113 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_serial-passage-cell-culture-adaptation_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "serial-passage-cell-culture-adaptation",
+    "title": "The serial-passage / cell-culture adaptation hypothesis — and why the intact furin site in early isolates argues against it",
+    "direction": "lab-leak",
+    "evidence_type": "virological",
+    "claim_confidence": 0.4,
+    "support_strength": "weak",
+    "claim": "A lab-origin variant holds that a natural bat sarbecovirus, repeatedly grown (\"serially passaged\") in cell culture or in humanized/animal models, could have acquired human-adapted features — including, on some versions, the furin cleavage site (FCS) — and then leaked, leaving **no engineering signature** in the genome (the \"no-see-um\" scenario). This document assesses that specific mechanistic claim, not the broader lab-leak question.",
+    "evidence_quality": "The data underpinning the **rebuttal** are strong and independently replicated: multiple labs worldwide documented FCS loss on Vero passage in peer-reviewed journals, and the intactness of the FCS in early isolates is directly observable in public genome databases. The **hypothesis itself** is largely a logical possibility argument with no positive supporting data — no documented passage series at any lab has been shown to produce SARS-CoV-2 or a near-progenitor. It is unfalsifiable in its strongest \"no-see-um\" form, which is an epistemic weakness, not a strength.",
+    "strongest_counterargument": "Proponents respond that passage in a humanized-mouse model or a TMPRSS2-positive human airway line (not Vero) could plausibly **maintain** the FCS while adapting the RBD, and that we cannot exclude such an experiment because WIV's full culture and animal-model records are not public (`china-data-withholding-transparency`). This is true but cuts against itself: it converts the hypothesis into an unfalsifiable claim resting on the *absence* of records rather than any positive evidence, and the specific, repeatedly observed behavior of the virus (FCS lost under ordinary passage) still has to be argued around rather than explained.",
+    "confidence_assessment": "- **Claim confidence:** 0.4 — As a bare *possibility* the mechanism is real (viruses do adapt in culture); as an *explanation for SARS-CoV-2 specifically* it is unsupported by any positive evidence and is in tension with the intact-FCS-in-early-isolates fact. I assign low-moderate confidence that the claim (passage explains SARS-CoV-2's features) is true.\n- **Support strength:** weak — Even if one grants the mechanism is conceivable, it provides no discriminating evidence for a lab origin; it is a way to *reconcile* lab origin with the lack of an engineering signature, not evidence *for* it.\n- **Net:** A calibrated reasoner should treat the serial-passage idea as an unfalsifiable escape hatch with no positive support and some contrary empirical evidence (FCS deletes under normal passage; early isolates are unscarred), not as affirmative evidence of a lab origin.",
+    "source_path": "evidence/serial-passage-cell-culture-adaptation.md",
+    "citations": [
+      {
+        "source_id": "src_eaf521ab9efc",
+        "citation": "Andersen, K.G., Rambaut, A., Lipkin, W.I., Holmes, E.C., Garry, R.F. (2020). The proximal origin of SARS-CoV-2. *Nature Medicine* 26, 450–452. https://www.nature.com/articles/s41591-020-0820-9",
+        "urls": [
+          "https://www.nature.com/articles/s41591-020-0820-9"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_8d384d8f30b2",
+        "citation": "Davidson, A.D. et al. (2020). Characterisation of the transcriptome and proteome of SARS-CoV-2 reveals a cell passage induced in-frame deletion of the furin-like cleavage site from the spike glycoprotein. *Genome Medicine* 12, 68. https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-00763-0",
+        "urls": [
+          "https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-00763-0"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_9d69ec69f048",
+        "citation": "Mautner, L. et al. (2022). Propagation of SARS-CoV-2 in Calu-3 Cells to Eliminate Mutations in the Furin Cleavage Site of Spike. PMC8704555. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8704555/",
+        "urls": [
+          "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8704555/"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_d46b88a2ea5f",
+        "citation": "Holmes, E.C. et al. (2021). The origins of SARS-CoV-2: A critical review. *Cell* 184, 4848–4856. https://doi.org/10.1016/j.cell.2021.08.017",
+        "urls": [
+          "https://doi.org/10.1016/j.cell.2021.08.017"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "A mechanistically possible, signature-free passage pathway receives probability even without positive evidence that it occurred."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on whether possibility, demonstrated precedent, or event-specific records are required for inclusion."
+    ],
+    "coverage_gaps": [
+      "No precursor, passage series, experimental record, or matching model-system result is supplied."
+    ],
+    "correlation_risks": [
+      "Correlated with furin-site, laboratory-capability, WIV-biosafety, and missing-record arguments."
+    ],
+    "capability_limits": [
+      "Assessing experimental virology requires checking methods, model systems, and replication in the cited studies."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Plausibility differs across cell types and models; event-specific support is absent."
+      ],
+      "ingestion_conditional": [
+        "Unreleased laboratory records prevent a decisive check."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "A hypothesis can become difficult to falsify if every absent signature is treated as expected."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Keep mechanistic possibility separate from evidence that the mechanism was used.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

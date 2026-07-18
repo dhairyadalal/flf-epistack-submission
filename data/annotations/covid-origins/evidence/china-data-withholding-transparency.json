@@ -1,0 +1,162 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_china-data-withholding-transparency_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "china-data-withholding-transparency",
+    "title": "China withheld and delayed key origin data, obstructing the investigation",
+    "direction": "neutral",
+    "evidence_type": "documentary",
+    "claim_confidence": 0.95,
+    "support_strength": "weak",
+    "claim": "China repeatedly delayed, restricted, or did not release primary data needed to investigate COVID-19's origin: it did not make the Huanan market environmental/metagenomic sequencing data public until 2023 (three years late), and briefly posted then restricted that data on GISAID in early 2023; it has not shared genetic sequences from ~508 viral samples from early Wuhan patients; and at least one team had early outpatient sequences deleted from a U.S. database. A senior WHO official called the withholding \"inexcusable,\" and both the WHO and the FBI Director publicly accused China of obstructing the probe.",
+    "evidence_quality": "This is strong **documentary** evidence: the claims rest on official WHO/SAGO statements, peer-reviewed publications (Bloom 2021 in *Molecular Biology and Evolution*), and contemporaneous reporting in *Science* and major outlets, with multiple independent corroborations. The *factual* pattern of delay, restriction, and non-release is essentially undisputed even by parties who otherwise disagree about origins. What is *contested* is the interpretation — whether withholding implies a cover-up of a lab origin, mere bureaucratic/political secrecy, or sensitivity about market-regulation failures. The withholding itself does not discriminate between origin hypotheses.",
+    "strongest_counterargument": "Two rebuttals cut against treating this as evidence *for* any particular origin:\n1. **Withholding is non-diagnostic and arguably default behavior.** The Chinese state restricts politically sensitive data as a matter of routine (e.g., early-pandemic case counts, censorship of whistleblowers). Opacity is consistent with embarrassment over a market/regulatory failure, over early mishandling, or with generic authoritarian information control — not specifically with concealing a lab leak. Absence of data is absence of evidence, not evidence of a specific cause.\n2. **When the hidden data has surfaced, it has leaned natural-origin.** The very data China was slow to release (the 2023 raccoon-dog metagenomics; Bloom's recovered early sequences) provided support for zoonotic/market scenarios, not for a lab leak. China also disputes the \"withholding\" framing, arguing it shared substantial data through the 2021 joint mission and that some \"missing\" raw data (e.g., individual patient records) involves privacy and sovereignty constraints. So the obstruction, while real and corrosive to confidence, cannot be read as a hidden lab-leak smoking gun.",
+    "confidence_assessment": "- **Claim confidence:** 0.95 — The core factual claim (delay, GISAID restriction, ~508 unshared sequences, deleted SRA data, \"inexcusable\"/obstruction statements by WHO and FBI) is documented across official statements, a peer-reviewed paper, and multiple independent outlets. Minor wording in the working summary needed correction: the GISAID data were *restricted/removed* after a brief posting rather than never released, and the \"inexcusable\" framing traces to WHO leadership in 2023.\n- **Support strength:** weak — This withholding lowers everyone's confidence and prolongs uncertainty, but it does not move the needle toward lab-leak *or* natural origin. It is genuinely neutral: a true fact about Chinese conduct that is non-diagnostic for the mechanism of emergence.\n- **Net:** A calibrated reasoner should treat China's data withholding as well-established and as the principal reason institutional confidence stays low, while resisting the inference that secrecy implies a lab origin — especially since the data that has surfaced has tended to favor zoonosis.",
+    "source_path": "evidence/china-data-withholding-transparency.md",
+    "citations": [
+      {
+        "source_id": "src_212955c9fb84",
+        "citation": "Cohen, J. (2023). \"'It's inexcusable.' WHO blasts China for not disclosing potential data on COVID-19's origin.\" *Science*/AAAS. https://www.science.org/content/article/it-s-inexcusable-who-blasts-china-not-disclosing-potential-data-covid-19-s-origin",
+        "urls": [
+          "https://www.science.org/content/article/it-s-inexcusable-who-blasts-china-not-disclosing-potential-data-covid-19-s-origin"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_fe0bbbaf30a3",
+        "citation": "WHO (2023). \"SAGO statement on newly released SARS-CoV-2 metagenomics data from China CDC on GISAID\" (18 March 2023). https://www.who.int/news/item/18-03-2023-sago-statement-on-newly-released-sars-cov-2-metagenomics-data-from-china-cdc-on-gisaid",
+        "urls": [
+          "https://www.who.int/news/item/18-03-2023-sago-statement-on-newly-released-sars-cov-2-metagenomics-data-from-china-cdc-on-gisaid"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_0ad7728cc933",
+        "citation": "Cohen, J. (2022). \"WHO panel favors natural origin of COVID-19 virus but decries missing evidence.\" *Science*/AAAS (notes 508 unshared viral sample sequences). https://www.science.org/content/article/who-panel-favors-natural-origin-covid-19-virus-decries-missing-evidence",
+        "urls": [
+          "https://www.science.org/content/article/who-panel-favors-natural-origin-covid-19-virus-decries-missing-evidence"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_6b308d11abd8",
+        "citation": "Bloom, J. D. (2021). \"Recovery of Deleted Deep Sequencing Data Sheds More Light on the Early Wuhan SARS-CoV-2 Epidemic.\" *Molecular Biology and Evolution* 38(12):5211–5224. https://doi.org/10.1093/molbev/msab246 (PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC8436388/)",
+        "urls": [
+          "https://doi.org/10.1093/molbev/msab246",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC8436388/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_7a1ca1a11d85",
+        "citation": "CNN (2024). \"WHO urges China to share Covid origins data, five years on from pandemic's emergence\" (30–31 Dec 2024). https://www.cnn.com/2024/12/30/china/who-china-covid-origin-data-five-years-intl-hnk/index.html",
+        "urls": [
+          "https://www.cnn.com/2024/12/30/china/who-china-covid-origin-data-five-years-intl-hnk/index.html"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_b9282f3039c4",
+        "citation": "UN News (2024). \"WHO continues to urge China to share data five years after COVID-19.\" https://news.un.org/en/story/2024/12/1158676",
+        "urls": [
+          "https://news.un.org/en/story/2024/12/1158676"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_29a6729dca41",
+        "citation": "NBC News (2023). \"FBI director accuses China of trying to 'thwart and obfuscate' Covid origin probe.\" https://www.nbcnews.com/politics/politics-news/fbi-director-says-china-trying-thwart-covid-origin-probe-rcna72805",
+        "urls": [
+          "https://www.nbcnews.com/politics/politics-news/fbi-director-says-china-trying-thwart-covid-origin-probe-rcna72805"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_2c97aef0ce3f",
+        "citation": "WHO-convened Global Study of Origins of SARS-CoV-2: China Part — final joint report (2021). https://www.who.int/docs/default-source/coronaviruse/final-joint-report_origins-studies-6-april-201.pdf",
+        "urls": [
+          "https://www.who.int/docs/default-source/coronaviruse/final-joint-report_origins-studies-6-april-201.pdf"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Institutional opacity is treated as evidence about the concealed event rather than a general feature of the political environment."
+    ],
+    "policy_sensitivities": [
+      "Weight changes with the assumed base rate of data restriction in unrelated Chinese crises and with whether process evidence is admitted into causal assessment."
+    ],
+    "coverage_gaps": [
+      "The contents of still-unreleased datasets and the reasons for each restriction are, by definition, unavailable."
+    ],
+    "correlation_risks": [
+      "Highly overlaps database-offline, data-deletion, WHO-access, and RaTG13-disclosure items."
+    ],
+    "capability_limits": [
+      "Document interpretation depends on completeness, provenance, surrounding context, and access to the original record."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Opacity lowers confidence in all conclusions but is weakly directional between origin hypotheses."
+      ],
+      "ingestion_conditional": [
+        "Missing data directly limits what the pipeline can assess."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "The same conduct can be framed as concealment of a lab event, concealment of regulatory failure, or generic authoritarian control."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Best represented as a coverage and trust modifier, not a standalone vote for either origin.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

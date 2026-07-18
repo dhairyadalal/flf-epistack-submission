@@ -1,0 +1,113 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_raccoon-dog-susceptible-species-genetic-tracing_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "raccoon-dog-susceptible-species-genetic-tracing",
+    "title": "Genetic tracing co-locates susceptible wildlife (raccoon dogs) with SARS-CoV-2 in the most positive market stall",
+    "direction": "natural-origin",
+    "evidence_type": "genomic",
+    "claim_confidence": 0.9,
+    "support_strength": "moderate",
+    "claim": "Reanalysis of the China CDC environmental metatranscriptomic dataset shows that SARS-CoV-2-positive samples from the Huanan Seafood Market contained mitochondrial genetic material from SARS-CoV-2-susceptible mammals — notably raccoon dogs (*Nyctereutes procyonoides*), plus civets, bamboo rats, hedgehogs and porcupines. The samples cluster at and around one wildlife stall (\"wildlife stall A\") in the market's southwest corner, where live mammals had been sold, and that stall had the highest SARS-CoV-2 positivity rate.",
+    "evidence_quality": "This is **peer-reviewed genomic/metatranscriptomic evidence** (Cell, 2024) built on the same underlying China CDC raw sequencing data that was deposited (then briefly removed) on GISAID/NCBI in early 2023. Strengths: the raw data are public and the reanalysis has been replicated by multiple independent groups, including critics. Weaknesses: (1) it is observational environmental sampling, collected weeks **after** the market was closed and being cleaned/disinfected, so it cannot directly demonstrate an infected animal; (2) co-localization of animal mtDNA and viral RNA in surface swabs is a spatial/contamination signal, not proof of host infection. The headline facts (which species' DNA was present, in which stall, with what positivity rate) are robust and agreed on by both sides; the **interpretation** is what is disputed.",
+    "strongest_counterargument": "Jesse Bloom (Virus Evolution 2023, 9(2):vead050) reanalyzed the same data and found that, across all samples, **the abundance of raccoon-dog genetic material is *negatively* correlated with SARS-CoV-2 abundance**, not positively. Of 14 samples with ≥20% raccoon-dog mitochondrial content, only one (Q61) contained any SARS-CoV-2 reads at all — and just 1 read out of ~200 million. The species whose genetic material correlates *most* positively with viral reads are implausible hosts (largemouth bass, catfish, cow, carp, snakehead fish). Bloom concludes that surface co-mingling of animal and viral material \"is unlikely to reliably indicate whether any animals were infected.\" In short: if abundant susceptible-animal DNA were a marker of an infected host, raccoon dogs would be the *least*, not most, implicated by the read counts; the virus tracks human/commerce/fish surfaces, consistent with an infected *person* contaminating a busy stall.\n\nA partial rebuttal of that rebuttal: Florence Débarre (Virus Evolution 2024, 10(1):vead077) argues Bloom's correlations pool heterogeneous samples collected under different protocols on different dates (a Simpson's-paradox artifact); within homogeneous same-day subsets the raccoon-dog/virus correlation is ~0 (non-significant) rather than clearly negative, and the same exclusion logic Bloom uses would also \"exclude humans\" as the shedding host. Débarre's point is that the correlation method is too weak to adjudicate either way — which cuts against Bloom's strong negative claim but does **not** restore a positive raccoon-dog signal. The honest bottom line is that simple read-abundance correlations cannot identify the shedding host; the natural-origin case here rests on the *spatial* co-location at stall A, not on a positive correlation.",
+    "confidence_assessment": "- **Claim confidence:** 0.90 — The factual claim (susceptible-mammal mtDNA, including raccoon dog, was present in SARS-CoV-2-positive samples concentrated at the highest-positivity wildlife stall) is true and agreed on by both Crits-Christoph and Bloom. I withhold the last 0.10 because some phrasings of the claim (\"virus positivity *increasing* near the stall\") imply a cleaner gradient than the noisy, post-disinfection environmental data actually support.\n- **Support strength:** moderate — for **natural origin**. It places SARS-CoV-2-competent live wildlife at the precise location of viral contamination, which is exactly what a market-spillover hypothesis predicts and a lab-leak hypothesis does not require. But because the sampling is post-closure and co-location is not infection, it is a strong *consistency* result rather than a smoking gun: a lab-origin/human-introduced virus could also contaminate the busiest stall where wildlife was handled. It corroborates the spatial-clustering and early-case epidemiology rather than standing alone.\n- **Net:** Susceptible wildlife including raccoon dogs was genetically co-located with the virus at the market's most-positive stall — robust and zoonosis-consistent — but read-level correlations are too weak to prove an animal was infected, so this raises the probability of market spillover without settling the origin question.",
+    "source_path": "evidence/raccoon-dog-susceptible-species-genetic-tracing.md",
+    "citations": [
+      {
+        "source_id": "src_1c0ed4eec2b9",
+        "citation": "Crits-Christoph A, Levy JI, Pekar JE, Goldstein SA, Singh R, Hensel Z, Gangavarapu K, et al. (2024). Genetic tracing of market wildlife and viruses at the epicenter of the COVID-19 pandemic. *Cell* 187(19):5468–5482.e11. DOI: 10.1016/j.cell.2024.08.010. PMID: 37745602 (bioRxiv preprint DOI: 10.1101/2023.09.13.557637). https://www.cell.com/cell/fulltext/S0092-8674(24)00901-2",
+        "urls": [
+          "https://www.cell.com/cell/fulltext/S0092-8674(24"
+        ],
+        "source_class": "preprint",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_b1c815b1b96a",
+        "citation": "Bloom JD (2023). Association between SARS-CoV-2 and metagenomic content of samples from the Huanan Seafood Market. *Virus Evolution* 9(2):vead050. DOI: 10.1093/ve/vead050. https://pmc.ncbi.nlm.nih.gov/articles/PMC11314060/",
+        "urls": [
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC11314060/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_7c5b870fb93a",
+        "citation": "Débarre F (2024). What we can and cannot learn from SARS-CoV-2 and animals in metagenomic samples from the Huanan market. *Virus Evolution* 10(1):vead077. DOI: 10.1093/ve/vead077. https://academic.oup.com/ve/article/10/1/vead077/7503693",
+        "urls": [
+          "https://academic.oup.com/ve/article/10/1/vead077/7503693"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_388b0718a65d",
+        "citation": "Scripps Research press release (2024). Genetic tracing at the Huanan Seafood market further supports COVID animal origins. https://www.scripps.edu/news-and-events/press-room/2024/20270919-andersen-covid-origins.html",
+        "urls": [
+          "https://www.scripps.edu/news-and-events/press-room/2024/20270919-andersen-covid-origins.html"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Co-location of susceptible-animal DNA and viral RNA is treated as evidence that animals, rather than nearby humans, shed the virus."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on standards for metagenomic co-occurrence, contamination controls, and whether indirect animal evidence is admitted."
+    ],
+    "coverage_gaps": [
+      "No intact infected animal, animal serology, or temporal sample establishes direction of transmission."
+    ],
+    "correlation_risks": [
+      "Same market environmental samples support the wildlife-stall positivity item; do not count separately without decomposing claims."
+    ],
+    "capability_limits": [
+      "Assessing phylogenetic or genomic inference requires sequence-level analysis and domain expertise beyond the supplied summary."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Species DNA and viral RNA co-occur, but causal direction is unresolved."
+      ],
+      "ingestion_conditional": [
+        "Samples were environmental and collected after market closure."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "The result can support an animal-source model or a contaminated-stall model depending on causal assumptions."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "A prime example where provenance is strong but inference structure must remain explicit.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

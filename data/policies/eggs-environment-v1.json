@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "eggs-environment",
+  "version": 1,
+  "case_id": "eggs",
+  "question_raw": "Are eggs good to eat?",
+  "framing": {
+    "framing_id": "environmental_impact",
+    "operationalized_question": "What environmental impacts follow from egg production relative to plausible substitute foods?",
+    "declared_values": ["climate", "land and resource use", "comparative substitution"]
+  },
+  "source_scope": {
+    "languages": ["en"],
+    "source_types": ["life-cycle assessments", "environmental reviews"],
+    "inclusion_rules": ["Studies must state system boundaries and a functional unit"],
+    "exclusion_rules": ["Health and welfare outcomes are tracked separately"]
+  },
+  "capability_profile": [
+    {
+      "capability": "Compare heterogeneous life-cycle assessments",
+      "status": "limited",
+      "evidence_type": "curated",
+      "note": "Rankings depend on functional unit, geography, and substitution assumptions."
+    }
+  ]
+}
+

@@ -1,0 +1,137 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_ratg13-banal-genetic-distance_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "ratg13-banal-genetic-distance",
+    "title": "RaTG13 and BANAL-52 are close relatives but represent decades of divergence from SARS-CoV-2",
+    "direction": "neutral",
+    "evidence_type": "genomic",
+    "claim_confidence": 0.95,
+    "support_strength": "weak",
+    "claim": "The two closest known relatives of SARS-CoV-2, the bat coronaviruses RaTG13 (~96.1% genome identity) and BANAL-52 (~96.8% identity), each differ from SARS-CoV-2 by roughly 900–1,100 nucleotides across the ~30 kb genome, corresponding to several decades of estimated evolutionary divergence; neither, nor any other known sarbecovirus, carries the furin (S1/S2 polybasic) cleavage site found in SARS-CoV-2.",
+    "evidence_quality": "High. The identity figures, RBD comparisons, and ACE2 binding come from peer-reviewed papers in *Nature* (Zhou 2020; Temmam 2022) with deposited genome sequences (e.g., RaTG13 GenBank MN996532; BANAL sequences in GISAID/GenBank), and have been independently re-analyzed by many groups. The divergence-time estimates (Boni et al. 2020, *Nature Microbiology*) are model-dependent and carry wide credible intervals, but the qualitative conclusion — decades, not years, of divergence — is robust across methods. The absence of a furin site in all sampled relatives is an uncontested observation. The main genuine uncertainty is in precise nucleotide-difference counts (alignment-dependent) and in absolute divergence dates (clock-rate-dependent).",
+    "strongest_counterargument": "The interpretation, not the facts, is contested, and it cuts both ways — which is why this item is neutral.\n\n- **Lab-leak reading:** The WIV held RaTG13 (the closest backbone at the time of the outbreak) and a related virus from the same Mojiang mine, and no sampled natural virus bridges the gap to SARS-CoV-2 — in particular none has the furin cleavage site, the very feature most associated with human transmissibility. Proponents (e.g., Chan & Zhan's furin-site analysis) argue the unique, \"out-of-place\" furin insertion in an otherwise bat-like backbone is what a synthetic-biology or serial-passage program might add.\n- **Natural-origin reading:** Temmam et al. and Garry (2022, PNAS, \"SARS-CoV-2 furin cleavage site was not engineered\") counter that BANAL viruses demonstrate the hardest-to-explain \"human-adapted\" feature — a human-ACE2-binding RBD — already exists in nature without any lab contact, and that furin cleavage sites arise naturally in many coronaviruses by insertion/recombination. The decades-long divergence (Boni 2020) directly undercuts the idea that any *known* virus, including RaTG13, was a ready-made backbone.\n\nNet: the same genetic gap is genuinely double-edged.",
+    "confidence_assessment": "- **Claim confidence:** 0.95 — The core quantitative facts (≈96–97% identity, ~900+ nt differences, decades of divergence, no furin site in any relative) are well-sourced and uncontested. The small deduction reflects method-dependence in exact nucleotide counts and divergence dates, and the slightly variable 96.1% vs 96.3% RaTG13 figure.\n- **Support strength:** weak — As a discriminator between hypotheses it is weak: the facts are fully consistent with both natural spillover (via unsampled intermediates) and a lab origin (via an unrecovered or modified backbone). It constrains but does not resolve.\n- **Net:** A calibrated reasoner should treat the RaTG13/BANAL gap as established fact but as near-zero net evidence on origin — it rules out the naïve claim that any sampled virus is a direct ancestor, while neither confirming nor excluding a lab role; the missing furin site in all relatives is the one feature both camps build arguments on.",
+    "source_path": "evidence/ratg13-banal-genetic-distance.md",
+    "citations": [
+      {
+        "source_id": "src_08d4606aa78b",
+        "citation": "Zhou, P., Yang, X.-L., Wang, X.-G., et al. (2020). A pneumonia outbreak associated with a new coronavirus of probable bat origin. *Nature*, 579, 270–273. https://doi.org/10.1038/s41586-020-2012-7",
+        "urls": [
+          "https://doi.org/10.1038/s41586-020-2012-7"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_7462b2e61b91",
+        "citation": "Temmam, S., Vongphayloth, K., Baquero, E., et al. (2022). Bat coronaviruses related to SARS-CoV-2 and infectious for human cells. *Nature*, 604, 330–336. https://doi.org/10.1038/s41586-022-04532-4",
+        "urls": [
+          "https://doi.org/10.1038/s41586-022-04532-4"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_a1aa97a71b37",
+        "citation": "Boni, M.F., Lemey, P., Jiang, X., et al. (2020). Evolutionary origins of the SARS-CoV-2 sarbecovirus lineage responsible for the COVID-19 pandemic. *Nature Microbiology*, 5, 1408–1417. https://doi.org/10.1038/s41564-020-0771-4",
+        "urls": [
+          "https://doi.org/10.1038/s41564-020-0771-4"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_2c301b363540",
+        "citation": "Garry, R.F. (2022). SARS-CoV-2 furin cleavage site was not engineered. *PNAS*, 119(40), e2211107119. https://doi.org/10.1073/pnas.2211107119",
+        "urls": [
+          "https://doi.org/10.1073/pnas.2211107119"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_c8890d3b5d75",
+        "citation": "Chan, Y.A. & Zhan, S.H. (2022). The Emergence of the Spike Furin Cleavage Site in SARS-CoV-2. *Molecular Biology and Evolution*, 39(1), msab327. https://doi.org/10.1093/molbev/msab327",
+        "urls": [
+          "https://doi.org/10.1093/molbev/msab327"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_0a493fed7ff0",
+        "citation": "RaTG13 — Wikipedia (summary of identity figures, discovery, and absence of furin motif). https://en.wikipedia.org/wiki/RaTG13",
+        "urls": [
+          "https://en.wikipedia.org/wiki/RaTG13"
+        ],
+        "source_class": "reference_work",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Large divergence from known relatives is used to constrain both direct natural and known-laboratory precursor narratives."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on molecular-clock assumptions and the expected unsampled diversity in wildlife and laboratory collections."
+    ],
+    "coverage_gaps": [
+      "Unknown wildlife viruses and unreleased laboratory sequences prevent a complete nearest-neighbor assessment."
+    ],
+    "correlation_risks": [
+      "Shares source and mechanism base with BANAL, natural-recombination, and no-close-progenitor items."
+    ],
+    "capability_limits": [
+      "Assessing phylogenetic or genomic inference requires sequence-level analysis and domain expertise beyond the supplied summary."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Known viruses are too divergent to be direct progenitors; the location of the missing branch is unknown."
+      ],
+      "ingestion_conditional": [
+        "The result is explicitly conditional on the viruses that have been sampled or disclosed."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "Distance weakens simplistic versions of both hypotheses more than it discriminates between them."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Appropriately treated as common constraint rather than a directional vote.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_fbi-doe-cia-lab-leaning-assessments_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "fbi-doe-cia-lab-leaning-assessments",
+    "title": "FBI, DOE, and (in 2025) CIA lean toward a lab/research-related origin",
+    "direction": "lab-leak",
+    "evidence_type": "intelligence-assessment",
+    "claim_confidence": 0.97,
+    "support_strength": "weak",
+    "claim": "Three U.S. intelligence agencies lean toward a lab/research-related origin of COVID-19: the FBI (since at least 2021, publicly confirmed by Director Christopher Wray in Feb 2023) assesses with **moderate confidence** that the pandemic \"most likely\" arose from a lab incident in Wuhan; the Department of Energy shifted to a lab origin with **low confidence** in early 2023; and in **January 2025** the CIA assessed with **low confidence** that a research-related origin is more likely than a natural one. All three flag that both scenarios remain plausible, and the CIA's shift came from re-examining existing data, not new intelligence.",
+    "evidence_quality": "This is **intelligence-assessment** evidence: declassified summaries of analyst judgments, not primary scientific data. Strengths: the assessors include agencies with directly relevant expertise (DOE oversees U.S. national laboratories with bioscience capacity; the FBI runs the investigative/forensic angle), and the judgments are on the record via official ODNI/NIC documents and the IC director's own public statements. Weaknesses are severe for inferential purposes: (1) the agencies are **not independent** — they draw on a largely shared, partly classified body of reporting, so three agencies leaning lab is not three independent lines of evidence; (2) the confidence levels are low-to-moderate by the agencies' own admission; (3) the underlying intelligence is redacted/classified and unverifiable by outside scientists; (4) the IC remains **split** (4+NIC vs. 3), so this is not a consensus; and (5) the 2025 CIA \"shift\" added no new information and coincided with a change of administration, raising the question of how much is signal vs. salience/politics.",
+    "strongest_counterargument": "The strongest rebuttal is that intelligence assessments are **categorically different from scientific conclusions** and should not be read as evidence for a lab origin. As argued in *Scientific American* (Rofer, 2023), IC assessments turn on source credibility and are kept opaque, whereas scientific conclusions rest on publicly shareable data and the coherence of the argument they support. A move between two \"low confidence\" positions (as DOE made) is minimal, and no agency disclosed what — if anything — drove it. Meanwhile the peer-reviewed scientific literature points the other way: Worobey et al. and Pekar et al. (*Science*, 2022) place the early outbreak's epicenter at the Huanan market and argue for two zoonotic spillovers, and virologists (e.g., Worobey, quoted in *Nature*, 2023) note that the published literature contains \"essentially nothing but\" original research supporting natural origin. On this view, three agencies leaning lab — at low-to-moderate confidence, with no shared primary evidence — does not outweigh the open scientific record, and citing it risks confusing analyst opinion with data.",
+    "confidence_assessment": "- **Claim confidence:** 0.97 — The factual claims are directly documented: Wray's Feb 2023 statement (NPR/CNN), DOE's low-confidence lab shift (WSJ/FactCheck), and the CIA's Jan 25, 2025 low-confidence research-related judgment (CBS/NBC/CNN, ODNI/NIC). One nuance the working summary understated: the CIA assessment was *ordered under the Biden administration* and merely *released* by Ratcliffe, and the IC explicitly stated there was no new intelligence. These details are confirmed, so the core claim stands.\n- **Support strength:** weak (for lab-leak) — Although it is true that three agencies, including the scientifically and investigatively best-resourced ones, lean lab, this is an **aggregation of non-independent expert opinion** at low-to-moderate confidence, not new primary evidence. It modestly raises the credibility of the lab hypothesis as a serious possibility but does not move a calibrated estimate much, because (a) the IC is split, (b) confidence is low, (c) the agencies share inputs, and (d) the 2025 update contained no new data.\n- **Net:** A calibrated reasoner should treat this as evidence that the lab hypothesis is taken seriously by qualified analysts — not as independent confirmation that a lab origin occurred; the low-to-moderate confidence and explicit absence of new evidence keep its probative weight modest.",
+    "source_path": "evidence/fbi-doe-cia-lab-leaning-assessments.md",
+    "citations": [
+      {
+        "source_id": "src_b0aa79f22cef",
+        "citation": "NPR (Bill Chappell, Feb 28, 2023). \"On Fox News, FBI's Wray repeats COVID lab leak claim.\" https://www.npr.org/2023/02/28/1160214557/fbi-covid-origins-investigation-wray",
+        "urls": [
+          "https://www.npr.org/2023/02/28/1160214557/fbi-covid-origins-investigation-wray"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_d327c4e89840",
+        "citation": "CNN Politics (Feb 28, 2023). \"FBI Director Wray acknowledges bureau assessment that Covid-19 likely resulted from lab incident.\" https://www.cnn.com/2023/02/28/politics/wray-fbi-covid-origins-lab-china",
+        "urls": [
+          "https://www.cnn.com/2023/02/28/politics/wray-fbi-covid-origins-lab-china"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_519b2cfe7f40",
+        "citation": "CBS News (Jan 25, 2025). \"CIA now says COVID most likely originated from a lab leak but has 'low confidence' in its assessment.\" https://www.cbsnews.com/news/cia-covid-likely-originated-lab-low-confidence-assessment/",
+        "urls": [
+          "https://www.cbsnews.com/news/cia-covid-likely-originated-lab-low-confidence-assessment/"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_e97b143231e5",
+        "citation": "NBC News (Jan 25, 2025). \"CIA shifts assessment on Covid origins, saying lab leak likely caused outbreak.\" https://www.nbcnews.com/politics/politics-news/cia-shifts-assessment-covid-origins-saying-lab-leak-likely-caused-outb-rcna189284",
+        "urls": [
+          "https://www.nbcnews.com/politics/politics-news/cia-shifts-assessment-covid-origins-saying-lab-leak-likely-caused-outb-rcna189284"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_deec945d1638",
+        "citation": "Office of the Director of National Intelligence (Aug 2021; updated declassified release). \"Declassified Assessment on COVID-19 Origins.\" https://www.dni.gov/files/ODNI/documents/assessments/Declassified-Assessment-on-COVID-19-Origins.pdf",
+        "urls": [
+          "https://www.dni.gov/files/ODNI/documents/assessments/Declassified-Assessment-on-COVID-19-Origins.pdf"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_a6cfa04f81f4",
+        "citation": "FactCheck.org (Jessica McDonald, Mar 2023). \"Still No Determination on COVID-19 Origin.\" https://www.factcheck.org/2023/03/scicheck-still-no-determination-on-covid-19-origin/",
+        "urls": [
+          "https://www.factcheck.org/2023/03/scicheck-still-no-determination-on-covid-19-origin/"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_567ec7efe948",
+        "citation": "Scientific American (Cheryl Rofer, 2023). \"Lab-Leak Intelligence Reports Aren't Scientific Conclusions.\" https://www.scientificamerican.com/article/lab-leak-intelligence-reports-arent-scientific-conclusions/",
+        "urls": [
+          "https://www.scientificamerican.com/article/lab-leak-intelligence-reports-arent-scientific-conclusions/"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_5b4829c25f06",
+        "citation": "Nature (Smriti Mallapaty, Mar 2023). \"US COVID-origins hearing renews debate over lab-leak hypothesis.\" https://www.nature.com/articles/d41586-023-00701-1",
+        "urls": [
+          "https://www.nature.com/articles/d41586-023-00701-1"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_bedf2ce13847",
+        "citation": "U.S. Right to Know (2025), on the NIC memorandum \"Updated IC Assessments of COVID-19 Origins\" (Jan 17, 2025). \"Newly released U.S. intelligence memo reveals plans for independent COVID origins study.\" https://usrtk.org/covid-19-origins/newly-released-u-s-intelligence-memo-reveals-plans-for-independent-covid-origins-study/",
+        "urls": [
+          "https://usrtk.org/covid-19-origins/newly-released-u-s-intelligence-memo-reveals-plans-for-independent-covid-origins-study/"
+        ],
+        "source_class": "commentary_or_advocacy",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Agency expertise and classified access are treated as informative even when the underlying evidence cannot be inspected."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on deference policy, confidence-language interpretation, and whether shared intelligence inputs are treated as independent judgments."
+    ],
+    "coverage_gaps": [
+      "Underlying intelligence, agency likelihood models, dissent, and reasons for assessment changes are largely classified."
+    ],
+    "correlation_risks": [
+      "Agencies share information; this overlaps the ODNI split and House-report items and is not three independent evidence streams."
+    ],
+    "capability_limits": [
+      "Most underlying intelligence is unavailable, preventing independent evaluation of source quality and analytic tradecraft."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Public confidence levels are low to moderate and do not expose the evidence basis."
+      ],
+      "ingestion_conditional": [
+        "The public corpus excludes classified inputs available to the agencies."
+      ],
+      "capability_conditional": [
+        "An external reviewer cannot audit classified-source credibility or analytic tradecraft."
+      ],
+      "framing_conditional": [
+        "Agency conclusions are expert assessments about evidence, not new primary evidence."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Render as opaque deference evidence with an explicit correlation warning.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

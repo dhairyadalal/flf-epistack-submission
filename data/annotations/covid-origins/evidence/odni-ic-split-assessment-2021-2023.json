@@ -1,0 +1,175 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_odni-ic-split-assessment-2021-2023_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "odni-ic-split-assessment-2021-2023",
+    "title": "US Intelligence Community is split on COVID-19 origins, with no agency above moderate confidence",
+    "direction": "neutral",
+    "evidence_type": "intelligence-assessment",
+    "claim_confidence": 0.97,
+    "support_strength": "weak",
+    "claim": "The declassified ODNI assessments (August 2021, updated June 2023) show a genuinely divided US Intelligence Community: the FBI favors a laboratory-associated origin with *moderate* confidence and the Department of Energy with *low* confidence, while four other IC elements plus the National Intelligence Council favor natural exposure with *low* confidence, and at least the CIA remained unable to choose. The IC consensus is that the virus was not developed as a biological weapon and (with low confidence) was probably not genetically engineered. No agency reaches better than \"moderate\" confidence on either side.",
+    "evidence_quality": "This is **primary government documentary evidence**: the actual declassified ODNI summaries, corroborated by mainstream reporting (NPR, CNN, FactCheck.org, CIDRAP) that quotes them. The *existence and content of the split* are not in dispute and are essentially certain.\n\nThe crucial epistemic point is what the evidence *is*: it is **interpretation, not independent observation**. ODNI states plainly that the IC and the global scientific community lack clinical samples and a complete picture of the earliest cases. The eight elements are largely reasoning over the *same* incomplete open-source and intelligence data and reaching different conclusions — so these are not eight independent confirmations but a measure of how underdetermined the question is. Intelligence assessments are also not peer-reviewed, their underlying reporting is classified and unverifiable by outsiders, and they are vulnerable to political pressure (the timing of declassifications and the 2025 CIA release under a new administration illustrate this).",
+    "strongest_counterargument": "The strongest pushback is that **a split is not symmetric and should not be read as a wash**: a *majority* of elements (four + NIC) plus the historical default lean natural, and the lab-leaning agencies (FBI, DOE, and later CIA) all flag *low or moderate* confidence and decline to show their evidence — the FBI and DOE notably \"won't say why\" (Snopes 2023). Lab-leak proponents counter the opposite way: that the FBI, the agency with the most relevant biological-forensics expertise, is the *only* one at \"moderate,\" and that the post-2023 drift (DOE, then CIA) is a one-directional movement *toward* lab origin as analysts revisited the data. Both readings, however, concede the core of this item — that the institutional signal is weak and confidence is capped low — which is why the item is coded neutral rather than supporting either side.",
+    "confidence_assessment": "- **Claim confidence:** 0.97 — The split, the FBI-moderate / DOE-low / four-plus-NIC-low structure, the CIA's undecided posture, and the no-bioweapon consensus are all directly stated in the primary documents and consistently reported. The one correction to the working summary: in 2021 DOE was *undecided*, not low-confidence lab; it moved to low-confidence lab only in 2023. I dock a few points only for residual ambiguity about the exact identity of the second undecided element.\n- **Support strength:** weak — for *neither* hypothesis. This is the point of the item: because no agency exceeds moderate confidence, the elements largely reinterpret the same incomplete data, and the assessments are explicitly hedged, IC opinion is weak evidence either way. It is strong evidence *about the state of knowledge* (deeply uncertain) and strong evidence *against* the engineered-bioweapon hypothesis specifically.\n- **Net:** A calibrated reasoner should treat the IC split as confirming that the origin question is genuinely underdetermined by current intelligence — useful for ruling out a deliberate bioweapon, but close to uninformative as a tiebreaker between natural spillover and an accidental lab leak.",
+    "source_path": "evidence/odni-ic-split-assessment-2021-2023.md",
+    "citations": [
+      {
+        "source_id": "src_deec945d1638",
+        "citation": "Office of the Director of National Intelligence (2023). *Updated Assessment on COVID-19 Origins* (declassified, June 2023). https://www.dni.gov/files/ODNI/documents/assessments/Declassified-Assessment-on-COVID-19-Origins.pdf",
+        "urls": [
+          "https://www.dni.gov/files/ODNI/documents/assessments/Declassified-Assessment-on-COVID-19-Origins.pdf"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_f2ce168994d4",
+        "citation": "Office of the Director of National Intelligence (2021). *Unclassified Summary of Assessment on COVID-19 Origins* (Aug 27, 2021). https://www.dni.gov/files/ODNI/documents/assessments/Unclassified-Summary-of-Assessment-on-COVID-19-Origins.pdf",
+        "urls": [
+          "https://www.dni.gov/files/ODNI/documents/assessments/Unclassified-Summary-of-Assessment-on-COVID-19-Origins.pdf"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_3eca806578cd",
+        "citation": "Wikipedia contributors. *Assessment on COVID-19 Origins*. https://en.wikipedia.org/wiki/Assessment_on_COVID-19_Origins",
+        "urls": [
+          "https://en.wikipedia.org/wiki/Assessment_on_COVID-19_Origins"
+        ],
+        "source_class": "reference_work",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_d55134bc9701",
+        "citation": "CIDRAP / University of Minnesota (2023). *US intelligence agency releases declassified Wuhan SARS-CoV-2 lab leak assessments*. https://www.cidrap.umn.edu/covid-19/us-intelligence-agency-releases-declassified-wuhan-sars-cov-2-lab-leak-assessments",
+        "urls": [
+          "https://www.cidrap.umn.edu/covid-19/us-intelligence-agency-releases-declassified-wuhan-sars-cov-2-lab-leak-assessments"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_a6cfa04f81f4",
+        "citation": "Jessica McDonald, FactCheck.org (2023). *Still No Determination on COVID-19 Origin*. https://www.factcheck.org/2023/03/scicheck-still-no-determination-on-covid-19-origin/",
+        "urls": [
+          "https://www.factcheck.org/2023/03/scicheck-still-no-determination-on-covid-19-origin/"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_8c4e8062b8df",
+        "citation": "NPR (2023). *U.S. Dept of Energy says with 'low confidence' that COVID may have leaked from a lab*. https://www.npr.org/2023/02/28/1160157977/u-s-dept-of-energy-says-with-low-confidence-that-covid-may-have-leaked-from-a-la",
+        "urls": [
+          "https://www.npr.org/2023/02/28/1160157977/u-s-dept-of-energy-says-with-low-confidence-that-covid-may-have-leaked-from-a-la"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_ba7d727406e2",
+        "citation": "CNN Politics (2023). *Assessment Covid-19 leaked from Chinese lab is a minority view within US intel community, sources say*. https://www.cnn.com/2023/02/27/politics/intel-community-covid-origins/index.html",
+        "urls": [
+          "https://www.cnn.com/2023/02/27/politics/intel-community-covid-origins/index.html"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_a037e3bdee69",
+        "citation": "Snopes (2023). *DOE and FBI Say Lab Origin of COVID Is 'Most Likely' — But Won't Say Why*. https://www.snopes.com/news/2023/03/03/fbi-doe-covid-origin/",
+        "urls": [
+          "https://www.snopes.com/news/2023/03/03/fbi-doe-covid-origin/"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_519b2cfe7f40",
+        "citation": "CBS News (2025). *CIA now says COVID most likely originated from a lab leak but has \"low confidence\" in its assessment*. https://www.cbsnews.com/news/cia-covid-likely-originated-lab-low-confidence-assessment/",
+        "urls": [
+          "https://www.cbsnews.com/news/cia-covid-likely-originated-lab-low-confidence-assessment/"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "A split among intelligence agencies is treated as evidence that both hypotheses remain plausible and that public evidence is incomplete."
+    ],
+    "policy_sensitivities": [
+      "Interpretation depends on deference to classified expertise and whether agency counts or confidence-weighted reasoning are used."
+    ],
+    "coverage_gaps": [
+      "Underlying reports, sources, interagency dependencies, and analytic methods are classified."
+    ],
+    "correlation_risks": [
+      "Same institutional evidence family as the FBI/DOE/CIA and House-report items."
+    ],
+    "capability_limits": [
+      "Most underlying intelligence is unavailable, preventing independent evaluation of source quality and analytic tradecraft."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "The split and confidence labels are public; their evidential basis is not."
+      ],
+      "ingestion_conditional": [
+        "Public assessors cannot ingest the classified corpus."
+      ],
+      "capability_conditional": [
+        "Agency tradecraft and source reliability cannot be independently scored from summaries."
+      ],
+      "framing_conditional": [
+        "Disagreement may indicate genuine evidential ambiguity, different agency access, or different analytic priors."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Useful as a transparency limit and disagreement record, not a poll of independent experts.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

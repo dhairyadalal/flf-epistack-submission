@@ -1,0 +1,136 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_cgg-cgg-arginine-codon-argument_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "cgg-cgg-arginine-codon-argument",
+    "title": "The CGG-CGG arginine codon pair at the furin cleavage site is a weak, non-probative origin clue",
+    "direction": "lab-leak",
+    "evidence_type": "genomic",
+    "claim_confidence": 0.9,
+    "support_strength": "weak",
+    "claim": "The two arginines of the SARS-CoV-2 spike furin cleavage motif (P-R-R-A-R) are encoded by the codon doublet CGG-CGG. CGG is the rarest of the six arginine codons in SARS-CoV-2 (roughly 3–5% of arginine codons), and the consecutive CGG-CGG doublet is uncommon in sarbecoviruses. Lab-leak proponents argued this is the codon a molecular biologist would preferentially choose, hinting at human design.",
+    "evidence_quality": "The underlying sequence fact (CGG-CGG; CGG rare) is hard genomic data and not in dispute. The *inference* from that fact to human design is speculative. The pro-lab-leak case rests largely on (a) an off-the-cuff, later-retracted remark by Baltimore and (b) heuristic intuitions about cloning practice, neither of which is a quantitative provenance test. The rebuttals come from peer-reviewed work (Chan & Zhan 2022 in *Molecular Biology and Evolution*; Wu & Zhao 2020 in *Stem Cell Research*; Garry 2022 in *PNAS*) and from named virologists in a fact-check that aggregates multiple independent experts. Note: the working brief's citation \"Wu & Zhao 2021, MBE msab327\" conflates two papers — msab327 is Chan & Zhan (2022, MBE); Wu & Zhao is a separate 2020 *Stem Cell Research* article. Both are real and cited below.",
+    "strongest_counterargument": "Codon rarity cannot establish provenance. As Chan & Zhan (2022) put it, \"the rarity of a codon cannot be used to confidently determine the provenance of, or rule out a possible provenance of, a given doublet.\" CGG and the CGG-CGG doublet both occur in natural coronaviruses; a feline CoV's CGG-CGA is one point mutation from CGG-CGG; the codons are >99.8% conserved (arguing against an inserted low-fitness codon); and a rational designer would arguably have engineered a stronger, multi-basic site. The strongest counter is therefore that the observation is fully compatible with natural evolution and carries essentially no discriminating power between hypotheses — which is why most virologists, and eventually Baltimore himself, treated it as non-probative.",
+    "confidence_assessment": "- **Claim confidence:** 0.9 — The factual core (CGG-CGG encodes the two arginines; CGG is a minority arginine codon) is solid and uncontested. The slightly-less-than-certain margin reflects only minor ambiguity in the exact \"rarity\" figure (3% vs 5%, depending on reference set).\n- **Support strength:** weak — For lab-leak. Even granting every factual premise, codon choice does not constrain provenance: the doublet exists in nature, is one mutation from observed feline-CoV sequence, and the \"a human would pick CGG\" heuristic is an intuition, not a test. Its chief proponent retracted the framing.\n- **Net:** A calibrated reasoner should record the CGG-CGG observation as true but treat it as essentially zero-to-weak evidence for engineering; it neither meaningfully raises nor lowers the probability of a lab origin.",
+    "source_path": "evidence/cgg-cgg-arginine-codon-argument.md",
+    "citations": [
+      {
+        "source_id": "src_c8890d3b5d75",
+        "citation": "Chan, Y.A. & Zhan, S.H. (2022). The Emergence of the Spike Furin Cleavage Site in SARS-CoV-2. *Molecular Biology and Evolution*, 39(1):msab327. https://doi.org/10.1093/molbev/msab327 (open access PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC8689951/)",
+        "urls": [
+          "https://doi.org/10.1093/molbev/msab327",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC8689951/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_6f50c05cc389",
+        "citation": "Wu, Y. & Zhao, S. (2020). Furin cleavage sites naturally occur in coronaviruses. *Stem Cell Research*, 50:102115. https://doi.org/10.1016/j.scr.2020.102115",
+        "urls": [
+          "https://doi.org/10.1016/j.scr.2020.102115"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_56a43af10343",
+        "citation": "Science Feedback (2021). \"The CGG CGG genetic sequence and furin cleavage sites also exist in naturally-occurring viruses; these features aren't evidence of genetic manipulation.\" https://science.feedback.org/review/the-cgg-cgg-genetic-sequence-and-furin-cleavage-sites-also-exist-in-naturally-occurring-viruses-these-features-arent-evidence-of-genetic-manipulation/",
+        "urls": [
+          "https://science.feedback.org/review/the-cgg-cgg-genetic-sequence-and-furin-cleavage-sites-also-exist-in-naturally-occurring-viruses-these-features-arent-evidence-of-genetic-manipulation/"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_2c301b363540",
+        "citation": "Garry, R.F. (2022). SARS-CoV-2 furin cleavage site was not engineered. *PNAS*, 119(40):e2211107119. https://doi.org/10.1073/pnas.2211107119",
+        "urls": [
+          "https://doi.org/10.1073/pnas.2211107119"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_98ccf0e007fc",
+        "citation": "Bailey, R. (2021, May 13). Is This a COVID-19 'Smoking Gun,' or Is It a Damp Squib? *Reason* (documents David Baltimore's \"smoking gun\" remark and his walk-back). https://reason.com/2021/05/13/is-this-a-covid-19-smoking-gun-or-is-it-a-damp-squib/",
+        "urls": [
+          "https://reason.com/2021/05/13/is-this-a-covid-19-smoking-gun-or-is-it-a-damp-squib/"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_20615f87e3cd",
+        "citation": "Bruttel, V., Washburne, A. & VanDongen, A. (2022). Endonuclease fingerprint indicates a synthetic origin of SARS-CoV-2. *bioRxiv* preprint (non-peer-reviewed; related restriction-site argument). https://doi.org/10.1101/2022.10.18.512756",
+        "urls": [
+          "https://doi.org/10.1101/2022.10.18.512756"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "A rare codon pair is assumed to be more expected under deliberate construction than under natural evolution."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on the reference class used for codon rarity and on whether designer preferences are specified before observing the sequence."
+    ],
+    "coverage_gaps": [
+      "A preregistered likelihood model for the doublet under competing mechanisms is absent."
+    ],
+    "correlation_risks": [
+      "This is one feature of the broader furin-cleavage-site cluster and should not be counted independently from it."
+    ],
+    "capability_limits": [
+      "Assessing phylogenetic or genomic inference requires sequence-level analysis and domain expertise beyond the supplied summary."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "The observation is real but its likelihood ratio is poorly established."
+      ],
+      "ingestion_conditional": [],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "Calling the doublet a fingerprint embeds an unstated model of how an engineer would design the sequence."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Treat as a low-directness feature argument rather than an independent origin event.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

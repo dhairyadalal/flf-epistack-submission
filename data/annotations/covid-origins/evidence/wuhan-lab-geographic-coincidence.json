@@ -1,0 +1,135 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_wuhan-lab-geographic-coincidence_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "wuhan-lab-geographic-coincidence",
+    "title": "Pandemic emerged in Wuhan, home to the world's leading bat-SARS-coronavirus lab, ~1,500-1,800 km from the nearest known viral reservoir",
+    "direction": "lab-leak",
+    "evidence_type": "circumstantial",
+    "claim_confidence": 0.9,
+    "support_strength": "weak",
+    "claim": "A novel SARS-related coronavirus first erupted in Wuhan, the city hosting the Wuhan Institute of Virology (WIV) — the world's leading collector and laboratory manipulator of SARS-like bat coronaviruses — even though the closest known wild relatives circulate in horseshoe bats in Yunnan (China) and Laos, roughly 1,500-1,800 km away from Wuhan. Lab-leak proponents argue this geographic juxtaposition is an extraordinary coincidence.",
+    "evidence_quality": "The component facts are strong and primary-sourced: WIV's collection (peer-reviewed virology literature, institutional records), RaTG13's Mojiang provenance and distance (Zhou et al. 2020 Nature; reported distances), and BANAL-52's Laos provenance (Temmam et al. 2022, Nature, peer-reviewed). So the *factual substrate* — virus in Wuhan, top lab in Wuhan, reservoir ~1,500-1,800 km away — is robust (confidence high).\n\nHowever, the *inferential weight* is circumstantial. The claim describes a spatial coincidence; it contains no genomic, documentary, or epidemiological evidence that the lab was the actual source. It is the kind of evidence that constrains priors rather than identifies a mechanism.",
+    "strongest_counterargument": "The proximity is real but weakly diagnostic, for several reasons (Wikipedia \"COVID-19 lab leak theory\"; Lewandowsky et al.):\n- **Labs cluster where people cluster.** Most large Chinese cities host coronavirus research laboratories; Wuhan (~11 million people) is a major transport, trade, and wildlife-trade hub. Outbreaks of bat-origin viruses \"typically begin in rural areas but are first noticed in large cities,\" so any spillover plausibly surfaces in a big surveilled city regardless of labs.\n- **Conjunction fallacy.** Lewandowsky and colleagues argue treating the lab's location as *a priori* evidence is \"literally a coincidence\" reasoning — lab-leak proponents foreground the WIV while ignoring the equally-present wet markets known to be spillover venues.\n- **Positive natural-origin evidence at the same site.** Spatial-epidemiology analyses (Worobey et al. 2022, Science; Pekar et al. 2022, Science) place the earliest cases and environmental positives at the Huanan Seafood Market, where live wild mammals susceptible to SARS-CoV-2 were sold — a competing, mechanism-bearing explanation for *why Wuhan*. If the market is the epicenter, the WIV's presence becomes incidental.\n- WIV's main campus is ~12 km from the Huanan market; the within-city co-location is not itself unusual for a metropolis.\n\nIn short: proximity establishes that a leak was *possible*, but a wildlife-trade spillover in a major hub city is at least as consistent with the same geography.",
+    "confidence_assessment": "- **Claim confidence:** 0.9 — The underlying facts (novel SARS-CoV in Wuhan; WIV as the top bat-CoV lab there; nearest known relatives ~1,500-1,800 km away in Yunnan/Laos) are well-sourced and largely uncontested. The minor uncertainty is wording: \"1,500-1,900 km\" is approximate, the true ancestor/reservoir location is unknown, and \"closest relatives\" is a moving target (RaTG13 → BANAL-52).\n- **Support strength:** weak — for the lab-leak hypothesis. As pure circumstance it raises the lab-leak prior modestly but is symmetrically explainable by natural spillover in a dense trade/travel hub, and is undercut by positive market-centered epidemiological evidence. It is suggestive, not dispositive.\n- **Net:** A calibrated reasoner should accept the geographic coincidence as true and genuinely notable, while recognizing it is opportunity-only evidence that moves the needle only slightly absent a mechanism — and that the same city-level geography is independently predicted by the wildlife-trade hypothesis.",
+    "source_path": "evidence/wuhan-lab-geographic-coincidence.md",
+    "citations": [
+      {
+        "source_id": "src_54563c0609f4",
+        "citation": "Antonio Regalado (2022). \"Meet the scientist at the center of the covid lab leak controversy\" (Shi Zhengli profile). MIT Technology Review. https://www.technologyreview.com/2022/02/09/1044985/shi-zhengli-covid-lab-leak-wuhan/",
+        "urls": [
+          "https://www.technologyreview.com/2022/02/09/1044985/shi-zhengli-covid-lab-leak-wuhan/"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_803c488ff800",
+        "citation": "Wikipedia contributors. \"COVID-19 lab leak theory\" (proximity argument and standard rebuttal; Lewandowsky conjunction-fallacy framing). https://en.wikipedia.org/wiki/COVID-19_lab_leak_theory",
+        "urls": [
+          "https://en.wikipedia.org/wiki/COVID-19_lab_leak_theory"
+        ],
+        "source_class": "reference_work",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_f1001c2a75a0",
+        "citation": "Wikipedia contributors. \"Wuhan Institute of Virology\" (300+ bat CoV sequences; BSL-4; Yunnan sampling). https://en.wikipedia.org/wiki/Wuhan_Institute_of_Virology",
+        "urls": [
+          "https://en.wikipedia.org/wiki/Wuhan_Institute_of_Virology"
+        ],
+        "source_class": "reference_work",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_0a493fed7ff0",
+        "citation": "Wikipedia contributors. \"RaTG13\" (96.1% identity; Mojiang/Yunnan provenance; ~1,600 km from Wuhan; later BANAL matches). https://en.wikipedia.org/wiki/RaTG13",
+        "urls": [
+          "https://en.wikipedia.org/wiki/RaTG13"
+        ],
+        "source_class": "reference_work",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_f396247ad0e2",
+        "citation": "Temmam, S., Vongphayloth, K., Baquero, E., et al. (2022). \"Bat coronaviruses related to SARS-CoV-2 and infectious for human cells.\" Nature 604, 330-336 (BANAL-52, Feuang, Laos; 96.8% identity; ACE2 binding). https://www.nature.com/articles/s41586-022-04532-4",
+        "urls": [
+          "https://www.nature.com/articles/s41586-022-04532-4"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_8dc153545d7a",
+        "citation": "Worobey, M., et al. (2022). \"The Huanan Seafood Wholesale Market in Wuhan was the early epicenter of the COVID-19 pandemic.\" Science 377, 951-959 (competing market-centered geography). https://www.science.org/doi/10.1126/science.abp8715",
+        "urls": [
+          "https://www.science.org/doi/10.1126/science.abp8715"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Wuhan is selected after the event as a city unusually associated with bat-coronavirus research, making the co-location appear diagnostically rare."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on the reference class of cities, labs, outbreak-detection hubs, wildlife trade routes, and whether location hypotheses were specified in advance."
+    ],
+    "coverage_gaps": [
+      "No quantified comparison estimates the probability of Wuhan under laboratory and natural-trade pathways using symmetric geographic models."
+    ],
+    "correlation_risks": [
+      "Correlated with WIV capability and biosafety evidence, while competing market geography is represented by several overlapping items."
+    ],
+    "capability_limits": [
+      "Circumstantial patterns are especially sensitive to base rates, alternative explanations, and selection of which coincidences are noticed."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "The co-location is real; its likelihood ratio is not established."
+      ],
+      "ingestion_conditional": [],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "Choosing the lab, market, city, or regional trade network as the salient geographic unit changes the apparent coincidence."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "A clear example of reference-class and salience choices entering before assessment.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

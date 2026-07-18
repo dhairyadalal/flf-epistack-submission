@@ -1,0 +1,129 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_huanan-market-spatial-clustering-two-lineages_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "huanan-market-spatial-clustering-two-lineages",
+    "title": "Huanan market spatial clustering and two zoonotic introductions",
+    "direction": "natural-origin",
+    "evidence_type": "epidemiological",
+    "claim_confidence": 0.85,
+    "support_strength": "strong",
+    "claim": "Two peer-reviewed Science papers (Worobey et al. 2022; Pekar et al. 2022), plus a follow-up Cell paper (Crits-Christoph et al. 2024), report that (a) the earliest December 2019 COVID-19 cases were geographically centered on the Huanan Seafood Wholesale Market, (b) SARS-CoV-2-positive environmental samples within the market were spatially associated with stalls selling live mammals, with raccoon-dog genetic material co-located with viral RNA, and (c) molecular-clock and phylodynamic analysis supports at least two separate introductions into humans (lineages A and B), a pattern the authors argue fits repeated live-wildlife-trade spillover.",
+    "evidence_quality": "Strong by the standards of this debate: three peer-reviewed papers (two in Science, one in Cell) by overlapping author teams, using independent methods — spatial epidemiology, genomic phylodynamics, and environmental metagenomics. The lines partly converge, which is meaningful. Important caveats: (1) the author teams overlap heavily (Worobey, Andersen, Pekar, Débarre, Holmes, Rambaut appear across all three), so these are not fully independent groups; (2) the underlying case-location and environmental-sampling data come substantially from Chinese CDC sources whose completeness and case-ascertainment process cannot be independently audited; (3) Pekar et al. required a published erratum. None of the work demonstrates an infected animal — the spillover-at-market conclusion is an inference from co-location plus clustering.",
+    "strongest_counterargument": "The market clustering may reflect ascertainment/amplification rather than origin. Stoyan & Chiu (Journal of the Royal Statistical Society Series A, 2024) argue the spatial test was structurally near-guaranteed to \"find\" the market: comparing a clustered, contagious outbreak against a non-contagious population-density null almost always rejects, and \"centrality does not imply causality\" — a central, crowded, poorly ventilated market is exactly where an outbreak from any source would first be detected and amplified [4]. Relatedly, the December 2019 case map relies on cases identified partly because of their market link (proximity/ascertainment bias concerns raised by Weissman and others). The Worobey team has rebutted these critiques (Stoyan/Chiu reply; \"No evidence of systematic proximity ascertainment bias,\" 2024), but the dispute is genuinely unresolved: even strong proponents concede the data cannot distinguish \"origin\" from \"first major amplification.\"",
+    "confidence_assessment": "- **Claim confidence:** 0.85 — The descriptive facts (clustering around the market, environmental positives near live-mammal stalls, raccoon-dog co-location, two lineages) are well-documented and peer-reviewed. The confidence is below 0.95 because of the Pekar erratum, the heavy author overlap, reliance on un-auditable Chinese source data, and the open question of whether two distinct lineages truly reflect two introductions versus one introduction with early diversification or sampling artifacts.\n- **Support strength:** strong (for natural origin) — This is the strongest affirmative primary-science case for zoonosis: it ties the earliest cases and viral RNA to the wildlife trade physically and temporally, and the two-introduction finding cuts against the single-point-source pattern a lab leak would more naturally produce.\n- **Net:** A calibrated reasoner should treat the market epicenter and wildlife co-location as well-established and as substantial evidence for natural origin, while recognizing that none of it directly proves an infected animal and that the \"origin vs. amplification\" objection remains a live, legitimate weakness rather than a settled point.",
+    "source_path": "evidence/huanan-market-spatial-clustering-two-lineages.md",
+    "citations": [
+      {
+        "source_id": "src_08a628ab2f98",
+        "citation": "Worobey M, Levy JI, Malpica Serrano L, Crits-Christoph A, Pekar JE, Goldstein SA, Rasmussen AL, Kraemer MUG, Newman C, Koopmans MPG, Suchard MA, Wertheim JO, Lemey P, Robertson DL, Garry RF, Holmes EC, Rambaut A, Andersen KG (2022). \"The Huanan Seafood Wholesale Market in Wuhan was the early epicenter of the COVID-19 pandemic.\" Science 377(6609):951-959. https://doi.org/10.1126/science.abp8715 (open: https://pmc.ncbi.nlm.nih.gov/articles/PMC9348750/)",
+        "urls": [
+          "https://doi.org/10.1126/science.abp8715",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC9348750/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_cdf8b0ed663c",
+        "citation": "Pekar JE, Magee A, Parker E, Moshiri N, Izhikevich K, Havens JL, et al. (2022). \"The molecular epidemiology of multiple zoonotic origins of SARS-CoV-2.\" Science 377(6609):960-966. https://doi.org/10.1126/science.abp8337 (open: https://pmc.ncbi.nlm.nih.gov/articles/PMC9348752/)",
+        "urls": [
+          "https://doi.org/10.1126/science.abp8337",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC9348752/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_dc73a75cd48b",
+        "citation": "Crits-Christoph A, Levy JI, Pekar JE, Goldstein SA, et al., Worobey M, Débarre F (2024). \"Genetic tracing of market wildlife and viruses at the epicenter of the COVID-19 pandemic.\" Cell 187(19):5468-5482.e11. https://doi.org/10.1016/j.cell.2024.08.010 (PubMed: https://pubmed.ncbi.nlm.nih.gov/37745602/)",
+        "urls": [
+          "https://doi.org/10.1016/j.cell.2024.08.010",
+          "https://pubmed.ncbi.nlm.nih.gov/37745602/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_a2c02f9a3112",
+        "citation": "Stoyan D, Chiu SN (2024). \"Statistics did not prove that the Huanan Seafood Wholesale Market was the early epicentre of the COVID-19 pandemic.\" Journal of the Royal Statistical Society Series A 187(3):710-722. https://doi.org/10.1093/jrsssa/qnad139 (preprint: https://arxiv.org/abs/2208.10106)",
+        "urls": [
+          "https://doi.org/10.1093/jrsssa/qnad139",
+          "https://arxiv.org/abs/2208.10106"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_5cfd3ac02634",
+        "citation": "Erratum for Pekar et al. (2024). Science. https://doi.org/10.1126/science.adl0585",
+        "urls": [
+          "https://doi.org/10.1126/science.adl0585"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Spatial clustering and two early lineages are combined as mutually reinforcing evidence of repeated market spillover."
+    ],
+    "policy_sensitivities": [
+      "Result changes with spatial ascertainment assumptions and with the phylogenetic model used to infer one versus multiple introductions."
+    ],
+    "coverage_gaps": [
+      "Raw early-case data, complete early sequences, and direct animal infections are absent."
+    ],
+    "correlation_risks": [
+      "Composite of two separately repeated evidence clusters; combining them can hide dependence and double counting."
+    ],
+    "capability_limits": [
+      "Assessing sampling, ascertainment, and spatial or temporal inference requires raw data and specialist statistical review beyond the supplied summary."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Both spatial and lineage patterns are observed, but each causal inference is independently contested."
+      ],
+      "ingestion_conditional": [
+        "Both components depend on incomplete early Chinese data."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "Convergence is weaker when the components share the same market-linked sampling process."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Decompose this compound item before assigning weight.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

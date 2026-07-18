@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/epistemic-audit/source-policy.schema.json",
+  "title": "Declared framing and source policy",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "policy_id",
+    "version",
+    "case_id",
+    "question_raw",
+    "framing",
+    "source_scope",
+    "capability_profile"
+  ],
+  "properties": {
+    "schema_version": { "const": "0.1.0" },
+    "policy_id": { "type": "string" },
+    "version": { "type": "integer", "minimum": 1 },
+    "case_id": { "type": "string" },
+    "question_raw": { "type": "string" },
+    "framing": {
+      "type": "object",
+      "required": ["framing_id", "operationalized_question", "declared_values"],
+      "properties": {
+        "framing_id": { "type": "string" },
+        "operationalized_question": { "type": "string" },
+        "declared_values": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "source_scope": {
+      "type": "object",
+      "required": ["languages", "source_types", "inclusion_rules", "exclusion_rules"],
+      "properties": {
+        "languages": { "type": "array", "items": { "type": "string" } },
+        "source_types": { "type": "array", "items": { "type": "string" } },
+        "inclusion_rules": { "type": "array", "items": { "type": "string" } },
+        "exclusion_rules": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "capability_profile": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["capability", "status", "evidence_type", "note"],
+        "properties": {
+          "capability": { "type": "string" },
+          "status": { "enum": ["supported", "limited", "unsupported", "unknown"] },
+          "evidence_type": { "enum": ["measured", "curated", "self_declared", "unknown"] },
+          "note": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

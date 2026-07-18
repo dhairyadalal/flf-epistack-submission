@@ -1,0 +1,137 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_banal-laos-bat-sarbecoviruses-ace2_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "banal-laos-bat-sarbecoviruses-ace2",
+    "title": "BANAL bat sarbecoviruses in Laos: closest known SARS-CoV-2 relatives, with RBDs that bind human ACE2 and infect human cells in nature",
+    "direction": "natural-origin",
+    "evidence_type": "virological",
+    "claim_confidence": 0.95,
+    "support_strength": "moderate",
+    "claim": "Wild horseshoe bats (*Rhinolophus* spp.) in karst caves of Feuang district, northern Laos, harbor sarbecoviruses (BANAL-52, BANAL-103, BANAL-236) whose genomes are up to ~96.8% identical to SARS-CoV-2 — the closest known relatives at the time of publication. Their receptor-binding domains (RBDs) are nearly identical to SARS-CoV-2's, bind human ACE2 with affinity comparable to or higher than early SARS-CoV-2, and the viruses enter and replicate in human cells via ACE2 without prior adaptation. This rebuts the early \"no wild virus binds human ACE2 this well, so the RBD must be engineered\" argument.",
+    "evidence_quality": "The core findings are **peer-reviewed and strong**. Temmam et al. 2022 is in *Nature* (Institut Pasteur / Institut Pasteur du Laos / National University of Laos), with isolated, sequenced viruses and functional ACE2/cell-entry assays. The viruses are real isolates, not just sequences. Follow-on peer-reviewed work has independently characterized BANAL-236: an *eBioMedicine* 2024 study (Tamura et al.) and a *Nature Microbiology* 2024 study (Peña-Hernández et al.) both built/used BANAL clones and confirmed ACE2-mediated human-cell entry — so the central virological claim is **replicated across independent labs**.\n\nOne source listed in the working brief deserves a flag: arXiv:2112.06141 (\"Laotian Bat Sarbecovirus BANAL-236 Uses ACE2 to Infect Cells by an Unknown Mechanism\") is **not a neutral structural paper** — it is a single-author preprint by Steven Quay, a prominent lab-leak advocate, arguing the virus's UTRs are \"non-canonical\" and unprecedented. It is not peer-reviewed and its framing is contested. The genuine structural evidence for RBD/ACE2 near-identity comes from PDB depositions (e.g., 8UZE) and peer-reviewed structural studies, not from that preprint.",
+    "strongest_counterargument": "The strongest rebuttal is **not** that the claim is false, but that it proves less than it seems. Two points:\n\n1. **The \"supposedly human-optimized\" framing is a strawman about the FCS, not the RBD.** Most serious engineering arguments centered on the polybasic furin cleavage site — which BANAL viruses **lack**. So BANAL rebuts the narrower \"the RBD couldn't have evolved naturally\" claim, but does nothing to explain the FCS, the single most-cited \"unusual\" feature.\n\n2. **Genetic closeness ≠ pandemic capability.** Peña-Hernández et al. (2024, *Nature Microbiology*) made molecular clones of BANAL-52 and BANAL-236 and found that, although they enter human cells via ACE2, they have **impaired replication in human nasal epithelial cells, reduced pathogenesis in mice, and diminished transmission in hamsters** relative to SARS-CoV-2. Tamura et al. (2024, *eBioMedicine*) similarly found BANAL-20-236 less fusogenic, less pathogenic, and tropic toward intestinal rather than respiratory cells. So the wild BANAL viruses are demonstrably **not** ready-made human respiratory pandemic agents — substantial additional change (notably the FCS and other spike adaptations) was needed. This is fully compatible with natural emergence via an intermediate host, but it blocks the over-strong reading \"a pandemic-ready virus already existed in bats.\"",
+    "confidence_assessment": "- **Claim confidence:** 0.95 — The factual claims (closest known relative at ~96.8%; near-identical RBD; binds human ACE2; enters human cells without adaptation; sampled far from Wuhan) are peer-reviewed in *Nature* and independently replicated. The small residual uncertainty is about precise quantitative wording (\"similar to\" vs \"more efficiently than\" early SARS-CoV-2 binding) and structural RMSD figures drawn from secondary structural papers.\n- **Support strength:** moderate — for **natural origin**. It decisively refutes the specific \"no natural virus binds human ACE2 well, so the RBD was engineered\" argument and shows the reservoir is undersampled (so an unsampled near-ancestor is plausible). But it does **not** address the furin cleavage site, BANAL viruses are not direct progenitors, and they are not transmission-competent in humans — so it shifts the prior toward natural origin without being decisive.\n- **Net:** A calibrated reasoner should treat BANAL as solid evidence that SARS-CoV-2's RBD/ACE2 binding is well within the natural sarbecovirus range and that the bat reservoir is poorly sampled — defusing one engineering argument — while noting it leaves the furin cleavage site question open and does not by itself prove the pandemic strain arose naturally.",
+    "source_path": "evidence/banal-laos-bat-sarbecoviruses-ace2.md",
+    "citations": [
+      {
+        "source_id": "src_f396247ad0e2",
+        "citation": "Temmam, S., Vongphayloth, K., Baquero, E., et al. (2022). *Bat coronaviruses related to SARS-CoV-2 and infectious for human cells.* Nature 604, 330–336. https://www.nature.com/articles/s41586-022-04532-4 (DOI: 10.1038/s41586-022-04532-4)",
+        "urls": [
+          "https://www.nature.com/articles/s41586-022-04532-4"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_da86135dc184",
+        "citation": "Institut Pasteur (2021). *SARS-CoV-2-related viruses capable of infecting human cells discovered in bats in northern Laos* (press release). https://www.pasteur.fr/en/press-area/press-documents/sars-cov-2-related-viruses-capable-infecting-human-cells-discovered-bats-northern-laos",
+        "urls": [
+          "https://www.pasteur.fr/en/press-area/press-documents/sars-cov-2-related-viruses-capable-infecting-human-cells-discovered-bats-northern-laos"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_38f8568d8c73",
+        "citation": "Peña-Hernández, M. A., Alfajaro, M. M., Filler, R. B., et al. (2024). *SARS-CoV-2-related bat viruses evade human intrinsic immunity but lack efficient transmission capacity.* Nature Microbiology 9, 2038–2050. https://www.nature.com/articles/s41564-024-01765-z (DOI: 10.1038/s41564-024-01765-9)",
+        "urls": [
+          "https://www.nature.com/articles/s41564-024-01765-z"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_bdf02fbbb0fa",
+        "citation": "Tamura, T., et al. (2024). *Virological characteristics of a SARS-CoV-2-related bat coronavirus, BANAL-20-236.* eBioMedicine 105:105181. https://www.thelancet.com/journals/ebiom/article/PIIS2352-3964(24)00216-0/fulltext (DOI: 10.1016/j.ebiom.2024.105181)",
+        "urls": [
+          "https://www.thelancet.com/journals/ebiom/article/PIIS2352-3964(24"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_6ee7de82b1cb",
+        "citation": "RCSB Protein Data Bank entry 8UZE — *Crystal structure of chimeric bat coronavirus BANAL-20-236 RBD complexed with ACE2.* https://www.rcsb.org/structure/8UZE",
+        "urls": [
+          "https://www.rcsb.org/structure/8UZE"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_423494ab9d43",
+        "citation": "(Flagged, contested, non-peer-reviewed) Quay, S. (2021). *Laotian Bat Sarbecovirus BANAL-236 Uses ACE2 to Infect Cells by an Unknown Mechanism.* arXiv:2112.06141. https://arxiv.org/abs/2112.06141 — single-author preprint by a lab-leak advocate; included only to note that the brief's citation is not neutral structural evidence.",
+        "urls": [
+          "https://arxiv.org/abs/2112.06141"
+        ],
+        "source_class": "preprint",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Natural availability of ACE2-binding relatives materially addresses origin hypotheses centered on an allegedly unnatural receptor-binding domain."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on whether the target hypothesis is rational RBD design, any engineering, serial passage, or research-related collection of a natural virus."
+    ],
+    "coverage_gaps": [
+      "Known BANAL viruses do not bridge the complete genomic gap or explain every SARS-CoV-2 feature, including the furin-cleavage-site question."
+    ],
+    "correlation_risks": [
+      "Shares mechanism-level support with natural-recombination, pangolin-RBD, and genetic-distance items."
+    ],
+    "capability_limits": [
+      "Assessing experimental virology requires checking methods, model systems, and replication in the cited studies."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "The viruses demonstrate natural ACE2 binding but have important phenotypic and genomic differences from SARS-CoV-2."
+      ],
+      "ingestion_conditional": [
+        "Inference is limited by sparse sampling of the wider sarbecovirus reservoir."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "Strong evidence against one rational-design argument is weaker evidence against the broader lab-incident hypothesis."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Avoid upgrading a rebuttal to a narrow engineering claim into proof of the complete zoonotic pathway.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_eggs_egg-production-environmental-impact_v1",
+  "case_id": "eggs",
+  "baseline_id": "audit-lower-layers-eggs-starter-2026-07-18",
+  "provenance": {
+    "upstream_author": "Audit the Lower Layers team",
+    "upstream_generation_method": "curated starter baseline with declared framings",
+    "annotation_method": "deterministic_extraction_and_provisional_classification"
+  },
+  "annotation_status": "extracted_not_verified",
+  "evidence": {
+    "evidence_id": "egg-production-environmental-impact",
+    "title": "Egg production has environmental impacts that vary by system and comparison",
+    "direction": "environmental-impact",
+    "evidence_type": "life-cycle-assessment",
+    "claim_confidence": null,
+    "support_strength": "not-comparable-across-framings",
+    "claim": "An environmental reading of “good to eat” evaluates greenhouse-gas emissions, land use, feed production, manure, eutrophication, and other impacts; results depend on production system, functional unit, geography, and the food used as a comparator.",
+    "evidence_quality": "Life-cycle assessment is the appropriate general method, but estimates are model-dependent. System boundaries, allocation choices, feed assumptions, geography, and the unit of comparison can materially change results.",
+    "strongest_counterargument": "Comparative global averages can obscure local production practices and nutritional substitution. A per-kilogram, per-protein, per-calorie, and per-serving comparison can rank foods differently, so an environmental verdict without a declared functional unit is underspecified.",
+    "confidence_assessment": "No numeric confidence is assigned. The robust conclusion is structural: environmental assessment requires a different source universe and outcome definition than either health or welfare assessment.",
+    "source_path": "evidence/egg-production-environmental-impact.md",
+    "citations": [
+      {
+        "source_id": "src_ca316d5769d7",
+        "citation": "Poore, J., & Nemecek, T. (2018). Reducing food's environmental impacts through producers and consumers. *Science* 360(6392):987–992. https://doi.org/10.1126/science.aaq0216",
+        "urls": [
+          "https://doi.org/10.1126/science.aaq0216"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_68ed13bb9c13",
+        "citation": "Leinonen, I., Williams, A. G., Wiseman, J., Guy, J., & Kyriazakis, I. (2012). Predicting the environmental impacts of chicken systems in the United Kingdom through a life cycle assessment: Egg production systems. *Poultry Science* 91(1):26–40. https://doi.org/10.3382/ps.2011-01635",
+        "urls": [
+          "https://doi.org/10.3382/ps.2011-01635"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_3eff07494463",
+        "citation": "Abín, R., Laca, A., Laca, A., & Díaz, M. (2018). Environmental assessment of intensive egg production: A Spanish case study. *Journal of Cleaner Production* 179:160–168. https://doi.org/10.1016/j.jclepro.2018.01.067",
+        "urls": [
+          "https://doi.org/10.1016/j.jclepro.2018.01.067"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [],
+    "policy_sensitivities": [],
+    "coverage_gaps": [],
+    "correlation_risks": [],
+    "capability_limits": [],
+    "uncertainty_attribution": {
+      "evidential": [],
+      "ingestion_conditional": [],
+      "capability_conditional": [],
+      "framing_conditional": [],
+      "unattributed": [
+        "The baseline assessment has not yet been independently audited."
+      ]
+    },
+    "notes": [
+      "Baseline prose and scores are preserved as claims by the upstream run, not adopted as our judgments."
+    ]
+  }
+}

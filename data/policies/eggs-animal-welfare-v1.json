@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "eggs-animal-welfare",
+  "version": 1,
+  "case_id": "eggs",
+  "question_raw": "Are eggs good to eat?",
+  "framing": {
+    "framing_id": "animal_welfare",
+    "operationalized_question": "What welfare consequences for laying hens are causally connected to producing the eggs being consumed?",
+    "declared_values": ["sentient-animal welfare", "husbandry conditions", "avoidable harm"]
+  },
+  "source_scope": {
+    "languages": ["en"],
+    "source_types": ["animal-welfare science", "veterinary evidence", "regulatory scientific opinions"],
+    "inclusion_rules": ["Evidence tied to laying-hen production systems and welfare outcomes"],
+    "exclusion_rules": ["Human-health outcomes alone cannot answer this framing"]
+  },
+  "capability_profile": [
+    {
+      "capability": "Separate descriptive welfare evidence from ethical weighting",
+      "status": "limited",
+      "evidence_type": "curated",
+      "note": "The evidence can describe consequences; the moral conclusion requires declared values."
+    }
+  ]
+}
+

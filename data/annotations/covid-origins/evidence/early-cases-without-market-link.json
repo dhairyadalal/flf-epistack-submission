@@ -1,0 +1,147 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_early-cases-without-market-link_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "early-cases-without-market-link",
+    "title": "Some of the earliest documented cases had no link to the Huanan market, and China gave the WHO only case summaries, not raw line-list data",
+    "direction": "lab-leak",
+    "evidence_type": "epidemiological",
+    "claim_confidence": 0.9,
+    "support_strength": "weak",
+    "claim": "A substantial fraction of the earliest documented COVID-19 cases reported no exposure to the Huanan Seafood Market: in Huang et al. (Lancet, Jan 2020) only 27 of the first 41 hospitalized patients (66%) had direct market exposure, and the WHO–China Joint Study (2021) found roughly half of the 174 December-2019 Hubei cases were market-linked (one widely cited extraction is 55 of 168). Separately, a WHO team member (Dominic Dwyer) stated that China provided the WHO mission with case *summaries* rather than the raw \"line-list\" patient data the team requested.",
+    "evidence_quality": "Mixed but mostly solid on the factual core. The case counts come from **peer-reviewed work** (Huang et al., *The Lancet*) and an **official intergovernmental report** (WHO–China Joint Study). The withholding claim is **first-hand testimony from a named WHO team member**, reported by multiple independent outlets (Reuters, AP, Al Jazeera) — credible but single-source and not independently auditable. The precise \"55 of 168\" figure is a *third-party extraction* of the WHO report's case data rather than a number the report itself foregrounds, so the exact denominator/numerator should be treated as approximate; \"about half\" is the safest summary.\n\nA key complication: the **onset date of the very first case is itself disputed.** The WHO report listed an 8 Dec 2019 onset for an early case; Worobey (Science, 2021) argued that case (a 41-year-old accountant) actually had COVID onset on **16 Dec**, his Dec-8 complaint being dental, and that the earliest case was instead a **Huanan market vendor** (onset ~11 Dec). A formal correction to that date was issued in Dec 2021. So the \"earliest case had no market link\" framing depends on which patient is taken as index, and that ordering is contested.",
+    "strongest_counterargument": "Worobey et al. (*Science*, 2022, DOI: 10.1126/science.abp8715) argue the market was the genuine epicenter even *after* accounting for ascertainment bias. Their key, somewhat paradoxical finding: early cases with **no direct market link still lived significantly closer to the market** (median ~4.0 km, p<0.001) than the general population — and, strikingly, *closer* than the market-linked cases themselves. They argue this pattern is the opposite of what contact-tracing/ascertainment bias would produce (unlinked cases traced from market clusters would not be expected to cluster *more* tightly around the market). Pekar et al. (*Science*, 2022) add genomic evidence of two early lineages consistent with multiple introductions at the market. On this view, the missing market links and incomplete data reflect imperfect early case-finding, not evidence of an origin elsewhere. Critics of the market hypothesis (e.g., Stoyan & Chiu 2024) dispute the spatial statistics, but the Worobey group has rebutted those critiques (arXiv 2403.05859, 2024).",
+    "confidence_assessment": "- **Claim confidence:** 0.9 — The core facts (first Lancet case unlinked, ~34% of first 41 unlinked, ~half of WHO's 174 unlinked, China provided summaries not line lists) are each well-sourced. The deduction is the exact \"55 of 168\" denominator (a derived figure, not authoritative) and the contested status of *which* case is truly first.\n- **Support strength:** weak — for lab-leak. Missing market links and withheld raw data are real and legitimately raise the possibility that the market was an amplifier rather than the source. But they are equally consistent with imperfect early case ascertainment, and the strongest available spatial analysis (Worobey 2022) finds the *unlinked* cases clustered around the market too. The data gap mainly establishes that the timeline is genuinely disputed and incomplete — not that introduction happened elsewhere.\n- **Net:** A calibrated reasoner should treat this as solid evidence that the early case data is incomplete and partly withheld, but only a weak update toward lab-leak, because the best reconstruction of the same data still places the geographic center of gravity at the market.",
+    "source_path": "evidence/early-cases-without-market-link.md",
+    "citations": [
+      {
+        "source_id": "src_7eea5284a0e6",
+        "citation": "Huang C, Wang Y, Li X, et al. (2020). \"Clinical features of patients infected with 2019 novel coronavirus in Wuhan, China.\" *The Lancet* 395(10223):497–506. DOI: 10.1016/S0140-6736(20)30183-5. https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30183-5/fulltext",
+        "urls": [
+          "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_21242f61be66",
+        "citation": "WHO (2021). \"WHO-convened Global Study of Origins of SARS-CoV-2: China Part — Joint Report.\" https://www.who.int/docs/default-source/coronaviruse/who-convened-global-study-of-origins-of-sars-cov-2-china-part-joint-report.pdf",
+        "urls": [
+          "https://www.who.int/docs/default-source/coronaviruse/who-convened-global-study-of-origins-of-sars-cov-2-china-part-joint-report.pdf"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_0361b92f3139",
+        "citation": "Reuters / Al Jazeera (13 Feb 2021). \"China refused to give raw COVID data to WHO, team member says\" (Dominic Dwyer testimony on line-list data). https://www.aljazeera.com/news/2021/2/13/china-refuses-to-give-raw-data-to-who-team-investigating-covid-19",
+        "urls": [
+          "https://www.aljazeera.com/news/2021/2/13/china-refuses-to-give-raw-data-to-who-team-investigating-covid-19"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_ab2e58d49e50",
+        "citation": "Worobey M, Levy JI, Malpica Serrano L, et al. (2022). \"The Huanan Seafood Wholesale Market in Wuhan was the early epicenter of the COVID-19 pandemic.\" *Science* 377(6609):951–959. DOI: 10.1126/science.abp8715. https://pmc.ncbi.nlm.nih.gov/articles/PMC9348750/",
+        "urls": [
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC9348750/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_fff89af410c8",
+        "citation": "Pekar JE, Magee A, Parker E, et al. (2022). \"The molecular epidemiology of multiple zoonotic origins of SARS-CoV-2.\" *Science* 377(6609):960–966. DOI: 10.1126/science.abp8337.",
+        "urls": [],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_bbfe8b5bb705",
+        "citation": "Worobey M (2021). \"Dissecting the early COVID-19 cases in Wuhan.\" *Science* 374(6572):1202–1204 (Dec-8 onset correction; market-vendor index case). DOI: 10.1126/science.abm4454. https://www.science.org/doi/10.1126/science.abm4454",
+        "urls": [
+          "https://www.science.org/doi/10.1126/science.abm4454"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_18b03f21852f",
+        "citation": "Confirmation of the centrality of the Huanan market among early COVID-19 cases — Reply to Stoyan and Chiu (2024). arXiv:2403.05859. https://arxiv.org/abs/2403.05859",
+        "urls": [
+          "https://arxiv.org/abs/2403.05859"
+        ],
+        "source_class": "preprint",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Lack of reported market exposure is treated as evidence that the market was not the origin rather than as expected incomplete linkage during community spread."
+    ],
+    "policy_sensitivities": [
+      "Conclusion changes with case inclusion dates, direct-versus-geographic linkage rules, and confidence in official case summaries."
+    ],
+    "coverage_gaps": [
+      "Raw patient line lists, complete exposure histories, and independent early surveillance records are unavailable."
+    ],
+    "correlation_risks": [
+      "Uses the same early-case dataset as market-clustering and absence-of-non-market-cluster items, sometimes to argue the opposite direction."
+    ],
+    "capability_limits": [
+      "Assessing sampling, ascertainment, and spatial or temporal inference requires raw data and specialist statistical review beyond the supplied summary."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Reported non-linkage is descriptive; its causal implication is contested."
+      ],
+      "ingestion_conditional": [
+        "Case histories were summarized and curated rather than independently available."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "Direct exposure, residence near the market, and outbreak epicenter are distinct relationships."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Represent opposing interpretations as reviews of one shared dataset, not independent evidence nodes.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

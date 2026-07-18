@@ -1,0 +1,138 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_defuse-furin-preexisting-blueprint_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "defuse-furin-preexisting-blueprint",
+    "title": "The 2018 DEFUSE proposal planned to insert furin cleavage sites into SARS-like coronaviruses — a documented pre-pandemic 'blueprint'",
+    "direction": "lab-leak",
+    "evidence_type": "documentary",
+    "claim_confidence": 0.9,
+    "support_strength": "moderate",
+    "claim": "In a March 2018 grant proposal to DARPA (\"Project DEFUSE\"), a consortium led by EcoHealth Alliance, with the University of North Carolina (Ralph Baric) and the Wuhan Institute of Virology (Shi Zhengli), explicitly proposed introducing \"human-specific cleavage sites\" — i.e. proteolytic / furin-type cleavage sites — at the S1/S2 junction of bat SARS-related coronavirus spikes and assembling chimeric viruses from synthetic genome segments. SARS-CoV-2 subsequently appeared carrying a furin cleavage site at exactly that junction — a feature absent from all other known members of its sarbecovirus subgenus. The proposal was rejected by DARPA in 2018 and there is no documentary evidence the proposed experiment was ever performed.",
+    "evidence_quality": "The underlying documentary fact is very well established: the DEFUSE proposal is a genuine primary document, its furin-site language is directly quoted in mainstream investigative journalism (The Intercept) and has been confirmed by congressional oversight (Senate HSGAC, Sen. Rand Paul correspondence 2023–2024) and EcoHealth's own non-denial of the document's existence. So the *claim that DEFUSE proposed this* is near-certain.\n\nWhat this is NOT: it is not evidence that the experiment was carried out. The proposal was rejected and unfunded; no leaked lab notebook, sequence, or record shows the planned furin insertion was executed. The probative force is purely circumstantial — a \"blueprint\" coincidence of feature + place + authorship + timing — not direct evidence of a manufactured virus. This is the crucial distinction between \"suggestive\" and \"demonstrative.\"",
+    "strongest_counterargument": "Several independent rebuttals weaken the inference:\n\n1. **Rejected and never funded.** EcoHealth Alliance's position (e.g. its March 2023 statements to the House Select Committee) is that DEFUSE \"was not funded and the work was never done, therefore it cannot have played any role in the origin of SARS-CoV-2.\" Daszak further argues the intent was to *survey* natural cleavage sites and introduce them as needed, not specifically to graft a furin site to test pandemic potential.\n\n2. **The site doesn't look engineered.** Robert F. Garry (2022, PNAS, \"SARS-CoV-2 furin cleavage site was not engineered\") argues the SARS-CoV-2 FCS is *suboptimal* for furin and that several amino acids near it are shared with natural sarbecoviruses (e.g. BANAL-20-52), consistent with natural recombination. A designer optimizing a furin site would likely have produced a stronger, canonical motif (e.g. RRKR rather than the observed PRRAR-type sequence). Wikipedia's lab-leak summary aggregates these points: the FCS shows \"suboptimal configuration and poor targeting,\" occurs naturally across coronaviruses (MERS-CoV, HCoV-OC43, HCoV-HKU1), and the inserted CGG-CGG arginine codons — argued by some to be a synthetic \"fingerprint\" — actually persisted rather than mutating out as circulation would be expected to favor if foreign.\n\n3. **A blueprint is not a build.** Many things are proposed in grants and never done; DARPA's rejection on biosafety grounds cuts against (not for) the work having quietly proceeded. The coincidence is genuinely striking but, absent any record of execution, remains consistent with the proposal having simply identified the *same* feature that natural selection later produced — precisely because researchers and nature were both \"looking at\" the S1/S2 junction as a pandemic-relevant target.\n\nA counter-counter: critics (Ebright; USRTK; some congressional staff) note that the relevant techniques (Baric's no-see-um/seamless assembly) leave no engineering signature, so absence of a fingerprint is weak exculpatory evidence, and that the proposal's rejection does not preclude the work proceeding under other funding or pre-proposal pilot work — though EcoHealth disputes this as logistically implausible.",
+    "confidence_assessment": "- **Claim confidence:** 0.90 — The documentary claim (DEFUSE proposed introducing human-specific/furin-type cleavage sites at S1/S2 in chimeric SARS-related CoVs, was submitted to DARPA in 2018, and was rejected) is essentially certain. I discount slightly only because the precise framing — \"explicitly a furin cleavage site to make a pandemic virus\" — is contested by EcoHealth, who emphasize the cleavage-site language was about surveying/introducing natural sites, and because \"furin\" specifically is partly interpretive of the proposal's \"human-specific cleavage sites\" wording.\n- **Support strength:** moderate (for lab-leak) — The timeline/authorship coincidence is genuinely arresting and hard to dismiss as pure chance; it is among the strongest *circumstantial* points for a research-related origin. But it is downgraded from \"strong\" because (a) there is no evidence the work was done, (b) the actual SARS-CoV-2 furin site has features that several specialists read as more natural than designed, and (c) a proposal is not an experiment.\n- **Net:** A calibrated reasoner should treat DEFUSE as a real and significant *circumstantial* fact that meaningfully raises the prior on a research-related origin — the exact feature was a stated aim of the exact institutions in the exact city shortly before — while recognizing it is documentary coincidence, not proof of construction, and is partly offset by molecular arguments that the resulting site looks suboptimal/natural.",
+    "source_path": "evidence/defuse-furin-preexisting-blueprint.md",
+    "citations": [
+      {
+        "source_id": "src_069db05f7fe3",
+        "citation": "Lerner, S. & Hibbett, M. (2021). \"Leaked Grant Proposal Details High-Risk Coronavirus Research.\" The Intercept, 23 Sept 2021. https://theintercept.com/2021/09/23/coronavirus-research-grant-darpa/",
+        "urls": [
+          "https://theintercept.com/2021/09/23/coronavirus-research-grant-darpa/"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_9d3852b637f6",
+        "citation": "U.S. Right to Know. \"US scientists proposed to make viruses with unique features of SARS-CoV-2 in Wuhan.\" https://usrtk.org/covid-19-origins/scientists-proposed-making-viruses-with-unique-features-of-sars-cov-2-in-wuhan/",
+        "urls": [
+          "https://usrtk.org/covid-19-origins/scientists-proposed-making-viruses-with-unique-features-of-sars-cov-2-in-wuhan/"
+        ],
+        "source_class": "commentary_or_advocacy",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_b038dc8edf56",
+        "citation": "Garry, R. F. (2022). \"SARS-CoV-2 furin cleavage site was not engineered.\" Proceedings of the National Academy of Sciences 119(40): e2211107119. https://www.pnas.org/doi/10.1073/pnas.2211107119 (PubMed: https://pubmed.ncbi.nlm.nih.gov/36173950/)",
+        "urls": [
+          "https://www.pnas.org/doi/10.1073/pnas.2211107119",
+          "https://pubmed.ncbi.nlm.nih.gov/36173950/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_b521e10b0b1c",
+        "citation": "EcoHealth Alliance (March 2023). Statements correcting inaccuracies in testimony before the House Select Committee on the Coronavirus Pandemic (positions that DEFUSE was unfunded and \"the work was never done\"). https://www.ecohealthalliance.org/2023/03/ecohealth-alliance-statement-correcting-inaccuracies-in-testimony-to-be-delivered-before-the-house-select-committee",
+        "urls": [
+          "https://www.ecohealthalliance.org/2023/03/ecohealth-alliance-statement-correcting-inaccuracies-in-testimony-to-be-delivered-before-the-house-select-committee"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_803c488ff800",
+        "citation": "Wikipedia. \"COVID-19 lab leak theory\" (aggregates DEFUSE and furin-site engineering/natural-occurrence arguments). https://en.wikipedia.org/wiki/COVID-19_lab_leak_theory",
+        "urls": [
+          "https://en.wikipedia.org/wiki/COVID-19_lab_leak_theory"
+        ],
+        "source_class": "reference_work",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_50a51de5d65b",
+        "citation": "DRASTIC — \"An Analysis of Project DEFUSE\" (independent analysis of the leaked proposal). https://www.researchgate.net/publication/363729325_DRASTIC_-_An_Analysis_of_Project_DEFUSE",
+        "urls": [
+          "https://www.researchgate.net/publication/363729325_DRASTIC_-_An_Analysis_of_Project_DEFUSE"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "The coincidence between a proposed intervention and a later viral feature is treated as unlikely without a causal connection."
+    ],
+    "policy_sensitivities": [
+      "Weight changes with priors for natural cleavage-site emergence and for unfunded or pilot work proceeding outside the grant."
+    ],
+    "coverage_gaps": [
+      "Evidence of execution, the exact construct design, and a matching precursor are absent."
+    ],
+    "correlation_risks": [
+      "Duplicate DEFUSE evidence cluster; strongly correlated with the furin-site and laboratory-capability items."
+    ],
+    "capability_limits": [
+      "Document interpretation depends on completeness, provenance, surrounding context, and access to the original record."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "The conceptual resemblance is real but molecular and procedural linkage is unresolved."
+      ],
+      "ingestion_conditional": [
+        "Unreleased experimental records could materially change the assessment in either direction."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "Calling the proposal a blueprint gives more causal force than calling it evidence of relevant research interest."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Do not add this item's weight to the other DEFUSE summaries.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

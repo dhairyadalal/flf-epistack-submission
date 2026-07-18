@@ -1,0 +1,173 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_no-close-progenitor-or-intermediate-host_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "no-close-progenitor-or-intermediate-host",
+    "title": "No close progenitor virus or infected intermediate host has been found years after emergence",
+    "direction": "lab-leak",
+    "evidence_type": "genomic",
+    "claim_confidence": 0.92,
+    "support_strength": "weak",
+    "claim": "More than four years after the emergence of SARS-CoV-2, no direct animal progenitor virus has been sampled and no infected non-human animal of any species (intermediate host or reservoir) has been found that links to the pandemic, despite substantial sampling. The closest known relatives are bat viruses (~96–96.8% identity) whose shared ancestor with SARS-CoV-2 dates back several decades.",
+    "evidence_quality": "The underlying factual claim is strong and largely uncontested: it rests on peer-reviewed work across the spectrum of the origins debate (Holmes et al. 2021 Cell; Temmam et al. 2022 Nature; Pekar et al. 2022 Science; Liu et al. 2023 Nature; Crits-Christoph et al. 2024 Cell). Even authors who argue strongly for a natural market origin concede that the direct progenitor and any infected intermediate remain unsampled. The dispute is not over the fact but over its interpretation — whether prolonged failure to find an infected animal favors a lab origin or merely reflects sampling limits.",
+    "strongest_counterargument": "\"Absence of evidence is not evidence of absence,\" and the inference from this fact to a lab origin is weak for several converging reasons:\n\n1. **Sampling has been limited and politically constrained.** The wildlife supply chains feeding Wuhan markets (farms in southern China, Laos, Vietnam) were largely culled and not systematically tested early; the live animals present at Huanan in late 2019 were removed before sampling. Holmes et al. (2021) and the 2024 Cell study emphasize that the relevant animals were never sampled in the relevant window.\n2. **Natural spillovers frequently lack an identified intermediate.** No intermediate host was ever conclusively identified for MERS-related lineages before camels, for Ebola, or for some early SARS-CoV-1 introductions; the SARS-1 civet result, while fast, was aided by an ongoing live-animal trade that was still operating when sampling occurred.\n3. **The market DNA evidence is positively suggestive.** Susceptible species (raccoon dogs, civets) demonstrably present at the exact stalls with the most SARS-CoV-2-positive environmental samples is what a zoonotic spillover would predict, even absent a positive animal test.\n4. **The decades-of-divergence gap exists on every hypothesis.** Because the closest known viruses are ~3–4% divergent, no sampled virus is a plausible direct ancestor under *any* origin scenario — including a lab one. The absence of a close progenitor therefore does not specifically favor lab leak; it reflects how little of the bat-coronavirus reservoir has been sequenced (Holmes et al. 2021; Temmam et al. 2022). Liu et al. (2023, Nature, \"Surveillance of SARS-CoV-2 at the Huanan Seafood Market\") and Crits-Christoph et al. (2024, Cell) present this evidence as supporting, not undermining, a market zoonotic origin.",
+    "confidence_assessment": "- **Claim confidence:** 0.92 — As stated (no sampled direct progenitor; no confirmed infected animal of any species linked to the pandemic), the claim is essentially accurate and agreed across the literature. The small uncertainty reflects ongoing debate about whether the market environmental/DNA evidence should count as a partial identification of the source.\n- **Support strength:** weak — IF true (which it is), it moves the origin question only modestly toward lab-leak. The decades-long divergence gap exists under all hypotheses, intermediate hosts are often unfound in genuine zoonoses, and sampling has been demonstrably incomplete and politically obstructed. The SARS-1 contrast is real but rests on a single unusually favorable precedent.\n- **Net:** A calibrated reasoner should treat the missing progenitor/intermediate as a genuine and somewhat surprising gap that is *weakly* consistent with a non-zoonotic introduction, while recognizing it is far better explained by undersampling of a vast, poorly characterized bat reservoir and disrupted wildlife supply chains — and that the same gap would exist even if the origin were natural.",
+    "source_path": "evidence/no-close-progenitor-or-intermediate-host.md",
+    "citations": [
+      {
+        "source_id": "src_d46b88a2ea5f",
+        "citation": "Holmes EC, Goldstein SA, Rasmussen AL, Robertson DL, Crits-Christoph A, Wertheim JO, et al. (2021). The origins of SARS-CoV-2: A critical review. *Cell* 184(19):4848–4856. https://doi.org/10.1016/j.cell.2021.08.017",
+        "urls": [
+          "https://doi.org/10.1016/j.cell.2021.08.017"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_7462b2e61b91",
+        "citation": "Temmam S, Vongphayloth K, Baquero E, Munier S, Bonomi M, Regnault B, et al. (2022). Bat coronaviruses related to SARS-CoV-2 and infectious for human cells. *Nature* 604(7905):330–336. https://doi.org/10.1038/s41586-022-04532-4",
+        "urls": [
+          "https://doi.org/10.1038/s41586-022-04532-4"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_cdf8b0ed663c",
+        "citation": "Pekar JE, Magee A, Parker E, Moshiri N, Izhikevich K, Havens JL, et al. (2022). The molecular epidemiology of multiple zoonotic origins of SARS-CoV-2. *Science* 377(6609):960–966. https://doi.org/10.1126/science.abp8337",
+        "urls": [
+          "https://doi.org/10.1126/science.abp8337"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_08a628ab2f98",
+        "citation": "Worobey M, Levy JI, Malpica Serrano L, Crits-Christoph A, Pekar JE, Goldstein SA, et al. (2022). The Huanan Seafood Wholesale Market in Wuhan was the early epicenter of the COVID-19 pandemic. *Science* 377(6609):951–959. https://doi.org/10.1126/science.abp8715",
+        "urls": [
+          "https://doi.org/10.1126/science.abp8715"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_9ae7140dfa62",
+        "citation": "Liu WJ, Liu P, Lei W, Jia Z, He X, Shi W, et al. (2023). Surveillance of SARS-CoV-2 at the Huanan Seafood Market. *Nature* 619:810–817. https://doi.org/10.1038/s41586-023-06043-2",
+        "urls": [
+          "https://doi.org/10.1038/s41586-023-06043-2"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_dc73a75cd48b",
+        "citation": "Crits-Christoph A, Levy JI, Pekar JE, Goldstein SA, Singh R, Hensel Z, et al. (2024). Genetic tracing of market wildlife and viruses at the epicenter of the COVID-19 pandemic. *Cell* 187(19):5468–5482. https://doi.org/10.1016/j.cell.2024.08.010",
+        "urls": [
+          "https://doi.org/10.1016/j.cell.2024.08.010"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_1554ebdb9e9a",
+        "citation": "Guan Y, Zheng BJ, He YQ, Liu XL, Zhuang ZX, Cheung CL, et al. (2003). Isolation and characterization of viruses related to the SARS coronavirus from animals in southern China. *Science* 302(5643):276–278. https://doi.org/10.1126/science.1087139",
+        "urls": [
+          "https://doi.org/10.1126/science.1087139"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_ee12858250bd",
+        "citation": "Wang M, Yan M, Xu H, Liang W, Kan B, Zheng B, et al. (2005). SARS-CoV Infection in a Restaurant from Palm Civet. *Emerging Infectious Diseases* 11(12):1860–1865 (CDC EID). https://wwwnc.cdc.gov/eid/article/11/12/04-1293_article",
+        "urls": [
+          "https://wwwnc.cdc.gov/eid/article/11/12/04-1293_article"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_89ffd3192635",
+        "citation": "Domingo JL (2022). SARS-CoV-2 and the Missing Link of Intermediate Hosts in Viral Emergence — What We Can Learn From Other Betacoronaviruses. *Frontiers in Virology* 2:875213. https://doi.org/10.3389/fviro.2022.875213",
+        "urls": [
+          "https://doi.org/10.3389/fviro.2022.875213"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Failure to find a close progenitor or host is treated as less expected under zoonosis than under a laboratory incident."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on search-effort estimates, reservoir size, political access, and expected discovery time under each hypothesis."
+    ],
+    "coverage_gaps": [
+      "The relevant wildlife reservoir, farms, supply chains, and laboratory inventories were not comprehensively sampled."
+    ],
+    "correlation_risks": [
+      "Overlaps no-source-animal and RaTG13/BANAL genetic-distance items."
+    ],
+    "capability_limits": [
+      "Assessing phylogenetic or genomic inference requires sequence-level analysis and domain expertise beyond the supplied summary."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "The absence is real in the observed corpus, but the likelihood of non-discovery under each hypothesis is uncertain."
+      ],
+      "ingestion_conditional": [
+        "Sampling and access limitations directly determine the observed absence."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "Absence of an animal link and absence of a laboratory precursor are symmetric missing-link problems unless search efforts are compared."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Requires an explicit missingness model before receiving directional weight.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_eggs_population-cardiovascular-risk_v1",
+  "case_id": "eggs",
+  "baseline_id": "audit-lower-layers-eggs-starter-2026-07-18",
+  "provenance": {
+    "upstream_author": "Audit the Lower Layers team",
+    "upstream_generation_method": "curated starter baseline with declared framings",
+    "annotation_method": "deterministic_extraction_and_provisional_classification"
+  },
+  "annotation_status": "extracted_not_verified",
+  "evidence": {
+    "evidence_id": "population-cardiovascular-risk",
+    "title": "Moderate egg consumption and population-level cardiovascular risk",
+    "direction": "health-population",
+    "evidence_type": "epidemiological",
+    "claim_confidence": null,
+    "support_strength": "not-comparable-across-framings",
+    "claim": "At a population level, moderate egg consumption—roughly up to one egg per day—has not shown a consistent association with higher cardiovascular-disease risk across prospective-cohort meta-analyses, although results vary by population and study design.",
+    "evidence_quality": "The BMJ paper includes large prospective cohorts and a systematic review, but the evidence is observational and vulnerable to residual confounding, dietary-measurement error, and variation in what foods eggs replace or accompany. The AHA advisory is an expert synthesis rather than an independent experimental result.",
+    "strongest_counterargument": "Other large observational analyses have reported positive associations between dietary cholesterol or egg intake and cardiovascular outcomes. Aggregating population averages may also conceal meaningful individual response differences and subgroup effects.",
+    "confidence_assessment": "No numeric confidence is assigned in this starter baseline. The warranted conclusion is conditional: moderate intake is not consistently associated with higher population-level cardiovascular risk, but this does not establish individual safety or settle questions about other health outcomes.",
+    "source_path": "evidence/population-cardiovascular-risk.md",
+    "citations": [
+      {
+        "source_id": "src_68170b824429",
+        "citation": "Drouin-Chartier, J.-P., et al. (2020). Egg consumption and risk of cardiovascular disease: three large prospective US cohort studies, systematic review, and updated meta-analysis. *BMJ* 368:m513. https://doi.org/10.1136/bmj.m513",
+        "urls": [
+          "https://doi.org/10.1136/bmj.m513"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_32a78142c304",
+        "citation": "Carson, J. A. S., et al. (2020). Dietary Cholesterol and Cardiovascular Risk: A Science Advisory From the American Heart Association. *Circulation* 141:e39–e53. https://doi.org/10.1161/CIR.0000000000000743",
+        "urls": [
+          "https://doi.org/10.1161/CIR.0000000000000743"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_52d996d82739",
+        "citation": "Zhong, V. W., et al. (2019). Associations of Dietary Cholesterol or Egg Consumption With Incident Cardiovascular Disease and Mortality. *JAMA* 321(11):1081–1095. https://doi.org/10.1001/jama.2019.1572",
+        "urls": [
+          "https://doi.org/10.1001/jama.2019.1572"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [],
+    "policy_sensitivities": [],
+    "coverage_gaps": [],
+    "correlation_risks": [],
+    "capability_limits": [],
+    "uncertainty_attribution": {
+      "evidential": [],
+      "ingestion_conditional": [],
+      "capability_conditional": [],
+      "framing_conditional": [],
+      "unattributed": [
+        "The baseline assessment has not yet been independently audited."
+      ]
+    },
+    "notes": [
+      "Baseline prose and scores are preserved as claims by the upstream run, not adopted as our judgments."
+    ]
+  }
+}

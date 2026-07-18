@@ -1,0 +1,137 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_2018-state-dept-cables-biosafety-warnings_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "2018-state-dept-cables-biosafety-warnings",
+    "title": "2018 U.S. State Department cables flagged a trained-staff shortage at WIV's new BSL-4 lab",
+    "direction": "lab-leak",
+    "evidence_type": "documentary",
+    "claim_confidence": 0.9,
+    "support_strength": "weak",
+    "claim": "In January 2018, U.S. Embassy Beijing science diplomats who visited the Wuhan Institute of Virology (WIV) sent at least one \"Sensitive But Unclassified\" cable to Washington noting that the WIV's newly opened BSL-4 laboratory faced \"a serious shortage of appropriately trained technicians and investigators needed to safely operate this high-containment laboratory,\" in the context of WIV research on bat coronaviruses with human-transmission potential. The cables requested more U.S. assistance; they did not allege an actual leak.",
+    "evidence_quality": "This is **documentary** evidence: a real, contemporaneous, pre-pandemic U.S. government diplomatic cable, partially released through FOIA litigation, so its existence and core content are well established and not seriously contested. The first-order facts (a 2018 cable, a noted training shortage at the BSL-4 lab, a request for more U.S. help) are high-confidence. What is contested is **interpretation and emphasis**: Rogin's column is opinion journalism that foregrounds an alarmist reading (\"safety and management weaknesses,\" \"wake-up call\"), while the underlying cable reads more as a state-of-the-art-lab-needing-staff narrative. The document is one primary source filtered through a single journalist's framing; the full second cable has not been publicly released in full.",
+    "strongest_counterargument": "The cable is weak support for a leak for three independent reasons. (1) **Wrong lab:** the staffing/safety comment concerns the BSL-4 facility, but WIV's SARS-like bat-coronavirus work was done at BSL-2/BSL-3, so the cable does not characterize the conditions under which any plausible accidental infection would have occurred. (2) **Misframed tone:** Zichen Wang (Pekingnology) shows Rogin quoted only ~100 of the cable's words in a ~1,350-word column and built an alarmist narrative around anonymous officials that the cable's own \"state-of-the-art\" / \"Despite Limitations… Produce SARS Discoveries\" language does not support — the cable was a pitch for *more* engagement, not a red alert. (3) **No predictive content:** when the cable was actually released (July 2020), reporters and officials noted it contained no warning of a leak and no claim the lab was on the verge of an accident; it is being read backwards through the lens of the pandemic. A generic observation that a brand-new high-containment lab is short on trained staff is unremarkable for any new BSL-4 facility and is not specific evidence that SARS-CoV-2 escaped.",
+    "confidence_assessment": "- **Claim confidence:** 0.9 — The existence of the 2018 cable, the quoted training-shortage language, the delegation members, and the request for assistance are corroborated by the released document, multiple outlets, and even by critics who dispute the framing. I dock 0.1 only because the *exact* wording (\"appropriately\"/\"this high-containment laboratory\") is Rogin's rendering and differs slightly from the released cable's phrasing (\"highly trained… a BSL-4 laboratory\").\n- **Support strength:** weak (for lab-leak) — Even fully granting the claim, it establishes only that a new BSL-4 lab was understaffed and that U.S. diplomats flagged general pandemic risk from coronavirus research. It does not describe the BSL-2/BSL-3 settings of the actual bat-CoV work, contains no allegation of an incident, and the same fact is fully consistent with no leak ever occurring.\n- **Net:** A real and genuinely pre-pandemic official document that modestly raises the prior plausibility of a biosafety lapse at WIV, but whose probative value for an actual leak is small and is frequently overstated by selective quotation; a calibrated reasoner treats it as background context, not as a smoking gun.",
+    "source_path": "evidence/2018-state-dept-cables-biosafety-warnings.md",
+    "citations": [
+      {
+        "source_id": "src_86b0857b96a2",
+        "citation": "Rogin, J. (2020, April 14). *State Department cables warned of safety issues at Wuhan lab studying bat coronaviruses* [Opinion]. The Washington Post. https://www.washingtonpost.com/opinions/2020/04/14/state-department-cables-warned-safety-issues-wuhan-lab-studying-bat-coronaviruses/",
+        "urls": [
+          "https://www.washingtonpost.com/opinions/2020/04/14/state-department-cables-warned-safety-issues-wuhan-lab-studying-bat-coronaviruses/"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_a41a8b293b7d",
+        "citation": "Wang, Z. (Pekingnology). *Josh Rogin's WashPo column & book misrepresented a U.S. diplomatic cable from Wuhan.* https://www.pekingnology.com/p/josh-rogins-washpo-column-and-book",
+        "urls": [
+          "https://www.pekingnology.com/p/josh-rogins-washpo-column-and-book"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_c24d6e3d5ee1",
+        "citation": "CNN Politics (2020, July 18). *State Department releases cable that helped spread claims coronavirus emerged from Chinese lab.* https://www.cnn.com/2020/07/18/politics/state-department-cable-coronavirus-chinese-lab/index.html",
+        "urls": [
+          "https://www.cnn.com/2020/07/18/politics/state-department-cable-coronavirus-chinese-lab/index.html"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_0c72be37c5c3",
+        "citation": "The Washington Post (2020, July 17). *State Department releases cable that launched claims that coronavirus escaped from Chinese lab.* https://www.washingtonpost.com/national-security/state-department-releases-cable-that-launched-claims-that-coronavirus-escaped-from-chinese-lab/2020/07/17/63deae58-c861-11ea-a9d3-74640f25b953_story.html",
+        "urls": [
+          "https://www.washingtonpost.com/national-security/state-department-releases-cable-that-launched-claims-that-coronavirus-escaped-from-chinese-lab/2020/07/17/63deae58-c861-11ea-a9d3-74640f25b953_story.html"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_f1001c2a75a0",
+        "citation": "Wikipedia. *Wuhan Institute of Virology* (BSL-4 lab opened Jan. 2018; coronavirus research conducted at BSL-2/BSL-3). https://en.wikipedia.org/wiki/Wuhan_Institute_of_Virology",
+        "urls": [
+          "https://en.wikipedia.org/wiki/Wuhan_Institute_of_Virology"
+        ],
+        "source_class": "reference_work",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_6f59a6356a3c",
+        "citation": "The original cable, \"China Opens First Bio Safety Level 4 Laboratory,\" released July 2020 (hosted via Washington Post document CDN). https://context-cdn.washingtonpost.com/notes/prod/default/documents/109d57ba-42dd-4215-9f4e-39d068ceed31/",
+        "urls": [
+          "https://context-cdn.washingtonpost.com/notes/prod/default/documents/109d57ba-42dd-4215-9f4e-39d068ceed31/"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "A staffing concern at a high-containment facility is treated as relevant to the probability of a specific accident involving a possibly different laboratory workflow."
+    ],
+    "policy_sensitivities": [
+      "Weight changes sharply depending on whether the policy admits retrospective circumstantial indicators or requires incident-specific evidence."
+    ],
+    "coverage_gaps": [
+      "The complete cable context, facility-specific incident records, and the containment level of the hypothesized precursor work are not established by this item."
+    ],
+    "correlation_risks": [
+      "Overlaps with the BSL-2 handling and general WIV biosafety items; these should not be counted as three independent accident signals."
+    ],
+    "capability_limits": [
+      "Document interpretation depends on completeness, provenance, surrounding context, and access to the original record."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "The cable documents a concern but does not document an accident."
+      ],
+      "ingestion_conditional": [
+        "Interpretation depends on whether the full cable or selected quotations and later commentary are used."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "The same document can be framed as a warning, a request for cooperation, or a routine capacity assessment."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Primarily bears on opportunity and institutional risk, not direct causation.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

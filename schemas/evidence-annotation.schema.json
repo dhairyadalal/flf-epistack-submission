@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/epistemic-audit/evidence-annotation.schema.json",
+  "title": "Epistemic evidence annotation",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "annotation_id",
+    "case_id",
+    "baseline_id",
+    "provenance",
+    "annotation_status",
+    "evidence",
+    "review"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "0.1.0" },
+    "annotation_id": { "type": "string", "minLength": 1 },
+    "case_id": { "type": "string", "minLength": 1 },
+    "baseline_id": { "type": "string", "minLength": 1 },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "upstream_author",
+        "upstream_generation_method",
+        "annotation_method"
+      ],
+      "properties": {
+        "upstream_author": { "type": "string" },
+        "upstream_generation_method": { "type": "string" },
+        "annotation_method": { "type": "string" },
+        "reviewer": { "type": "string" },
+        "review_method": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "annotation_status": {
+      "enum": [
+        "extracted_not_verified",
+        "provisionally_reviewed",
+        "independently_audited"
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "evidence_id",
+        "title",
+        "direction",
+        "evidence_type",
+        "claim",
+        "source_path",
+        "citations"
+      ],
+      "properties": {
+        "evidence_id": { "type": "string" },
+        "title": { "type": "string" },
+        "direction": { "type": "string" },
+        "evidence_type": { "type": "string" },
+        "claim_confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "support_strength": { "type": "string" },
+        "claim": { "type": "string" },
+        "evidence_quality": { "type": "string" },
+        "strongest_counterargument": { "type": "string" },
+        "confidence_assessment": { "type": "string" },
+        "source_path": { "type": "string" },
+        "citations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sourceCitation" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "verification_status",
+        "review_basis",
+        "framing_assumptions",
+        "policy_sensitivities",
+        "coverage_gaps",
+        "correlation_risks",
+        "capability_limits",
+        "uncertainty_attribution",
+        "notes"
+      ],
+      "properties": {
+        "verification_status": {
+          "enum": ["not_checked", "metadata_checked", "content_checked"]
+        },
+        "review_basis": {
+          "enum": [
+            "baseline_document_only",
+            "citation_metadata",
+            "selected_source_content",
+            "full_source_audit"
+          ]
+        },
+        "framing_assumptions": { "type": "array", "items": { "type": "string" } },
+        "policy_sensitivities": { "type": "array", "items": { "type": "string" } },
+        "coverage_gaps": { "type": "array", "items": { "type": "string" } },
+        "correlation_risks": { "type": "array", "items": { "type": "string" } },
+        "capability_limits": { "type": "array", "items": { "type": "string" } },
+        "uncertainty_attribution": {
+          "type": "object",
+          "required": [
+            "evidential",
+            "ingestion_conditional",
+            "capability_conditional",
+            "framing_conditional",
+            "unattributed"
+          ],
+          "additionalProperties": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "sourceCitation": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "citation",
+        "urls",
+        "source_class",
+        "classification_method",
+        "verification_status",
+        "language",
+        "access_status"
+      ],
+      "properties": {
+        "source_id": { "type": "string" },
+        "citation": { "type": "string" },
+        "urls": {
+          "type": "array",
+          "items": { "type": "string", "format": "uri" }
+        },
+        "source_class": {
+          "enum": [
+            "scholarly_publication",
+            "preprint",
+            "government_or_intergovernmental",
+            "journalism",
+            "commentary_or_advocacy",
+            "reference_work",
+            "unclassified"
+          ]
+        },
+        "classification_method": { "type": "string" },
+        "verification_status": {
+          "enum": ["not_checked", "metadata_checked", "content_checked"]
+        },
+        "language": { "type": "string" },
+        "access_status": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

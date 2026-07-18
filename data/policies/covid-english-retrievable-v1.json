@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "covid-english-retrievable",
+  "version": 1,
+  "case_id": "covid-origins",
+  "question_raw": "Was COVID-19 caused by zoonotic spillover or a research-related incident?",
+  "framing": {
+    "framing_id": "proximate_origin_competing_hypotheses",
+    "operationalized_question": "Which proximate-origin hypothesis is better supported by the accessible evidence?",
+    "declared_values": ["publicly inspectable evidence", "comparative hypothesis assessment"]
+  },
+  "source_scope": {
+    "languages": ["en"],
+    "source_types": ["peer-reviewed literature", "official reports", "primary documents", "journalism"],
+    "inclusion_rules": ["Publicly retrievable English-language material"],
+    "exclusion_rules": ["Material not reliably interpretable in English", "Inaccessible classified evidence"]
+  },
+  "capability_profile": [
+    {
+      "capability": "Reliably interpret non-English full text",
+      "status": "unknown",
+      "evidence_type": "unknown",
+      "note": "The imported baseline did not publish a measured language-capability profile."
+    }
+  ]
+}
+

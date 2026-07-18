@@ -1,0 +1,151 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_three-wiv-researchers-sick-nov-2019_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "three-wiv-researchers-sick-nov-2019",
+    "title": "Reports that three WIV researchers fell ill in November 2019",
+    "direction": "lab-leak",
+    "evidence_type": "intelligence-assessment",
+    "claim_confidence": 0.55,
+    "support_strength": "weak",
+    "claim": "A U.S. State Department fact sheet (15 January 2021) stated that \"several researchers inside the WIV became sick in autumn 2019, before the first identified case of the outbreak, with symptoms consistent with both COVID-19 and common seasonal illnesses.\" Later reporting (Wall Street Journal and NBC News, May 2021), citing an undisclosed U.S. intelligence report, said that *three* specific WIV researchers fell ill enough to seek hospital care in November 2019. The factual core in dispute is twofold: (a) whether the researchers were genuinely sick at that time, and (b) whether their illness was COVID-19 as opposed to ordinary seasonal sickness. The first part is moderately supported; the second is essentially unestablished.",
+    "evidence_quality": "This is **intelligence-derived and journalistic**, not scientific evidence. The original claims rest on classified U.S. intelligence whose underlying sourcing has never been made public; no medical records, names, diagnoses, or test results have been released or independently verified. The State Department fact sheet was a political document issued in the final days of the Trump administration. The WSJ/NBC reporting relayed the existence of an intelligence report but could not characterize its reliability, and the intelligence officials themselves disagreed on its strength. Crucially, the most authoritative later evaluation — the IC's own declassified assessment — downgraded the significance, finding the symptoms non-diagnostic. There is no replication and no chain to a primary medical source. The claim is therefore weakly grounded and largely uncorroborated in its load-bearing detail (that the illness was COVID-19).",
+    "strongest_counterargument": "The strongest rebuttal is internal to the U.S. intelligence community: its consolidated assessment found the researchers' fall-2019 symptoms \"consistent with but not diagnostic of COVID-19\" and explicitly concluded the information \"neither supports nor refutes either hypothesis.\" The declassified detail is more deflating still — illnesses were mild, included colds and allergies with symptoms *not* typical of COVID-19, some were confirmed to be unrelated illnesses, and no COVID-like hospitalizations were documented. Independently, Marion Koopmans, who interviewed WIV staff as part of the WHO mission, characterized the autumn-2019 illnesses as unremarkable seasonal sickness (\"nothing that stood out\"). Because some respiratory illness among lab staff every autumn is the statistical baseline, observing \"several sick researchers\" carries almost no diagnostic weight unless the illness can be tied to SARS-CoV-2 — which it never has been.",
+    "confidence_assessment": "- **Claim confidence:** 0.55 — It is fairly likely that some WIV personnel were sick in autumn 2019 (this is corroborated even by the WHO virologist and is unremarkable). But the specific, load-bearing version — that exactly three named-but-unreleased researchers had *COVID-19* in November 2019 and sought hospital care for it — is much weaker; the diagnosis is unverified and the IC itself found symptoms non-diagnostic. The confidence reflects \"people were sick\" (high) blended with \"it was COVID and this is meaningful\" (low).\n- **Support strength:** weak (for lab-leak) — Even if fully true that three researchers were ill, seasonal respiratory illness is the expected baseline, and the U.S. IC, which holds the source material, judged it neither supports nor refutes either hypothesis.\n- **Net:** A calibrated reasoner should treat this as a much-cited but evidentially thin item: probably some WIV staff were sick in late 2019, but there is no verified link to SARS-CoV-2, and the intelligence community's own conclusion is that it does not move the origin question in either direction.",
+    "source_path": "evidence/three-wiv-researchers-sick-nov-2019.md",
+    "citations": [
+      {
+        "source_id": "src_376011656004",
+        "citation": "U.S. Department of State (15 Jan 2021). \"Fact Sheet: Activity at the Wuhan Institute of Virology.\" https://2017-2021.state.gov/fact-sheet-activity-at-the-wuhan-institute-of-virology/ (text mirror: https://en.wikisource.org/wiki/Fact_Sheet:_Activity_at_the_Wuhan_Institute_of_Virology)",
+        "urls": [
+          "https://2017-2021.state.gov/fact-sheet-activity-at-the-wuhan-institute-of-virology/",
+          "https://en.wikisource.org/wiki/Fact_Sheet:_Activity_at_the_Wuhan_Institute_of_Virology"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_80e5e4793605",
+        "citation": "Gordon, M. R., Strobel, W. P., & Hinshaw, D. (23 May 2021). \"Intelligence on Sick Staff at Wuhan Lab Fuels Debate on Covid-19 Origin.\" The Wall Street Journal. (paywalled; widely reported, e.g. Kathmandu Post: https://kathmandupost.com/world/2021/05/24/wuhan-lab-staff-sought-hospital-care-before-covid-19-outbreak-disclosed-wall-street-journal)",
+        "urls": [
+          "https://kathmandupost.com/world/2021/05/24/wuhan-lab-staff-sought-hospital-care-before-covid-19-outbreak-disclosed-wall-street-journal"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_16fb32a827bf",
+        "citation": "NBC News (24 May 2021). \"U.S. intel report identified 3 Wuhan lab researchers who fell ill in November 2019.\" https://www.nbcnews.com/health/health-news/u-s-intel-report-identified-3-wuhan-lab-researchers-who-n1268327",
+        "urls": [
+          "https://www.nbcnews.com/health/health-news/u-s-intel-report-identified-3-wuhan-lab-researchers-who-n1268327"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_6d3747d6a22c",
+        "citation": "Reuters / Al Jazeera (24 May 2021). \"US agencies examine reports of early COVID infections in Wuhan.\" https://www.aljazeera.com/news/2021/5/24/us-agencies-examine-reports-of-early-covid-19-infections-in-wuhan-reuters",
+        "urls": [
+          "https://www.aljazeera.com/news/2021/5/24/us-agencies-examine-reports-of-early-covid-19-infections-in-wuhan-reuters"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_deec945d1638",
+        "citation": "Office of the Director of National Intelligence. \"Declassified Assessment on COVID-19 Origins\" (declassified June 2023; updated assessment originally released Oct 2021). https://www.dni.gov/files/ODNI/documents/assessments/Declassified-Assessment-on-COVID-19-Origins.pdf ; landing page: https://www.dni.gov/index.php/newsroom/reports-publications/reports-publications-2021/3583-declassified-assessment-on-covid-19-origins",
+        "urls": [
+          "https://www.dni.gov/files/ODNI/documents/assessments/Declassified-Assessment-on-COVID-19-Origins.pdf",
+          "https://www.dni.gov/index.php/newsroom/reports-publications/reports-publications-2021/3583-declassified-assessment-on-covid-19-origins"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_d55134bc9701",
+        "citation": "CIDRAP (June 2023). \"US intelligence agency releases declassified Wuhan SARS-CoV-2 lab leak assessments.\" https://www.cidrap.umn.edu/covid-19/us-intelligence-agency-releases-declassified-wuhan-sars-cov-2-lab-leak-assessments",
+        "urls": [
+          "https://www.cidrap.umn.edu/covid-19/us-intelligence-agency-releases-declassified-wuhan-sars-cov-2-lab-leak-assessments"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_3270efd5f2f8",
+        "citation": "NBC News (March 2021). Marion Koopmans interview on WHO mission findings re WIV staff illness (\"nothing that stood out\"). https://www.nbcnews.com/nightly-news/video/who-team-scientist-wuhan-lab-workers-fell-sick-in-2019-104497733806",
+        "urls": [
+          "https://www.nbcnews.com/nightly-news/video/who-team-scientist-wuhan-lab-workers-fell-sick-in-2019-104497733806"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "A small cluster of autumn respiratory illness among laboratory staff is treated as anomalous relative to the seasonal baseline."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on admission of anonymous intelligence reporting and on the base rate assigned to ordinary illness and hospital visits."
+    ],
+    "coverage_gaps": [
+      "Medical records, contemporaneous tests, serology, precise dates, and independently attributable identities are unavailable."
+    ],
+    "correlation_risks": [
+      "News reports largely trace to overlapping intelligence claims rather than independent witnesses."
+    ],
+    "capability_limits": [
+      "Most underlying intelligence is unavailable, preventing independent evaluation of source quality and analytic tradecraft."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Illness may have occurred, but SARS-CoV-2 etiology is unestablished."
+      ],
+      "ingestion_conditional": [
+        "The decisive medical information is not publicly accessible."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "Without a seasonal baseline, ordinary sickness can be selected retrospectively as a suspicious cluster."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Do not treat multiple media citations to one intelligence report as corroboration.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

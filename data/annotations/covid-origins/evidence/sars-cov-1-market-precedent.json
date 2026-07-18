@@ -1,0 +1,114 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_sars-cov-1-market-precedent_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "sars-cov-1-market-precedent",
+    "title": "SARS-CoV-1 (2002–04) emerged through the live wildlife trade at Chinese markets — a close precedent for a market-origin zoonosis",
+    "direction": "natural-origin",
+    "evidence_type": "virological",
+    "claim_confidence": 0.97,
+    "support_strength": "moderate",
+    "claim": "SARS-CoV-1, the cause of the 2002–04 SARS epidemic, crossed into humans through the live wildlife trade: a SARS-related coronavirus was isolated from masked palm civets (and detected in a raccoon dog) in a Guangdong live-animal market, market animal traders showed markedly elevated SARS-CoV antibody prevalence, and the 2003–04 second outbreak was traced to civet exposure and ended after markets were closed and civets culled. This is a documented, closely analogous precedent for a market/wildlife-trade origin of a SARS-related coronavirus in China.",
+    "evidence_quality": "High. The core facts rest on contemporaneous, peer-reviewed primary literature: a *Science* virus-isolation paper (Guan et al. 2003), a CDC government serosurvey (MMWR 2003), and a peer-reviewed review (Shi & Hu 2007, *Virus Research*). The civet/market emergence model has been independently replicated and is the textbook consensus account of SARS-CoV-1 origins. The factual claim about *how SARS-CoV-1 emerged* is essentially uncontested in the scientific literature.\n\nThe important interpretive caveat is the gap between \"SARS-CoV-1 emerged at markets\" (well established) and \"therefore SARS-CoV-2 emerged at a market\" (a prior, not proof). This item provides a base-rate / analogy argument, not direct evidence about SARS-CoV-2.",
+    "strongest_counterargument": "The precedent is real but limited in three ways. (1) **Civets were amplifying intermediate hosts, not the reservoir.** The virus was found in market/farmed civets but not wild civets, and showed rapid genomic change in markets — bats (*Rhinolophus*) are the natural reservoir (Shi & Hu 2007). For SARS-CoV-2, despite extensive sampling, *no infected intermediate host and no infected animal at Huanan has ever been identified*, unlike the prompt success with SARS-CoV-1 civets. A lab-leak proponent argues the missing intermediate host is a disanalogy, not a parallel. (2) **An analogy is not evidence about the specific event.** That zoonosis is the prior-expected route does not establish it occurred for SARS-CoV-2; it only sets a base rate. (3) For SARS-CoV-1 the chain was nailed down — virus in the animals, seroconversion in traders, outbreak ending on market closure — whereas for SARS-CoV-2 the analogous animal-side confirmation is absent, which some read as evidence the routes differ.",
+    "confidence_assessment": "- **Claim confidence:** 0.97 — The factual claim (SARS-CoV-1 emerged via the live wildlife trade, civets as the market intermediate, elevated trader seroprevalence) is supported by multiple independent peer-reviewed and government sources and is scientific consensus.\n- **Support strength:** moderate — for natural-origin. It establishes that a market/wildlife-trade zoonosis of a SARS-related coronavirus in China is not hypothetical but has happened, raising the prior for the same mechanism at Huanan and implicating the same species. But it is an analogy/base-rate argument, and the key disanalogy (no identified infected intermediate host for SARS-CoV-2) blunts its force.\n- **Net:** A calibrated reasoner should treat this as solid evidence that a market-origin zoonosis is the prior-expected outcome for a novel SARS-related coronavirus in China — strengthening the natural-origin prior — while noting it says nothing decisive about which route SARS-CoV-2 actually took.",
+    "source_path": "evidence/sars-cov-1-market-precedent.md",
+    "citations": [
+      {
+        "source_id": "src_1554ebdb9e9a",
+        "citation": "Guan Y, Zheng BJ, He YQ, Liu XL, Zhuang ZX, Cheung CL, et al. (2003). Isolation and characterization of viruses related to the SARS coronavirus from animals in southern China. *Science*, 302(5643), 276–278. https://doi.org/10.1126/science.1087139 (PubMed: https://pubmed.ncbi.nlm.nih.gov/12958366/)",
+        "urls": [
+          "https://doi.org/10.1126/science.1087139",
+          "https://pubmed.ncbi.nlm.nih.gov/12958366/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_cda17b458594",
+        "citation": "Centers for Disease Control and Prevention (2003). Prevalence of IgG Antibody to SARS-Associated Coronavirus in Animal Traders — Guangdong Province, China, 2003. *MMWR Morb Mortal Wkly Rep*, 52(41), 986–987. https://www.cdc.gov/mmwr/preview/mmwrhtml/mm5241a2.htm",
+        "urls": [
+          "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm5241a2.htm"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_54d67b3087bc",
+        "citation": "Shi Z, Hu Z (2007). A review of studies on animal reservoirs of the SARS coronavirus. *Virus Research*, 133(1), 74–87. https://doi.org/10.1016/j.virusres.2007.03.012 (PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC7114516/)",
+        "urls": [
+          "https://doi.org/10.1016/j.virusres.2007.03.012",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC7114516/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_13e36518a31e",
+        "citation": "Wang LF, Eaton BT (2007). Bats, Civets and the Emergence of SARS. In *Wildlife and Emerging Zoonotic Diseases*. https://pmc.ncbi.nlm.nih.gov/articles/PMC7120088/ (PubMed: https://pubmed.ncbi.nlm.nih.gov/17848070/)",
+        "urls": [
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC7120088/",
+          "https://pubmed.ncbi.nlm.nih.gov/17848070/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "SARS-CoV-1 is selected as a close reference class for setting prior odds on SARS-CoV-2 emergence."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on reference-class choice and how differences in host discovery, surveillance, geography, and laboratory context are handled."
+    ],
+    "coverage_gaps": [
+      "The analogy does not supply event-specific evidence about SARS-CoV-2."
+    ],
+    "correlation_risks": [
+      "Overlaps the combined SARS-1/MERS zoonotic-precedent item."
+    ],
+    "capability_limits": [
+      "Assessing experimental virology requires checking methods, model systems, and replication in the cited studies."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "The precedent establishes a real mechanism and prior, but analogy strength is contestable."
+      ],
+      "ingestion_conditional": [],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "Choosing zoonotic coronavirus precedents rather than laboratory accidents changes the prior before case evidence is considered."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Represent as prior/reference-class evidence, not likelihood evidence from the Wuhan event.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

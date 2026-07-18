@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "eggs-health-individual",
+  "version": 1,
+  "case_id": "eggs",
+  "question_raw": "Are eggs good to eat?",
+  "framing": {
+    "framing_id": "health_individual",
+    "operationalized_question": "How might eating eggs affect an individual's lipid markers and cardiovascular risk, given heterogeneous dietary-cholesterol response?",
+    "declared_values": ["individual heterogeneity", "person-specific uncertainty", "clinical relevance"]
+  },
+  "source_scope": {
+    "languages": ["en"],
+    "source_types": ["controlled feeding studies", "clinical trials", "mechanistic reviews", "cohort evidence"],
+    "inclusion_rules": ["Evidence must report or discuss variation between individuals"],
+    "exclusion_rules": ["Population averages are insufficient when response heterogeneity is not reported"]
+  },
+  "capability_profile": [
+    {
+      "capability": "Infer an individual's response from population literature",
+      "status": "unsupported",
+      "evidence_type": "curated",
+      "note": "The tool can surface heterogeneity but cannot diagnose a user."
+    }
+  ]
+}

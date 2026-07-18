@@ -1,0 +1,111 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_rbd-not-optimal-for-human-ace2_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "rbd-not-optimal-for-human-ace2",
+    "title": "SARS-CoV-2's receptor-binding domain was not computationally optimal for human ACE2 at emergence",
+    "direction": "natural-origin",
+    "evidence_type": "virological",
+    "claim_confidence": 0.8,
+    "support_strength": "weak",
+    "claim": "At the time SARS-CoV-2 emerged, its receptor-binding domain (RBD) bound human ACE2 efficiently but by a structural solution **not predicted to be optimal** by the computational/structural models then available. Andersen et al. (2020) argued this is more consistent with natural selection than with deliberate engineering, because a designer using those models would have chosen a different, \"ideal\" binding configuration. Subsequent variants that *improved* ACE2 affinity show the original RBD was not at a fitness peak.",
+    "evidence_quality": "Peer-reviewed and partly replicated. The pangolin RBD homology and the post-emergence affinity gains are robust, independently established facts. The core \"not optimal\" inference is a **reasoning argument layered on the 2020 structural literature**, not a direct experiment, so its strength depends on how good those 2020 models were — a point critics press (below).",
+    "strongest_counterargument": "The argument is weaker than it first appears, for two reasons. (1) \"Not optimal by 2020 computational models\" assumes a designer would rely on, and trust, those models; an engineer using **directed evolution or passage** (rather than rational design) would *also* produce a non-\"optimal,\" natural-looking RBD — so non-optimality does not cleanly distinguish natural selection from lab passage (see `serial-passage-cell-culture-adaptation`). (2) The same authors who made this argument privately expressed serious doubts about a natural origin around the time of writing (`proximal-origin-private-doubts-controversy`), which does not refute the RBD science but cautions against treating the paper as a settled, disinterested verdict. The RBD point argues against *rational design specifically*, not against all lab scenarios.",
+    "confidence_assessment": "- **Claim confidence:** 0.8 — The factual core (RBD not affinity-optimal at emergence; natural binding solution present in pangolin CoVs; later variants bind tighter) is well supported. The interpretive \"not what an engineer would build\" layer is sound but model-dependent.\n- **Support strength:** weak — It effectively rebuts the **rational-design / bioweapon** sub-hypothesis, but does little against the \"leak of a natural or passaged virus\" variants of lab origin, which is where the serious lab-leak case now sits.\n- **Net:** Good evidence that SARS-CoV-2 was not rationally engineered for human ACE2 binding, but only a weak discriminator between natural spillover and a leak of an ancestrally natural virus.",
+    "source_path": "evidence/rbd-not-optimal-for-human-ace2.md",
+    "citations": [
+      {
+        "source_id": "src_eaf521ab9efc",
+        "citation": "Andersen, K.G., Rambaut, A., Lipkin, W.I., Holmes, E.C., Garry, R.F. (2020). The proximal origin of SARS-CoV-2. *Nature Medicine* 26, 450–452. https://www.nature.com/articles/s41591-020-0820-9",
+        "urls": [
+          "https://www.nature.com/articles/s41591-020-0820-9"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_243494ad8df6",
+        "citation": "Lam, T.T.-Y. et al. (2020). Identifying SARS-CoV-2-related coronaviruses in Malayan pangolins. *Nature* 583, 282–285. https://www.nature.com/articles/s41586-020-2169-0",
+        "urls": [
+          "https://www.nature.com/articles/s41586-020-2169-0"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_9be67fdc5522",
+        "citation": "Starr, T.N. et al. (2020). Deep mutational scanning of SARS-CoV-2 receptor binding domain reveals constraints on folding and ACE2 binding. *Cell* 182, 1295–1310. https://doi.org/10.1016/j.cell.2020.08.012",
+        "urls": [
+          "https://doi.org/10.1016/j.cell.2020.08.012"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_b791e0cb4046",
+        "citation": "Liu, P. et al. / Xiao, K. et al. (2020). Isolation of SARS-CoV-2-related coronavirus from Malayan pangolins. *Nature* 583, 286–289. https://www.nature.com/articles/s41586-020-2313-x",
+        "urls": [
+          "https://www.nature.com/articles/s41586-020-2313-x"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "A rational designer would have used then-current computational predictions and selected an apparently optimal ACE2-binding solution."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on whether the competing laboratory hypothesis specifies rational design, directed evolution, serial passage, or collection of a natural virus."
+    ],
+    "coverage_gaps": [
+      "The item does not test all plausible engineering or passage workflows."
+    ],
+    "correlation_risks": [
+      "Correlated with BANAL natural ACE2 binding and broader RBD-naturalness arguments."
+    ],
+    "capability_limits": [
+      "Assessing experimental virology requires checking methods, model systems, and replication in the cited studies."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Non-optimality relative to a model is informative mainly about a narrow design strategy."
+      ],
+      "ingestion_conditional": [],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "The inference weakens substantially when the lab hypothesis does not require rational computational design."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Label explicitly as evidence against rational design, not against every research-related origin.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

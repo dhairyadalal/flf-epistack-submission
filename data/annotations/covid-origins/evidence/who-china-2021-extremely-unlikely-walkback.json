@@ -1,0 +1,127 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_who-china-2021-extremely-unlikely-walkback_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "who-china-2021-extremely-unlikely-walkback",
+    "title": "WHO-China 2021 'extremely unlikely' finding was repudiated by the WHO's own leadership and later reopened",
+    "direction": "neutral",
+    "evidence_type": "documentary",
+    "claim_confidence": 0.97,
+    "support_strength": "moderate",
+    "claim": "The March 2021 WHO-convened joint study with China ranked introduction via a laboratory incident as \"extremely unlikely,\" the lowest of four hypotheses. Within four months, WHO Director-General Tedros Adhanom Ghebreyesus publicly called the push to rule out a lab leak \"premature,\" said the joint team had been denied access to raw data, and (in August 2021) said Chinese scientists had pressured the team to drop the lab hypothesis. The 2022 SAGO preliminary report then re-opened the laboratory hypothesis as warranting further investigation, and the 2025 SAGO final report concluded the investigation remained incomplete because China still had not shared key data.",
+    "evidence_quality": "This is **documentary** evidence about an institutional process, and it is essentially uncontested: the primary documents (the March 2021 joint report, the June 2022 SAGO preliminary report, the June 2025 SAGO final report) are all public, and Tedros's July 2021 statements were made on the record to assembled reporters and reported by multiple independent outlets (NPR, AP/Boston Globe, Washington Post). The facts of *what was said and written* are as solid as documentary evidence gets. What is contestable is the *interpretation* — see below.",
+    "strongest_counterargument": "The walkback does not show the \"extremely unlikely\" ranking was *wrong*, only that it was *premature and under-evidenced*. Several scientists who co-authored the March 2021 study (e.g., Liang Wannian, John Watson, Peter Daszak) defended it as a genuine collaborative effort, and the SAGO bodies that \"re-opened\" the lab question still, in 2022 and again in 2025, judged **zoonotic spillover the more likely explanation**. The 3-member SAGO dissent in 2022 argued no new evidence had emerged to overturn the 2021 zoonosis conclusion. So a defender of natural origin can say: leadership's caution was about *process and political optics* (data access, the need to keep all hypotheses open), not a substantive scientific reversal toward the lab hypothesis. The walkback is best read as \"the 2021 ranking was overstated as a closed conclusion,\" not \"a lab leak is now likely.\"",
+    "confidence_assessment": "- **Claim confidence:** 0.97 — Every component (the ranking, the July 2021 \"premature\" quote, the raw-data complaint, the SAGO re-opening, the 2025 incompleteness finding) is directly documented in primary sources or on-the-record reporting. Minor uncertainty only on fine wording.\n- **Support strength:** moderate — This is genuinely **neutral / meta-evidential**. It does not provide physical or epidemiological evidence for *either* origin. Its force is to **discount the evidentiary weight** of the single most-cited institutional dismissal of the lab leak: a conclusion co-authored by the Chinese government, walked back by the head of the issuing organization within months, and never resolved because China withheld raw data. That weakens an argument-from-authority for natural origin without itself favoring the lab.\n- **Net:** A calibrated reasoner should stop treating the March 2021 \"extremely unlikely\" rating as a settled institutional verdict — its own organization's leadership repudiated it as premature and data-starved — while also not mistaking that walkback for affirmative evidence of a lab leak.",
+    "source_path": "evidence/who-china-2021-extremely-unlikely-walkback.md",
+    "citations": [
+      {
+        "source_id": "src_988648d5b262",
+        "citation": "WHO (2021). *WHO-convened Global Study of Origins of SARS-CoV-2: China Part — Joint WHO–China Study* (30 March 2021). https://www.who.int/publications/i/item/who-convened-global-study-of-origins-of-sars-cov-2-china-part",
+        "urls": [
+          "https://www.who.int/publications/i/item/who-convened-global-study-of-origins-of-sars-cov-2-china-part"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_1b2ca0cb4a70",
+        "citation": "Associated Press / Maria Cheng & Jamey Keaten (2021). \"WHO chief says it was 'premature' to rule out COVID lab leak.\" Boston Globe, 15 July 2021. https://www.bostonglobe.com/2021/07/15/world/who-chief-says-it-was-premature-rule-out-covid-lab-leak/ (also NPR: https://www.npr.org/2021/07/15/1016436749/who-chief-wuhan-lab-covid-19-origin-premature-tedros)",
+        "urls": [
+          "https://www.bostonglobe.com/2021/07/15/world/who-chief-says-it-was-premature-rule-out-covid-lab-leak/",
+          "https://www.npr.org/2021/07/15/1016436749/who-chief-wuhan-lab-covid-19-origin-premature-tedros"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_b3563bb5d2fe",
+        "citation": "WHO Scientific Advisory Group for the Origins of Novel Pathogens (SAGO) (2022). *Preliminary Report* (9 June 2022). https://cdn.who.int/media/docs/default-source/scientific-advisory-group-on-the-origins-of-novel-pathogens/sago-report-09062022.pdf",
+        "urls": [
+          "https://cdn.who.int/media/docs/default-source/scientific-advisory-group-on-the-origins-of-novel-pathogens/sago-report-09062022.pdf"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_7cda724a7daa",
+        "citation": "NBC News (2022). \"WHO makes U-turn, urging further investigation into Chinese Wuhan 'lab leak' theory.\" https://www.nbcnews.com/news/world/covid-19-urges-investigation-chinese-wuhan-lab-leak-theory-rcna32910 (and Wikipedia summary of Tedros's August 2021 statement on Chinese pressure: https://en.wikipedia.org/wiki/COVID-19_lab_leak_theory)",
+        "urls": [
+          "https://www.nbcnews.com/news/world/covid-19-urges-investigation-chinese-wuhan-lab-leak-theory-rcna32910",
+          "https://en.wikipedia.org/wiki/COVID-19_lab_leak_theory"
+        ],
+        "source_class": "reference_work",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_82c4c523ff53",
+        "citation": "WHO (2025). \"WHO Scientific Advisory Group issues report on origins of COVID-19\" (27 June 2025). https://www.who.int/news/item/27-06-2025-who-scientific-advisory-group-issues-report-on-origins-of-covid-19",
+        "urls": [
+          "https://www.who.int/news/item/27-06-2025-who-scientific-advisory-group-issues-report-on-origins-of-covid-19"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "WHO's change in public language is treated as evidence about the underlying origin rather than primarily about process and evidential sufficiency."
+    ],
+    "policy_sensitivities": [
+      "Weight depends on deference to institutional conclusions and separation of procedural criticism from substantive probability updates."
+    ],
+    "coverage_gaps": [
+      "Key data requested by WHO/SAGO remain unavailable, preventing resolution of why confidence should move."
+    ],
+    "correlation_risks": [
+      "Overlaps China-data-withholding and general institutional-process evidence."
+    ],
+    "capability_limits": [
+      "Document interpretation depends on completeness, provenance, surrounding context, and access to the original record."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "The walkback establishes premature closure more clearly than it supports a lab origin."
+      ],
+      "ingestion_conditional": [
+        "Institutional uncertainty is explicitly driven by missing requested evidence."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "Reopening a hypothesis is not the same claim as judging it more likely."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Represent as a process-correction and uncertainty signal.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

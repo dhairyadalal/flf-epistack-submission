@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "eggs-health-population",
+  "version": 1,
+  "case_id": "eggs",
+  "question_raw": "Are eggs good to eat?",
+  "framing": {
+    "framing_id": "health_population",
+    "operationalized_question": "At typical consumption levels, how is eating eggs associated with population-level cardiovascular outcomes?",
+    "declared_values": ["population health", "cardiovascular outcomes", "typical consumption"]
+  },
+  "source_scope": {
+    "languages": ["en"],
+    "source_types": ["systematic reviews", "prospective cohorts", "clinical guidance"],
+    "inclusion_rules": ["Human evidence with an explicit egg-consumption exposure"],
+    "exclusion_rules": ["Animal welfare and environmental outcomes are outside this framing"]
+  },
+  "capability_profile": [
+    {
+      "capability": "Interpret English-language abstracts and reports",
+      "status": "supported",
+      "evidence_type": "curated",
+      "note": "Full methodological appraisal still requires domain review."
+    }
+  ]
+}
+

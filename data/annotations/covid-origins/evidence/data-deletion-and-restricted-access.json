@@ -1,0 +1,151 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_data-deletion-and-restricted-access_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "data-deletion-and-restricted-access",
+    "title": "Deleted databases, withdrawn sequences, and restricted WHO access: behavior some read as a cover-up",
+    "direction": "lab-leak",
+    "evidence_type": "circumstantial",
+    "claim_confidence": 0.9,
+    "support_strength": "weak",
+    "claim": "A cluster of data-access events is invoked as evidence of concealment: (1) the Wuhan Institute of Virology's (WIV) main online database of ~22,000 bat/virus sample records and sequences went offline on 12 September 2019, before the recognized outbreak; (2) a set of early Wuhan SARS-CoV-2 deep-sequencing datasets was deleted from the NIH Sequence Read Archive (SRA) at the submitters' request and later recovered by Jesse Bloom; and (3) China declined to provide raw line-list patient data on early cases to the WHO-convened joint mission and restricted aspects of its access. Proponents argue this is the pattern one would expect if there were something to hide.",
+    "evidence_quality": "Mixed and largely circumstantial. The strongest documented, peer-reviewed piece is Bloom (2021) in *Molecular Biology and Evolution* — the deletion and recovery are real and verifiable. The WHO raw-data dispute is well-attested by named mission participants and appears in the official report. The 12 Sep 2019 database takedown date is real but its provenance (22,000 figure, exact date) rests substantially on DRASTIC analysis and archived snapshots rather than an official audited record; the European Parliament question documents the controversy but does not independently establish motive. Critically, none of these facts is itself evidence about *where* the virus came from — they bear on transparency, not origin.",
+    "strongest_counterargument": "Each event has a mundane, non-lab-leak explanation, and the genomic claim has been directly rebutted:\n- **The deleted sequences carry little origin signal.** Débarre & Hensel (2025, *Molecular Biology and Evolution*), a critical reexamination, show the recovered sequences were collected on **30 January 2020** — later than hundreds of other sequences — and their mutations are consistent with late-January 2020 diversity. They conclude the data \"align with contemporaneous data\" and do not support Bloom's inference about an undersampled early progenitor. So even granting the deletion, the recovered content does not point to a lab origin.\n- **Withholding is overdetermined by politics, not biology.** Authoritarian opacity, reputational defensiveness, fear of being blamed, and bureaucratic face-saving fully explain database takedowns, withdrawn submissions, and restricted access without any lab-leak premise. The same Chinese reticence applies to data that, when finally analyzed (e.g., the Huanan market environmental samples), has been read by many researchers as *supporting* zoonosis.\n- **Submitter-controlled withdrawal is normal database behavior.** SRA and GISAID both let submitters withdraw/un-release data; this routinely happens for resubmission, journal disputes, or QC, and is not unique to COVID.\nConcealment lowers confidence in exculpatory Chinese claims, but it is not affirmative evidence for a lab leak.",
+    "confidence_assessment": "- **Claim confidence:** 0.9 — The underlying factual events are well-documented and largely uncontested: the 12 Sep 2019 takedown, the SRA deletion and recovery (Bloom), and the WHO raw-data refusal all occurred. The residual uncertainty is in details (exact record count, precise internal motives), not in whether the events happened.\n- **Support strength:** weak (for lab-leak) — As behavior-consistent-with-cover-up, it is suggestive but non-dispositive and symmetric: it is equally consistent with a state concealing embarrassing zoonotic-spillover details, regulatory failures, or simply behaving as an opaque autocracy. The one piece with potential genomic content (Bloom) has been substantially neutralized by Débarre & Hensel (2025).\n- **Net:** A calibrated reasoner should treat this as real and troubling evidence of obstruction that lowers trust in Chinese exculpatory statements and has genuinely impeded investigation — but should not move it far toward lab-leak, because withholding data is explained at least as well by authoritarian opacity and face-saving as by a specific lab origin.",
+    "source_path": "evidence/data-deletion-and-restricted-access.md",
+    "citations": [
+      {
+        "source_id": "src_77d98aaff7ef",
+        "citation": "Bloom, J.D. (2021). Recovery of Deleted Deep Sequencing Data Sheds More Light on the Early Wuhan SARS-CoV-2 Epidemic. *Molecular Biology and Evolution* 38(12): 5211–5224. https://academic.oup.com/mbe/article/38/12/5211/6353034 (full text: https://pmc.ncbi.nlm.nih.gov/articles/PMC8436388/)",
+        "urls": [
+          "https://academic.oup.com/mbe/article/38/12/5211/6353034",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC8436388/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_f69ac64b7993",
+        "citation": "Débarre, F. & Hensel, Z. (2025). A Critical Reexamination of Recovered SARS-CoV-2 Sequencing Data. *Molecular Biology and Evolution*. https://pubmed.ncbi.nlm.nih.gov/40488574/ (PMC: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12147218/)",
+        "urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/40488574/",
+          "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12147218/"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_c31e729e243a",
+        "citation": "European Parliament. Written question E-000608/2022 (Kuhs): \"Entire Wuhan Institute virus database taken offline on 12 September 2019.\" https://www.europarl.europa.eu/doceo/document/E-9-2022-000608_EN.html",
+        "urls": [
+          "https://www.europarl.europa.eu/doceo/document/E-9-2022-000608_EN.html"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_0361b92f3139",
+        "citation": "Al Jazeera / Reuters (13 Feb 2021). China refused to give raw COVID data to WHO, team member says. https://www.aljazeera.com/news/2021/2/13/china-refuses-to-give-raw-data-to-who-team-investigating-covid-19",
+        "urls": [
+          "https://www.aljazeera.com/news/2021/2/13/china-refuses-to-give-raw-data-to-who-team-investigating-covid-19"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_ceb240984c8f",
+        "citation": "CNN (14 Feb 2021). WHO in China: Wuhan mission finds possible signs of wider original coronavirus outbreak in 2019. https://amp.cnn.com/cnn/2021/02/14/health/who-mission-china-intl/index.html",
+        "urls": [
+          "https://amp.cnn.com/cnn/2021/02/14/health/who-mission-china-intl/index.html"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_520f7c2773ca",
+        "citation": "Cohen, J. (2023). Reporting on withdrawn Huanan market GISAID sequences. *Science*. https://www.science.org/content/article/critics-decry-access-transparency-issues-key-trove-coronavirus-sequences",
+        "urls": [
+          "https://www.science.org/content/article/critics-decry-access-transparency-issues-key-trove-coronavirus-sequences"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_de2226444bd1",
+        "citation": "Pekingnology / context on WIV cyberattack explanation (Yuan Zhiming, Shi Zhengli, Daszak statements). https://www.pekingnology.com/p/wuhan-institute-of-virology-was-under",
+        "urls": [
+          "https://www.pekingnology.com/p/wuhan-institute-of-virology-was-under"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "Several heterogeneous access events are grouped as one pattern of suspicious conduct."
+    ],
+    "policy_sensitivities": [
+      "The result depends on whether the policy aggregates events by apparent motive or evaluates each event's ordinary administrative base rate separately."
+    ],
+    "coverage_gaps": [
+      "Server logs, submitter correspondence, retained database contents, and complete access histories are missing."
+    ],
+    "correlation_risks": [
+      "Contains the same underlying events represented separately by database-offline and China-opacity items."
+    ],
+    "capability_limits": [
+      "Circumstantial patterns are especially sensitive to base rates, alternative explanations, and selection of which coincidences are noticed."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "Deletion or restriction is established more readily than a concealment motive or its relevance to origin."
+      ],
+      "ingestion_conditional": [
+        "Unavailable content prevents assessing whether the missing records would be directionally informative."
+      ],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "Bundling events creates a stronger pattern than evaluating their distinct causes may warrant."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Use event-level nodes and shared-event identifiers to avoid pattern inflation.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}

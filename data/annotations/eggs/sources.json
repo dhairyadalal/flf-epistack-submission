@@ -1,0 +1,299 @@
+[
+  {
+    "schema_version": "0.1.0",
+    "source_id": "src_17e21b145f2e",
+    "citation": "Beynen, A. C., Katan, M. B., & van Zutphen, L. F. M. (1987). Hypo- and hyperresponders: individual differences in the response of serum cholesterol concentration to changes in diet. *Advances in Lipid Research* 22:115–171. https://pubmed.ncbi.nlm.nih.gov/3328489/",
+    "urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/3328489/"
+    ],
+    "source_class": "scholarly_publication",
+    "classification_method": "citation_text_heuristic",
+    "verification_status": "not_checked",
+    "language": "unknown",
+    "access_status": "unknown",
+    "occurrences": [
+      {
+        "evidence_id": "individual-lipid-response",
+        "case_id": "eggs"
+      }
+    ],
+    "review": {
+      "verification_status": "not_checked",
+      "quality_assessment": "Scholarly publication or index record. Peer-review status, study design, and relevance still require content checking.",
+      "independence_notes": [],
+      "limitations": [
+        "Classification is based on citation text only; source content has not been independently checked."
+      ]
+    }
+  },
+  {
+    "schema_version": "0.1.0",
+    "source_id": "src_32a78142c304",
+    "citation": "Carson, J. A. S., et al. (2020). Dietary Cholesterol and Cardiovascular Risk: A Science Advisory From the American Heart Association. *Circulation* 141:e39–e53. https://doi.org/10.1161/CIR.0000000000000743",
+    "urls": [
+      "https://doi.org/10.1161/CIR.0000000000000743"
+    ],
+    "source_class": "scholarly_publication",
+    "classification_method": "citation_text_heuristic",
+    "verification_status": "not_checked",
+    "language": "unknown",
+    "access_status": "unknown",
+    "occurrences": [
+      {
+        "evidence_id": "population-cardiovascular-risk",
+        "case_id": "eggs"
+      }
+    ],
+    "review": {
+      "verification_status": "not_checked",
+      "quality_assessment": "Scholarly publication or index record. Peer-review status, study design, and relevance still require content checking.",
+      "independence_notes": [],
+      "limitations": [
+        "Classification is based on citation text only; source content has not been independently checked."
+      ]
+    }
+  },
+  {
+    "schema_version": "0.1.0",
+    "source_id": "src_3eff07494463",
+    "citation": "Abín, R., Laca, A., Laca, A., & Díaz, M. (2018). Environmental assessment of intensive egg production: A Spanish case study. *Journal of Cleaner Production* 179:160–168. https://doi.org/10.1016/j.jclepro.2018.01.067",
+    "urls": [
+      "https://doi.org/10.1016/j.jclepro.2018.01.067"
+    ],
+    "source_class": "scholarly_publication",
+    "classification_method": "citation_text_heuristic",
+    "verification_status": "not_checked",
+    "language": "unknown",
+    "access_status": "unknown",
+    "occurrences": [
+      {
+        "evidence_id": "egg-production-environmental-impact",
+        "case_id": "eggs"
+      }
+    ],
+    "review": {
+      "verification_status": "not_checked",
+      "quality_assessment": "Scholarly publication or index record. Peer-review status, study design, and relevance still require content checking.",
+      "independence_notes": [],
+      "limitations": [
+        "Classification is based on citation text only; source content has not been independently checked."
+      ]
+    }
+  },
+  {
+    "schema_version": "0.1.0",
+    "source_id": "src_52d996d82739",
+    "citation": "Zhong, V. W., et al. (2019). Associations of Dietary Cholesterol or Egg Consumption With Incident Cardiovascular Disease and Mortality. *JAMA* 321(11):1081–1095. https://doi.org/10.1001/jama.2019.1572",
+    "urls": [
+      "https://doi.org/10.1001/jama.2019.1572"
+    ],
+    "source_class": "scholarly_publication",
+    "classification_method": "citation_text_heuristic",
+    "verification_status": "not_checked",
+    "language": "unknown",
+    "access_status": "unknown",
+    "occurrences": [
+      {
+        "evidence_id": "population-cardiovascular-risk",
+        "case_id": "eggs"
+      }
+    ],
+    "review": {
+      "verification_status": "not_checked",
+      "quality_assessment": "Scholarly publication or index record. Peer-review status, study design, and relevance still require content checking.",
+      "independence_notes": [],
+      "limitations": [
+        "Classification is based on citation text only; source content has not been independently checked."
+      ]
+    }
+  },
+  {
+    "schema_version": "0.1.0",
+    "source_id": "src_68170b824429",
+    "citation": "Drouin-Chartier, J.-P., et al. (2020). Egg consumption and risk of cardiovascular disease: three large prospective US cohort studies, systematic review, and updated meta-analysis. *BMJ* 368:m513. https://doi.org/10.1136/bmj.m513",
+    "urls": [
+      "https://doi.org/10.1136/bmj.m513"
+    ],
+    "source_class": "scholarly_publication",
+    "classification_method": "citation_text_heuristic",
+    "verification_status": "not_checked",
+    "language": "unknown",
+    "access_status": "unknown",
+    "occurrences": [
+      {
+        "evidence_id": "population-cardiovascular-risk",
+        "case_id": "eggs"
+      }
+    ],
+    "review": {
+      "verification_status": "not_checked",
+      "quality_assessment": "Scholarly publication or index record. Peer-review status, study design, and relevance still require content checking.",
+      "independence_notes": [],
+      "limitations": [
+        "Classification is based on citation text only; source content has not been independently checked."
+      ]
+    }
+  },
+  {
+    "schema_version": "0.1.0",
+    "source_id": "src_68ed13bb9c13",
+    "citation": "Leinonen, I., Williams, A. G., Wiseman, J., Guy, J., & Kyriazakis, I. (2012). Predicting the environmental impacts of chicken systems in the United Kingdom through a life cycle assessment: Egg production systems. *Poultry Science* 91(1):26–40. https://doi.org/10.3382/ps.2011-01635",
+    "urls": [
+      "https://doi.org/10.3382/ps.2011-01635"
+    ],
+    "source_class": "scholarly_publication",
+    "classification_method": "citation_text_heuristic",
+    "verification_status": "not_checked",
+    "language": "unknown",
+    "access_status": "unknown",
+    "occurrences": [
+      {
+        "evidence_id": "egg-production-environmental-impact",
+        "case_id": "eggs"
+      }
+    ],
+    "review": {
+      "verification_status": "not_checked",
+      "quality_assessment": "Scholarly publication or index record. Peer-review status, study design, and relevance still require content checking.",
+      "independence_notes": [],
+      "limitations": [
+        "Classification is based on citation text only; source content has not been independently checked."
+      ]
+    }
+  },
+  {
+    "schema_version": "0.1.0",
+    "source_id": "src_a04b46952862",
+    "citation": "Katan, M. B., Beynen, A. C., de Vries, J. H. M., & Nobels, A. (1986). Existence of consistent hypo- and hyperresponders to dietary cholesterol in man. *American Journal of Epidemiology* 123(2):221–234. https://pubmed.ncbi.nlm.nih.gov/3946374/",
+    "urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/3946374/"
+    ],
+    "source_class": "scholarly_publication",
+    "classification_method": "citation_text_heuristic",
+    "verification_status": "not_checked",
+    "language": "unknown",
+    "access_status": "unknown",
+    "occurrences": [
+      {
+        "evidence_id": "individual-lipid-response",
+        "case_id": "eggs"
+      }
+    ],
+    "review": {
+      "verification_status": "not_checked",
+      "quality_assessment": "Scholarly publication or index record. Peer-review status, study design, and relevance still require content checking.",
+      "independence_notes": [],
+      "limitations": [
+        "Classification is based on citation text only; source content has not been independently checked."
+      ]
+    }
+  },
+  {
+    "schema_version": "0.1.0",
+    "source_id": "src_acf6d3d12806",
+    "citation": "European Food Safety Authority (2023). Plain-language summary: Welfare of laying hens. https://www.efsa.europa.eu/en/plain-language-summary/welfare-laying-hens",
+    "urls": [
+      "https://www.efsa.europa.eu/en/plain-language-summary/welfare-laying-hens"
+    ],
+    "source_class": "unclassified",
+    "classification_method": "citation_text_heuristic",
+    "verification_status": "not_checked",
+    "language": "unknown",
+    "access_status": "unknown",
+    "occurrences": [
+      {
+        "evidence_id": "laying-hen-welfare",
+        "case_id": "eggs"
+      }
+    ],
+    "review": {
+      "verification_status": "not_checked",
+      "quality_assessment": "Source class could not be established from citation text alone.",
+      "independence_notes": [],
+      "limitations": [
+        "Classification is based on citation text only; source content has not been independently checked."
+      ]
+    }
+  },
+  {
+    "schema_version": "0.1.0",
+    "source_id": "src_c10579b55993",
+    "citation": "EFSA Panel on Animal Health and Welfare (2023). Welfare of laying hens on farm. *EFSA Journal* 21(2):7789. https://doi.org/10.2903/j.efsa.2023.7789",
+    "urls": [
+      "https://doi.org/10.2903/j.efsa.2023.7789"
+    ],
+    "source_class": "scholarly_publication",
+    "classification_method": "citation_text_heuristic",
+    "verification_status": "not_checked",
+    "language": "unknown",
+    "access_status": "unknown",
+    "occurrences": [
+      {
+        "evidence_id": "laying-hen-welfare",
+        "case_id": "eggs"
+      }
+    ],
+    "review": {
+      "verification_status": "not_checked",
+      "quality_assessment": "Scholarly publication or index record. Peer-review status, study design, and relevance still require content checking.",
+      "independence_notes": [],
+      "limitations": [
+        "Classification is based on citation text only; source content has not been independently checked."
+      ]
+    }
+  },
+  {
+    "schema_version": "0.1.0",
+    "source_id": "src_ca316d5769d7",
+    "citation": "Poore, J., & Nemecek, T. (2018). Reducing food's environmental impacts through producers and consumers. *Science* 360(6392):987–992. https://doi.org/10.1126/science.aaq0216",
+    "urls": [
+      "https://doi.org/10.1126/science.aaq0216"
+    ],
+    "source_class": "scholarly_publication",
+    "classification_method": "citation_text_heuristic",
+    "verification_status": "not_checked",
+    "language": "unknown",
+    "access_status": "unknown",
+    "occurrences": [
+      {
+        "evidence_id": "egg-production-environmental-impact",
+        "case_id": "eggs"
+      }
+    ],
+    "review": {
+      "verification_status": "not_checked",
+      "quality_assessment": "Scholarly publication or index record. Peer-review status, study design, and relevance still require content checking.",
+      "independence_notes": [],
+      "limitations": [
+        "Classification is based on citation text only; source content has not been independently checked."
+      ]
+    }
+  },
+  {
+    "schema_version": "0.1.0",
+    "source_id": "src_d4064e97355b",
+    "citation": "Godos, J., et al. (2021). Egg consumption and cardiovascular risk: a dose-response meta-analysis of prospective cohort studies. *European Journal of Nutrition* 60:1833–1862. https://doi.org/10.1007/s00394-020-02345-7",
+    "urls": [
+      "https://doi.org/10.1007/s00394-020-02345-7"
+    ],
+    "source_class": "scholarly_publication",
+    "classification_method": "citation_text_heuristic",
+    "verification_status": "not_checked",
+    "language": "unknown",
+    "access_status": "unknown",
+    "occurrences": [
+      {
+        "evidence_id": "individual-lipid-response",
+        "case_id": "eggs"
+      }
+    ],
+    "review": {
+      "verification_status": "not_checked",
+      "quality_assessment": "Scholarly publication or index record. Peer-review status, study design, and relevance still require content checking.",
+      "independence_notes": [],
+      "limitations": [
+        "Classification is based on citation text only; source content has not been independently checked."
+      ]
+    }
+  }
+]

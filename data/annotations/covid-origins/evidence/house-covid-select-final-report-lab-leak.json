@@ -1,0 +1,147 @@
+{
+  "schema_version": "0.1.0",
+  "annotation_id": "ann_covid-origins_house-covid-select-final-report-lab-leak_v1",
+  "case_id": "covid-origins",
+  "baseline_id": "carlo-claude-unattended-2026-06-25",
+  "provenance": {
+    "upstream_author": "Claude (baseline supplied by Carlo)",
+    "upstream_generation_method": "23-minute unattended Claude Code swarm",
+    "annotation_method": "deterministic_extraction_and_provisional_classification",
+    "reviewer": "OpenAI Codex",
+    "review_method": "Model-assisted structural review of every supplied evidence note; no systematic full-text verification of the cited corpus"
+  },
+  "annotation_status": "provisionally_reviewed",
+  "evidence": {
+    "evidence_id": "house-covid-select-final-report-lab-leak",
+    "title": "US House COVID Select final report (Dec 2024) concluded a lab-related incident is the most likely origin",
+    "direction": "lab-leak",
+    "evidence_type": "intelligence-assessment",
+    "claim_confidence": 0.97,
+    "support_strength": "weak",
+    "claim": "The Republican-led House Select Subcommittee on the Coronavirus Pandemic, in its December 2024 final report (\"After Action Review of the COVID-19 Pandemic: Lessons Learned and a Path Forward,\" ~520 pages), concluded that SARS-CoV-2 \"most likely\" emerged from a laboratory- or research-related incident in Wuhan. Its case rests largely on a biological feature it calls \"not found in nature\" (the furin cleavage site), the single-introduction pattern, the absence of an identified intermediate host, reports of WIV researcher illnesses in fall 2019, and US-funded gain-of-function-adjacent work via EcoHealth Alliance/Peter Daszak.",
+    "evidence_quality": "This is a **congressional committee report** — an institutional assessment, not peer-reviewed science or a primary data source. It is the most comprehensive congressional articulation of the lab-leak case, but it was produced by a partisan-majority committee, was not adopted bipartisanly (Democrats issued a competing report), and per Science contained no new direct evidence. Its central scientific premises are contested:\n- The \"furin cleavage site is not found in nature\" claim is **factually disputed** by the virology literature. Furin/polybasic cleavage sites occur across coronaviruses (e.g., endemic human betacoronaviruses, mouse coronavirus, and bat sarbecoviruses), and a 2022 PNAS analysis (Liu et al.) argued the SARS-CoV-2 site shows no engineering signature; a furin-cleavage-competent bat virus (BANAL/related sarbecoviruses) has also been described [PNAS 2022; J. Virol. 2023].\n- The \"single introduction\" framing is contested: the peer-reviewed Worobey et al. (2022, Science) and Pekar et al. (2022, Science) analyses argued for *two* introductions clustered at the Huanan market — evidence the natural-origin side reads as favoring zoonosis, not lab leak.\nSo the report functions as an **assessment-of-opinion** whose factual existence and conclusion are certain, but whose underlying scientific claims are weaker than presented.",
+    "strongest_counterargument": "The report's marquee scientific claim — that the furin cleavage site is \"not found in nature\" — is contradicted by peer-reviewed virology. Polybasic/furin cleavage sites arose independently multiple times across coronaviruses; SARS-CoV-2's site carries an \"out-of-frame\" CGG-CGG arginine codon usage that is unusual but observed in nature and inconsistent with standard cloning, and cell-culture passage tends to delete the site reproducibly — yet early isolates retain it [PNAS 2022, Liu et al., \"SARS-CoV-2 furin cleavage site was not engineered\"; Holmes/Andersen et al. critical analyses]. More broadly, the natural-origin camp argues the strongest *primary* evidence (spatial clustering of early cases and viral lineages at the Huanan market; two introductions) points to zoonosis, and that a congressional report restating circumstantial points without new data does not move the genomic/epidemiological balance.",
+    "confidence_assessment": "- **Claim confidence:** 0.97 — It is well documented and uncontested that the report exists, runs ~500–520 pages, was released December 2024 under Chair Wenstrup, and concluded a lab-related incident is \"most likely\" while citing the furin site, single introduction, and EcoHealth/NIAID funding. (Confidence is on the *existence and content of the report*, not on whether its scientific claims are correct.)\n- **Support strength:** weak (for lab-leak) — It is an assessment/opinion that aggregates pre-existing circumstantial arguments rather than new evidence; its two flagship technical claims are scientifically contested or arguably misread; and it lacks bipartisan or independent-scientific endorsement. Institutional weight is real but evidentially thin.\n- **Net:** A calibrated reasoner should treat this as a high-profile, politically-led *endorsement* of the lab-leak hypothesis, not as independent confirming evidence — its conclusion is certain to exist, but should update one's posterior only modestly, and not at all on the contested furin-site/single-introduction claims.",
+    "source_path": "evidence/house-covid-select-final-report-lab-leak.md",
+    "citations": [
+      {
+        "source_id": "src_6791631ba7ee",
+        "citation": "U.S. House Committee on Oversight and Accountability (2 Dec 2024). \"FINAL REPORT: COVID Select Concludes 2-Year Investigation, Issues 500+ Page Final Report on Lessons Learned and the Path Forward.\" https://oversight.house.gov/release/final-report-covid-select-concludes-2-year-investigation-issues-500-page-final-report-on-lessons-learned-and-the-path-forward/",
+        "urls": [
+          "https://oversight.house.gov/release/final-report-covid-select-concludes-2-year-investigation-issues-500-page-final-report-on-lessons-learned-and-the-path-forward/"
+        ],
+        "source_class": "government_or_intergovernmental",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_69f36111f6bf",
+        "citation": "Cohen, J. (2 Dec 2024). \"House panel concludes that COVID-19 pandemic came from a lab leak.\" Science/AAAS. https://www.science.org/content/article/house-panel-concludes-covid-19-pandemic-came-lab-leak",
+        "urls": [
+          "https://www.science.org/content/article/house-panel-concludes-covid-19-pandemic-came-lab-leak"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_f73e5ac878ac",
+        "citation": "CNN (2 Dec 2024). \"House Covid-19 panel releases final report criticizing public health response to the pandemic.\" https://www.cnn.com/2024/12/02/health/house-covid-subcommittee-report",
+        "urls": [
+          "https://www.cnn.com/2024/12/02/health/house-covid-subcommittee-report"
+        ],
+        "source_class": "journalism",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_a78d51d867a7",
+        "citation": "WUSF/NPR (7 Dec 2024). \"House panel on COVID issues report, concludes pandemic started in Wuhan lab.\" https://www.wusf.org/politics-issues/2024-12-07/house-panel-covid-report-concludes-pandemic-started-wuhan-lab",
+        "urls": [
+          "https://www.wusf.org/politics-issues/2024-12-07/house-panel-covid-report-concludes-pandemic-started-wuhan-lab"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_b038dc8edf56",
+        "citation": "Liu, Z. et al. (2022). \"SARS-CoV-2 furin cleavage site was not engineered.\" PNAS 119(35):e2211107119. https://www.pnas.org/doi/10.1073/pnas.2211107119",
+        "urls": [
+          "https://www.pnas.org/doi/10.1073/pnas.2211107119"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_2e3ad8a68abc",
+        "citation": "Holmes, E.C., Andersen, K.G., et al. (2023). \"A Critical Analysis of the Evidence for the SARS-CoV-2 Origin Hypotheses.\" Journal of Virology 97(5). https://journals.asm.org/doi/10.1128/jvi.00365-23",
+        "urls": [
+          "https://journals.asm.org/doi/10.1128/jvi.00365-23"
+        ],
+        "source_class": "scholarly_publication",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      },
+      {
+        "source_id": "src_0fadb7845195",
+        "citation": "Wu, Y. & Zhao, S. (2021). \"Furin cleavage sites naturally occur in coronaviruses.\" Stem Cell Research 50:102115. https://www.sciencedirect.com/science/article/pii/S1873506120304165",
+        "urls": [
+          "https://www.sciencedirect.com/science/article/pii/S1873506120304165"
+        ],
+        "source_class": "unclassified",
+        "classification_method": "citation_text_heuristic",
+        "verification_status": "not_checked",
+        "language": "unknown",
+        "access_status": "unknown"
+      }
+    ]
+  },
+  "review": {
+    "verification_status": "not_checked",
+    "review_basis": "baseline_document_only",
+    "framing_assumptions": [
+      "A congressional committee conclusion is treated as epistemic evidence rather than a political synthesis of already-available evidence."
+    ],
+    "policy_sensitivities": [
+      "Weight changes with policies for partisan institutions, expert testimony, and separation of primary evidence from institutional judgment."
+    ],
+    "coverage_gaps": [
+      "The item does not identify a new public primary datum uniquely supporting the report's bottom-line conclusion."
+    ],
+    "correlation_risks": [
+      "Repackages DEFUSE, biosafety, intelligence, and conduct evidence already represented elsewhere."
+    ],
+    "capability_limits": [
+      "Most underlying intelligence is unavailable, preventing independent evaluation of source quality and analytic tradecraft."
+    ],
+    "uncertainty_attribution": {
+      "evidential": [
+        "The committee's conclusion is clear; the incremental evidential content is uncertain."
+      ],
+      "ingestion_conditional": [],
+      "capability_conditional": [],
+      "framing_conditional": [
+        "Institutional conclusions can be evidence of serious consideration without being independent evidence of the event."
+      ],
+      "unattributed": []
+    },
+    "notes": [
+      "Separate the report's primary documents from its evaluative conclusion.",
+      "This is a substantive structural annotation of the supplied evidence note, not an independent finding that its factual claim is true."
+    ]
+  }
+}
