@@ -104,28 +104,32 @@
 
           <aside id="framing-sidebar" class="framing-sidebar" aria-labelledby="framing-sidebar-title" hidden>
             <div class="framing-sidebar-heading">
-              <p class="kicker">Current framing</p>
+              <p id="sidebar-kicker" class="kicker"></p>
               <h3 id="framing-sidebar-title"></h3>
               <p id="framing-mode"></p>
             </div>
             <section>
-              <h4>Operational question</h4>
+              <h4 id="sidebar-question-label"></h4>
               <p id="framing-question"></p>
             </section>
             <section>
-              <h4>Sources admitted</h4>
+              <h4 id="sidebar-sources-label"></h4>
               <ul id="framing-sources"></ul>
             </section>
             <section>
-              <h4>Policy boundary</h4>
+              <h4 id="sidebar-policy-label"></h4>
               <ul id="framing-policy-exclusions"></ul>
             </section>
             <section>
-              <h4>Outcomes left out</h4>
+              <h4 id="sidebar-exclusions-label"></h4>
               <ul id="framing-exclusions"></ul>
             </section>
+            <section id="sidebar-limits" hidden>
+              <h4 id="sidebar-limits-label"></h4>
+              <ul id="sidebar-limits-list"></ul>
+            </section>
             <section class="framing-consequence">
-              <h4>Why this matters</h4>
+              <h4 id="sidebar-consequence-label"></h4>
               <p id="framing-consequence"></p>
             </section>
           </aside>

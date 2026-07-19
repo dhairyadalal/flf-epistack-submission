@@ -47,12 +47,21 @@ const elements = {
   coverageSummary: document.querySelector("#coverage-summary"),
   coverageDetails: document.querySelector("#coverage-details"),
   framingSidebar: document.querySelector("#framing-sidebar"),
+  sidebarKicker: document.querySelector("#sidebar-kicker"),
   framingSidebarTitle: document.querySelector("#framing-sidebar-title"),
   framingMode: document.querySelector("#framing-mode"),
+  sidebarQuestionLabel: document.querySelector("#sidebar-question-label"),
   framingQuestion: document.querySelector("#framing-question"),
+  sidebarSourcesLabel: document.querySelector("#sidebar-sources-label"),
   framingSources: document.querySelector("#framing-sources"),
+  sidebarPolicyLabel: document.querySelector("#sidebar-policy-label"),
   framingPolicyExclusions: document.querySelector("#framing-policy-exclusions"),
+  sidebarExclusionsLabel: document.querySelector("#sidebar-exclusions-label"),
   framingExclusions: document.querySelector("#framing-exclusions"),
+  sidebarLimits: document.querySelector("#sidebar-limits"),
+  sidebarLimitsLabel: document.querySelector("#sidebar-limits-label"),
+  sidebarLimitsList: document.querySelector("#sidebar-limits-list"),
+  sidebarConsequenceLabel: document.querySelector("#sidebar-consequence-label"),
   framingConsequence: document.querySelector("#framing-consequence"),
   resultCount: document.querySelector("#result-count"),
   search: document.querySelector("#search"),
@@ -437,6 +446,70 @@ function renderRunTabs(experiment, caseData) {
   return run;
 }
 
+function renderFixedCorpusSidebar(experiment, run, caseData) {
+  const excludedIds = new Set(run.excluded_evidence_ids);
+  const excludedCounts = new Map();
+  const directionLabels = {
+    "natural-origin": "Natural-origin support",
+    "lab-leak": "Research-related support",
+    neutral: "Background or neutral",
+  };
+  for (const item of caseData.evidence) {
+    if (!excludedIds.has(item.evidence.evidence_id)) continue;
+    const direction = item.evidence.direction;
+    excludedCounts.set(direction, (excludedCounts.get(direction) || 0) + 1);
+  }
+
+  const coverageGroups = [
+    ["Known but unavailable", experiment.coverage_report.known_but_unavailable],
+    ["Capability limited", experiment.coverage_report.capability_limited],
+    ["Not established", experiment.coverage_report.not_established],
+  ];
+  const added = run.added_since_previous_run.length;
+  const changeSummary = state.runIndex === 0
+    ? `This starting pass admits ${added} records.`
+    : `This pass adds ${added} records to the preceding policy.`;
+
+  elements.sidebarKicker.textContent = "Current evidence policy";
+  elements.framingSidebarTitle.textContent = run.label;
+  elements.framingMode.textContent =
+    `Pass ${state.runIndex + 1} of ${experiment.runs.length} — each pass contains the evidence admitted by the previous one.`;
+  elements.sidebarQuestionLabel.textContent = "Question held fixed";
+  elements.framingQuestion.textContent = experiment.question;
+  elements.sidebarSourcesLabel.textContent = "Evidence admitted";
+  elements.framingSources.replaceChildren(
+    el("li", { text: `${run.included_evidence_ids.length} of ${caseData.evidence.length} evidence records` }),
+    el("li", { text: `${run.included_source_ids.length} of ${caseData.sources.length} cited sources` }),
+    el("li", { text: `${run.assessment.cluster_contributions.length} scored evidence-family contributions` }),
+  );
+  elements.sidebarPolicyLabel.textContent = "Policy boundary";
+  elements.framingPolicyExclusions.replaceChildren(el("li", { text: run.description }));
+  elements.sidebarExclusionsLabel.textContent = "Records left out";
+  elements.framingExclusions.replaceChildren(
+    ...(excludedCounts.size
+      ? [...excludedCounts.entries()].map(([direction, count]) =>
+          el("li", {}, [
+            el("strong", { text: directionLabels[direction] || label(direction) }),
+            document.createTextNode(` — ${count} ${count === 1 ? "record" : "records"}`),
+          ]),
+        )
+      : [el("li", { text: "No records from the supplied baseline are excluded." })]),
+  );
+  elements.sidebarLimits.hidden = false;
+  elements.sidebarLimitsLabel.textContent = "Known limits";
+  elements.sidebarLimitsList.replaceChildren(
+    ...coverageGroups.map(([groupLabel, items]) =>
+      el("li", {}, [
+        el("strong", { text: `${groupLabel} (${items.length})` }),
+        document.createTextNode(` — ${items.map((item) => item.label).join("; ")}`),
+      ]),
+    ),
+  );
+  elements.sidebarConsequenceLabel.textContent = "Assessment effect";
+  elements.framingConsequence.textContent =
+    `${changeSummary} ${run.assessment.conclusion}`;
+}
+
 function renderFixedCorpusExperiment(caseData, experiment) {
   const run = experiment.runs[state.runIndex];
   elements.experimentKicker.textContent = "Fixed-corpus policy ablation";
@@ -444,11 +517,12 @@ function renderFixedCorpusExperiment(caseData, experiment) {
   elements.experimentDescription.textContent =
     "The 40 supplied records stay fixed. Each run admits a different subset, then recalculates support after duplicate evidence families are collapsed.";
   elements.experimentSection.classList.remove("framing-experiment");
+  elements.experimentSection.classList.add("sidebar-experiment");
   elements.runPickerTitle.textContent = "Choose an evidence pass";
   elements.runPickerDescription.textContent =
     "Each pass widens the source policy. Select one to see which records enter and how the assessment changes.";
-  elements.coverageDetails.hidden = false;
-  elements.framingSidebar.hidden = true;
+  elements.coverageDetails.hidden = true;
+  elements.framingSidebar.hidden = false;
   elements.assessmentLabel.textContent = "Assessment under this policy";
   elements.supportBalance.hidden = false;
   elements.framingOutput.hidden = true;
@@ -494,6 +568,7 @@ function renderFixedCorpusExperiment(caseData, experiment) {
   elements.clusterFilter.value = state.clusterId;
   renderClaimGraph(experiment, run, caseData);
   renderCoverage(experiment);
+  renderFixedCorpusSidebar(experiment, run, caseData);
 }
 
 function renderFramingGraph(experiment, run, caseData) {
@@ -585,17 +660,22 @@ function renderFramingGraph(experiment, run, caseData) {
 }
 
 function renderFramingCoverage(run) {
+  elements.sidebarKicker.textContent = "Current framing";
   elements.framingSidebarTitle.textContent = run.label;
   elements.framingMode.textContent = run.framing_declared
     ? "Declared choice — selected explicitly before evidence is assessed."
     : "Implicit assumption — the system chose this meaning without asking.";
   elements.framingQuestion.textContent = run.operationalized_question;
+  elements.sidebarQuestionLabel.textContent = "Operational question";
+  elements.sidebarSourcesLabel.textContent = "Sources admitted";
   elements.framingSources.replaceChildren(
     ...run.source_scope.source_types.map((sourceType) => el("li", { text: sourceType })),
   );
+  elements.sidebarPolicyLabel.textContent = "Policy boundary";
   elements.framingPolicyExclusions.replaceChildren(
     ...run.source_scope.exclusion_rules.map((rule) => el("li", { text: rule })),
   );
+  elements.sidebarExclusionsLabel.textContent = "Outcomes left out";
   elements.framingExclusions.replaceChildren(
     ...run.excluded_by_framing.map((item) =>
       el("li", {}, [
@@ -604,6 +684,8 @@ function renderFramingCoverage(run) {
       ]),
     ),
   );
+  elements.sidebarLimits.hidden = true;
+  elements.sidebarConsequenceLabel.textContent = "Why this matters";
   elements.framingConsequence.textContent = run.framing_conditional_uncertainty;
 }
 
@@ -614,6 +696,7 @@ function renderFramingExperiment(caseData, experiment) {
   elements.experimentDescription.textContent =
     "The raw question stays fixed. Each run swaps the framing object, which changes the operational question, admissible sources, and shape of the answer.";
   elements.experimentSection.classList.add("framing-experiment");
+  elements.experimentSection.classList.add("sidebar-experiment");
   elements.runPickerTitle.textContent = "Choose what “good” means";
   elements.runPickerDescription.textContent =
     "Select a framing to rerun the inquiry. The question, admitted sources, exclusions, and resulting assessment update together.";
