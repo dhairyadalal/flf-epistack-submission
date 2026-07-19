@@ -193,11 +193,10 @@ function renderCaseHeader(caseData) {
   if (isCovid) {
     if (elements.inquiryKicker) elements.inquiryKicker.textContent = "Inquiry";
     if (elements.inquiryQuestion)
-      elements.inquiryQuestion.textContent =
-        "What does the available evidence show about the origins of COVID-19?";
+      elements.inquiryQuestion.textContent = "What was the origin of COVID-19?";
     if (elements.inquiryMotivation)
       elements.inquiryMotivation.textContent =
-        "In 2024, a $100,000 judged debate between Saar Wilf and Peter Miller — spanning 15 hours of structured argument, epidemiological data, viral genetics, and Bayesian inference — ended in a decisive ruling for zoonosis, yet six independent analyses of the same evidence spanned 23 orders of magnitude. The debate record is one of the richest publicly available examples of a real-world epistemic dispute on a consequential question, yet remains hard to navigate, interrogate, or use to update one's beliefs.";
+        "Did COVID-19 emerge from natural zoonotic spillover or from a laboratory accident? In 2024, a $100,000 structured debate between Saar Wilf and Peter Miller ran for 15 hours and ended in a decisive ruling for zoonosis — yet six independent Bayesian analyses of the same evidence spanned 23 orders of magnitude. The debate record is one of the richest publicly available examples of a real-world epistemic dispute, yet remains difficult to navigate and use to form a considered view.";
     elements.kicker.textContent = "Imported baseline · structural review";
     elements.title.textContent = "COVID-origins evidence review";
     elements.description.textContent =
