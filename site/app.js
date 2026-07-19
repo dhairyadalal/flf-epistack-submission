@@ -167,7 +167,7 @@ function renderCaseHeader(caseData) {
       elements.inquiryQuestion.textContent = "What was the origin of COVID-19?";
     if (elements.inquiryMotivation)
       elements.inquiryMotivation.textContent =
-        "A $100,000 judged debate between Saar Wilf and Peter Miller spent 15 hours weighing epidemiological, genetic, and Bayesian evidence on this question — and still ended with two expert judges ruling for zoonosis while six independent analyses of the same evidence spanned 23 orders of magnitude. That gap between effort and disagreement makes the debate one of the richest public records of a contested, high-stakes dispute, and a demanding test of whether better structure can make its reasoning easier to navigate, interrogate, and update.";
+        "COVID-19 was one of the most consequential events in recent history, and its origin is still disputed: some evidence points to a natural spillover from wildlife, other evidence points to a research-related incident, and no account has settled the question. This review examines the underlying evidence directly to see what it actually supports.";
     elements.kicker.textContent = "Imported baseline · structural review";
     elements.title.textContent = "COVID-origins evidence review";
     elements.description.textContent =
