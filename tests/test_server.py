@@ -35,6 +35,11 @@ class ServerContextTests(unittest.TestCase):
         self.assertIn("two to four most relevant records", SYSTEM_INSTRUCTIONS)
         self.assertIn("only when the user explicitly asks", SYSTEM_INSTRUCTIONS)
 
+    def test_system_prompt_prioritizes_framing_over_provenance_metadata(self) -> None:
+        self.assertIn("interpretation of the question -> outcomes that count", SYSTEM_INSTRUCTIONS)
+        self.assertIn("Do not volunteer them", SYSTEM_INSTRUCTIONS)
+        self.assertIn("structured metadata field is not automatically", SYSTEM_INSTRUCTIONS)
+
     def test_complete_eggs_case_is_attached(self) -> None:
         context, receipt = build_case_context(self.catalog, "eggs")
         payload = json.loads(context)
