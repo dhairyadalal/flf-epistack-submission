@@ -1144,6 +1144,7 @@ function renderChat() {
   elements.chatPromptsDescription.textContent = history.length
     ? "Choose another lens to challenge or extend the answer above."
     : "Select a question to ask it. Each one tests a different limit of the assessment.";
+  elements.chatPrompts.open = history.length === 0;
 
   const contextSummary = `${caseData.evidence.length} evidence records and ${caseData.sources.length} source records`;
   if (state.chatConfigured === true) {
@@ -1226,6 +1227,7 @@ async function askQuestion(question) {
   const userMessage = chatMessage("user", question);
   const assistantMessage = chatMessage("assistant", "Reviewing the complete case context…");
   const assistantBody = assistantMessage.querySelector(".chat-message-body");
+  elements.chatPrompts.open = false;
   elements.chatMessages.append(userMessage, assistantMessage);
   elements.chatMessages.scrollTop = elements.chatMessages.scrollHeight;
   setChatBusy(true);
