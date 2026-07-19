@@ -16,22 +16,14 @@
         <span>Epistack competition prototype</span>
         <strong>Evidence review</strong>
       </div>
-      <div class="case-selector">
-        <span class="case-selector-label">Select case</span>
-        <div id="case-tabs" class="case-tabs" role="tablist" aria-label="Case study"></div>
-      </div>
+      <div id="case-tabs" class="case-tabs" role="tablist" aria-label="Case study"></div>
     </header>
 
     <main>
-      <section class="inquiry-section" aria-labelledby="inquiry-question">
-        <h1 id="inquiry-question"></h1>
-        <p id="inquiry-motivation"></p>
-      </section>
-
       <section class="case-summary" aria-labelledby="case-title">
         <div class="case-copy">
           <p id="case-kicker" class="kicker"></p>
-          <h2 id="case-title"></h2>
+          <h1 id="case-title"></h1>
           <p id="case-description"></p>
         </div>
         <div id="metrics" class="metrics" aria-label="Case metrics"></div>
@@ -210,10 +202,6 @@
           <button type="button" data-question="What relevant evidence is unavailable, excluded, or not established in this corpus, and how could obtaining it alter the assessment?">
             <strong>Missing evidence</strong>
             <span>What is absent, and could it materially change the answer?</span>
-          </button>
-          <button type="button" data-question="How do the structural limitations of this analysis — including corpus scope, source coverage, framing choices, and annotation method — affect the assessment provided and confidence in the supported evidence?">
-            <strong>Structural limitations</strong>
-            <span>How do the boundaries of this analysis constrain confidence in its findings?</span>
           </button>
         </div>
       </details>

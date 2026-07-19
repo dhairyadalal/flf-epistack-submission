@@ -14,8 +14,6 @@ const state = {
 
 const elements = {
   tabs: document.querySelector("#case-tabs"),
-  inquiryQuestion: document.querySelector("#inquiry-question"),
-  inquiryMotivation: document.querySelector("#inquiry-motivation"),
   kicker: document.querySelector("#case-kicker"),
   title: document.querySelector("#case-title"),
   description: document.querySelector("#case-description"),
@@ -154,10 +152,6 @@ function renderCaseHeader(caseData) {
   const experiment = currentExperiment();
 
   if (isCovid) {
-    elements.inquiryQuestion.textContent =
-      "What does the available evidence show about the origins of COVID-19?";
-    elements.inquiryMotivation.textContent =
-      "In 2024, a $100,000 judged debate between Saar Wilf and Peter Miller — spanning 15 hours of structured argument, epidemiological data, viral genetics, and Bayesian inference — ended in a decisive ruling for zoonosis, yet six independent analyses of the same evidence spanned 23 orders of magnitude. The debate record is one of the richest publicly available examples of a real-world epistemic dispute on a consequential question, yet it remains hard to navigate, interrogate, or use to update one's beliefs. This makes it a strong stress test for tools that aim to make reasoning more transparent, traversable, and trustworthy.";
     elements.kicker.textContent = "Imported baseline · structural review";
     elements.title.textContent = "COVID-origins evidence review";
     elements.description.textContent =
@@ -170,11 +164,8 @@ function renderCaseHeader(caseData) {
     );
     elements.directionLabel.textContent = "Position";
   } else {
-    elements.inquiryQuestion.textContent = “Are eggs good to eat, and how can we tell?”;
-    elements.inquiryMotivation.textContent =
-      “This open-ended everyday question is representative of a large class of health and nutrition debates where evidence is contested, context-dependent, and framing-sensitive. Getting clarity on what the important sub-questions even are — and what counts as appropriate evidence — is often more than half the challenge. It serves as a deliberately simple demonstration case that exposes how question framing shapes evidence selection before any sources are reviewed.”;
-    elements.kicker.textContent = “Original demonstration · framing comparison”;
-    elements.title.textContent = “What does “good to eat” mean?”;
+    elements.kicker.textContent = "Original demonstration · framing comparison";
+    elements.title.textContent = "What does “good to eat” mean?";
     elements.description.textContent =
       "Four explicit interpretations of the same question produce different evidence requirements.";
     elements.boundary.replaceChildren(
