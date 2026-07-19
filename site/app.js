@@ -14,6 +14,10 @@ const state = {
 
 const elements = {
   tabs: document.querySelector("#case-tabs"),
+  casePicker: document.querySelector("#case-picker"),
+  inquiryKicker: document.querySelector("#inquiry-kicker"),
+  inquiryQuestion: document.querySelector("#inquiry-question"),
+  inquiryMotivation: document.querySelector("#inquiry-motivation"),
   kicker: document.querySelector("#case-kicker"),
   title: document.querySelector("#case-title"),
   description: document.querySelector("#case-description"),
@@ -118,6 +122,41 @@ function label(value) {
   return value.replaceAll("-", " ").replaceAll("_", " ");
 }
 
+function renderCasePicker() {
+  if (!elements.casePicker) return;
+  elements.casePicker.replaceChildren();
+  state.catalog.cases.forEach((caseData, index) => {
+    const caseId = caseData.manifest.case_id;
+    const isCovid = caseId === "covid-origins";
+    const isSelected = index === state.caseIndex;
+    const btn = el("button", {
+      className: "case-card" + (isSelected ? " case-card--selected" : ""),
+      attrs: { type: "button", "aria-pressed": String(isSelected) },
+    }, [
+      el("strong", { text: isCovid ? "COVID origins" : "Eggs" }),
+      el("span", {
+        text: isCovid
+          ? "Origins of COVID-19 · structured evidence review"
+          : "Dietary health question · framing comparison",
+      }),
+    ]);
+    btn.addEventListener("click", () => {
+      if (index === state.caseIndex) return;
+      state.chatAbortController?.abort();
+      state.chatAbortController = null;
+      state.caseIndex = index;
+      state.selectedId = null;
+      state.query = "";
+      state.direction = "all";
+      state.runIndex = 0;
+      state.clusterId = null;
+      elements.search.value = "";
+      render();
+    });
+    elements.casePicker.append(btn);
+  });
+}
+
 function renderTabs() {
   elements.tabs.replaceChildren();
   state.catalog.cases.forEach((caseData, index) => {
@@ -152,6 +191,13 @@ function renderCaseHeader(caseData) {
   const experiment = currentExperiment();
 
   if (isCovid) {
+    if (elements.inquiryKicker) elements.inquiryKicker.textContent = "Inquiry";
+    if (elements.inquiryQuestion)
+      elements.inquiryQuestion.textContent =
+        "What does the available evidence show about the origins of COVID-19?";
+    if (elements.inquiryMotivation)
+      elements.inquiryMotivation.textContent =
+        "In 2024, a $100,000 judged debate between Saar Wilf and Peter Miller — spanning 15 hours of structured argument, epidemiological data, viral genetics, and Bayesian inference — ended in a decisive ruling for zoonosis, yet six independent analyses of the same evidence spanned 23 orders of magnitude. The debate record is one of the richest publicly available examples of a real-world epistemic dispute on a consequential question, yet remains hard to navigate, interrogate, or use to update one's beliefs.";
     elements.kicker.textContent = "Imported baseline · structural review";
     elements.title.textContent = "COVID-origins evidence review";
     elements.description.textContent =
@@ -164,6 +210,12 @@ function renderCaseHeader(caseData) {
     );
     elements.directionLabel.textContent = "Position";
   } else {
+    if (elements.inquiryKicker) elements.inquiryKicker.textContent = "Inquiry";
+    if (elements.inquiryQuestion)
+      elements.inquiryQuestion.textContent = "Are eggs good to eat, and how can we tell?";
+    if (elements.inquiryMotivation)
+      elements.inquiryMotivation.textContent =
+        "This open-ended everyday question is representative of a large class of health and nutrition debates where evidence is contested, context-dependent, and framing-sensitive. Getting clarity on what the important sub-questions even are — and what counts as appropriate evidence — is often more than half the challenge.";
     elements.kicker.textContent = "Original demonstration · framing comparison";
     elements.title.textContent = "What does “good to eat” mean?";
     elements.description.textContent =
@@ -1272,6 +1324,7 @@ async function askQuestion(question) {
 
 function render() {
   const caseData = currentCase();
+  renderCasePicker();
   renderTabs();
   renderCaseHeader(caseData);
   renderExperiment(caseData);
