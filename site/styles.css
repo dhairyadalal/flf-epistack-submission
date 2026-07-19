@@ -1095,7 +1095,7 @@ footer {
 }
 
 @media (min-width: 1440px) {
-  body { padding-right: 400px; }
+  body { padding-right: 472px; }
 
   .inquiry-chat {
     position: fixed;
@@ -1103,7 +1103,7 @@ footer {
     top: 16px;
     right: 16px;
     bottom: 16px;
-    width: 368px;
+    width: 440px;
   }
 }
 
