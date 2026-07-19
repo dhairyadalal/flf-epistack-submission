@@ -5,6 +5,7 @@ import unittest
 
 from epistemic_audit.server import (
     MAX_HISTORY_MESSAGES,
+    SYSTEM_INSTRUCTIONS,
     build_case_context,
     build_messages,
     load_catalog,
@@ -27,6 +28,12 @@ class ServerContextTests(unittest.TestCase):
         self.assertEqual(len(payload["case"]["sources"]), 173)
         self.assertEqual(len(receipt["context_sha256"]), 64)
         self.assertEqual(receipt["context_characters"], len(context))
+
+    def test_system_prompt_has_concrete_default_length_limits(self) -> None:
+        self.assertIn("150–250 words", SYSTEM_INSTRUCTIONS)
+        self.assertIn("at most four bullets", SYSTEM_INSTRUCTIONS)
+        self.assertIn("two to four most relevant records", SYSTEM_INSTRUCTIONS)
+        self.assertIn("only when the user explicitly asks", SYSTEM_INSTRUCTIONS)
 
     def test_complete_eggs_case_is_attached(self) -> None:
         context, receipt = build_case_context(self.catalog, "eggs")
