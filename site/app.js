@@ -13,7 +13,6 @@ const state = {
 };
 
 const elements = {
-  tabs: document.querySelector("#case-tabs"),
   casePicker: document.querySelector("#case-picker"),
   inquiryKicker: document.querySelector("#inquiry-kicker"),
   inquiryQuestion: document.querySelector("#inquiry-question"),
@@ -154,34 +153,6 @@ function renderCasePicker() {
       render();
     });
     elements.casePicker.append(btn);
-  });
-}
-
-function renderTabs() {
-  elements.tabs.replaceChildren();
-  state.catalog.cases.forEach((caseData, index) => {
-    const caseId = caseData.manifest.case_id;
-    const button = el("button", {
-      text: caseId === "covid-origins" ? "COVID origins" : "Eggs",
-      attrs: {
-        type: "button",
-        role: "tab",
-        "aria-selected": String(index === state.caseIndex),
-      },
-    });
-    button.addEventListener("click", () => {
-      state.chatAbortController?.abort();
-      state.chatAbortController = null;
-      state.caseIndex = index;
-      state.selectedId = null;
-      state.query = "";
-      state.direction = "all";
-      state.runIndex = 0;
-      state.clusterId = null;
-      elements.search.value = "";
-      render();
-    });
-    elements.tabs.append(button);
   });
 }
 
@@ -1324,7 +1295,6 @@ async function askQuestion(question) {
 function render() {
   const caseData = currentCase();
   renderCasePicker();
-  renderTabs();
   renderCaseHeader(caseData);
   renderExperiment(caseData);
   renderEvidenceList(caseData);

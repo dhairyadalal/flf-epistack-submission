@@ -68,26 +68,6 @@ a:focus-visible {
 
 .brand strong { font-size: 1.05rem; }
 
-.case-tabs { display: flex; gap: 4px; }
-
-.case-tabs button {
-  border: 1px solid transparent;
-  border-radius: 5px;
-  padding: 7px 11px;
-  color: var(--muted);
-  background: transparent;
-  cursor: pointer;
-}
-
-.case-tabs button:hover { color: var(--ink); background: var(--faint); }
-
-.case-tabs button[aria-selected="true"] {
-  border-color: #b9cadd;
-  color: var(--accent);
-  background: var(--accent-soft);
-  font-weight: 650;
-}
-
 main,
 footer {
   width: min(1440px, calc(100% - 48px));
