@@ -53,7 +53,7 @@ Python extraction ──► versioned annotations ──► site/data/catalog.js
 ## Build and view
 
 Python 3.11+ is the only build requirement. Install the `test` extra to run
-JSON Schema validation tests.
+JSON Schema validation tests and the `chat` extra for the local inquiry server.
 
 ```bash
 python -m pip install -e '.[test]'
@@ -69,6 +69,46 @@ For a checkout without installing the package, run:
 ```bash
 PYTHONPATH=src python -m epistemic_audit.build
 ```
+
+## Full-context inquiry chat
+
+The interactive inquiry panel requires a server: a public static page cannot
+hold an LLM credential safely. The Python server serves the same site and keeps
+the NVIDIA credential outside the browser.
+
+Create a new NVIDIA API key, then run:
+
+```bash
+python -m pip install -e '.[chat,test]'
+cp .env.example .env
+# Edit .env and replace the placeholder with the newly issued key.
+epistack-serve
+```
+
+Open `http://localhost:8000`. Do not place the key in `site/app.js`, commit it,
+or expose it as a public frontend environment variable. `.env.example` lists
+the supported variable names but contains no credential.
+
+Every question sends the complete selected case record from the generated
+catalog: its manifest, evidence annotations, normalized sources, policies, and
+experiment output. The server returns a receipt with the case ID, record
+counts, serialized context size, and SHA-256 digest. The UI displays that
+receipt so a reviewer can check that the model received the whole case rather
+than an undisclosed retrieval subset. Conversation history and the current page
+selection are sent in addition to—not instead of—the complete case context.
+
+The COVID context is currently about 687,000 serialized characters; the eggs
+context is about 59,000. This fits within the model's documented long-context
+capacity, but sending the full corpus on every turn increases latency and API
+usage. The server therefore keeps responses to 4,096 tokens by default while
+allowing `NVIDIA_MAX_TOKENS` to override that ceiling up to 16,384.
+
+GitHub Pages can continue to display the static review, but its inquiry panel
+will remain disabled. `render.yaml` is included for moving the whole site and
+server to Render; add `NVIDIA_API_KEY` there as a secret environment variable.
+Before making the endpoint public, also set account-level usage limits and a
+platform rate limit or access policy so an anonymous visitor cannot exhaust the
+inference quota.
 
 ## Annotation honesty
 

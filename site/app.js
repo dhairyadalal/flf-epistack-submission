@@ -6,6 +6,10 @@ const state = {
   direction: "all",
   runIndex: 0,
   clusterId: null,
+  chatHistories: new Map(),
+  chatConfigured: null,
+  chatModel: "z-ai/glm-5.2",
+  chatAbortController: null,
 };
 
 const elements = {
@@ -72,6 +76,14 @@ const elements = {
   policySection: document.querySelector("#policy-section"),
   policyDescription: document.querySelector("#policy-description"),
   policies: document.querySelector("#policy-grid"),
+  chat: document.querySelector("#inquiry-chat"),
+  chatContextStatus: document.querySelector("#chat-context-status"),
+  chatMessages: document.querySelector("#chat-messages"),
+  chatPrompts: document.querySelector("#chat-prompts"),
+  chatForm: document.querySelector("#chat-form"),
+  chatQuestion: document.querySelector("#chat-question"),
+  chatSubmit: document.querySelector("#chat-submit"),
+  chatModel: document.querySelector("#chat-model"),
 };
 
 function el(tag, options = {}, children = []) {
@@ -96,6 +108,10 @@ function currentExperiment() {
   return state.catalog.experiments.find((experiment) => experiment.case_id === caseId) || null;
 }
 
+function currentCaseId() {
+  return currentCase().manifest.case_id;
+}
+
 function label(value) {
   return value.replaceAll("-", " ").replaceAll("_", " ");
 }
@@ -113,6 +129,8 @@ function renderTabs() {
       },
     });
     button.addEventListener("click", () => {
+      state.chatAbortController?.abort();
+      state.chatAbortController = null;
       state.caseIndex = index;
       state.selectedId = null;
       state.query = "";
@@ -969,6 +987,154 @@ function renderPolicies(caseData) {
   );
 }
 
+function chatMessage(role, content, extraClass = "") {
+  return el("article", { className: `chat-message ${role} ${extraClass}`.trim() }, [
+    el("strong", { text: role === "user" ? "You" : "Inquiry assistant" }),
+    el("p", { text: content }),
+  ]);
+}
+
+function chatHistoryForCurrentCase() {
+  return state.chatHistories.get(currentCaseId()) || [];
+}
+
+function renderChat() {
+  const caseData = currentCase();
+  const caseLabel = currentCaseId() === "covid-origins" ? "COVID origins" : "eggs";
+  const history = chatHistoryForCurrentCase();
+  const introduction = chatMessage(
+    "assistant",
+    `Ask a critical question about the ${caseLabel} case. I will distinguish supplied claims from structural annotations, identify policy sensitivity, and cite record IDs.`,
+  );
+  elements.chatMessages.replaceChildren(
+    introduction,
+    ...history.map((message) => chatMessage(message.role, message.content)),
+  );
+  elements.chatMessages.scrollTop = elements.chatMessages.scrollHeight;
+
+  const contextSummary = `${caseData.evidence.length} evidence records and ${caseData.sources.length} source records`;
+  if (state.chatConfigured === true) {
+    elements.chatContextStatus.textContent =
+      `Ready. Every question attaches all ${contextSummary} for this case.`;
+  } else if (state.chatConfigured === false) {
+    elements.chatContextStatus.textContent =
+      `The page is available, but chat needs a newly issued NVIDIA_API_KEY on the local server.`;
+  } else {
+    elements.chatContextStatus.textContent =
+      `Checking the local inquiry service for ${contextSummary}…`;
+  }
+  elements.chatModel.textContent = `${state.chatModel.replace("z-ai/", "")} · full case context`;
+}
+
+function setChatBusy(isBusy) {
+  elements.chatSubmit.disabled = isBusy || state.chatConfigured !== true;
+  elements.chatQuestion.disabled = isBusy || state.chatConfigured !== true;
+  elements.chatPrompts.querySelectorAll("button").forEach((button) => {
+    button.disabled = isBusy || state.chatConfigured !== true;
+  });
+  elements.chatSubmit.textContent = isBusy ? "Asking…" : "Ask";
+}
+
+async function checkChatHealth() {
+  try {
+    const response = await fetch("./api/health", { cache: "no-store" });
+    if (!response.ok) throw new Error(`Health request failed: ${response.status}`);
+    const health = await response.json();
+    state.chatConfigured = health.chat_configured === true;
+    state.chatModel = health.model || state.chatModel;
+  } catch (_error) {
+    state.chatConfigured = false;
+  }
+  renderChat();
+  setChatBusy(false);
+}
+
+function currentPageState() {
+  const experiment = currentExperiment();
+  return {
+    run_id: experiment?.runs[state.runIndex]?.run_id || null,
+    selected_evidence_id: state.selectedId,
+    evidence_family_filter: state.clusterId,
+    record_direction_filter: state.direction,
+  };
+}
+
+async function parseChatStream(response, assistantText, onReceipt) {
+  const reader = response.body?.getReader();
+  if (!reader) throw new Error("The chat response did not contain a stream.");
+  const decoder = new TextDecoder();
+  let buffer = "";
+  let answer = "";
+
+  while (true) {
+    const { value, done } = await reader.read();
+    buffer += decoder.decode(value || new Uint8Array(), { stream: !done });
+    const lines = buffer.split("\n");
+    buffer = lines.pop() || "";
+    for (const line of lines) {
+      if (!line.trim()) continue;
+      const event = JSON.parse(line);
+      if (event.type === "context") onReceipt(event.receipt);
+      if (event.type === "delta") {
+        answer += event.content;
+        assistantText.textContent = answer;
+        elements.chatMessages.scrollTop = elements.chatMessages.scrollHeight;
+      }
+      if (event.type === "error") throw new Error(event.error);
+    }
+    if (done) break;
+  }
+  return answer.trim();
+}
+
+async function askQuestion(question) {
+  const caseId = currentCaseId();
+  const history = [...chatHistoryForCurrentCase()];
+  const userMessage = chatMessage("user", question);
+  const assistantMessage = chatMessage("assistant", "Reviewing the complete case context…");
+  const assistantText = assistantMessage.querySelector("p");
+  elements.chatMessages.append(userMessage, assistantMessage);
+  elements.chatMessages.scrollTop = elements.chatMessages.scrollHeight;
+  setChatBusy(true);
+
+  const controller = new AbortController();
+  state.chatAbortController = controller;
+  try {
+    const response = await fetch("./api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        case_id: caseId,
+        question,
+        history,
+        page_state: currentPageState(),
+      }),
+      signal: controller.signal,
+    });
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({ error: `Chat request failed: ${response.status}` }));
+      throw new Error(error.error || `Chat request failed: ${response.status}`);
+    }
+
+    const answer = await parseChatStream(response, assistantText, (receipt) => {
+      elements.chatContextStatus.textContent =
+        `Attached ${receipt.evidence_records} evidence and ${receipt.source_records} source records · ${receipt.context_characters.toLocaleString()} characters · receipt ${receipt.context_sha256.slice(0, 12)}`;
+    });
+    if (!answer) throw new Error("The model returned an empty response.");
+    const updatedHistory = [...history, { role: "user", content: question }, { role: "assistant", content: answer }];
+    state.chatHistories.set(caseId, updatedHistory.slice(-20));
+  } catch (error) {
+    if (error.name === "AbortError") return;
+    assistantMessage.classList.add("error");
+    assistantText.textContent = error.message;
+  } finally {
+    if (state.chatAbortController === controller) {
+      state.chatAbortController = null;
+      setChatBusy(false);
+    }
+  }
+}
+
 function render() {
   const caseData = currentCase();
   renderTabs();
@@ -976,6 +1142,8 @@ function render() {
   renderExperiment(caseData);
   renderEvidenceList(caseData);
   renderPolicies(caseData);
+  renderChat();
+  setChatBusy(Boolean(state.chatAbortController));
 }
 
 elements.search.addEventListener("input", (event) => {
@@ -996,11 +1164,36 @@ elements.clusterFilter.addEventListener("change", (event) => {
   }
 });
 
+elements.chatForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const question = elements.chatQuestion.value.trim();
+  if (!question || state.chatConfigured !== true || state.chatAbortController) return;
+  elements.chatQuestion.value = "";
+  askQuestion(question);
+});
+
+elements.chatQuestion.addEventListener("keydown", (event) => {
+  if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
+    event.preventDefault();
+    elements.chatForm.requestSubmit();
+  }
+});
+
+elements.chatPrompts.addEventListener("click", (event) => {
+  const button = event.target.closest("button[data-question]");
+  if (!button || button.disabled) return;
+  elements.chatQuestion.value = button.dataset.question;
+  elements.chatForm.requestSubmit();
+});
+
+setChatBusy(false);
+
 try {
   const response = await fetch("./data/catalog.json");
   if (!response.ok) throw new Error(`Data request failed: ${response.status}`);
   state.catalog = await response.json();
   render();
+  checkChatHealth();
 } catch (error) {
   console.error(error);
   elements.list.replaceChildren(

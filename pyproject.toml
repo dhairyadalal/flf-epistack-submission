@@ -10,10 +10,12 @@ requires-python = ">=3.11"
 dependencies = []
 
 [project.optional-dependencies]
+chat = ["openai>=1.30", "python-dotenv>=1.0"]
 test = ["jsonschema>=4.23"]
 
 [project.scripts]
 epistack-build = "epistemic_audit.build:main"
+epistack-serve = "epistemic_audit.server:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

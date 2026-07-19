@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: epistack
+    runtime: python
+    plan: free
+    buildCommand: python -m pip install -e '.[chat]' && epistack-build
+    startCommand: epistack-serve --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: NVIDIA_API_KEY
+        sync: false
+      - key: NVIDIA_MODEL
+        value: z-ai/glm-5.2
+      - key: NVIDIA_MAX_TOKENS
+        value: "4096"
