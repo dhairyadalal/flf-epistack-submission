@@ -44,7 +44,7 @@ class ServerContextTests(unittest.TestCase):
         self.assertEqual(len(payload["experiments"]), 1)
         self.assertEqual(len(payload["policies"]), 4)
 
-    def test_messages_include_context_history_and_current_page_state(self) -> None:
+    def test_messages_include_context_and_history_but_not_page_state(self) -> None:
         messages = build_messages(
             context='{"case":"complete"}',
             question="What changes?",
@@ -57,7 +57,8 @@ class ServerContextTests(unittest.TestCase):
 
         self.assertEqual([message["role"] for message in messages], ["system", "user", "assistant", "user"])
         self.assertIn('FULL_CASE_CONTEXT_JSON:\n{"case":"complete"}', messages[0]["content"])
-        self.assertIn('"run_id":"strict-public-evidence"', messages[-1]["content"])
+        self.assertNotIn("strict-public-evidence", messages[-1]["content"])
+        self.assertNotIn("CURRENT_PAGE_STATE_JSON", messages[-1]["content"])
         self.assertIn("What changes?", messages[-1]["content"])
 
     def test_history_must_be_complete_alternating_turns(self) -> None:

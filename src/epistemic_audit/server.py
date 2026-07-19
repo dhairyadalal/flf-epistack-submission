@@ -40,6 +40,11 @@ Required behavior:
 - Identify framing, source-policy, independence, ingestion, and capability sensitivities when relevant.
 - If the context cannot answer a question, say what information is missing instead of guessing.
 - Compare competing interpretations fairly and make uncertainty attributable.
+- Focus on the substance of the case: claims, warrants, evidence, source coverage, dependencies,
+  missing evidence, and how the assessment changes under alternative policies or framings.
+- The interface's active run, selected record, filters, and other display state are navigation choices,
+  not findings of the inquiry. Do not diagnose mismatches or draw analytical conclusions from those
+  controls. Discuss the interface state only when the user explicitly asks about the interface itself.
 """
 
 
@@ -115,14 +120,13 @@ def build_messages(
     history: list[dict[str, str]],
     page_state: dict[str, Any],
 ) -> list[dict[str, str]]:
+    # Retained in the API for compatibility, but not shown to the model: a
+    # temporary interface selection is not evidence about the case.
+    del page_state
     system_message = (
         f"{SYSTEM_INSTRUCTIONS}\n\nFULL_CASE_CONTEXT_JSON:\n{context}"
     )
-    current_prompt = (
-        "CURRENT_PAGE_STATE_JSON:\n"
-        f"{json.dumps(page_state, ensure_ascii=False, separators=(',', ':'))}\n\n"
-        f"USER_QUESTION:\n{question}"
-    )
+    current_prompt = f"USER_QUESTION:\n{question}"
     return [
         {"role": "system", "content": system_message},
         *history,
