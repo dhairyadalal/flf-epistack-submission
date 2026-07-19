@@ -19,10 +19,14 @@ const elements = {
   experimentKicker: document.querySelector("#experiment-kicker"),
   experimentTitle: document.querySelector("#experiment-title"),
   experimentDescription: document.querySelector("#experiment-description"),
+  runPickerTitle: document.querySelector("#run-picker-title"),
+  runPickerDescription: document.querySelector("#run-picker-description"),
   runTabs: document.querySelector("#run-tabs"),
+  runPanel: document.querySelector("#run-panel"),
   runTitle: document.querySelector("#run-title"),
   runDescription: document.querySelector("#run-description"),
   runCounts: document.querySelector("#run-counts"),
+  assessmentLabel: document.querySelector("#assessment-label"),
   assessmentConclusion: document.querySelector("#assessment-conclusion"),
   naturalBalance: document.querySelector("#natural-balance"),
   researchBalance: document.querySelector("#research-balance"),
@@ -31,7 +35,6 @@ const elements = {
   supportBalance: document.querySelector("#support-balance"),
   framingOutput: document.querySelector("#framing-output"),
   answerShape: document.querySelector("#answer-shape"),
-  framingUncertainty: document.querySelector("#framing-uncertainty"),
   graphTitle: document.querySelector("#graph-title"),
   graphDescription: document.querySelector("#graph-description"),
   graphFilterField: document.querySelector("#graph-filter-field"),
@@ -42,6 +45,15 @@ const elements = {
   graphSelection: document.querySelector("#graph-selection"),
   coverage: document.querySelector("#coverage-report"),
   coverageSummary: document.querySelector("#coverage-summary"),
+  coverageDetails: document.querySelector("#coverage-details"),
+  framingSidebar: document.querySelector("#framing-sidebar"),
+  framingSidebarTitle: document.querySelector("#framing-sidebar-title"),
+  framingMode: document.querySelector("#framing-mode"),
+  framingQuestion: document.querySelector("#framing-question"),
+  framingSources: document.querySelector("#framing-sources"),
+  framingPolicyExclusions: document.querySelector("#framing-policy-exclusions"),
+  framingExclusions: document.querySelector("#framing-exclusions"),
+  framingConsequence: document.querySelector("#framing-consequence"),
   resultCount: document.querySelector("#result-count"),
   search: document.querySelector("#search"),
   direction: document.querySelector("#direction-filter"),
@@ -375,23 +387,53 @@ function renderCoverage(experiment) {
 
 function renderRunTabs(experiment, caseData) {
   const run = experiment.runs[state.runIndex];
+  const framingHints = {
+    "eggs-silent-baseline": "Leaves “good” undefined",
+    "eggs-health-population-declared": "Average cardiovascular risk",
+    "eggs-health-individual-declared": "Personal lipid response",
+    "eggs-animal-welfare-declared": "Conditions for laying hens",
+    "eggs-environment-declared": "Production footprint",
+  };
+  const selectRun = (index, focus = false) => {
+    state.runIndex = index;
+    renderExperiment(caseData);
+    if (focus) elements.runTabs.querySelectorAll("button")[index]?.focus();
+  };
   elements.runTabs.replaceChildren(
     ...experiment.runs.map((candidate, index) => {
+      const isFraming = experiment.experiment_type === "framing_comparison";
       const button = el("button", {
-        text: candidate.label,
         attrs: {
+          id: `run-tab-${index}`,
           type: "button",
           role: "tab",
           "aria-selected": String(index === state.runIndex),
+          "aria-controls": "run-panel",
+          tabindex: index === state.runIndex ? "0" : "-1",
         },
-      });
-      button.addEventListener("click", () => {
-        state.runIndex = index;
-        renderExperiment(caseData);
+      }, [
+        el("strong", { text: candidate.label }),
+        el("span", {
+          text: isFraming
+            ? framingHints[candidate.run_id]
+            : candidate.description.split(".")[0],
+        }),
+      ]);
+      button.addEventListener("click", () => selectRun(index));
+      button.addEventListener("keydown", (event) => {
+        let nextIndex = null;
+        if (event.key === "ArrowRight") nextIndex = (index + 1) % experiment.runs.length;
+        if (event.key === "ArrowLeft") nextIndex = (index - 1 + experiment.runs.length) % experiment.runs.length;
+        if (event.key === "Home") nextIndex = 0;
+        if (event.key === "End") nextIndex = experiment.runs.length - 1;
+        if (nextIndex === null) return;
+        event.preventDefault();
+        selectRun(nextIndex, true);
       });
       return button;
     }),
   );
+  elements.runPanel.setAttribute("aria-labelledby", `run-tab-${state.runIndex}`);
   return run;
 }
 
@@ -401,6 +443,13 @@ function renderFixedCorpusExperiment(caseData, experiment) {
   elements.experimentTitle.textContent = "How source policy changes the assessment";
   elements.experimentDescription.textContent =
     "The 40 supplied records stay fixed. Each run admits a different subset, then recalculates support after duplicate evidence families are collapsed.";
+  elements.experimentSection.classList.remove("framing-experiment");
+  elements.runPickerTitle.textContent = "Choose an evidence pass";
+  elements.runPickerDescription.textContent =
+    "Each pass widens the source policy. Select one to see which records enter and how the assessment changes.";
+  elements.coverageDetails.hidden = false;
+  elements.framingSidebar.hidden = true;
+  elements.assessmentLabel.textContent = "Assessment under this policy";
   elements.supportBalance.hidden = false;
   elements.framingOutput.hidden = true;
   elements.graphFilterField.hidden = false;
@@ -536,34 +585,26 @@ function renderFramingGraph(experiment, run, caseData) {
 }
 
 function renderFramingCoverage(run) {
-  const groups = [
-    ["Admitted source scope", run.source_scope.source_types.map((value) => ({ label: value, note: "" }))],
-    ["Explicit policy exclusions", run.source_scope.exclusion_rules.map((value) => ({ label: value, note: "" }))],
-    [
-      "Other outcomes excluded by this framing",
-      run.excluded_by_framing.map((item) => ({
-        label: label(item.framing_id),
-        note: item.title,
-      })),
-    ],
-  ];
-  elements.coverage.replaceChildren(
-    ...groups.map(([title, items]) =>
-      el("section", {}, [
-        el("h4", { text: `${title} (${items.length})` }),
-        el(
-          "ul",
-          {},
-          items.map((item) =>
-            el("li", {}, [
-              el("strong", { text: item.label }),
-              item.note ? document.createTextNode(`: ${item.note}`) : null,
-            ]),
-          ),
-        ),
+  elements.framingSidebarTitle.textContent = run.label;
+  elements.framingMode.textContent = run.framing_declared
+    ? "Declared choice — selected explicitly before evidence is assessed."
+    : "Implicit assumption — the system chose this meaning without asking.";
+  elements.framingQuestion.textContent = run.operationalized_question;
+  elements.framingSources.replaceChildren(
+    ...run.source_scope.source_types.map((sourceType) => el("li", { text: sourceType })),
+  );
+  elements.framingPolicyExclusions.replaceChildren(
+    ...run.source_scope.exclusion_rules.map((rule) => el("li", { text: rule })),
+  );
+  elements.framingExclusions.replaceChildren(
+    ...run.excluded_by_framing.map((item) =>
+      el("li", {}, [
+        el("strong", { text: label(item.framing_id) }),
+        document.createTextNode(` — ${item.title}`),
       ]),
     ),
   );
+  elements.framingConsequence.textContent = run.framing_conditional_uncertainty;
 }
 
 function renderFramingExperiment(caseData, experiment) {
@@ -572,6 +613,13 @@ function renderFramingExperiment(caseData, experiment) {
   elements.experimentTitle.textContent = "How the meaning of “good” changes the inquiry";
   elements.experimentDescription.textContent =
     "The raw question stays fixed. Each run swaps the framing object, which changes the operational question, admissible sources, and shape of the answer.";
+  elements.experimentSection.classList.add("framing-experiment");
+  elements.runPickerTitle.textContent = "Choose what “good” means";
+  elements.runPickerDescription.textContent =
+    "Select a framing to rerun the inquiry. The question, admitted sources, exclusions, and resulting assessment update together.";
+  elements.coverageDetails.hidden = true;
+  elements.framingSidebar.hidden = false;
+  elements.assessmentLabel.textContent = "Assessment under this framing";
   elements.supportBalance.hidden = true;
   elements.framingOutput.hidden = false;
   elements.graphFilterField.hidden = true;
@@ -592,7 +640,6 @@ function renderFramingExperiment(caseData, experiment) {
   elements.runCounts.textContent = `${run.included_evidence_ids.length} evidence record · ${run.included_source_ids.length} cited sources · framing ${run.framing_declared ? "declared" : "implicit"}`;
   elements.assessmentConclusion.textContent = run.assessment_summary;
   elements.answerShape.textContent = run.answer_shape;
-  elements.framingUncertainty.textContent = run.framing_conditional_uncertainty;
   renderFramingGraph(experiment, run, caseData);
   renderFramingCoverage(run);
 }

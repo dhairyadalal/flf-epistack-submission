@@ -38,60 +38,98 @@
             <h2 id="experiment-title"></h2>
             <p id="experiment-description"></p>
           </div>
-          <div id="run-tabs" class="run-tabs" role="tablist" aria-label="Evidence policy"></div>
         </header>
 
-        <div class="run-summary">
-          <div>
-            <h3 id="run-title"></h3>
-            <p id="run-description"></p>
+        <div class="run-picker">
+          <div class="run-picker-copy">
+            <h3 id="run-picker-title"></h3>
+            <p id="run-picker-description"></p>
           </div>
-          <p id="run-counts" class="run-counts"></p>
+          <div id="run-tabs" class="run-tabs" role="tablist" aria-labelledby="run-picker-title"></div>
         </div>
 
-        <div class="assessment-row">
-          <div class="assessment-copy">
-            <span>Assessment under this policy</span>
-            <strong id="assessment-conclusion"></strong>
-          </div>
-          <div id="support-balance" class="support-balance">
-            <div class="balance-labels">
-              <span id="natural-balance"></span>
-              <span id="research-balance"></span>
+        <div class="experiment-layout">
+          <div id="run-panel" class="experiment-main" role="tabpanel" aria-live="polite">
+            <div class="run-summary">
+              <div>
+                <h3 id="run-title"></h3>
+                <p id="run-description"></p>
+              </div>
+              <p id="run-counts" class="run-counts"></p>
             </div>
-            <div class="balance-track" aria-hidden="true">
-              <span id="natural-bar"></span>
-              <span id="research-bar"></span>
+
+            <div class="assessment-row">
+              <div class="assessment-copy">
+                <span id="assessment-label">Assessment under this policy</span>
+                <strong id="assessment-conclusion"></strong>
+              </div>
+              <div id="support-balance" class="support-balance">
+                <div class="balance-labels">
+                  <span id="natural-balance"></span>
+                  <span id="research-balance"></span>
+                </div>
+                <div class="balance-track" aria-hidden="true">
+                  <span id="natural-bar"></span>
+                  <span id="research-bar"></span>
+                </div>
+                <p>Uses the baseline’s weak/moderate/strong labels, deduplicated by evidence family; not a probability.</p>
+              </div>
+              <div id="framing-output" class="framing-output" hidden>
+                <span>Answer shape</span>
+                <strong id="answer-shape"></strong>
+              </div>
             </div>
-            <p>Uses the baseline’s weak/moderate/strong labels, deduplicated by evidence family; not a probability.</p>
+
+            <div class="graph-toolbar">
+              <div>
+                <h3 id="graph-title"></h3>
+                <p id="graph-description"></p>
+              </div>
+              <label id="graph-filter-field">
+                <span>Evidence family</span>
+                <select id="cluster-filter"></select>
+              </label>
+            </div>
+
+            <div id="graph-legend" class="graph-legend" aria-label="Graph legend"></div>
+            <div id="graph-summary" class="sr-only"></div>
+            <div id="claim-graph" class="claim-graph" role="img" aria-describedby="graph-summary"></div>
+            <div id="graph-selection" class="graph-selection"></div>
+
+            <details id="coverage-details" class="coverage-details">
+              <summary id="coverage-summary">Coverage and negative space</summary>
+              <div id="coverage-report" class="coverage-report"></div>
+            </details>
           </div>
-          <div id="framing-output" class="framing-output" hidden>
-            <span>Answer shape</span>
-            <strong id="answer-shape"></strong>
-            <p id="framing-uncertainty"></p>
-          </div>
+
+          <aside id="framing-sidebar" class="framing-sidebar" aria-labelledby="framing-sidebar-title" hidden>
+            <div class="framing-sidebar-heading">
+              <p class="kicker">Current framing</p>
+              <h3 id="framing-sidebar-title"></h3>
+              <p id="framing-mode"></p>
+            </div>
+            <section>
+              <h4>Operational question</h4>
+              <p id="framing-question"></p>
+            </section>
+            <section>
+              <h4>Sources admitted</h4>
+              <ul id="framing-sources"></ul>
+            </section>
+            <section>
+              <h4>Policy boundary</h4>
+              <ul id="framing-policy-exclusions"></ul>
+            </section>
+            <section>
+              <h4>Outcomes left out</h4>
+              <ul id="framing-exclusions"></ul>
+            </section>
+            <section class="framing-consequence">
+              <h4>Why this matters</h4>
+              <p id="framing-consequence"></p>
+            </section>
+          </aside>
         </div>
-
-        <div class="graph-toolbar">
-          <div>
-            <h3 id="graph-title"></h3>
-            <p id="graph-description"></p>
-          </div>
-          <label id="graph-filter-field">
-            <span>Evidence family</span>
-            <select id="cluster-filter"></select>
-          </label>
-        </div>
-
-        <div id="graph-legend" class="graph-legend" aria-label="Graph legend"></div>
-        <div id="graph-summary" class="sr-only"></div>
-        <div id="claim-graph" class="claim-graph" role="img" aria-describedby="graph-summary"></div>
-        <div id="graph-selection" class="graph-selection"></div>
-
-        <details class="coverage-details">
-          <summary id="coverage-summary">Coverage and negative space</summary>
-          <div id="coverage-report" class="coverage-report"></div>
-        </details>
       </section>
 
       <section class="workspace" aria-labelledby="records-title">
