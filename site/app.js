@@ -80,6 +80,8 @@ const elements = {
   chatContextStatus: document.querySelector("#chat-context-status"),
   chatMessages: document.querySelector("#chat-messages"),
   chatPrompts: document.querySelector("#chat-prompts"),
+  chatPromptsTitle: document.querySelector("#chat-prompts-title"),
+  chatPromptsDescription: document.querySelector("#chat-prompts-description"),
   chatForm: document.querySelector("#chat-form"),
   chatQuestion: document.querySelector("#chat-question"),
   chatSubmit: document.querySelector("#chat-submit"),
@@ -987,10 +989,135 @@ function renderPolicies(caseData) {
   );
 }
 
+function appendInlineMarkdown(parent, text) {
+  const tokenPattern = /(\*\*[^*\n]+\*\*|`[^`\n]+`|\*[^*\n]+\*|\[[^\]\n]+\]\(https?:\/\/[^)\s]+\))/g;
+  let cursor = 0;
+  for (const match of text.matchAll(tokenPattern)) {
+    if (match.index > cursor) parent.append(document.createTextNode(text.slice(cursor, match.index)));
+    const token = match[0];
+    if (token.startsWith("**")) {
+      parent.append(el("strong", { text: token.slice(2, -2) }));
+    } else if (token.startsWith("`")) {
+      parent.append(el("code", { text: token.slice(1, -1) }));
+    } else if (token.startsWith("*")) {
+      parent.append(el("em", { text: token.slice(1, -1) }));
+    } else {
+      const link = token.match(/^\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)$/);
+      parent.append(
+        el("a", {
+          text: link[1],
+          attrs: { href: link[2], target: "_blank", rel: "noopener noreferrer" },
+        }),
+      );
+    }
+    cursor = match.index + token.length;
+  }
+  if (cursor < text.length) parent.append(document.createTextNode(text.slice(cursor)));
+}
+
+function isMarkdownBlockStart(line) {
+  return (
+    /^\s*$/.test(line) ||
+    /^```/.test(line) ||
+    /^#{1,6}\s+/.test(line) ||
+    /^\s*(---+|___+|\*\*\*+)\s*$/.test(line) ||
+    /^\s*([-*+] |\d+\. )/.test(line) ||
+    /^>\s?/.test(line)
+  );
+}
+
+function renderMarkdown(container, markdown) {
+  const lines = markdown.replaceAll("\r\n", "\n").split("\n");
+  const output = document.createDocumentFragment();
+  let index = 0;
+
+  while (index < lines.length) {
+    const line = lines[index];
+    if (!line.trim()) {
+      index += 1;
+      continue;
+    }
+
+    if (/^```/.test(line)) {
+      index += 1;
+      const codeLines = [];
+      while (index < lines.length && !/^```/.test(lines[index])) {
+        codeLines.push(lines[index]);
+        index += 1;
+      }
+      if (index < lines.length) index += 1;
+      output.append(el("pre", {}, el("code", { text: codeLines.join("\n") })));
+      continue;
+    }
+
+    const heading = line.match(/^(#{1,6})\s+(.+)$/);
+    if (heading) {
+      const node = el(heading[1].length <= 2 ? "h3" : "h4");
+      appendInlineMarkdown(node, heading[2]);
+      output.append(node);
+      index += 1;
+      continue;
+    }
+
+    if (/^\s*(---+|___+|\*\*\*+)\s*$/.test(line)) {
+      output.append(el("hr"));
+      index += 1;
+      continue;
+    }
+
+    const unordered = line.match(/^\s*[-*+]\s+(.+)$/);
+    const ordered = line.match(/^\s*\d+\.\s+(.+)$/);
+    if (unordered || ordered) {
+      const list = el(ordered ? "ol" : "ul");
+      const itemPattern = ordered ? /^\s*\d+\.\s+(.+)$/ : /^\s*[-*+]\s+(.+)$/;
+      while (index < lines.length) {
+        const item = lines[index].match(itemPattern);
+        if (!item) break;
+        const listItem = el("li");
+        appendInlineMarkdown(listItem, item[1]);
+        list.append(listItem);
+        index += 1;
+      }
+      output.append(list);
+      continue;
+    }
+
+    if (/^>\s?/.test(line)) {
+      const quoteLines = [];
+      while (index < lines.length && /^>\s?/.test(lines[index])) {
+        quoteLines.push(lines[index].replace(/^>\s?/, ""));
+        index += 1;
+      }
+      const quote = el("blockquote");
+      appendInlineMarkdown(quote, quoteLines.join(" "));
+      output.append(quote);
+      continue;
+    }
+
+    const paragraphLines = [line.trim()];
+    index += 1;
+    while (index < lines.length && !isMarkdownBlockStart(lines[index])) {
+      paragraphLines.push(lines[index].trim());
+      index += 1;
+    }
+    const paragraph = el("p");
+    appendInlineMarkdown(paragraph, paragraphLines.join(" "));
+    output.append(paragraph);
+  }
+
+  container.replaceChildren(output);
+}
+
 function chatMessage(role, content, extraClass = "") {
+  const body = el("div", { className: "chat-message-body" });
+  if (role === "assistant") renderMarkdown(body, content);
+  else body.textContent = content;
   return el("article", { className: `chat-message ${role} ${extraClass}`.trim() }, [
-    el("strong", { text: role === "user" ? "You" : "Inquiry assistant" }),
-    el("p", { text: content }),
+    el("strong", {
+      className: "chat-speaker",
+      text: role === "user" ? "You" : "Inquiry assistant",
+    }),
+    body,
   ]);
 }
 
@@ -1011,6 +1138,12 @@ function renderChat() {
     ...history.map((message) => chatMessage(message.role, message.content)),
   );
   elements.chatMessages.scrollTop = elements.chatMessages.scrollHeight;
+  elements.chatPromptsTitle.textContent = history.length
+    ? "Continue the critical inquiry"
+    : "Start a critical inquiry";
+  elements.chatPromptsDescription.textContent = history.length
+    ? "Choose another lens to challenge or extend the answer above."
+    : "Select a question to ask it. Each one tests a different limit of the assessment.";
 
   const contextSummary = `${caseData.evidence.length} evidence records and ${caseData.sources.length} source records`;
   if (state.chatConfigured === true) {
@@ -1059,7 +1192,7 @@ function currentPageState() {
   };
 }
 
-async function parseChatStream(response, assistantText, onReceipt) {
+async function parseChatStream(response, assistantBody, onReceipt) {
   const reader = response.body?.getReader();
   if (!reader) throw new Error("The chat response did not contain a stream.");
   const decoder = new TextDecoder();
@@ -1077,7 +1210,7 @@ async function parseChatStream(response, assistantText, onReceipt) {
       if (event.type === "context") onReceipt(event.receipt);
       if (event.type === "delta") {
         answer += event.content;
-        assistantText.textContent = answer;
+        renderMarkdown(assistantBody, answer);
         elements.chatMessages.scrollTop = elements.chatMessages.scrollHeight;
       }
       if (event.type === "error") throw new Error(event.error);
@@ -1092,7 +1225,7 @@ async function askQuestion(question) {
   const history = [...chatHistoryForCurrentCase()];
   const userMessage = chatMessage("user", question);
   const assistantMessage = chatMessage("assistant", "Reviewing the complete case context…");
-  const assistantText = assistantMessage.querySelector("p");
+  const assistantBody = assistantMessage.querySelector(".chat-message-body");
   elements.chatMessages.append(userMessage, assistantMessage);
   elements.chatMessages.scrollTop = elements.chatMessages.scrollHeight;
   setChatBusy(true);
@@ -1116,7 +1249,7 @@ async function askQuestion(question) {
       throw new Error(error.error || `Chat request failed: ${response.status}`);
     }
 
-    const answer = await parseChatStream(response, assistantText, (receipt) => {
+    const answer = await parseChatStream(response, assistantBody, (receipt) => {
       elements.chatContextStatus.textContent =
         `Attached ${receipt.evidence_records} evidence and ${receipt.source_records} source records · ${receipt.context_characters.toLocaleString()} characters · receipt ${receipt.context_sha256.slice(0, 12)}`;
     });
@@ -1126,7 +1259,7 @@ async function askQuestion(question) {
   } catch (error) {
     if (error.name === "AbortError") return;
     assistantMessage.classList.add("error");
-    assistantText.textContent = error.message;
+    assistantBody.textContent = error.message;
   } finally {
     if (state.chatAbortController === controller) {
       state.chatAbortController = null;

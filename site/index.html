@@ -182,9 +182,26 @@
       <div id="chat-messages" class="chat-messages" aria-live="polite"></div>
 
       <div id="chat-prompts" class="chat-prompts" aria-label="Suggested questions">
-        <button type="button" data-question="Which findings rely on overlapping or correlated evidence?">Find dependencies</button>
-        <button type="button" data-question="What important evidence or perspective is missing from this corpus?">Find missing evidence</button>
-        <button type="button" data-question="Which conclusions are most sensitive to the selected framing or evidence policy?">Test sensitivity</button>
+        <div class="chat-prompts-header">
+          <strong id="chat-prompts-title">Start a critical inquiry</strong>
+          <p id="chat-prompts-description">Select a question to ask it. Each one tests a different limit of the assessment.</p>
+        </div>
+        <button type="button" data-question="How do structural limitations in this tool's capabilities—including source verification, language coverage, and analyses that were not independently reproduced—affect the confidence we should place in the current assessment?">
+          <strong>Confidence and capability limits</strong>
+          <span>How should the tool’s structural limitations change our confidence?</span>
+        </button>
+        <button type="button" data-question="Which parts of the current assessment are most sensitive to the selected framing or evidence policy? Explain what changes and what remains stable.">
+          <strong>Framing and policy sensitivity</strong>
+          <span>Which conclusions depend most on choices made before assessment?</span>
+        </button>
+        <button type="button" data-question="Which findings share sources, assumptions, or evidence families, and where might treating them as independent overstate confidence?">
+          <strong>Evidence dependence</strong>
+          <span>Where could overlap or double-counting exaggerate support?</span>
+        </button>
+        <button type="button" data-question="What relevant evidence is unavailable, excluded, or not established in this corpus, and how could obtaining it alter the assessment?">
+          <strong>Missing evidence</strong>
+          <span>What is absent, and could it materially change the answer?</span>
+        </button>
       </div>
 
       <form id="chat-form" class="chat-form">
