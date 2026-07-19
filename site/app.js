@@ -196,7 +196,7 @@ function renderCaseHeader(caseData) {
       elements.inquiryQuestion.textContent = "What was the origin of COVID-19?";
     if (elements.inquiryMotivation)
       elements.inquiryMotivation.textContent =
-        "Did COVID-19 emerge from natural zoonotic spillover or from a laboratory accident? In 2024, a $100,000 structured debate between Saar Wilf and Peter Miller ran for 15 hours and ended in a decisive ruling for zoonosis — yet six independent Bayesian analyses of the same evidence spanned 23 orders of magnitude. The debate record is one of the richest publicly available examples of a real-world epistemic dispute, yet remains difficult to navigate and use to form a considered view.";
+        "A $100,000 judged debate between Saar Wilf and Peter Miller spent 15 hours weighing epidemiological, genetic, and Bayesian evidence on this question — and still ended with two expert judges ruling for zoonosis while six independent analyses of the same evidence spanned 23 orders of magnitude. That gap between effort and disagreement makes the debate one of the richest public records of a contested, high-stakes dispute, and a demanding test of whether better structure can make its reasoning easier to navigate, interrogate, and update.";
     elements.kicker.textContent = "Imported baseline · structural review";
     elements.title.textContent = "COVID-origins evidence review";
     elements.description.textContent =
@@ -214,7 +214,7 @@ function renderCaseHeader(caseData) {
       elements.inquiryQuestion.textContent = "Are eggs good to eat, and how can we tell?";
     if (elements.inquiryMotivation)
       elements.inquiryMotivation.textContent =
-        "This open-ended everyday question is representative of a large class of health and nutrition debates where evidence is contested, context-dependent, and framing-sensitive. Getting clarity on what the important sub-questions even are — and what counts as appropriate evidence — is often more than half the challenge.";
+        "Whether eggs are healthy depends entirely on what “good” means — population cardiovascular risk, personal lipid response, animal welfare, and environmental footprint each demand different evidence and can point to different answers. This case is a mundane stand-in for a much larger class of everyday and high-stakes questions where deciding what to ask, and what counts as evidence, is often the real challenge.";
     elements.kicker.textContent = "Original demonstration · framing comparison";
     elements.title.textContent = "What does “good to eat” mean?";
     elements.description.textContent =
