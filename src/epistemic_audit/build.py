@@ -20,7 +20,7 @@ CASES = (
     {
         "case_id": "covid-origins",
         "baseline_id": "carlo-claude-unattended-2026-06-25",
-        "root": ROOT / "flf-epistack-contest-main",
+        "root": ROOT / "carlo-baseline",
         "upstream_author": "Claude (baseline supplied by Carlo)",
         "generation_method": "23-minute unattended Claude Code swarm",
     },

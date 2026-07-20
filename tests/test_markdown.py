@@ -22,7 +22,7 @@ class FrontmatterTests(unittest.TestCase):
 
 class CorpusTests(unittest.TestCase):
     def test_imported_covid_corpus_has_expected_shape(self) -> None:
-        corpus = load_corpus(ROOT / "flf-epistack-contest-main")
+        corpus = load_corpus(ROOT / "carlo-baseline")
         self.assertEqual(len(corpus), 40)
         self.assertTrue(all(item.claim for item in corpus))
         self.assertTrue(all(item.citations for item in corpus))
